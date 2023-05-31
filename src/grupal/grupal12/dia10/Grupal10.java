@@ -10,11 +10,10 @@ import java.util.Arrays;
  *
  *
  * @author Oscar Fernandez,Cintia Muñoz, Joaquin Baeza, Hans Schiess
- *
+ * @version 1.0
+ * @see grupal.grupal12.dia10
  */
-
-
-public class Grupal10 {
+ class Grupal10 {
     /**
      * Método principal que ejecuta el programa.
      * Muestra un menú de opciones y solicita al usuario ingresar una opción.
