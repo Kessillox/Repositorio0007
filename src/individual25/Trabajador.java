@@ -29,6 +29,18 @@ public class Trabajador {
     private String telefono;
     private int edad;
 
+    public Trabajador() {
+    }
+
+    public Trabajador(String nombres, String apellido1, String apellido2, String run, String telefono, int edad) {
+        this.nombres = nombres;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
+        this.run = run;
+        this.telefono = telefono;
+        this.edad = edad;
+    }
+
     public String getNombres() {
         return nombres;
     }
@@ -36,5 +48,24 @@ public class Trabajador {
     public void setNombres(String nombres) {
         this.nombres = nombres;
     }
+
+    @Override
+    public String toString() {
+        return "Trabajador{" +
+                "nombres='" + nombres + '\'' +
+                ", apellido1='" + apellido1 + '\'' +
+                ", apellido2='" + apellido2 + '\'' +
+                ", run='" + run + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", edad=" + edad +
+                '}';
+    }
+
+    public String nombreCompleto(){
+        return "Nombres: " + nombres + " Apellidos: " + apellido1 + " " + apellido2;
+
+    }
+
+
 }
 
