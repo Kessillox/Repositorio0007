@@ -15,18 +15,17 @@ public class Ejercicio23 {
         } while (cadena.isEmpty());
 
 
-        for(int i=0; i < cadena.length(); i++){
+        for (int i = 0; i < cadena.length(); i++) {
             char letra = cadena.charAt(i);
             if (letra == ' ') {
                 continue;
 
-            }else if (Character.isLowerCase(letra)) {
+            } else if (Character.isLowerCase(letra)) {
                 letra = Character.toUpperCase(letra);
 
-            }else if (Character.isUpperCase(letra)){
+            } else if (Character.isUpperCase(letra)) {
                 letra = Character.toLowerCase(letra);
             }
-
 
 
             resultado += letra;
@@ -37,4 +36,5 @@ public class Ejercicio23 {
         System.out.println("El resultado es: " + resultado);
 
 
+    }
 }
