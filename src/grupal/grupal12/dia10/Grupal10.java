@@ -1,10 +1,4 @@
 package grupal.grupal12.dia10;
-
-
-
-
-
-
 import java.util.Scanner;
 import java.util.Arrays;
 
@@ -18,8 +12,6 @@ import java.util.Arrays;
  * @author Oscar Fernandez,Cintia Muñoz, Joaquin Baeza, Hans Schiess
  *
  */
-
-
 
 
 public class Grupal10 {
