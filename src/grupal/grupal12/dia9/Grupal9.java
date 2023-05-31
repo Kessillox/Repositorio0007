@@ -1,14 +1,34 @@
 package grupal.grupal12.dia9;
 import java.util.Scanner;
 
-/* Integrantes : Cintia Muñoz
-                 Joaquin Baeza
-                 Hans Schiess
-                 Oscar Fernandez*/
+/**
+ * Clase Grupal9 que recopila información sobre una empresa, capacitaciones asistentes dichas capacitaciones
+ * y muestra los datos ingresados a traves de la consola.
+ * @author Cintia Muñoz, Joaquín Baeza, Hans Schiess, Oscar Fernández
+ * @version 1.0
+ * @see grupal.grupal12.dia9
+ *
+ */
 public class Grupal9 {
-    public static void main(String[] args) {
 
+    /**
+     * Método principal que ejecuta el programa.
+     *
+     */
+    public static void main(String[] args) {
+/**
+ * Crea una nueva instancia de Scanner para leer información entragada por del usuario.
+ */
         Scanner leer = new Scanner(System.in);
+
+        /**
+         * Se capturan y validan distintos datos de la empresa solicitados al usuario.
+         * Los datos a capturar son: ID de la empresa, RUT de empresa, nombre de la empresa, dirección,
+         * teléfono, nombre y run del representante de la empresa.
+         * Información sobre la capacitación tales cómo día, hora, lugar, duración y cantidad de asistentes.
+         * Nombre y edad de los asistentes a las capacitaciones.
+         *
+         */
 
         //Datos de la empresa y su respectiva validación
         //ID empresa
@@ -72,24 +92,25 @@ public class Grupal9 {
         Long telefono;
         while (true) {
             System.out.println("Ingrese teléfono de contacto (EJEMPLO: 56954313978)");
-            String input = leer.next();
-            if (!input.isEmpty()) {
-                if (input.matches("\\d+")) {
-                    telefono = Long.parseLong(input);
-                    break;
-                } else {
-                    System.out.println("Debe ingresar un valor numérico entero para el teléfono");
-                }
-            } else {
+            String input = leer.nextLine();
+            //telefono = leer.nextLong();
+
+            if (input.isEmpty()) {
                 System.out.println("El teléfono no puede estar en blanco");
+                // Vuelve al inicio del bucle sin avanzar
             }
-            leer.nextLine(); // Descartar el resto de la línea actual
+
+            if (input.matches("\\d+")) {
+                telefono = Long.parseLong(input);
+                break; // Sale del bucle si se ingresa un número válido
+            } else {
+                System.out.println("Debe ingresar un valor numérico entero para el teléfono");
+            }
         }
 
 
         // Nombre de usuario
         String nombreUsuario;
-        leer.nextLine();
 
         while (true) {
             System.out.println("Ingrese nombre del usuario");
@@ -210,6 +231,10 @@ public class Grupal9 {
             System.exit(0);
         }
 
+        /**
+         * Se clasifican los asistentes según el rango etareo al cual corresponden y se contabiliza
+         * cuantos asistentes hay según rango etareo
+         */
 
 
         //Cantidad de asistentes por rango etareo
@@ -225,6 +250,10 @@ public class Grupal9 {
                 mayores35++;
             }
         }
+
+        /**
+         * Se imprime por consola la información obtenida
+         */
 
         //Mostrar datos
         System.out.println("============================================");
