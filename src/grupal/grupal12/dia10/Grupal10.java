@@ -1,14 +1,34 @@
 package grupal.grupal12.dia10;
 
+
+
+
+
+
 import java.util.Scanner;
 import java.util.Arrays;
 
-/* Integrantes : Cintia Muñoz
-                 Joaquin Baeza
-                 Hans Schiess
-                 Oscar Fernandez*/
-public class Grupal10 {
+/**
 
+ * Clase que contiene un programa de registro de empresas y capacitaciones.
+ * Permite registrar datos de la empresa, así como también realizar registros
+ * de capacitaciones.
+ *
+ *
+ * @author Oscar Fernandez,Cintia Muñoz, Joaquin Baeza, Hans Schiess
+ *
+ */
+
+
+
+
+public class Grupal10 {
+    /**
+     * Método principal que ejecuta el programa.
+     * Muestra un menú de opciones y solicita al usuario ingresar una opción.
+     * Dependiendo de la opción seleccionada, llama a los métodos correspondientes.
+     *
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int opcion;
@@ -40,7 +60,11 @@ public class Grupal10 {
     }
 
 
-
+    /**
+     * Método para registrar los datos de una empresa.
+     * Solicita al usuario ingresar los datos de la empresa, como el ID, el RUT, el nombre, la dirección, etc.
+     * Valida que los datos ingresados sean correctos y muestra los datos registrados.
+     */
     public static void datosEmpresa() {
         Scanner leer = new Scanner(System.in);
         // Datos de la empresa y su respectiva validación
@@ -157,7 +181,11 @@ public class Grupal10 {
 
 
     }
-
+    /**
+     * Método para registrar una capacitación.
+     * Solicita al usuario ingresar los datos de la capacitación, como el día, la hora, el lugar, etc.
+     * Registra los datos de los asistentes y muestra estadísticas sobre la capacitación, como el promedio de calificaciones.
+     */
 
     public static void capacitaciones () {
 
