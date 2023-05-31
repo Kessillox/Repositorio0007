@@ -1,3 +1,5 @@
+package empresaclase13;
+
 public class Capacitacion {
 
     private int identificador;
@@ -79,7 +81,7 @@ public class Capacitacion {
 
     @Override
     public String toString() {
-        return "Capacitacion{" +
+        return "empresaclase13.Capacitacion{" +
                 "identificador=" + identificador +
                 ", rutCliente='" + rutCliente + '\'' +
                 ", dia='" + dia + '\'' +

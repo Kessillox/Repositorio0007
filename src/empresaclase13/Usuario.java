@@ -1,3 +1,5 @@
+package empresaclase13;
+
 public class Usuario {
     private String nombre;
     private String fechaDeNacimiento;
@@ -38,7 +40,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" +
+        return "empresaclase13.Usuario{" +
                 "nombre='" + nombre + '\'' +
                 ", fechaDeNacimiento='" + fechaDeNacimiento + '\'' +
                 ", run='" + run + '\'' +

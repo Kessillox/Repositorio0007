@@ -1,3 +1,5 @@
+package empresaclase13;
+
 public class Cliente {
 
     private String rut;
@@ -69,7 +71,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" +
+        return "empresaclase13.Cliente{" +
                 "rut='" + rut + '\'' +
                 ", nombreEmpresa='" + nombreEmpresa + '\'' +
                 ", nombreRepresentante='" + nombreRepresentante + '\'' +

@@ -1,3 +1,7 @@
+import empresaclase13.Capacitacion;
+import empresaclase13.Cliente;
+import empresaclase13.Usuario;
+
 public class Main {
     public static void main(String[] args) {
 
