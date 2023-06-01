@@ -19,7 +19,8 @@ public class Cliente { // se crea la clase Cliente
     public Cliente() { // constructor vacio
     }
 
-    public Cliente(long rut, String nombreEmpresa, String telefonoRepresentante, String direccion, String comuna) { // constructor con parametros, atributos de la clase
+    // constructor con parametros, atributos de la clase
+    public Cliente(long rut, String nombreEmpresa, String nombreRepresentante, String apellido1, String apellido2,String telefonoRepresentante, String direccion, String comuna) {
         if (rut < 999999999) {
             while (rut > 999999999) {
                 System.out.println("Ingrese de nuevo el rut: (no debe ser mayor a 999999999)");
@@ -31,6 +32,9 @@ public class Cliente { // se crea la clase Cliente
             this.rut = rut;
         }
         this.nombreEmpresa = nombreEmpresa;
+        this.nombreRepresentante = nombreRepresentante;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
         this.telefonoRepresentante = telefonoRepresentante;
         this.direccion = direccion;
         this.comuna = comuna;
@@ -122,6 +126,7 @@ public class Cliente { // se crea la clase Cliente
                 + telefonoRepresentante + ", direccion=" + direccion + ", comuna=" + comuna + "]";
     }
 
+    //Metodo obtenerNombre
     public String obtenerNombre(){
         return "El nombre del representante legal es: "+nombreRepresentante+" "+apellido1+" "+apellido2;
     }

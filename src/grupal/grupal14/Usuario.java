@@ -44,7 +44,7 @@ public class Usuario { // se crea la clase Usuario
         return "Usuario [nombre=" + nombre + ", fechaDeNacimiento=" + fechaDeNacimiento + ", run=" + run + "]";
     }
 
-
+    //Metodo mostrarEdad
     public String mostrarEdad() {
         LocalDate fechaActual = LocalDate.now();
         Period periodo = Period.between(fechaDeNacimiento, fechaActual);
