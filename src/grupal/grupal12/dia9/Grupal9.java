@@ -1,26 +1,24 @@
-package grupal.grupal12.dia9;
-import java.util.Scanner;
-
-/**
- * Clase Grupal9 que recopila información sobre una empresa, capacitaciones asistentes dichas capacitaciones
- * y muestra los datos ingresados a traves de la consola.
- * @author Cintia Muñoz, Joaquín Baeza, Hans Schiess, Oscar Fernández
- * @version 1.0
- * @see grupal.grupal12.dia9
- *
- */
-public class Grupal9 {
+    package grupal.grupal12.dia9;
+    import java.util.Scanner;
 
     /**
+    * Clase Grupal9 que recopila información sobre una empresa, capacitaciones asistentes dichas capacitaciones
+    * y muestra los datos ingresados a traves de la consola.
+    * @author Cintia Muñoz, Joaquín Baeza, Hans Schiess, Oscar Fernández
+    * @version 1.0
+    * @see grupal.grupal12.dia9
+    */
+public class Grupal9 {
+
+     /**
      * Método principal que ejecuta el programa.
      *
      */
     public static void main(String[] args) {
-/**
- * Crea una nueva instancia de Scanner para leer información entragada por del usuario.
- */
+    /**
+    * Crea una nueva instancia de Scanner para leer información entragada por del usuario.
+    */
         Scanner leer = new Scanner(System.in);
-
         /**
          * Se capturan y validan distintos datos de la empresa solicitados al usuario.
          * Los datos a capturar son: ID de la empresa, RUT de empresa, nombre de la empresa, dirección,
@@ -31,7 +29,9 @@ public class Grupal9 {
          */
 
         //Datos de la empresa y su respectiva validación
-        //ID empresa
+
+        //ID empresa: recibe un dato de tipo entero, se valida que no se ingrese vacío
+        //y que sólo se ingresen datos de tipo numérico
         int id;
         while (true) {
             System.out.println("Ingrese ID de la empresa");
@@ -49,7 +49,7 @@ public class Grupal9 {
         }
 
 
-        //Rut empresa
+        //Rut empresa: es un dato de tipo string con la validación para que no se ingrese el campo vacio
         String rut;
         do {
             System.out.println("Ingrese RUT de la empresa (EJEMPLO: 77555444-3)");
@@ -60,7 +60,7 @@ public class Grupal9 {
         } while (rut.isEmpty());
 
 
-        // Nombre empresa
+        // Nombre empresa: es string y se valida que no se ingrese el campo vacío
         String nombreEmpresa;
         System.out.println("Ingrese nombre de la empresa");
         nombreEmpresa = leer.nextLine();
@@ -75,7 +75,7 @@ public class Grupal9 {
             }
         }
 
-        // Dirección
+        // Dirección: se recibe un dato tipo string y se valida que no ingrese vacío
         String direccion;
         while (true) {
             System.out.println("Ingrese dirección de la empresa");
@@ -88,12 +88,13 @@ public class Grupal9 {
         }
 
 
-        // Teléfono
+        // Teléfono: dato tipo long, se valida que sólo se ingrese un número
+        // y que el campo no quede vacío
         Long telefono;
         while (true) {
             System.out.println("Ingrese teléfono de contacto (EJEMPLO: 56954313978)");
             String input = leer.nextLine();
-            //telefono = leer.nextLong();
+
 
             if (input.isEmpty()) {
                 System.out.println("El teléfono no puede estar en blanco");
@@ -109,7 +110,8 @@ public class Grupal9 {
         }
 
 
-        // Nombre de usuario
+        // Nombre de usuario: String que al igual que las variables anteriores
+        //se recibe un dato por consola y se valida que no esté vacío
         String nombreUsuario;
 
         while (true) {
@@ -124,7 +126,7 @@ public class Grupal9 {
         }
 
 
-        // RUN
+        // RUN: variable tipo string, con la validación que no se ingrese vacío
         String run;
         System.out.println("Ingrese Run del usuario (Ejemplo: 15333444-1)");
         while (true) {
@@ -137,7 +139,7 @@ public class Grupal9 {
         }
 
 
-        // Día de la capacitación
+        // Día de la capacitación: variable tipo string, con su respectiva validación
         String dia;
         while (true) {
             System.out.println("Ingrese día que se realizará la capacitación(EJEMPLO: Lunes 22)");
@@ -150,7 +152,8 @@ public class Grupal9 {
         }
 
 
-        //Hora de la capacitación
+        //Hora de la capacitación: variable tipo string, con su respectiva validación para que
+        //no se ingrese un campo vacío
         String hora;
         while (true) {
             System.out.println("Ingrese hora de la capacitación (EJEMPLO: 09:00)");
@@ -162,7 +165,7 @@ public class Grupal9 {
             }
         }
 
-        //Lugar de la capacitación
+        //Lugar de la capacitación: variable tipo string, con su respectiva validación
         String lugar;
         while (true) {
             System.out.println("Ingrese lugar dónde se realizará la capacitación");
@@ -174,7 +177,7 @@ public class Grupal9 {
             }
         }
 
-        //Tiempo que durará la capacitación
+        //Tiempo que durará la capacitación: variable tipo string, con su respectiva validación
         String duracion;
         while (true) {
             System.out.println("Ingrese duración de la capacitación (EJEMPLO: 1 hora)");
@@ -186,7 +189,8 @@ public class Grupal9 {
             }
         }
 
-        //Cantidad de asistentes
+        //Cantidad de asistentes: variable tipo entero. Se valida que no se ingrese el campo vacío,
+        //que el valor ingresado sea mayor a cero y que sólo se ingresen números
         int asistentes;
         System.out.println("Ingrese número de asistentes a la capacitación");
         while (true) {
@@ -207,8 +211,11 @@ public class Grupal9 {
             }
         }
 
-        //Datos de los asistentes
+        //Datos de los asistentes:
         int[] edadAsistentes = new int[asistentes]; //Arreglo para guardar las edades de los asistentes
+
+        //Una vez ingresada la cantidad de asistentes se crea un ciclo que para ingresar el nombre y edad
+        // a cada asistente, según el número de asistentes ingresados por el usuario
         if (asistentes > 0) {
             for (int i = 0; i < asistentes; i++) {
                 System.out.println("Ingrese nombre de asistente");
@@ -237,7 +244,8 @@ public class Grupal9 {
          */
 
 
-        //Cantidad de asistentes por rango etareo
+        //Cantidad de asistentes por rango etareo: con el arreglo creado para guardar la edad de los asistentes
+        // se clasifican según rango de edad
         int menores25 = 0;
         int entre26y35 = 0;
         int mayores35 = 0;

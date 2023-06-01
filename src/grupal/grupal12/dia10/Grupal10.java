@@ -1,24 +1,22 @@
-package grupal.grupal12.dia10;
-import java.util.Scanner;
-import java.util.Arrays;
+    package grupal.grupal12.dia10;
 
-/**
+    import java.util.Scanner;
+    import java.util.Arrays;
 
- * Clase que contiene un programa de registro de empresas y capacitaciones.
- * Permite registrar datos de la empresa, así como también realizar registros
- * de capacitaciones.
- *
- *
- * @author Oscar Fernandez,Cintia Muñoz, Joaquin Baeza, Hans Schiess
- * @version 1.0
- * @see grupal.grupal12.dia10
- */
- class Grupal10 {
+    /**
+    * Clase que contiene un programa de registro de empresas y capacitaciones.
+    * Permite registrar datos de la empresa, así como también realizar registros
+    * de capacitaciones.
+    * @author Oscar Fernandez,Cintia Muñoz, Joaquin Baeza, Hans Schiess
+    * @version 1.0
+    * @see grupal.grupal12.dia10
+    */
+    class Grupal10 {
     /**
      * Método principal que ejecuta el programa.
      * Muestra un menú de opciones y solicita al usuario ingresar una opción.
      * Dependiendo de la opción seleccionada, llama a los métodos correspondientes.
-     *
+     * @param args Argumentos de línea de comandos.
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -60,7 +58,8 @@ import java.util.Arrays;
         Scanner leer = new Scanner(System.in);
         // Datos de la empresa y su respectiva validación
 
-        // ID empresa
+        //ID empresa: recibe un dato de tipo entero, se valida que no se ingrese vacío
+        //y que sólo se ingresen datos de tipo numérico
         int id;
         while (true) {
             System.out.println("Ingrese ID de la empresa");
@@ -77,7 +76,7 @@ import java.util.Arrays;
             }
         }
 
-        // Rut empresa
+        //Rut empresa: es un dato de tipo string con la validación para que no se ingrese el campo vacio
         String rut;
         do {
             System.out.println("Ingrese RUT de la empresa (EJEMPLO: 77555444-3)");
@@ -87,7 +86,7 @@ import java.util.Arrays;
             }
         } while (rut.isEmpty());
 
-        // Nombre empresa
+        // Nombre empresa: es string y se valida que no se ingrese el campo vacío
         String nombreEmpresa;
         System.out.println("Ingrese nombre de la empresa");
         nombreEmpresa = leer.nextLine();
@@ -102,7 +101,7 @@ import java.util.Arrays;
             }
         }
 
-        // Dirección
+        // Dirección: se recibe un dato tipo string y se valida que no ingrese vacío
         String direccion;
         while (true) {
             System.out.println("Ingrese dirección de la empresa");
@@ -114,7 +113,8 @@ import java.util.Arrays;
             }
         }
 
-        // Teléfono
+        // Teléfono: dato tipo long, se valida que sólo se ingrese un número
+        // y que el campo no quede vacío
         Long telefono;
         while (true) {
             System.out.println("Ingrese teléfono de contacto (EJEMPLO: 56954313978)");
@@ -135,7 +135,6 @@ import java.util.Arrays;
         }
 
 
-
         // Nombre de usuario
         String nombreUsuario;
         while (true) {
@@ -149,7 +148,7 @@ import java.util.Arrays;
             }
         }
 
-        // RUN
+        // RUN: variable tipo string, con la validación que no se ingrese vacío
         String run;
         System.out.println("Ingrese Run del usuario (Ejemplo: 15333444-1)");
         while (true) {
@@ -161,7 +160,7 @@ import java.util.Arrays;
             }
         }
 
-        // Mostrar datos
+        // Mostrar datos por consola
         System.out.println("============================================");
         System.out.println("Los datos de la empresa son los siguientes: ");
         System.out.println("ID empresa " + id + "; Nombre de la empresa: " + nombreEmpresa + "; Dirección: " + direccion
@@ -172,16 +171,17 @@ import java.util.Arrays;
 
 
     }
+
     /**
      * Método para registrar una capacitación.
      * Solicita al usuario ingresar los datos de la capacitación, como el día, la hora, el lugar, etc.
      * Registra los datos de los asistentes y muestra estadísticas sobre la capacitación, como el promedio de calificaciones.
      */
 
-    public static void capacitaciones () {
+    public static void capacitaciones() {
 
         Scanner leer = new Scanner(System.in);
-        // Día de la capacitación
+        // Día de la capacitación: variable tipo string, con su respectiva validación
         String dia;
         while (true) {
             System.out.println("Ingrese día que se realizará la capacitación(EJEMPLO: Lunes 22)");
@@ -193,7 +193,8 @@ import java.util.Arrays;
             }
         }
 
-        // Hora de la capacitación
+        //Hora de la capacitación: variable tipo string, con su respectiva validación para que
+        //no se ingrese un campo vacío
         String hora;
         while (true) {
             System.out.println("Ingrese hora de la capacitación (EJEMPLO: 09:00)");
@@ -205,7 +206,7 @@ import java.util.Arrays;
             }
         }
 
-        // Lugar de la capacitación
+        //Lugar de la capacitación: variable tipo string, con su respectiva validación
         String lugar;
         while (true) {
             System.out.println("Ingrese lugar dónde se realizará la capacitación");
@@ -217,7 +218,7 @@ import java.util.Arrays;
             }
         }
 
-        // Tiempo que durará la capacitación
+        //Tiempo que durará la capacitación: variable tipo string, con su respectiva validación
         String duracion;
         while (true) {
             System.out.println("Ingrese duración de la capacitación (EJEMPLO: 1 hora)");
@@ -229,7 +230,8 @@ import java.util.Arrays;
             }
         }
 
-        // Cantidad de asistentes
+        //Cantidad de asistentes: variable tipo entero. Se valida que no se ingrese el campo vacío,
+        //que el valor ingresado sea mayor a cero y que sólo se ingresen números
         int asistentes;
         System.out.println("Ingrese número de asistentes a la capacitación");
         while (true) {
@@ -268,6 +270,10 @@ import java.util.Arrays;
                     nombreAsistente = leer.nextLine();
                 }
 
+    /**
+    * Los asistentes califican la capacitación, se obtiene
+    * la nota mínima y la nota máxima
+    */
                 // Calificación de la capacitación
                 System.out.println("Ingrese calificacion de la capacitacion");
                 String notaAsistente = leer.nextLine();
@@ -313,6 +319,7 @@ import java.util.Arrays;
             }
         }
 
+
         System.out.println("........................");
         System.out.println("Los datos de la capacitacion son: ");
         System.out.println("Día de capacitación: " + dia + "; Hora: " + hora + "; Lugar: " + lugar + "; Duración: "
@@ -332,6 +339,10 @@ import java.util.Arrays;
         for (int i = 0; i < promedio.length; i++) {
             acum += promedio[i];
         }
+
+        /**
+         * Se calcula el promedio de la capacitación de acuerdo a las notas ingresadas por los asistentes
+         */
 
         // Calcular promedio
         prom = acum / promedio.length;
