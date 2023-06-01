@@ -2,27 +2,32 @@ package cl.bootcamp.empresa13.models;
 
 /**
  * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
- * La clase Empresa (Cliente) contiene 6 atributos
+ * La clase Cliente contiene 6 atributos
  * @version 1.0.2
- * @see Empresa
+ * @see Cliente
  */
 
-public class Empresa {
+public class Cliente {
     private String rut;
     private String nombre;
     private String nombreRepresentante;
+    private String apellido1Representante;
+    private String apellido2Representante;
     private String telefonoRepresentante;
     private String direccion;
     private String comuna;
 
-    public Empresa() {
+    public Cliente() {
     }
 
-    public Empresa(String rut, String nombre, String nombreRepresentante,
+    public Cliente(String rut, String nombre, String nombreRepresentante,
+                   String apellido1Representante, String apellido2Representante,
                    String telefonoRepresentante, String direccion, String comuna) {
         this.rut = rut;
         this.nombre = nombre;
         this.nombreRepresentante = nombreRepresentante;
+        this.apellido1Representante = apellido1Representante;
+        this.apellido2Representante = apellido2Representante;
         this.telefonoRepresentante = telefonoRepresentante;
         this.direccion = direccion;
         this.comuna = comuna;
@@ -78,7 +83,6 @@ public class Empresa {
 
     /**
      * Sobre escritura del método toString
-     *
      * @return String
      */
 

@@ -12,13 +12,14 @@ import cl.bootcamp.empresa13.models.*;
 public class TestEmpresaClases {
     public static void main(String[] args) {
 
-        Empresa empresa = new Empresa("60.000.123", "Potreros S.A.", "Cristian",
+        Cliente cliente = new Cliente("60.000.123", "Potreros S.A.", "Cristian",
+                "Durán", "Ferreira",
                 "+569 99887766", "Santiago 6161", "Las Condes");
         Usuario usuario = new Usuario("19.987.654-3", "Juan", "1990-03-06");
-        Capacitacion capacitacion = new Capacitacion(115, empresa.getRut(), 60, 5 ,
+        Capacitacion capacitacion = new Capacitacion(115, cliente.getRut(), 60, 5 ,
                 "Ciudad Empresarial", "4 días", 15);
 
-        System.out.println("empresa = " + empresa);
+        System.out.println("empresa = " + cliente);
         System.out.println("capacitación = " + capacitacion);
         System.out.println("usuario = " + usuario);
     }
