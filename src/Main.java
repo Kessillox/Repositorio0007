@@ -11,5 +11,6 @@ public class Main {
         );
 
         System.out.println(luis.nombreCompleto());
+        System.out.println(luis.descomponerRun());
     }
 }

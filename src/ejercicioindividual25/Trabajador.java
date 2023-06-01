@@ -31,10 +31,14 @@ public class Trabajador {
     }
 
     public String nombreCompleto() {
+
         return nombres + apellidos;
     }
 
-    public String descomponerRun(){
-        return "El desarrollador no esta operativo...";
+    public int descomponerRun(){
+
+        String runSinFormato = run.replaceAll("[.-]", "");
+        String numeroStr = runSinFormato.substring(0, runSinFormato.length() - 1);
+        return Integer.parseInt(numeroStr);
     }
 }
