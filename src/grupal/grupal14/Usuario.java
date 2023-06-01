@@ -4,7 +4,7 @@ import java.time.Period;
 public class Usuario { // se crea la clase Usuario
     // se crea los atributos de la clase
     private String nombre;
-    private String fechaDeNacimiento;
+    private LocalDate fechaDeNacimiento;
     private String run;
     
     // constructor vacio
@@ -12,7 +12,7 @@ public class Usuario { // se crea la clase Usuario
     }
     
     // constructor con parametros, atributos de la clase
-    public Usuario(String nombre, String fechaDeNacimiento, String run) {
+    public Usuario(String nombre, LocalDate fechaDeNacimiento, String run) {
         this.nombre = nombre;
         this.fechaDeNacimiento = fechaDeNacimiento;
         this.run = run;
@@ -25,10 +25,10 @@ public class Usuario { // se crea la clase Usuario
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public String getFechaDeNacimiento() {
+    public LocalDate getFechaDeNacimiento() {
         return fechaDeNacimiento;
     }
-    public void setFechaDeNacimiento(String fechaDeNacimiento) {
+    public void setFechaDeNacimiento(LocalDate fechaDeNacimiento) {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
     public String getRun() {
@@ -45,10 +45,10 @@ public class Usuario { // se crea la clase Usuario
     }
 
 
-    public int mostrarEdad() {
-        LocalDate fechaNacimientoInt = LocalDate.parse(fechaDeNacimiento);
-
-
+    public String mostrarEdad() {
+        LocalDate fechaActual = LocalDate.now();
+        Period periodo = Period.between(fechaDeNacimiento, fechaActual);
+        return "El usuario tiene "+periodo.getYears()+" Años";
 
     }
 }

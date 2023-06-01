@@ -6,6 +6,11 @@ public class Cliente { // se crea la clase Cliente
     // se crea los atributos de la clase
     private long rut;
     private String nombreEmpresa;
+
+    private String nombreRepresentante;
+
+    private String apellido1;
+    private String apellido2;
     private String telefonoRepresentante;
     private String direccion;
     private String comuna;
@@ -85,11 +90,40 @@ public class Cliente { // se crea la clase Cliente
         this.comuna = comuna;
     }
 
+
+    public String getNombreRepresentante() {
+        return nombreRepresentante;
+    }
+
+    public void setNombreRepresentante(String nombreRepresentante) {
+        this.nombreRepresentante = nombreRepresentante;
+    }
+
+    public String getApellido1() {
+        return apellido1;
+    }
+
+    public void setApellido1(String apellido1) {
+        this.apellido1 = apellido1;
+    }
+
+    public String getApellido2() {
+        return apellido2;
+    }
+
+    public void setApeliido2(String apeliido2) {
+        this.apellido2 = apeliido2;
+    }
+
     // metodo toString
     @Override
     public String toString() {
         return "Cliente [rut=" + rut + ", nombreEmpresa=" + nombreEmpresa + ", telefonoRepresentante="
                 + telefonoRepresentante + ", direccion=" + direccion + ", comuna=" + comuna + "]";
+    }
+
+    public String obtenerNombre(){
+        return "El nombre del representante legal es: "+nombreRepresentante+" "+apellido1+" "+apellido2;
     }
 
     
