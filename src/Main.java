@@ -6,7 +6,11 @@ import usuario.Usuario;
 public class Main {
     public static void main(String[] args) {
         Cliente cliente = new Cliente();
-        cliente.setRut(JOptionPane.showInputDialog("Ingrese rut del cliente"));
+        String rut;
+        do {
+            rut = JOptionPane.showInputDialog("Ingrese rut del cliente \nSin puntos ni guion");
+        } while (Integer.parseInt(rut) > 99999999);
+        cliente.setRut(rut);
         cliente.setNombres(JOptionPane.showInputDialog("Ingrese el nombre del cliente"));
         cliente.setApellidos(JOptionPane.showInputDialog("Ingrese el o los apellidos del cliente"));
         cliente.setTelefono(JOptionPane.showInputDialog("Ingrese telefono del cliente"));
