@@ -5,6 +5,8 @@ public class Cliente {
     private String rut;
     private String nombreEmpresa;
     private String nombreRepresentante;
+    private  String apellido1Representante;
+    private String apellido2Representante;
     private String telefonoRepresentante;
     private String direccion;
     private String comuna;
@@ -12,10 +14,12 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(String rut, String nombreEmpresa, String nombreRepresentante, String telefonoRepresentante, String direccion, String comuna) {
+    public Cliente(String rut, String nombreEmpresa, String nombreRepresentante, String apellido1Representante, String apellido2Representante, String telefonoRepresentante, String direccion, String comuna) {
         this.rut = rut;
         this.nombreEmpresa = nombreEmpresa;
         this.nombreRepresentante = nombreRepresentante;
+        this.apellido1Representante = apellido1Representante;
+        this.apellido2Representante = apellido2Representante;
         this.telefonoRepresentante = telefonoRepresentante;
         this.direccion = direccion;
         this.comuna = comuna;
@@ -45,6 +49,22 @@ public class Cliente {
         this.nombreRepresentante = nombreRepresentante;
     }
 
+    public String getApellido1Representante() {
+        return apellido1Representante;
+    }
+
+    public void setApellido1Representante(String apellido1Representante) {
+        this.apellido1Representante = apellido1Representante;
+    }
+
+    public String getApellido2Representante() {
+        return apellido2Representante;
+    }
+
+    public void setApellido2Representante(String apellido2Representante) {
+        this.apellido2Representante = apellido2Representante;
+    }
+
     public String getTelefonoRepresentante() {
         return telefonoRepresentante;
     }
@@ -71,13 +91,19 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "empresaclase13.Cliente{" +
+        return "Cliente{" +
                 "rut='" + rut + '\'' +
                 ", nombreEmpresa='" + nombreEmpresa + '\'' +
                 ", nombreRepresentante='" + nombreRepresentante + '\'' +
+                ", apellido1Representante='" + apellido1Representante + '\'' +
+                ", apellido2Representante='" + apellido2Representante + '\'' +
                 ", telefonoRepresentante='" + telefonoRepresentante + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", comuna='" + comuna + '\'' +
                 '}';
+    }
+
+    public String obtenerNombre(){
+        return nombreRepresentante + " " + apellido1Representante + " " + apellido2Representante;
     }
 }

@@ -46,4 +46,11 @@ public class Usuario {
                 ", run='" + run + '\'' +
                 '}';
     }
+
+    public String mostrarEdad(){
+        int edad;
+        edad = (2023 - Integer.parseInt(fechaDeNacimiento));
+        return "El usuario tiene " + edad;
+    }
+
 }

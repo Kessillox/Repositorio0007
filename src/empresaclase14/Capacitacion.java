@@ -91,4 +91,11 @@ public class Capacitacion {
                 ", cantidadDeAsistentes=" + cantidadDeAsistentes +
                 '}';
     }
+    /*mostrarDetalle(): retorna un mensaje con el texto “La capacitación será en A a las B del día
+C, y durará D minutos”, en donde A es el lugar, B es la hora, C es el día y D son los minutos.*/
+
+    public String mostrarDetalle(){
+        return "La capacitación será en " + lugar + " a las " + hora + " del día " + dia +
+                ", y durará " + duracion + " minutos";
+    }
 }
