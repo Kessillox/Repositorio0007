@@ -1,9 +1,12 @@
 package tg14;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class Capacitacion {
     private int identificador;
     private String rutCliente;
-    private String dia;
+    private LocalDate dia;
     private String hora;
     private String lugar;
     private double duracion;
@@ -14,7 +17,7 @@ public class Capacitacion {
     public Capacitacion(int identificador, String rutCliente, String dia, String hora, String lugar, double duracion, int cantidadAsistentes) {
         this.identificador = identificador;
         this.rutCliente = rutCliente;
-        this.dia = dia;
+        this.dia = LocalDate.parse(dia, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         this.hora = hora;
         this.lugar = lugar;
         this.duracion = duracion;
@@ -50,11 +53,11 @@ public class Capacitacion {
         this.rutCliente = cliente;
     }
 
-    public String getDia() {
+    public LocalDate getDia() {
         return dia;
     }
 
-    public void setDia(String dia) {
+    public void setDia(LocalDate dia) {
         this.dia = dia;
     }
 

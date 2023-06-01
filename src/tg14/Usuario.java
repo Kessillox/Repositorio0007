@@ -1,16 +1,20 @@
 package tg14;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
 public class Usuario {
     private String rut;
     private String nombre;
-    private String fechaNac;
+    private LocalDate fechaNac;
 
     public Usuario(){}
 
     public Usuario(String rut, String nombre, String fechaNac){
-        this.rut=rut;
-        this.nombre=nombre;
-        this.fechaNac=fechaNac;
+        this.rut = rut;
+        this.nombre = nombre;
+        this.fechaNac = LocalDate.parse(fechaNac, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
     @Override
@@ -38,12 +42,17 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getFechaNac() {
+    public LocalDate getFechaNac() {
         return fechaNac;
     }
 
-    public void setFechaNac(String fechaNac) {
+    public void setFechaNac(LocalDate fechaNac) {
         this.fechaNac = fechaNac;
+    }
+
+    public void mostrarEdad() {
+        int edad = this.fechaNac.until(LocalDate.now()).getYears();
+        System.out.println("El usuario tiene " + edad + " años");
     }
 }
 
