@@ -1,4 +1,4 @@
-package Individual_Oscar;
+package Individual_Oscar.Ejercicio23;
 import java.util.Scanner;
 import java.util.Arrays;
 public class Ejercicio23 {
