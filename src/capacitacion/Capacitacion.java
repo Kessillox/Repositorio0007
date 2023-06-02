@@ -1,7 +1,7 @@
 package capacitacion;
 
 /**
- * @author Gonzal Alonzo
+ * @author Gonzalo Alonzo
  *
  */
 public class Capacitacion {
@@ -34,6 +34,70 @@ public class Capacitacion {
         this.hora = hora;
         this.lugar = lugar;
         this.duracion = duracion;
+        this.cantidadasistentes = cantidadasistentes;
+    }
+
+    public int getIdentificador() {
+        return identificador;
+    }
+
+    public void setIdentificador(int identificador) {
+        this.identificador = identificador;
+    }
+
+    public int getRutcliente() {
+        return rutcliente;
+    }
+
+    public void setRutcliente(int rutcliente) {
+        this.rutcliente = rutcliente;
+    }
+
+    public int getDv() {
+        return dv;
+    }
+
+    public void setDv(int dv) {
+        this.dv = dv;
+    }
+
+    public int getDia() {
+        return dia;
+    }
+
+    public void setDia(int dia) {
+        this.dia = dia;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+
+    public String getLugar() {
+        return lugar;
+    }
+
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
+    }
+
+    public double getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(double duracion) {
+        this.duracion = duracion;
+    }
+
+    public int getCantidadasistentes() {
+        return cantidadasistentes;
+    }
+
+    public void setCantidadasistentes(int cantidadasistentes) {
         this.cantidadasistentes = cantidadasistentes;
     }
 
