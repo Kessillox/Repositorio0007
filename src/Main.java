@@ -1,26 +1,73 @@
-/*import empresaclase14.Capacitacion;
+import empresaclase14.Capacitacion;
 import empresaclase14.Cliente;
 import empresaclase14.Usuario;
+
+/**
+ * Esta es la clase Main donde se crea la instancia de los objetos Usuario, Capacitación y Cliente
+ * @author Leadro Villalba
+ * @author Luis Zambrano
+ * @author Gustavo Vargas
+ * @author Cristian Trureo
+ * @version 1.1
+ */
 
 public class Main {
     public static void main(String[] args) {
 
-       // Cliente cristian = new Cliente("11.111.111-1", "La Pila", "Cristian", "+56911111111", "Avenida Siempre Viva 123", "El Congo");
-        Capacitacion awakelab = new Capacitacion(1, "22.222.222-2", "22", "15:00pm", "Talcahuano", 5, 22);
-        Usuario marcelo = new Usuario("Marcelo", "24/12/1977", "33.333.333-3");
+        // Crear instancias de la clase Cliente con constructor vacío
+        Cliente cliente1 = new Cliente();
 
-        /*
-        cristian.setRut("11.111.111-1\n");
-        cristian.setNombreEmpresa("La Pila\n");
-        cristian.setNombreRepresentante("Cristian\n");
-        cristian.setTelefonoRepresentante("+56911111111\n");
-        cristian.setDireccion("Avenida Siempre Viva 123\n");
-        cristian.setComuna("El Congo\n");
-        */
-/*
-        System.out.println(cristian.toString());
-        System.out.println(awakelab.toString());
-        System.out.println(marcelo.toString());
+        // Crear instancia de clase cliente con constructor con todos los parámetros
+        Cliente cliente2 = new Cliente("11111111-1", "Pelayo", "Macario",
+                "Fernandez", "Torrealba", "123456789",
+                "Lejos 124", "Los Alpes");
+
+        // Imprimir datos de los clientes
+        System.out.println(cliente1);
+        System.out.println(cliente2);
+
+        // Modificando datos de los clientes a través de métodos setter
+        cliente1.setRut("12345678-9");
+        cliente2.setNombreEmpresa("Tritón");
+
+        // Imprimir los datos a través de métodos getter
+        System.out.println("El nuevo Rut del cliente 1 es: " + cliente1.getRut());
+        System.out.println("El nuevo nombre de la empresa del cliente 2 es: " + cliente2.getNombreEmpresa());
+        System.out.println();
+
+
+        // Crear instancias de la clase Usuario con constructor vacío
+        Usuario usuario1 = new Usuario();
+
+        // Crear instancias de la clase Usuario con constructor y tus parámetros
+        Usuario usuario2 = new Usuario("Brocacochi", "01/01/2000", "22222222-2");
+
+        // Imprimir datos de los usuarios
+        System.out.println(usuario1);
+        System.out.println(usuario2);
+
+        // Modificar datos de los usuarios a través de métodos setter
+        usuario1.setNombre("Radyk");
+        usuario2.setFechaDeNacimiento("28/06/1984");
+        System.out.println("El nuevo nombre del usuario 1 es: " + usuario1.getNombre());
+        System.out.println("La nueva fecha de nacimiento del usuario 2 es: " + usuario2.getFechaDeNacimiento());
+        System.out.println("");
+
+        // Crear instancias de la clase Capacitación
+        Capacitacion capacitacion1 = new Capacitacion();
+        Capacitacion capacitacion2 = new Capacitacion(1, "11111111-1", "25/03/2023",
+                "09:00", "La Punta del Cerro", 4, 20);
+
+        // Imprimir datos de las capacitaciones a través del método toString()
+        System.out.println(capacitacion1.toString());
+        System.out.println(capacitacion2.toString());
+
+        // Modificar datos de las capacitaciones a través de métodos setters
+        capacitacion1.setIdentificador(2);
+        capacitacion2.setRutCliente("33333333-3");
+
+        // Imprimir datos de las capacitaciones a través de métodos getters
+        System.out.println("El nuevo identificador de la capacitación 1 es: " + capacitacion1.getIdentificador());
+        System.out.println("El nuevo RUT del cliente de la capacitación 2 es: " + capacitacion2.getRutCliente());
     }
-
-}*/
+}
