@@ -35,7 +35,7 @@ public class App {
 
         //CLASE CLIENTE
         // Se intancia de la clase cliente el objeto cliente atraves de su constructor
-        Cliente cliente = new Cliente(78501900, "Recoders", "Juan", "Perez", "Gonzalez", "953323568", "Balmaceda 212", "Talca");
+        Cliente cliente = new Cliente(78501900, "Recoders", 16374458, "Juan", "Perez", "Gonzalez", "953323568", "Balmaceda 212", "Talca");
         System.out.println("****** DATOS DE CLIENTE******");
         //Metodo metodo toString
         System.out.println(cliente.toString());

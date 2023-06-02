@@ -6,7 +6,7 @@ public class Cliente { // se crea la clase Cliente
     // se crea los atributos de la clase
     private long rut;
     private String nombreEmpresa;
-
+    private long runRepresentante;
     private String nombreRepresentante;
 
     private String apellido1;
@@ -20,7 +20,8 @@ public class Cliente { // se crea la clase Cliente
     }
 
     // constructor con parametros, atributos de la clase
-    public Cliente(long rut, String nombreEmpresa, String nombreRepresentante, String apellido1, String apellido2,String telefonoRepresentante, String direccion, String comuna) {
+    public Cliente(long rut, String nombreEmpresa, long runRepresentante, String nombreRepresentante, String apellido1, String apellido2, String telefonoRepresentante, String direccion, String comuna) {
+        this.runRepresentante = runRepresentante;
         if (rut < 999999999) {
             while (rut > 999999999) {
                 System.out.println("Ingrese de nuevo el rut: (no debe ser mayor a 999999999)");
@@ -32,6 +33,7 @@ public class Cliente { // se crea la clase Cliente
             this.rut = rut;
         }
         this.nombreEmpresa = nombreEmpresa;
+        this.runRepresentante = runRepresentante;
         this.nombreRepresentante = nombreRepresentante;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
@@ -67,6 +69,35 @@ public class Cliente { // se crea la clase Cliente
         this.nombreEmpresa = nombreEmpresa;
     }
 
+    public long getRunRepresentante() {
+        return runRepresentante;
+    }
+    public void setRunRepresentante(Long runRepresentante){this.runRepresentante = runRepresentante;}
+
+    public String getNombreRepresentante() {
+        return nombreRepresentante;
+    }
+
+    public void setNombreRepresentante(String nombreRepresentante) {
+        this.nombreRepresentante = nombreRepresentante;
+    }
+
+    public String getApellido1() {
+        return apellido1;
+    }
+
+    public void setApellido1(String apellido1) {
+        this.apellido1 = apellido1;
+    }
+
+    public String getApellido2() {
+        return apellido2;
+    }
+
+    public void setApeliido2(String apeliido2) {
+        this.apellido2 = apeliido2;
+    }
+
 
     public String getTelefonoRepresentante() {
         return telefonoRepresentante;
@@ -95,35 +126,24 @@ public class Cliente { // se crea la clase Cliente
     }
 
 
-    public String getNombreRepresentante() {
-        return nombreRepresentante;
-    }
 
-    public void setNombreRepresentante(String nombreRepresentante) {
-        this.nombreRepresentante = nombreRepresentante;
-    }
-
-    public String getApellido1() {
-        return apellido1;
-    }
-
-    public void setApellido1(String apellido1) {
-        this.apellido1 = apellido1;
-    }
-
-    public String getApellido2() {
-        return apellido2;
-    }
-
-    public void setApeliido2(String apeliido2) {
-        this.apellido2 = apeliido2;
-    }
 
     // metodo toString
+
+
     @Override
     public String toString() {
-        return "Cliente [rut=" + rut + ", nombreEmpresa=" + nombreEmpresa + ", telefonoRepresentante="
-                + telefonoRepresentante + ", direccion=" + direccion + ", comuna=" + comuna + "]";
+        return "Cliente{" +
+                "rut=" + rut +
+                ", nombreEmpresa='" + nombreEmpresa + '\'' +
+                ", runRepresentante=" + runRepresentante +
+                ", nombreRepresentante='" + nombreRepresentante + '\'' +
+                ", apellido1='" + apellido1 + '\'' +
+                ", apellido2='" + apellido2 + '\'' +
+                ", telefonoRepresentante='" + telefonoRepresentante + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", comuna='" + comuna + '\'' +
+                '}';
     }
 
     //Metodo obtenerNombre
