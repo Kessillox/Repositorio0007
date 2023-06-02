@@ -131,4 +131,23 @@ public class Cliente {
         this.sistemaSalud = sistemaSalud;
     }
 
+    /**
+     * Metodo que retorna el nombre completo
+     *
+     * @return nombre y apellido concatenados a un espacio
+     */
+    public String obtenerNombre() {
+        return nombres + " " + apellidos;
+    }
+
+    /**
+     * Metodo que retorna el sistema de salud del cliente
+     *
+     * @return tipo de sistema de salud (fonasa|isapre)
+     */
+    public String obtenerSistemaSalud() {
+        return this.sistemaSalud;
+    }
+
+
 }
