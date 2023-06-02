@@ -92,16 +92,17 @@ public class Cliente {
     @Override
     public String toString() {
         return "Cliente{" +
-                "rut='" + rut + '\'' +
-                ", nombreEmpresa='" + nombreEmpresa + '\'' +
-                ", nombreRepresentante='" + nombreRepresentante + '\'' +
-                ", apellido1Representante='" + apellido1Representante + '\'' +
-                ", apellido2Representante='" + apellido2Representante + '\'' +
-                ", telefonoRepresentante='" + telefonoRepresentante + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", comuna='" + comuna + '\'' +
-                '}';
+                "\n rut='" + rut + "'," +
+                "\n nombreEmpresa='" + nombreEmpresa + "'," +
+                "\n nombreRepresentante='" + nombreRepresentante + "'," +
+                "\n apellido1Representante='" + apellido1Representante + "'," +
+                "\n apellido2Representante='" + apellido2Representante + "'," +
+                "\n telefonoRepresentante='" + telefonoRepresentante + "'," +
+                "\n direccion='" + direccion + "'," +
+                "\n comuna='" + comuna + "'" +
+                "\n}";
     }
+
 
     public String obtenerNombre(){
         return nombreRepresentante + " " + apellido1Representante + " " + apellido2Representante;

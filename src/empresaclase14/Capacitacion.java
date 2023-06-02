@@ -81,21 +81,24 @@ public class Capacitacion {
 
     @Override
     public String toString() {
-        return "empresaclase13.Capacitacion{" +
-                "identificador=" + identificador +
-                ", rutCliente='" + rutCliente + '\'' +
-                ", dia='" + dia + '\'' +
-                ", hora='" + hora + '\'' +
-                ", lugar='" + lugar + '\'' +
-                ", duracion=" + duracion +
-                ", cantidadDeAsistentes=" + cantidadDeAsistentes +
-                '}';
+        return "Capacitacion{" +
+                "\n identificador=" + identificador + "'," +
+                "\n rutCliente='" + rutCliente + "'," +
+                "\n dia='" + dia + "'," +
+                "\n hora='" + hora + "'," +
+                "\n lugar='" + lugar + "'," +
+                "\n duracion=" + duracion + "," +
+                "\n cantidadDeAsistentes=" + cantidadDeAsistentes +
+                "\n}";
     }
-    /*mostrarDetalle(): retorna un mensaje con el texto “La capacitación será en A a las B del día
+
+
+
+ /*mostrarDetalle(): retorna un mensaje con el texto “La capacitación será en A a las B del día
 C, y durará D minutos”, en donde A es el lugar, B es la hora, C es el día y D son los minutos.*/
 
     public String mostrarDetalle(){
-        return "La capacitación será en " + lugar + " a las " + hora + " del día " + dia +
+        return "La capacitación será en " + lugar + " a las " + hora + "hrs. del día " + dia +
                 ", y durará " + duracion + " minutos";
     }
 }

@@ -40,12 +40,13 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "empresaclase13.Usuario{" +
-                "nombre='" + nombre + '\'' +
-                ", fechaDeNacimiento='" + fechaDeNacimiento + '\'' +
-                ", run='" + run + '\'' +
-                '}';
+        return "Usuario{" +
+                "\n nombre='" + nombre + "'," +
+                "\n fechaDeNacimiento='" + fechaDeNacimiento + "'," +
+                "\n run='" + run + "'" +
+                "\n}";
     }
+
 
     public String mostrarEdad(){
         int edad;
