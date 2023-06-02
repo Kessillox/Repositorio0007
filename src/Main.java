@@ -9,7 +9,7 @@ public class Main {
         Cliente cliente = new Cliente();
         String rut;
         do {
-            rut = JOptionPane.showInputDialog("Ingrese rut del cliente \nSin puntos ni guion");
+            rut = JOptionPane.showInputDialog("Ingrese run del cliente \nSin puntos ni guion");
         } while (Integer.parseInt(rut) > 99999999);
         cliente.setRut(rut);
         cliente.setNombres(JOptionPane.showInputDialog("Ingrese el nombre del cliente"));
@@ -25,10 +25,12 @@ public class Main {
         // mostrar datos
         cliente.toString();
 
+
         Usuario usuario = new Usuario();
-        usuario.setNombre(JOptionPane.showInputDialog("Ingrese el nombre del cliente"));
-        usuario.setFechaNacimiento(JOptionPane.showInputDialog("Ingrese la fecha nacimiento del cliente"));
+        usuario.setNombre(JOptionPane.showInputDialog("Ingrese el nombre del usuario: "));
+        usuario.setFechaNacimiento(JOptionPane.showInputDialog("Ingrese la fecha nacimiento del usuario: "));
         usuario.setRun(JOptionPane.showInputDialog("Ingrese Run del usuario: "));
+        usuario.setEdad(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la edad del usuario: ")));
 
         usuario.toString();
 
@@ -49,7 +51,7 @@ public class Main {
         capacitacion.setRutcliente(rutcap);
         capacitacion.setDv(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el digito Verificador: ")));
         capacitacion.setDia(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el dia de capacitacion(1 al 30): ")));
-        capacitacion.setHora(JOptionPane.showInputDialog("Ingrese hgora de la capacitacion: "));
+        capacitacion.setHora(JOptionPane.showInputDialog("Ingrese hora de la capacitacion: "));
         capacitacion.setLugar(JOptionPane.showInputDialog("Ingrese lugar de capacitacion: "));
         capacitacion.setDuracion(Double.parseDouble(JOptionPane.showInputDialog("Ingrese duracion capacitacion en minutos: ")));
 

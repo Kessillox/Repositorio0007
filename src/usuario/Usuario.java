@@ -9,6 +9,7 @@ public class Usuario {
     private String nombre;
     private String fechaNacimiento;
     private String run;
+    private int edad;
 
     /**
      * Constructor vacio
@@ -21,11 +22,13 @@ public class Usuario {
      * @param nombre
      * @param fechaNacimiento
      * @param run
+     * @param edad
      */
-    public Usuario(String nombre, String fechaNacimiento, String run) {
+    public Usuario(String nombre, String fechaNacimiento, String run, int edad) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.run = run;
+        this.edad = edad;
 
     }
 
@@ -36,6 +39,7 @@ public class Usuario {
                 "nombre='" + nombre + '\'' +
                 ", fechaNacimiento='" + fechaNacimiento + '\'' +
                 ", run='" + run + '\'' +
+                ", edad='" + edad + '\'' +
                 '}';
     }
 
@@ -62,5 +66,13 @@ public class Usuario {
 
     public void setRun(String run) {
         this.run = run;
+    }
+
+    public int getEdad() { return edad; }
+
+    public void setEdad(int edad) {this.edad = edad;}
+
+    public String mostrarEdad() {
+        return "El usuario tiene " + edad + " años";
     }
 }
