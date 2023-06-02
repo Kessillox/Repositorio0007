@@ -1,5 +1,9 @@
 package empresaclase14;
 
+/**
+ * Clase que define una Capacitación, contiene 7 atributos
+ * @author Luis Zambrano
+ */
 public class Capacitacion {
 
     private int identificador;
@@ -92,11 +96,11 @@ public class Capacitacion {
                 "\n}";
     }
 
-
-
- /*mostrarDetalle(): retorna un mensaje con el texto “La capacitación será en A a las B del día
-C, y durará D minutos”, en donde A es el lugar, B es la hora, C es el día y D son los minutos.*/
-
+    /**
+     * La capacitación será en A a las B del día
+     * C, y durará D minutos, en donde A es el lugar, B es la hora, C es el día y D son los minutos.
+     * @return Un String con el mensaje.
+     */
     public String mostrarDetalle(){
         return "La capacitación será en " + lugar + " a las " + hora + "hrs. del día " + dia +
                 ", y durará " + duracion + " minutos";

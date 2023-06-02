@@ -1,5 +1,9 @@
 package empresaclase14;
 
+/**
+ * Clase que representa un Cliente, contiene 8 atributos privados.
+ * @author Luis Zambrano
+ */
 public class Cliente {
 
     private String rut;
@@ -104,6 +108,10 @@ public class Cliente {
     }
 
 
+    /**
+     * Concatena nombreRepresentante, apellido1Representante y apellido2Representante.
+     * @return un String completo del nombre.
+     */
     public String obtenerNombre(){
         return nombreRepresentante + " " + apellido1Representante + " " + apellido2Representante;
     }

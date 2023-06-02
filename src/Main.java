@@ -26,11 +26,11 @@ public class Main {
         System.out.println(cliente1);
         System.out.println(cliente2);
 
-        // Modificando datos de los clientes a través de métodos setter
+        // Modificando datos de los clientes a través de métodos setters
         cliente1.setRut("12345678-9");
         cliente2.setNombreEmpresa("Tritón");
 
-        // Imprimir los datos a través de métodos getter
+        // Imprimir los datos a través de métodos getters
         System.out.println("El nuevo Rut del cliente 1 es: " + cliente1.getRut());
         System.out.println("El nuevo nombre de la empresa del cliente 2 es: " + cliente2.getNombreEmpresa());
         System.out.println();
@@ -46,7 +46,7 @@ public class Main {
         System.out.println(usuario1);
         System.out.println(usuario2);
 
-        // Modificar datos de los usuarios a través de métodos setter
+        // Modificar datos de los usuarios a través de métodos setters
         usuario1.setNombre("Radyk");
         usuario2.setFechaDeNacimiento("28/06/1984");
         System.out.println("El nuevo nombre del usuario 1 es: " + usuario1.getNombre());

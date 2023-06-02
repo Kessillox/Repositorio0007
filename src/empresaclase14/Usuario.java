@@ -1,3 +1,12 @@
+/**
+ * Esta es la clase Usuario la cual contiene 4 atributos sus constructores, uno vacío y otro con argumentos, sus Getters and Setters, su método toString y mostrarEdad()
+ * @author Leadro Villalba
+ * @author Luis Zambrano
+ * @author Gustavo Vargas
+ * @author Cristian Trureo
+ * @version 1.1
+ */
+
 package empresaclase14;
 
 public class Usuario {
@@ -48,6 +57,10 @@ public class Usuario {
     }
 
 
+    /**
+     * Resta a 2023 los años del atributo fechaDeNacimiento
+     * @return edad
+     */
     public String mostrarEdad(){
         int edad;
         edad = (2023 - Integer.parseInt(fechaDeNacimiento));
