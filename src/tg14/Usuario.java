@@ -51,6 +51,7 @@ public class Usuario {
     }
 
     public void mostrarEdad() {
+        // Se obtiene la edad calculando la diferencia de años entre la fecha actual y la fecha de nacimiento.
         int edad = this.fechaNac.until(LocalDate.now()).getYears();
         System.out.println("El usuario tiene " + edad + " años");
     }

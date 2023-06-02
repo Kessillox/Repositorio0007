@@ -102,7 +102,6 @@ public class Cliente {
     }
 
     public String obtenerNombre() {
-        // return String.join(" ", "Agregar", "espacios", "es","sencillo");
         return String.format("%s %s %s", this.nombreRepresentate, this.apellidoRepresentante1, this.apellidoRepresentante2);
     }
 
