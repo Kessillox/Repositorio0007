@@ -69,5 +69,6 @@ public class Main {
         // Imprimir datos de las capacitaciones a través de métodos getters
         System.out.println("El nuevo identificador de la capacitación 1 es: " + capacitacion1.getIdentificador());
         System.out.println("El nuevo RUT del cliente de la capacitación 2 es: " + capacitacion2.getRutCliente());
+
     }
 }

@@ -95,14 +95,9 @@ public class Capacitacion {
                 "\n cantidadDeAsistentes=" + cantidadDeAsistentes +
                 "\n}";
     }
-
-    /**
-     * La capacitación será en A a las B del día
-     * C, y durará D minutos, en donde A es el lugar, B es la hora, C es el día y D son los minutos.
-     * @return Un String con el mensaje.
-     */
+    // Se considera que el atributo duración es ingresado en formato HORA
     public String mostrarDetalle(){
         return "La capacitación será en " + lugar + " a las " + hora + "hrs. del día " + dia +
-                ", y durará " + duracion + " minutos";
+                ", y durará " + (duracion*60) + " minutos";
     }
 }

@@ -56,11 +56,6 @@ public class Usuario {
                 "\n}";
     }
 
-
-    /**
-     * Resta a 2023 los años del atributo fechaDeNacimiento
-     * @return edad
-     */
     public String mostrarEdad(){
         int edad;
         edad = (2023 - Integer.parseInt(fechaDeNacimiento));

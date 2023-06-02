@@ -107,11 +107,6 @@ public class Cliente {
                 "\n}";
     }
 
-
-    /**
-     * Concatena nombreRepresentante, apellido1Representante y apellido2Representante.
-     * @return un String completo del nombre.
-     */
     public String obtenerNombre(){
         return nombreRepresentante + " " + apellido1Representante + " " + apellido2Representante;
     }
