@@ -1,4 +1,7 @@
 package colegio;
 
-public class Alumno {
+public class Alumno extends Persona {
+
+    private int id;
+
 }
