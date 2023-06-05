@@ -8,7 +8,7 @@ public class Main {
             Trabajador trabajador = new Trabajador(
                     "Manuel Fernando",
                     "Pinot Friz",
-                    19555544-3,
+                    "19555544-3",
                     944468294,
                     25);
 

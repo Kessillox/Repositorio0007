@@ -4,6 +4,9 @@ import cliente.Cliente;
 import usuario.Usuario;
 
 public class Main {
+    public Main() {
+    }
+
     public static void main(String[] args) {
         Cliente cliente = new Cliente();
         cliente.setRut(JOptionPane.showInputDialog("Ingrese rut del cliente"));

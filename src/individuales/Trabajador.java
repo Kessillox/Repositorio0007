@@ -25,7 +25,7 @@ public class Trabajador {
      * @param telefono
      * @param edad
      */
-    public Trabajador(String nombres, String apellidos, int run, int telefono, int edad) {
+    public Trabajador(String nombres, String apellidos, String run, int telefono, int edad) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.run = String.valueOf(run);
