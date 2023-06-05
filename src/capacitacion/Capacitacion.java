@@ -134,4 +134,4 @@ public class Capacitacion {
         return mensaje.toString();
     }
 }
-}
+
