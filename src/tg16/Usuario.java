@@ -51,12 +51,12 @@ public class Usuario implements Asesoria {
 
     public void mostrarEdad() {
         // Se obtiene la edad calculando la diferencia de años entre la fecha actual y la fecha de nacimiento.
-        int edad = this.fechaNac.until(LocalDate.now()).getYears();
+        int edad = fechaNac.until(LocalDate.now()).getYears();
         System.out.println("El usuario tiene " + edad + " años");
     }
-    public void analizarUsuario() {
-        System.out.println("Nombre de usuario: " + nombre );
-    };
 
+    public void analizarUsuario() {
+        System.out.println("Nombre: " + getNombre() );
+    };
 }
 

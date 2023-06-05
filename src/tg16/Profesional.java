@@ -44,7 +44,7 @@ public class Profesional extends Usuario{
     public void analizarUsuario() {
         super.analizarUsuario();
         // SOBREESCRIBIR EL FUNCIONAMIENTO DEL METODO
-        System.out.println("Titulo: " + titulo);
-        System.out.println( "Fecha de Ingreso: " + fechaIngreso);
+        System.out.println("Titulo: " + getTitulo());
+        System.out.println("Fecha de Ingreso: " + getFechaIngreso());
     }
 }

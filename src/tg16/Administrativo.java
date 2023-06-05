@@ -40,7 +40,7 @@ public class Administrativo extends Usuario {
     @Override
     public void analizarUsuario() {
         super.analizarUsuario();
-        System.out.println("Area: " + area);
-        System.out.println("Experiencia previa: " +experienciaPrevia);
+        System.out.println("Area: " + getArea());
+        System.out.println("Experiencia previa: " + getExperienciaPrevia());
     }
 }
