@@ -64,6 +64,6 @@ public class Usuario implements Asesoria {
 
     @Override
     public void analizarUsuario() {
-        System.out.println("El nombre del usuario es: " + nombre);
+        System.out.println("El nombre del usuario es: " + getNombre());
     }
 }
