@@ -12,6 +12,13 @@ public class Profesional extends Usuario {
         this.fechaDeIngreso = fechaDeIngreso;
     }
 
+    // constructor incluyendo atributos de la clase padre (Usuario)
+    public Profesional(String nombre, String fechaDeNacimiento, String run, String titulo, String fechaDeIngreso) {
+        super(nombre, fechaDeNacimiento, run);
+        this.titulo = titulo;
+        this.fechaDeIngreso = fechaDeIngreso;
+    }
+
     public String getTitulo() {
         return titulo;
     }
@@ -34,5 +41,12 @@ public class Profesional extends Usuario {
                 "titulo='" + titulo + '\'' +
                 ", fechaDeIngreso='" + fechaDeIngreso + '\'' +
                 '}';
+    }
+
+    @Override
+    public void analizarUsuario() {
+        super.analizarUsuario();
+       // toString();
+        System.out.println("Datos: " +this.toString());
     }
 }

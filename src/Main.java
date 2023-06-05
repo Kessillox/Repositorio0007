@@ -1,5 +1,6 @@
 import empresaclase14.Capacitacion;
 import empresaclase14.Cliente;
+import empresaclase14.Profesional;
 import empresaclase14.Usuario;
 
 /**
@@ -70,5 +71,12 @@ public class Main {
         System.out.println("El nuevo identificador de la capacitación 1 es: " + capacitacion1.getIdentificador());
         System.out.println("El nuevo RUT del cliente de la capacitación 2 es: " + capacitacion2.getRutCliente());
 
+        // usuario2.analizarUsuario();
+        //Profesional profesional1 = new Profesional("Developer","03/06/2023");
+        //profesional1.analizarUsuario();
+
+        Usuario profesional1;
+        profesional1 = new Profesional("Cristian","17/12/1997","16776399","Developer","05/06/2023");
+        profesional1.analizarUsuario();
     }
 }
