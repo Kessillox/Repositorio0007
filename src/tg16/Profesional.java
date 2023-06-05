@@ -7,14 +7,22 @@ public class Profesional extends Usuario{
     private String titulo;
     private LocalDate fechaIngreso;
 
+    public Profesional(){}
+
     public Profesional(String rut, String nombre, String fechaNac, String titulo, String fechaIngreso) {
         super(rut, nombre, fechaNac);
         this.titulo = titulo;
         this.fechaIngreso = LocalDate.parse(fechaIngreso, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-
     }
 
-    public Profesional(){}
+    @Override
+    public String toString() {
+        return super.toString() +
+                "Profesional{" +
+                "titulo='" + titulo + '\'' +
+                ", fechaIngreso=" + fechaIngreso +
+                '}';
+    }
 
     public String getTitulo() {
         return titulo;
