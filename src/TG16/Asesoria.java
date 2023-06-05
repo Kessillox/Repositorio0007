@@ -7,8 +7,6 @@ package TG16;
 public interface Asesoria {
 
 
-    public default void AnalizarUsuario(){
-        System.out.println("Analizando Usuario");
-    }
+    public void AnalizarUsuario();
 
 }
