@@ -3,7 +3,7 @@ package TG16;
 /**
  * @Author Gonzalo Alonzo
  */
-public class Cliente extends Usuario{
+public class Cliente extends Usuario implements Asesoria{
     private String rut;
     private String nombres;
     private String apellidos;
@@ -119,10 +119,5 @@ public class Cliente extends Usuario{
                 '}';
     }
 
-    @Override
-    public void AnalizarUsuario() {
-        this.toString();
 
-
-    }
 }
