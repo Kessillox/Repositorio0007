@@ -64,7 +64,6 @@ public class Usuario implements Asesoria{
 
     @Override
     public void analizarUsuario() {
-        System.out.println("Nombre de usuario: " +this.getNombre() +"\nFecha de nacimiento: "+this.getFechaDeNacimiento()
-        +"\nRun: "+this.getRun());
+        System.out.println("Nombre de usuario: " +this.getNombre());
     }
 }
