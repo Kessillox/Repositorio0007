@@ -1,4 +1,4 @@
-package Accidente;
+package accidente;
 
 /**
  * @author gonzaloalonzo
