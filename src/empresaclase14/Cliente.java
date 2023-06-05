@@ -4,7 +4,7 @@ package empresaclase14;
  * Clase que representa un Cliente, contiene 8 atributos privados.
  * @author Luis Zambrano
  */
-public class Cliente {
+public class Cliente extends Usuario {
 
     private String rut;
     private String nombreEmpresa;
