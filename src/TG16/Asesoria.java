@@ -1,15 +1,14 @@
 package TG16;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.sql.SQLOutput;
+/**
+ * @author gonzaloalonzo
+ */
 
 public interface Asesoria {
 
 
-    public abstract class AnalizarUsuario
-    {
-
+    public default void AnalizarUsuario(){
+        System.out.println("Analizando Usuario");
     }
 
 }
