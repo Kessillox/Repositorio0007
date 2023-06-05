@@ -1,4 +1,4 @@
-package validacion;
+package procesovalidarelementos;
 
 public class Documento implements Validacion{
     private String titulo;

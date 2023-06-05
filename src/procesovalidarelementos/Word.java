@@ -1,4 +1,4 @@
-package validacion;
+package procesovalidarelementos;
 
 public class Word extends Documento{
 
@@ -13,11 +13,7 @@ public class Word extends Documento{
         this.version = version;
     }
 
-    @Override
-    public String toString() {
-        return "Word{" +
-                "version=" + version +
-                '}';
+    public Word() {
     }
 
     public int getVersion() {
@@ -26,6 +22,13 @@ public class Word extends Documento{
 
     public void setVersion(int version) {
         this.version = version;
+    }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "version=" + version +
+                '}';
     }
 
     @Override

@@ -1,4 +1,4 @@
-package validacion;
+package procesovalidarelementos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ public class ServicioValidar {
         listaDeValidacion.add(elemento);
     }
 
-    public void validar(){
+    public void validarLista(){
         for (Validacion elemento: listaDeValidacion
              ) {
             elemento.validar();

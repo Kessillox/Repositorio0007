@@ -1,4 +1,4 @@
-package validacion;
+package procesovalidarelementos;
 
 public class PDF extends Documento{
 
@@ -33,6 +33,6 @@ public class PDF extends Documento{
 
     @Override
     public void validar() {
-        System.out.println("El doc con título "+ getTitulo()+ " ha sido validado");
+        System.out.println("El PDF con título "+ getTitulo()+ " ha sido validado");
     }
 }

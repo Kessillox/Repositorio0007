@@ -1,6 +1,4 @@
-package validacion;
-
-import java.sql.SQLOutput;
+package procesovalidarelementos;
 
 public class Video implements Validacion{
     private String nombre;
