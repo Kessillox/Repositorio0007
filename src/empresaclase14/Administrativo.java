@@ -12,8 +12,8 @@ public class Administrativo extends Usuario {
         this.experienciaPrevia = experienciaPrevia;
     }
 
-    public Administrativo(String nombre, String fechaDeNacimiento, String run, String area, String experienciaPrevia) {
-        super(nombre, fechaDeNacimiento, run);
+    public Administrativo(Usuario usuario, String area, String experienciaPrevia) {
+        super(usuario.getNombre(), usuario.getFechaDeNacimiento(), usuario.getRun());
         this.area = area;
         this.experienciaPrevia = experienciaPrevia;
     }
@@ -36,14 +36,15 @@ public class Administrativo extends Usuario {
 
     @Override
     public String toString() {
-        return "Administrativo{" +
-                "area='" + area + '\'' +
-                ", experienciaPrevia='" + experienciaPrevia + '\'' +
-                '}';
+        return "\n Administrativo{ " +
+                "\n area= " + area + ',' +
+                "\n experienciaPrevia= " + experienciaPrevia +
+                "\n}";
     }
+
     @Override
-    public void analizarUsuario(){
-        super.analizarUsuario();
+    public void analizarUsuario() {
+        System.out.println("El nombre del usuario es: " + super.getNombre());
         System.out.println("La información del Administrativo es: " + this.toString());
     }
 }
