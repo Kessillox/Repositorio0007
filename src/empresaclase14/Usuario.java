@@ -9,7 +9,7 @@
 
 package empresaclase14;
 
-public class Usuario {
+public class Usuario implements Asesoria {
     private String nombre;
     private String fechaDeNacimiento;
     private String run;
@@ -62,4 +62,8 @@ public class Usuario {
         return "El usuario tiene " + edad;
     }
 
+    @Override
+    public void analizarUsuario() {
+        System.out.println("El nombre del usuario es: " + nombre);
+    }
 }

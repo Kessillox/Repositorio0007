@@ -35,4 +35,10 @@ public class Administrativo extends Usuario {
                 ", experienciaPrevia='" + experienciaPrevia + '\'' +
                 '}';
     }
+
+    @Override
+    public void analizarUsuario() {
+        super.analizarUsuario();
+        System.out.println("La información del Administrativo es: " + this.toString());
+    }
 }

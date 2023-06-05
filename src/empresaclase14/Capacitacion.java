@@ -6,7 +6,7 @@ package empresaclase14;
  */
 public class Capacitacion {
 
-    private int identificador;
+    private int idCapacitacion;
     private String rutCliente;
     private String dia;
     private String hora;
@@ -18,7 +18,7 @@ public class Capacitacion {
     }
 
     public Capacitacion(int identificador, String rutCliente, String dia, String hora, String lugar, int duracion, int cantidadDeAsistentes) {
-        this.identificador = identificador;
+        this.idCapacitacion = identificador;
         this.rutCliente = rutCliente;
         this.dia = dia;
         this.hora = hora;
@@ -28,11 +28,11 @@ public class Capacitacion {
     }
 
     public int getIdentificador() {
-        return identificador;
+        return idCapacitacion;
     }
 
     public void setIdentificador(int identificador) {
-        this.identificador = identificador;
+        this.idCapacitacion = identificador;
     }
 
     public String getRutCliente() {
@@ -86,7 +86,7 @@ public class Capacitacion {
     @Override
     public String toString() {
         return "Capacitacion{" +
-                "\n identificador=" + identificador + "'," +
+                "\n identificador=" + idCapacitacion + "'," +
                 "\n rutCliente='" + rutCliente + "'," +
                 "\n dia='" + dia + "'," +
                 "\n hora='" + hora + "'," +
