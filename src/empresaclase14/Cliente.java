@@ -110,4 +110,5 @@ public class Cliente extends Usuario {
     public String obtenerNombre(){
         return nombreRepresentante + " " + apellido1Representante + " " + apellido2Representante;
     }
+
 }

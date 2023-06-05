@@ -74,6 +74,7 @@ public class Main {
 
         // Imprimir datos del usuario llamando el método de interfaz
         usuario1.analizarUsuario();
+        System.out.println("");
 
         // Imprimir datos del Administrativo llamando el método de interfaz
         Administrativo administrativo1 = new Administrativo(usuario1,"Talca","Ninguna");
