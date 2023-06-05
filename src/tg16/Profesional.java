@@ -4,8 +4,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Profesional extends Usuario{
-     private String titulo;
-     private LocalDate fechaIngreso;
+    private String titulo;
+    private LocalDate fechaIngreso;
 
     public Profesional(String rut, String nombre, String fechaNac, String titulo, String fechaIngreso) {
         super(rut, nombre, fechaNac);
@@ -36,7 +36,6 @@ public class Profesional extends Usuario{
     public void analizarUsuario() {
         super.analizarUsuario();
         // SOBREESCRIBIR EL FUNCIONAMIENTO DEL METODO
-
         System.out.println("Titulo: " + titulo);
         System.out.println( "Fecha de Ingreso: " + fechaIngreso);
     }
