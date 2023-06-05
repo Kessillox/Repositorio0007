@@ -1,4 +1,4 @@
-package individuales;
+package individuales.T25;
 
 import java.util.Arrays;
 
@@ -28,7 +28,7 @@ public class Trabajador {
     public Trabajador(String nombres, String apellidos, String run, int telefono, int edad) {
         this.nombres = nombres;
         this.apellidos = apellidos;
-        this.run = String.valueOf(run);
+        this.run = run;
         this.telefono = telefono;
         this.edad = edad;
     }
