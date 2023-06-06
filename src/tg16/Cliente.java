@@ -1,52 +1,33 @@
 package tg16;
 
 public class Cliente extends Usuario{
-    private String apellido1;
-    private String apellido2;
     private String nombreEmpresa;
-    private String telefono;
-    private String direccion;
-    private String comuna;
+    private String giroEmpresa;
+    private String telefonoRepresentante;
+    private String direccionEmpresa;
+    private String comunaEmpresa;
 
     public Cliente() {}
 
-    public Cliente(String rut, String nombre, String fechaNac, String apellido1, String apellido2, String nombreEmpresa, String telefono, String direccion, String comuna) {
-        super(rut, nombre, fechaNac);
-        this.apellido1 = apellido1;
-        this.apellido2 = apellido2;
+    public Cliente(String nombre, String apellido1, String apellido2, String fechaNac, String run, String nombreEmpresa, String giroEmpresa, String telefonoRepresentante, String direccionEmpresa, String comunaEmpresa) {
+        super(nombre, apellido1, apellido2, fechaNac, run);
         this.nombreEmpresa = nombreEmpresa;
-        this.telefono = telefono;
-        this.direccion = direccion;
-        this.comuna = comuna;
+        this.giroEmpresa = giroEmpresa;
+        this.telefonoRepresentante = telefonoRepresentante;
+        this.direccionEmpresa = direccionEmpresa;
+        this.comunaEmpresa = comunaEmpresa;
     }
 
     @Override
     public String toString() {
         return super.toString() +
             "Cliente{" +
-            "apellido1='" + apellido1 + '\'' +
-            ", apellido2='" + apellido2 + '\'' +
-            ", nombreEmpresa='" + nombreEmpresa + '\'' +
-            ", telefono='" + telefono + '\'' +
-            ", direccion='" + direccion + '\'' +
-            ", comuna='" + comuna + '\'' +
+            "nombreEmpresa='" + nombreEmpresa + '\'' +
+            ", giroEmpresa='" + giroEmpresa + '\'' +
+            ", telefonoRepresentante='" + telefonoRepresentante + '\'' +
+            ", direccionEmpresa='" + direccionEmpresa + '\'' +
+            ", comunaEmpresa='" + comunaEmpresa + '\'' +
             '}';
-    }
-
-    public String getApellido1() {
-        return apellido1;
-    }
-
-    public void setApellido1(String apellido1) {
-        this.apellido1 = apellido1;
-    }
-
-    public String getApellido2() {
-        return apellido2;
-    }
-
-    public void setApellido2(String apellido2) {
-        this.apellido2 = apellido2;
     }
 
     public String getNombreEmpresa() {
@@ -57,42 +38,49 @@ public class Cliente extends Usuario{
         this.nombreEmpresa = nombreEmpresa;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getGiroEmpresa() {
+        return giroEmpresa;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setGiroEmpresa(String giroEmpresa) {
+        this.giroEmpresa = giroEmpresa;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public String getTelefonoRepresentante() {
+        return telefonoRepresentante;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setTelefonoRepresentante(String telefonoRepresentante) {
+        this.telefonoRepresentante = telefonoRepresentante;
     }
 
-    public String getComuna() {
-        return comuna;
+    public String getDireccionEmpresa() {
+        return direccionEmpresa;
     }
 
-    public void setComuna(String comuna) {
-        this.comuna = comuna;
+    public void setDireccionEmpresa(String direccionEmpresa) {
+        this.direccionEmpresa = direccionEmpresa;
+    }
+
+    public String getComunaEmpresa() {
+        return comunaEmpresa;
+    }
+
+    public void setComunaEmpresa(String comunaEmpresa) {
+        this.comunaEmpresa = comunaEmpresa;
     }
 
     public String obtenerNombre() {
-        return String.format("%s %s %s", getNombre(), getApellido1(), getApellido2());
+        return String.format("%s %s %s", this.getNombre(), this.getApellido1(), this.getApellido2());
     }
 
     @Override
     public void analizarUsuario() {
         super.analizarUsuario();
-        System.out.println("Primer apellido: " + getApellido1());
-        System.out.println("Segundo apellido: " + getApellido2());
-        System.out.println("Nombre de la empresa: " + getNombreEmpresa());
-        System.out.println("Teléfono: " + getTelefono());
-        System.out.println("Dirección: " + getDireccion());
-        System.out.println("Comuna: " + getComuna());
+        System.out.println("Nombre de la empresa: " + this.getNombreEmpresa());
+        System.out.println("Giro de la empresa: " + this.getGiroEmpresa());
+        System.out.println("Teléfono del representante: " + this.getTelefonoRepresentante());
+        System.out.println("Dirección de la empresa: " + this.getDireccionEmpresa());
+        System.out.println("Comuna de la empresa: " + this.getComunaEmpresa());
     }
 }

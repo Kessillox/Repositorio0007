@@ -6,8 +6,8 @@ public class Administrativo extends Usuario {
 
     public Administrativo() {}
 
-    public Administrativo(String rut, String nombre, String fechaNac, String area, String experienciaPrevia) {
-        super(rut, nombre, fechaNac);
+    public Administrativo(String nombre, String apellido1, String apellido2, String fechaNac, String run, String area, String experienciaPrevia) {
+        super(nombre, apellido1, apellido2, fechaNac, run);
         this.area = area;
         this.experienciaPrevia = experienciaPrevia;
     }
@@ -40,7 +40,7 @@ public class Administrativo extends Usuario {
     @Override
     public void analizarUsuario() {
         super.analizarUsuario();
-        System.out.println("Area: " + getArea());
-        System.out.println("Experiencia previa: " + getExperienciaPrevia());
+        System.out.println("Area: " + this.getArea());
+        System.out.println("Experiencia previa: " + this.getExperienciaPrevia());
     }
 }

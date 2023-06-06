@@ -9,8 +9,8 @@ public class Profesional extends Usuario{
 
     public Profesional(){}
 
-    public Profesional(String rut, String nombre, String fechaNac, String titulo, String fechaIngreso) {
-        super(rut, nombre, fechaNac);
+    public Profesional(String nombre, String apellido1, String apellido2, String fechaNac, String run, String titulo, String fechaIngreso) {
+        super(nombre, apellido1, apellido2, fechaNac, run);
         this.titulo = titulo;
         this.fechaIngreso = LocalDate.parse(fechaIngreso, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
@@ -43,8 +43,7 @@ public class Profesional extends Usuario{
     @Override
     public void analizarUsuario() {
         super.analizarUsuario();
-        // SOBREESCRIBIR EL FUNCIONAMIENTO DEL METODO
-        System.out.println("Titulo: " + getTitulo());
-        System.out.println("Fecha de Ingreso: " + getFechaIngreso());
+        System.out.println("Titulo: " + this.getTitulo());
+        System.out.println("Fecha de Ingreso: " + this.getFechaIngreso());
     }
 }
