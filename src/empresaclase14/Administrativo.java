@@ -30,9 +30,9 @@ public class Administrativo extends Usuario {
 
     @Override
     public String toString() {
-        return "\n Administrativo{ " +
-                "\n area= " + area + ',' +
-                "\n experienciaPrevia= " + experienciaPrevia +
+        return "Administrativo{" +
+                "\n area= '" + area + "'," +
+                "\n experienciaPrevia= '" + experienciaPrevia + "'," +
                 "\n}";
     }
 

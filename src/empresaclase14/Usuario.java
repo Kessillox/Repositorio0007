@@ -50,9 +50,9 @@ public class Usuario implements Asesoria{
     @Override
     public String toString() {
         return "Usuario{" +
-                "\n nombre='" + nombre + "'," +
-                "\n fechaDeNacimiento='" + fechaDeNacimiento + "'," +
-                "\n run='" + run + "'" +
+                "\n nombre= '" + nombre + "'," +
+                "\n fechaDeNacimiento= '" + fechaDeNacimiento + "'," +
+                "\n run= '" + run + "'" +
                 "\n}";
     }
 

@@ -79,14 +79,15 @@ public class Main {
         administrativo1.analizarUsuario();
         System.out.println("");
 
-        // Imprimir datos del Administrativo llamando el método de interfaz
+        // Imprimir datos del Profesional llamando el método de interfaz
+        Profesional profesional1 = new Profesional("Ingeniero","02/05/2023");
+        profesional1.setNombre(usuario1.getNombre());
+        profesional1.analizarUsuario();
+        System.out.println("");
+
+        // Imprimir datos del Cliente llamando el método de interfaz
         cliente1.setNombre(usuario1.getNombre());
         cliente1.analizarUsuario();
         System.out.println("");
-
-
-        // Imprimir datos del Profesional llamando el método de interfaz
-        Profesional profesional1 = new Profesional(usuario2,"Ingeniero","02/05/2023");
-        profesional1.analizarUsuario();
     }
 }

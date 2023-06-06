@@ -96,14 +96,14 @@ public class Cliente extends Usuario {
     @Override
     public String toString() {
         return "Cliente{" +
-                "\n rut='" + rut + "'," +
-                "\n nombreEmpresa='" + nombreEmpresa + "'," +
-                "\n nombreRepresentante='" + nombreRepresentante + "'," +
-                "\n apellido1Representante='" + apellido1Representante + "'," +
-                "\n apellido2Representante='" + apellido2Representante + "'," +
-                "\n telefonoRepresentante='" + telefonoRepresentante + "'," +
-                "\n direccion='" + direccion + "'," +
-                "\n comuna='" + comuna + "'" +
+                "\n rut= '" + rut + "'," +
+                "\n nombreEmpresa= '" + nombreEmpresa + "'," +
+                "\n nombreRepresentante= '" + nombreRepresentante + "'," +
+                "\n apellido1Representante= '" + apellido1Representante + "'," +
+                "\n apellido2Representante= '" + apellido2Representante + "'," +
+                "\n telefonoRepresentante= '" + telefonoRepresentante + "'," +
+                "\n direccion= '" + direccion + "'," +
+                "\n comuna= '" + comuna + "'" +
                 "\n}";
     }
 
