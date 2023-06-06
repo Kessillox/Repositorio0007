@@ -29,6 +29,19 @@ public class Cliente extends Usuario {
         this.comuna = comuna;
     }
 
+    public Cliente(String nombre, String fechaDeNacimiento, String run, String rut, String nombreEmpresa, String nombreRepresentante,
+                   String apellido1Representante, String apellido2Representante, String telefonoRepresentante, String direccion, String comuna) {
+        super(nombre, fechaDeNacimiento, run);
+        this.rut = rut;
+        this.nombreEmpresa = nombreEmpresa;
+        this.nombreRepresentante = nombreRepresentante;
+        this.apellido1Representante = apellido1Representante;
+        this.apellido2Representante = apellido2Representante;
+        this.telefonoRepresentante = telefonoRepresentante;
+        this.direccion = direccion;
+        this.comuna = comuna;
+    }
+
     public String getRut() {
         return rut;
     }
