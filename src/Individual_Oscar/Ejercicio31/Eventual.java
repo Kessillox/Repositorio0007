@@ -1,19 +1,21 @@
 package Individual_Oscar.Ejercicio31;
 
 public class Eventual extends Trabajador {
-    private String disponibilidad;
+    private Boolean disponibilidad;
     private String correo;
 
     public Eventual() {
     }
-    public Eventual(String disponibilidad, String correo) {
+
+    public Eventual(String nombres, String apellidos, String run, String telefono, int edad, Boolean disponibilidad, String correo) {
+        super(nombres, apellidos, run, telefono, edad);
         this.disponibilidad = disponibilidad;
         this.correo = correo;
     }
-    public String getDisponibilidad() {
+    public Boolean getDisponibilidad() {
         return disponibilidad;
     }
-    public void setDisponibilidad(String disponibilidad) {
+    public void setDisponibilidad(Boolean disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
     public String getCorreo() {
@@ -27,4 +29,11 @@ public class Eventual extends Trabajador {
         return "Eventual{" + "disponibilidad=" + disponibilidad + ", correo=" + correo + '}';
     }
 
+    @Override
+    public void mostrarDatos() {
+        super.mostrarDatos();
+        System.out.println("Disponibilidad: " + disponibilidad);
+        System.out.println("Correo: " + correo);
+
+    }
 }

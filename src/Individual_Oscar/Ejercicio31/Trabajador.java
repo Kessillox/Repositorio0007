@@ -78,4 +78,9 @@ public class Trabajador {
                 '}';
     }
 
+
+      public void mostrarDatos(){
+        System.out.println("Telefono: " + telefono);
+        System.out.println("Edad: " + edad);
+      }
 }

@@ -8,7 +8,8 @@ public class Honorario extends Trabajador {
     }
 
 
-    public Honorario(String giro, String anioIniciacion) {
+    public Honorario(String nombres, String apellidos, String run, String telefono, int edad, String giro, String anioIniciacion) {
+        super(nombres, apellidos, run, telefono, edad);
         this.giro = giro;
         this.anioIniciacion = anioIniciacion;
     }
@@ -37,5 +38,10 @@ public class Honorario extends Trabajador {
                 '}';
     }
 
-
+    @Override
+    public void mostrarDatos() {
+        super.mostrarDatos();
+        System.out.println("Giro: " + giro);
+        System.out.println("Anio Iniciacion: " + anioIniciacion);
+    }
 }

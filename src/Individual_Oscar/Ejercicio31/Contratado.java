@@ -2,7 +2,7 @@ package Individual_Oscar.Ejercicio31;
 
 public class Contratado extends Trabajador{
     private String fechaIngreso;
-    private int salario;
+    private double salario;
 
     public Contratado() {
 
@@ -14,7 +14,36 @@ public class Contratado extends Trabajador{
         this.salario = salario;
     }
 
+    public String getFechaIngreso() {
+        return fechaIngreso;
+    }
 
+    public void setFechaIngreso(String fechaIngreso) {
+        this.fechaIngreso = fechaIngreso;
+    }
 
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
+    @Override
+    public String toString() {
+        return "Contratado{" +
+                "fechaIngreso='" + fechaIngreso + '\'' +
+                ", salario=" + salario +
+                '}';
+    }
+
+    @Override
+    public void mostrarDatos() {
+        super.mostrarDatos();
+        System.out.println("Fecha de ingreso: " + fechaIngreso);
+        System.out.println("Salario: " + salario);
+
+    }
 }
 
