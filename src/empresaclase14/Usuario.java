@@ -9,7 +9,7 @@
 
 package empresaclase14;
 
-public class Usuario implements Asesoria{
+public class Usuario implements IAsesoria {
     private String nombre;
     private String fechaDeNacimiento;
     private String run;
