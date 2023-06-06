@@ -1,4 +1,4 @@
-package cl.bootcamp.empresa14.models;
+package cl.bootcamp.empresa.models;
 
 /**
  * @author Cristian Durán (el más bacán del grupo potrero), Ignacio Aránguiz e Iván Becerra

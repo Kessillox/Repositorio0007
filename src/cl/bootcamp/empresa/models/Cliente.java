@@ -1,4 +1,4 @@
-package cl.bootcamp.empresa14.models;
+package cl.bootcamp.empresa.models;
 
 /**
  * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
