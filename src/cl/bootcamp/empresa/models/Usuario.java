@@ -78,4 +78,14 @@ public class Usuario implements IAsesoria {
     public void analizarUsuario() {
         System.out.println(nombre + " " + apellido1 + " " + apellido2);
     }
+
+    @Override
+    public String toString() {
+        return "nombre: " + nombre +
+                ", apellido1: " + apellido1 +
+                ", apellido2: " + apellido2 +
+                ", fechaNacimiento: " + fechaNacimiento +
+                ", run: " + run +
+                ", edad: " + edad;
+    }
 }
