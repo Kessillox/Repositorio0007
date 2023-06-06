@@ -3,14 +3,15 @@ package cl.bootcamp.empresa14.models;
 /**
  * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
  * La clase Usuario contiene 3 atributos
- * @version 1.1.0
+ * @version 1.0.0
  * @see Usuario
  */
 public class Usuario {
-    private String run;
     private String nombre;
-    private int edad;
+    private String apellido1;
+    private String apellido2;
     private String fechaNacimiento;
+    private
 
     public Usuario() {
     }
