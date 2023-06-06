@@ -1,4 +1,4 @@
-package individual25gustavov;
+package individual27gustavov;
 
 /**
  * Individual 25: Crear una clase Trabajador creando algunos metodos.
