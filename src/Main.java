@@ -89,5 +89,13 @@ public class Main {
         cliente1.setNombre(usuario1.getNombre());
         cliente1.analizarUsuario();
         System.out.println("");
+
+        Listado listado = new Listado();
+        listado.addElemento(profesional1);
+        listado.addElemento(cliente1);
+        listado.addElemento(new Profesional("RRHH", "03/03/2003"));
+
+        listado.instanciasRegistradas();
+
     }
 }
