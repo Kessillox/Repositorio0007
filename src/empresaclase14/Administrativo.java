@@ -12,12 +12,6 @@ public class Administrativo extends Usuario {
         this.experienciaPrevia = experienciaPrevia;
     }
 
-    public Administrativo(Usuario usuario, String area, String experienciaPrevia) {
-        super(usuario.getNombre(), usuario.getFechaDeNacimiento(), usuario.getRun());
-        this.area = area;
-        this.experienciaPrevia = experienciaPrevia;
-    }
-
     public String getArea() {
         return area;
     }

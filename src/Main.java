@@ -77,8 +77,13 @@ public class Main {
         System.out.println("");
 
         // Imprimir datos del Administrativo llamando el método de interfaz
-        Administrativo administrativo1 = new Administrativo(usuario1,"Talca","Ninguna");
+        Administrativo administrativo1 = new Administrativo("Talca","Ninguna");
+        administrativo1.setNombre(usuario1.getNombre());
         administrativo1.analizarUsuario();
+        System.out.println("");
+
+        cliente1.setNombre(usuario1.getNombre());
+        cliente1.analizarUsuario();
 
 
     }

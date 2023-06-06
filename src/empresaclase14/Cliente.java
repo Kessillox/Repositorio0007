@@ -111,4 +111,9 @@ public class Cliente extends Usuario {
         return nombreRepresentante + " " + apellido1Representante + " " + apellido2Representante;
     }
 
+    @Override
+    public void analizarUsuario() {
+        System.out.println("El nombre del usuario es: " + super.getNombre());
+        System.out.println("La información del Cliente es: " + this.toString());
+    }
 }
