@@ -1,7 +1,4 @@
-import empresaclase14.Administrativo;
-import empresaclase14.Capacitacion;
-import empresaclase14.Cliente;
-import empresaclase14.Usuario;
+import empresaclase14.*;
 
 /**
  * Esta es la clase Main donde se crea la instancia de los objetos Usuario, Capacitación y Cliente
@@ -88,6 +85,8 @@ public class Main {
         System.out.println("");
 
 
-
+        // Imprimir datos del Profesional llamando el método de interfaz
+        Profesional profesional1 = new Profesional(usuario2,"Ingeniero","02/05/2023");
+        profesional1.analizarUsuario();
     }
 }
