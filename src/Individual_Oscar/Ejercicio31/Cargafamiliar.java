@@ -1,6 +1,6 @@
 package Individual_Oscar.Ejercicio31;
 
-public class Cargafamiliar {
+public class Cargafamiliar extends Trabajador {
     private String runCarga;
     private String nombres;
     private String apellidos;
