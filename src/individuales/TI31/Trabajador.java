@@ -1,4 +1,4 @@
-package individuales.T25;
+package individuales.TI31;
 
 import java.util.Arrays;
 
