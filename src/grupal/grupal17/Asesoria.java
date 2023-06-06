@@ -1,0 +1,8 @@
+package grupal.grupal17;
+
+//Interfaz Asesoria que se implementa en la clase Usuario
+public interface Asesoria {
+
+    //Método analizarUsuario
+    public void analizarUsuario();
+}
