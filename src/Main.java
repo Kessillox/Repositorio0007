@@ -82,8 +82,11 @@ public class Main {
         administrativo1.analizarUsuario();
         System.out.println("");
 
+        // Imprimir datos del Administrativo llamando el método de interfaz
         cliente1.setNombre(usuario1.getNombre());
         cliente1.analizarUsuario();
+        System.out.println("");
+
 
 
     }
