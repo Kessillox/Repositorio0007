@@ -1,4 +1,4 @@
-# Ejercicio Grupal 16 _Los Marines Espaciales_
+# Ejercicio Grupal 17 _Los Marines Espaciales_
 
 - Ejercicio Grupal 17:
 - - Comentarios principios SOLID
