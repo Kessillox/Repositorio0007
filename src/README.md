@@ -10,5 +10,5 @@
 |------------------|
 | Leandro Villalba | 
 | Gustavo Vargas   |
-| Cristian Trureo  |
+| Cristian Trureo  | 💀
 | Luis Zambrano    | 😎
