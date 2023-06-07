@@ -2,7 +2,11 @@ package cl.bootcamp.empresa.models;
 
 import cl.bootcamp.empresa.interfaces.IAsesoria;
 
-import java.util.Date;
+/* Principio de responsabilidad única (SRP - Single Responsibility Principle):
+La clase Usuario tiene la responsabilidad de representar los datos de un usuario y proporciona métodos para acceder y modificar esos datos.*/
+
+/* Principio de abierto/cerrado (OCP - Open/Closed Principle):
+La clase Usuario está abierta a la extensión, ya que se pueden crear nuevas clases derivadas para representar diferentes tipos de usuarios, sin modificar el código existente.*/
 
 /**
  * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
@@ -22,12 +26,13 @@ public class Usuario implements IAsesoria {
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellido1, String apellido2, String fechaNacimiento, String run) {
+    public Usuario(String nombre, String apellido1, String apellido2, String fechaNacimiento, String run, int edad) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
         this.fechaNacimiento = fechaNacimiento;
         this.run = run;
+        this.edad = edad;
     }
 
     public String getNombre() {
@@ -68,6 +73,14 @@ public class Usuario implements IAsesoria {
 
     public void setRun(String run) {
         this.run = run;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
     public void mostrarEdad() {
