@@ -8,6 +8,7 @@ public class Cliente extends Usuario {
 
     private String nombreEmpresa;
     private String giroEmpresa;
+    private String rut;
     private  String telefonoRepresentante;
     private String direccionEmpresa;
     private String comunaEmpresa;
@@ -15,23 +16,24 @@ public class Cliente extends Usuario {
     public Cliente() {
     }
 
-    public Cliente(String nombreEmpresa, String giroEmpresa, String telefonoRepresentante, String direccionEmpresa, String comunaEmpresa) {
+    public Cliente(String nombreEmpresa, String giroEmpresa, String rut, String telefonoRepresentante, String direccionEmpresa, String comunaEmpresa) {
         this.nombreEmpresa = nombreEmpresa;
         this.giroEmpresa = giroEmpresa;
+        this.rut = rut;
         this.telefonoRepresentante = telefonoRepresentante;
         this.direccionEmpresa = direccionEmpresa;
         this.comunaEmpresa = comunaEmpresa;
     }
 
-    public Cliente(String nombre, String apellido1, String apellido2, String fechaDeNacimiento, String runORut, String nombreEmpresa, String giroEmpresa, String telefonoRepresentante, String direccionEmpresa, String comunaEmpresa) {
-        super(nombre, apellido1, apellido2, fechaDeNacimiento, runORut);
+    public Cliente(String nombre, String apellido1, String apellido2, String fechaDeNacimiento, String run, String nombreEmpresa, String giroEmpresa, String rut, String telefonoRepresentante, String direccionEmpresa, String comunaEmpresa) {
+        super(nombre, apellido1, apellido2, fechaDeNacimiento, run);
         this.nombreEmpresa = nombreEmpresa;
         this.giroEmpresa = giroEmpresa;
+        this.rut = rut;
         this.telefonoRepresentante = telefonoRepresentante;
         this.direccionEmpresa = direccionEmpresa;
         this.comunaEmpresa = comunaEmpresa;
     }
-
 
     public String getNombreEmpresa() {
         return nombreEmpresa;
@@ -47,6 +49,14 @@ public class Cliente extends Usuario {
 
     public void setGiroEmpresa(String giroEmpresa) {
         this.giroEmpresa = giroEmpresa;
+    }
+
+    public String getRut() {
+        return rut;
+    }
+
+    public void setRut(String rut) {
+        this.rut = rut;
     }
 
     public String getTelefonoRepresentante() {
@@ -76,12 +86,13 @@ public class Cliente extends Usuario {
     @Override
     public String toString() {
         return "Cliente{" +
-                "\n nombreEmpresa='" + nombreEmpresa + '\'' +
-                "\n giroEmpresa='" + giroEmpresa + '\'' +
-                "\n telefonoRepresentante='" + telefonoRepresentante + '\'' +
-                "\n direccionEmpresa='" + direccionEmpresa + '\'' +
-                "\n comunaEmpresa='" + comunaEmpresa + '\'' +
-                "\n }";
+                "nombreEmpresa='" + nombreEmpresa + '\'' +
+                ", giroEmpresa='" + giroEmpresa + '\'' +
+                ", rut='" + rut + '\'' +
+                ", telefonoRepresentante='" + telefonoRepresentante + '\'' +
+                ", direccionEmpresa='" + direccionEmpresa + '\'' +
+                ", comunaEmpresa='" + comunaEmpresa + '\'' +
+                '}';
     }
 
     public String obtenerNombre(){

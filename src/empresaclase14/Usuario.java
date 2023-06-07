@@ -23,17 +23,17 @@ public class Usuario implements IAsesoria {
     private String apellido1;
     private String apellido2;
     private String fechaDeNacimiento;
-    private String runORut;
+    private String run;
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellido1, String apellido2, String fechaDeNacimiento, String runORut) {
+    public Usuario(String nombre, String apellido1, String apellido2, String fechaDeNacimiento, String run) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
         this.fechaDeNacimiento = fechaDeNacimiento;
-        this.runORut = runORut;
+        this.run = run;
     }
 
     public String getNombre() {
@@ -60,20 +60,20 @@ public class Usuario implements IAsesoria {
         this.apellido2 = apellido2;
     }
 
-    public String getRunORut() {
-        return runORut;
-    }
-
-    public void setRunORut(String runORut) {
-        this.runORut = runORut;
-    }
-
     public String getFechaDeNacimiento() {
         return fechaDeNacimiento;
     }
 
     public void setFechaDeNacimiento(String fechaDeNacimiento) {
         this.fechaDeNacimiento = fechaDeNacimiento;
+    }
+
+    public String getRun() {
+        return run;
+    }
+
+    public void setRun(String run) {
+        this.run = run;
     }
 
     @Override
@@ -83,7 +83,7 @@ public class Usuario implements IAsesoria {
                 ", apellido1='" + apellido1 + '\'' +
                 ", apellido2='" + apellido2 + '\'' +
                 ", fechaDeNacimiento='" + fechaDeNacimiento + '\'' +
-                ", runORut='" + runORut + '\'' +
+                ", run='" + run + '\'' +
                 '}';
     }
 
