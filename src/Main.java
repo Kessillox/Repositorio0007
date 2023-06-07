@@ -38,8 +38,18 @@ public class Main {
         profesional1.analizarUsuario();
         profesional2.analizarUsuario();
 
+        // Instancia de la clase listado
+        Listado listado = new Listado();
 
+        // agregando usuarios ya creados a listado
+        listado.addElemento(profesional1);
+        listado.addElemento(usuario1);
+        listado.addElemento(usuario2);
+        listado.addElemento(profesional2);
+        listado.addElemento(cliente1);
 
-
+        // llamando metodo que despliega los datos
+        System.out.println("<<< LISTADO >>>");
+        listado.instanciasRegistradas();
     }
 }
