@@ -1,7 +1,5 @@
 package empresa.entity;
 
-import empresa.entity.Usuario;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 

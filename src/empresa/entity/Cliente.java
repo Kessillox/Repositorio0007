@@ -1,8 +1,5 @@
 package empresa.entity;
 
-import empresa.entity.Usuario;
-
-import java.time.LocalDate;
 import java.util.Scanner;
 
 // Clase Cliente que hereda los atributos y métodos de la clase Usuario

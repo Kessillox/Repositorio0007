@@ -1,9 +1,5 @@
 package empresa.entity;
 
-import empresa.entity.Usuario;
-
-import java.time.LocalDate;
-
 
 //Clase Administrativo que hereda atributos y métodos desde la clase Usuario
 public class Administrativo extends Usuario {
