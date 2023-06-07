@@ -1,7 +1,7 @@
-import cl.bootcamp.empresa.models.Administrativo;
-import cl.bootcamp.empresa.models.Cliente;
-import cl.bootcamp.empresa.models.Listado;
-import cl.bootcamp.empresa.models.Profesional;
+import grupal16.models.Administrativo;
+import grupal16.models.Cliente;
+import grupal16.models.Listado;
+import grupal16.models.Profesional;
 
 public class Main {
     public static void main(String[] args) {

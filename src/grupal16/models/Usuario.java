@@ -1,8 +1,6 @@
-package cl.bootcamp.empresa.models;
+package grupal16.models;
 
-import cl.bootcamp.empresa.interfaces.IAsesoria;
-
-import java.util.Date;
+import grupal16.interfaces.IAsesoria;
 
 /**
  * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz

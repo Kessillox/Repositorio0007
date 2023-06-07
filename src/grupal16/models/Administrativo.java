@@ -1,6 +1,4 @@
-package cl.bootcamp.empresa.models;
-
-import java.util.Date;
+package grupal16.models;
 
 /**
  * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz

@@ -1,6 +1,6 @@
-package cl.bootcamp.empresa.models;
+package grupal16.models;
 
-import cl.bootcamp.empresa.interfaces.IAsesoria;
+import grupal16.interfaces.IAsesoria;
 
 import java.util.ArrayList;
 import java.util.List;

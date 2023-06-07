@@ -1,14 +1,12 @@
-package cl.bootcamp.empresa.models;
-
-import java.util.Date;
+package grupal13.models;
 
 /**
  * @author Cristian Durán (el más bacán del grupo potrero), Ignacio Aránguiz e Iván Becerra
  * La clase Capacitacion contiene 7 atributos.
- * @version 1.0.0
+ * @version 1.0.3
  * @see Capacitacion
  */
-public class Capacitacion extends Usuario{
+public class Capacitacion {
 
     private int id;
     private String rutEmpresa;
@@ -21,11 +19,8 @@ public class Capacitacion extends Usuario{
     public Capacitacion() {
     }
 
-    public Capacitacion(String nombre, String apellido1, String apellido2,
-                        String fechaNacimiento, String run, int id,
-                        String rutEmpresa, int dia, int hora, String lugar,
-                        String duracion, int cantidadAsistentes) {
-        super(nombre, apellido1, apellido2, fechaNacimiento, run);
+    public Capacitacion(int id, String rutEmpresa, int dia, int hora,
+                        String lugar, String duracion, int cantidadAsistentes) {
         this.id = id;
         this.rutEmpresa = rutEmpresa;
         this.dia = dia;
@@ -91,9 +86,15 @@ public class Capacitacion extends Usuario{
         this.cantidadAsistentes = cantidadAsistentes;
     }
 
+    /**
+     * Sobre escritura del método toString
+     *
+     * @return String
+     */
+
     @Override
     public String toString() {
-        return  "id: " + id +
+        return "id: " + id +
                 ", rut empresa: " + rutEmpresa +
                 ", dia: " + dia +
                 ", hora: " + hora +
