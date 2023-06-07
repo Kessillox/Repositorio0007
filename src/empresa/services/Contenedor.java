@@ -3,6 +3,7 @@ package empresa.services;
 import empresa.entity.Capacitacion;
 import empresa.iservices.IAsesoria;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,10 +35,10 @@ public class Contenedor {
     }
 
 
-    public void eliminarUsuario(Long run){
-
-
+    public void eliminarUsuario(Long run) {
+        listaDeUsuarios.removeIf(usuario -> usuario.getRun().equals(Long.valueOf(run)));
     }
+
 
 
 }

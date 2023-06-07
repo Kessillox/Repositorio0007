@@ -5,4 +5,5 @@ public interface IAsesoria {
 
     //Método analizarUsuario
     public void analizarUsuario();
+    public Long getRun();
 }
