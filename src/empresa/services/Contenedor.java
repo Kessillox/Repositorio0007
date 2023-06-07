@@ -62,4 +62,13 @@ public class Contenedor {
         }
     }
 
+    public void listarUsuariosPorTipo(IAsesoria tipo) {
+        for (IAsesoria usuario : listaDeUsuarios) {
+            if(usuario.getClass().equals(tipo.getClass())){
+                System.out.println(usuario.toString());
+            }
+        }
+
+    }
+
 }
