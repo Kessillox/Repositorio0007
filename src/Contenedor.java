@@ -34,19 +34,20 @@ public class Contenedor {
         this.listaCapacitaciones = listaCapacitaciones;
     }
 
-    public void almacenarCliente() {
+    public void registrarCliente() {
+        System.out.println("=== REGISTRO CLIENTE ===");
 
     }
 
-    public void almacenarProfesional() {
+    public void registrarProfesional() {
 
     }
 
-    public void almacenarAdministrativo() {
+    public void registrarAdministrativo() {
 
     }
 
-    public void almacenarCapacitacion() {
+    public void registrarCapacitacion() {
 
     }
 
