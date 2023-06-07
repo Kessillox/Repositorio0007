@@ -1,7 +1,12 @@
 public class Usuario {
     private String nombreUsuario;
+    private String apellido1;
+    private String apellido2;
     private String fechaDeNacimientoUsuario;
     private String runUsuario;
+    private String rutEmpresa;
+
+
 
     @Override
     public String toString() {
