@@ -78,11 +78,16 @@ public class Trabajador implements Corredora {
                 '}';
     }
 
+    @Override
+    public void mostrarDatos() {
 
-      public void mostrarDatos(){
+    }
+
+
+    /*public void mostrarDatos(){
         System.out.println("Telefono: " + telefono);
         System.out.println("Edad: " + edad);
-      }
+      }*/
 
 
     }
