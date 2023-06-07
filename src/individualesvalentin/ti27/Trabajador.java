@@ -1,4 +1,4 @@
-package individualesvalentin.TI25;
+package individualesvalentin.ti27;
 
 public class Trabajador {
     private String nombre1;

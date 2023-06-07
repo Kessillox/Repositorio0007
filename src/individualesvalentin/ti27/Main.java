@@ -1,4 +1,4 @@
-package individualesvalentin.TG27;
+package individualesvalentin.ti27;
 
 public class Main {
     public static void main(String[] args) {
