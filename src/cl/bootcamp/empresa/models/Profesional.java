@@ -35,4 +35,18 @@ public class Profesional extends Usuario{
     public void setFechaIngreso(String fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
+
+    @Override
+    public void analizarUsuario() {
+        System.out.print("El profesional: ");
+        super.analizarUsuario();
+        System.out.println(", titulo: " + titulo + ", fecha de ingreso: " + fechaIngreso);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "titulo: " + titulo +
+                ", fechaIngreso: " + fechaIngreso;
+    }
 }

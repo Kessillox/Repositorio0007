@@ -10,6 +10,7 @@ package cl.bootcamp.empresa.models;
 public class Cliente extends Usuario{
     private String nombreEmpresa;
     private String giroEmpresa;
+    private String rut;
     private String telefonoRepresentante;
     private String direccionEmpresa;
     private String comunaEmpresa;
@@ -20,7 +21,7 @@ public class Cliente extends Usuario{
     public Cliente(String nombre, String apellido1, String apellido2,
                    String fechaNacimiento, String run, String nombreEmpresa,
                    String giroEmpresa, String telefonoRepresentante,
-                   String direccionEmpresa, String comunaEmpresa) {
+                   String direccionEmpresa, String comunaEmpresa, String rut) {
         super(nombre, apellido1, apellido2, fechaNacimiento, run);
         this.nombreEmpresa = nombreEmpresa;
         this.giroEmpresa = giroEmpresa;
@@ -43,6 +44,14 @@ public class Cliente extends Usuario{
 
     public void setGiroEmpresa(String giroEmpresa) {
         this.giroEmpresa = giroEmpresa;
+    }
+
+    public String getRut() {
+        return rut;
+    }
+
+    public void setRut(String rut) {
+        this.rut = rut;
     }
 
     public String getTelefonoRepresentante() {
@@ -70,8 +79,20 @@ public class Cliente extends Usuario{
     }
 
     @Override
+    public void analizarUsuario() {
+        System.out.print("El cliente: ");
+        super.analizarUsuario();
+        System.out.println(", nombre empresa: " + nombreEmpresa +
+                ", giro empresa: " + giroEmpresa +
+                ", teléfono representante: " + telefonoRepresentante +
+                ", dirección empresa: " + direccionEmpresa +
+                ", comuna empresa: " + comunaEmpresa);
+    }
+
+    @Override
     public String toString() {
-        return "nombre empresa: " + nombreEmpresa +
+        return super.toString() +
+                "nombre empresa: " + nombreEmpresa +
                 ", giro empresa: " + giroEmpresa +
                 ", teléfono representante: " + telefonoRepresentante +
                 ", dirección empresa: " + direccionEmpresa +

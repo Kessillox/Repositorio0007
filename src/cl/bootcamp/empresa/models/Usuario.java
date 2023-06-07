@@ -76,7 +76,7 @@ public class Usuario implements IAsesoria {
 
     @Override
     public void analizarUsuario() {
-        System.out.println(nombre + " " + apellido1 + " " + apellido2);
+        System.out.print(nombre + " " + apellido1 + " " + apellido2);
     }
 
     @Override
