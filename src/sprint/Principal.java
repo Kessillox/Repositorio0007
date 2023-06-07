@@ -8,6 +8,17 @@ public class Principal {
         Scanner sc = new Scanner(System.in);
         Usuario usuario1 = new Usuario ("Livio","Guitierrez","Zambrano", "09/03/1995","26.987.636-2");
 
+        if (usuario1.getNombre() != null && usuario1.getNombre().length() > 3 && usuario1.getNombre().length() < 20) {
+            System.out.println(usuario1.getNombre());
+        }else {
+            System.out.println("Error: El nombre debe tener entre 3 y 20 caracteres.");
+        }
+
+        if(usuario1.getFechaNacimiento() != null)
+            System.out.println("No puede estar nulo.");
+
+        //if (usuario1.getRun().length())
+
         //VARIABLES
         int op =0;
 
@@ -38,11 +49,4 @@ public class Principal {
             }
         }while (op>3);
     }
-
-       /** if ( Usuario.getnombre != null && nombre.length() >= 10 && nombre.length() <= 50) {
-            this.nombre = nombre;
-        } else {
-            System.out.println("Error: El nombre debe tener entre 10 y 50 caracteres.");
-        }**/
-
 }
