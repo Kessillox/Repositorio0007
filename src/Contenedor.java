@@ -35,7 +35,7 @@ public class Contenedor {
     }
 
     public void almacenarCliente() {
-
+        //comentario de prueba
     }
 
     public void almacenarProfesional() {
