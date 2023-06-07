@@ -72,4 +72,5 @@ public class Usuario implements Asesoria {
     public void analizarUsuario() {
         System.out.println("Nombre " + this.getNombre() + "Su run es " + this.getRun());
     }
+    // probando
 }
