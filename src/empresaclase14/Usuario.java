@@ -9,6 +9,15 @@
 
 package empresaclase14;
 
+/*
+* En esta clase se aplica el Principio de Sus titución de Liskov
+* La clase Usuario es la clase Padre de Cliente, Administrativo y Profesional
+*
+* Usuario está abstraída de manera tal que cuando utilicemos las clases hijas no
+* se altere el comportamiento de la clase padre (ni del programa), no haya que
+* sobreecribir métodos que no sirvan a las clases hijas y también para que los
+* atributos de la clase padre tengan sentido para las clases hijas*/
+
 public class Usuario implements IAsesoria {
     private String nombre;
     private String apellido1;
