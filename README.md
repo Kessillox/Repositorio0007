@@ -11,7 +11,7 @@
 
 | Nombre:          |
 |------------------|
-| Leandro Villalba | 
+| Leandro Villalba | 👽
 | Gustavo Vargas   |
 | Cristian Trureo  | 💀
 | Luis Zambrano    | 😎
