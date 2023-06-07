@@ -2,29 +2,26 @@ package evaluacionFinalModuloJava;
 
 import TG16.Asesoria;
 
+import java.time.LocalDate;
+
 public class Usuario implements Iasesoria {
     private String nombre;
 
     private String apellido1;
     private String apellido2;
-    private String fechaNacimiento;
+    private LocalDate fechaNacimiento;//dd/mm/yy
     private int run;
-    private String afp;
-    private String sistemaSalud;
-    private int edad;
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellido1, String apellido2, String fechaNacimiento, int run, String afp, String sistemaSalud, int edad) {
+    public Usuario(String nombre, String apellido1, String apellido2, LocalDate fechaNacimiento, int run, int edad) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
         this.fechaNacimiento = fechaNacimiento;
         this.run = run;
-        this.afp = afp;
-        this.sistemaSalud = sistemaSalud;
-        this.edad = edad;
+
     }
 
     public String getNombre() {
@@ -51,11 +48,11 @@ public class Usuario implements Iasesoria {
         this.apellido2 = apellido2;
     }
 
-    public String getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -67,47 +64,15 @@ public class Usuario implements Iasesoria {
         this.run = run;
     }
 
-    public String getAfp() {
-        return afp;
-    }
-
-    public void setAfp(String afp) {
-        this.afp = afp;
-    }
-
-    public String getSistemaSalud() {
-        return sistemaSalud;
-    }
-
-    public void setSistemaSalud(String sistemaSalud) {
-        this.sistemaSalud = sistemaSalud;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
     public void mostrarEdad(){
-        System.out.println("El usuario tiene "+this.getEdad()+" anos");
-    }
-
-    public void obtenerNombre(){
-        System.out.println("El nombre del usuarios es "+this.getNombre()+" "+this.getApellido1()+" "+ this.getApellido2());
-    }
-    public void obtenerSistemaSalud(){
-        System.out.println("Sistema de salud del usuario es: "+ this.getSistemaSalud());
-        analizarUsuario();
+        System.out.println("El usuario tiene "+ LocalDate.now().getDayOfYear() - this.getFechaNacimiento()+" anos");
     }
 
 
     @Override
     public void analizarUsuario() {
         mostrarEdad();
-        obtenerNombre();
-        obtenerSistemaSalud();
+
+
     }
 }

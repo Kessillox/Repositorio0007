@@ -1,10 +1,12 @@
 package evaluacionFinalModuloJava;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class VisitaTerreno {
     private int indetificadorVisita;
-    private String fechaAccidente;
-    private String diaAccidente;
-    private String hora;
+    private LocalDate diaAccidente;
+    private LocalTime hora;
     private String lugar;
     private String comentario;
 }

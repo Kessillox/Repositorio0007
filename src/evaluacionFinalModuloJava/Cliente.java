@@ -1,5 +1,6 @@
 package evaluacionFinalModuloJava;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Cliente extends Usuario{
@@ -15,13 +16,13 @@ public class Cliente extends Usuario{
     public Cliente() {
     }
 
-    public Cliente(String nombre, String apellido1, String apellido2, String fechaNacimiento, int run, String afp, String sistemaSalud, int edad, int rut, String nombreEmpresa, String giroEmpresa, String telefonoRepresentante, String direccionEmpresa, String comunaEmpresa, ArrayList<Capacitacion> capacitaciones) {
-        super(nombre, apellido1, apellido2, fechaNacimiento, run, afp, sistemaSalud, edad);
+    public Cliente(String nombre, String apellido1, String apellido2, LocalDate fechaNacimiento, int run, int edad, int rut, String nombreEmpresa, String giroEmpresa, String telefonoRepresentante, String direccionEmpresa, String comunaEmpresa, ArrayList<Capacitacion> capacitaciones) {
+        super(nombre, apellido1, apellido2, fechaNacimiento, run, edad);
         this.rut = rut;
         this.nombreEmpresa = nombreEmpresa;
         this.giroEmpresa = giroEmpresa;
         this.telefonoRepresentante = telefonoRepresentante;
-        DireccionEmpresa = direccionEmpresa;
+        this.DireccionEmpresa = direccionEmpresa;
         this.comunaEmpresa = comunaEmpresa;
         this.capacitaciones = capacitaciones;
     }
@@ -82,8 +83,15 @@ public class Cliente extends Usuario{
         this.capacitaciones = capacitaciones;
     }
 
+    public void obtenerNombre(){
+        System.out.println("El nombre del usuarios es "+this.getNombre()+" "+this.getApellido1()+" "+ this.getApellido2());
+    }
+
+
     @Override
     public void analizarUsuario() {
         super.analizarUsuario();
     }
+
+
 }

@@ -1,10 +1,13 @@
 package evaluacionFinalModuloJava;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class Capacitacion {
     private int identificador;
     private int rut;
-    private String dia;
-    private String hora;
+    private LocalDate dia;
+    private LocalTime hora;
     private String lugar;
     private int duracion;
     private int cantidadAsistentes;
