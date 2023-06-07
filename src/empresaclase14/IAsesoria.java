@@ -12,3 +12,9 @@ public interface IAsesoria {
     public void analizarUsuario();
 }
 
+/*
+ Según el Principio de Inversión de Dependencias, los módulos de alto nivel deben depender de abstracciones en lugar de depender
+ directamente de los módulos de bajo nivel. Las abstracciones pueden ser interfaces, clases abstractas o algún otro mecanismo que
+ permita definir un contrato común para la comunicación entre los módulos.
+ */
+
