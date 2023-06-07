@@ -65,7 +65,7 @@ public class Usuario implements Iasesoria {
     }
 
     public void mostrarEdad(){
-        System.out.println("El usuario tiene "+ LocalDate.now().getDayOfYear() - this.getFechaNacimiento()+" anos");
+        //System.out.println("El usuario tiene "+ LocalDate.now().getDayOfYear()- this.getFechaNacimiento()+" anos");
     }
 
 

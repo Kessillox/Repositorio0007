@@ -15,7 +15,7 @@ public class Capacitacion {
     public Capacitacion() {
     }
 
-    public Capacitacion(int identificador, int rut, String dia, String hora, String lugar, int duracion, int cantidadAsistentes) {
+    public Capacitacion(int identificador, int rut, LocalDate dia, LocalTime hora, String lugar, int duracion, int cantidadAsistentes) {
         this.identificador = identificador;
         this.rut = rut;
         this.dia = dia;
@@ -41,19 +41,19 @@ public class Capacitacion {
         this.rut = rut;
     }
 
-    public String getDia() {
+    public LocalDate getDia() {
         return dia;
     }
 
-    public void setDia(String dia) {
+    public void setDia() {
         this.dia = dia;
     }
 
-    public String getHora() {
+    public LocalTime getHora() {
         return hora;
     }
 
-    public void setHora(String hora) {
+    public void setHora(LocalTime hora) {
         this.hora = hora;
     }
 
