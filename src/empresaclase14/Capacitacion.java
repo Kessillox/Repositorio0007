@@ -31,8 +31,8 @@ public class Capacitacion {
         return idCapacitacion;
     }
 
-    public void setIdentificador(int identificador) {
-        this.idCapacitacion = identificador;
+    public void setIdentificador(int idCapacitacion) {
+        this.idCapacitacion = idCapacitacion;
     }
 
     public String getRutCliente() {
