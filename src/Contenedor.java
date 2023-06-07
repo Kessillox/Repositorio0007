@@ -36,10 +36,74 @@ public class Contenedor {
 
     public void almacenarCliente() {
         System.out.println("=== REGISTRO CLIENTE ===");
-        //comentario de prueba
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
     public void almacenarProfesional() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 
