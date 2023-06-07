@@ -131,51 +131,129 @@ public class Contenedor {
 
         }
 
+        sc.close();
         Usuario cliente = new Cliente(nombre, apellido1, apellido2, fechaNac, run, nombreEmpresa, giroEmpresa, strTelefonoRepresentante, direccionEmpresa, comunaEmpresa, edad);
         this.getListaUsuarios().add(cliente);
     }
 
     public void almacenarProfesional() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("= = = REGISTRAR PROFESIONAL = = =");
 
+        String nombre = "";
+        while (nombre.length() < 5 || nombre.length() > 50) {
+            System.out.println("Ingresar nombre (5 - 50 carácteres)");
+            nombre = sc.nextLine();
+        }
 
+        String apellido1 = "";
+        while (apellido1.length() < 5 || apellido1.length() > 50) {
+            System.out.println("Ingresar primer apellido (5 - 50 carácteres)");
+            apellido1 = sc.nextLine();
+        }
 
+        String apellido2 = "";
+        while (apellido2.length() < 5 || apellido2.length() > 50) {
+            System.out.println("Ingresar segundo apellido (5 - 50 carácteres)");
+            apellido2 = sc.nextLine();
+        }
 
+        String fechaNac = "";
+        Pattern patron = Pattern.compile("(0[1-9]|1[0-2])/([0-2][1-9]|3[0-1])/(19\\d\\d|20[0-2][0-9])");
+        Matcher matcher = patron.matcher(fechaNac);
+        while (!matcher.matches()) {
+            System.out.println("Ingresar fecha de nacimiento (dd/MM/YYYY)");
+            fechaNac = sc.nextLine();
+            matcher = patron.matcher(fechaNac);
+        }
 
+        int run = 100000000;
+        while (run >= 99999999) {
+            try {
+                System.out.println("Ingresar run sin digito verificador (XXXXXXXX)");
+                run = sc.nextInt();
+                sc.nextLine();
+            } catch (Exception e) {
+                sc.nextLine();
+            }
+        }
 
+        String titulo = "";
+        while (titulo.length() < 10 || titulo.length() > 50) {
+            System.out.println("Ingresar título académico (10 - 50 carácteres)");
+            titulo = sc.nextLine();
+        }
 
+        String fechaIngreso = "";
+        Matcher matcher2 = patron.matcher(fechaIngreso);
+        while (!matcher.matches()) {
+            System.out.println("Ingresar fecha de ingreso (dd/MM/YYYY)");
+            fechaIngreso = sc.nextLine();
+            matcher2 = patron.matcher(fechaIngreso);
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        sc.close();
+        Usuario profesional = new Profesional(nombre, apellido1, apellido2, fechaNac, run, titulo, fechaIngreso);
+        this.getListaUsuarios().add(profesional);
     }
 
     public void almacenarAdministrativo() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("= = = REGISTRAR ADMINISTRATIVO = = =");
 
+        String nombre = "";
+        while (nombre.length() < 5 || nombre.length() > 50) {
+            System.out.println("Ingresar nombre (5 - 50 carácteres)");
+            nombre = sc.nextLine();
+        }
+
+        String apellido1 = "";
+        while (apellido1.length() < 5 || apellido1.length() > 50) {
+            System.out.println("Ingresar primer apellido (5 - 50 carácteres)");
+            apellido1 = sc.nextLine();
+        }
+
+        String apellido2 = "";
+        while (apellido2.length() < 5 || apellido2.length() > 50) {
+            System.out.println("Ingresar segundo apellido (5 - 50 carácteres)");
+            apellido2 = sc.nextLine();
+        }
+
+        String fechaNac = "";
+        Pattern patron = Pattern.compile("(0[1-9]|1[0-2])/([0-2][1-9]|3[0-1])/(19\\d\\d|20[0-2][0-9])");
+        Matcher matcher = patron.matcher(fechaNac);
+        while (!matcher.matches()) {
+            System.out.println("Ingresar fecha de nacimiento (dd/MM/YYYY)");
+            fechaNac = sc.nextLine();
+            matcher = patron.matcher(fechaNac);
+        }
+
+        int run = 100000000;
+        while (run >= 99999999) {
+            try {
+                System.out.println("Ingresar run sin digito verificador (XXXXXXXX)");
+                run = sc.nextInt();
+                sc.nextLine();
+            } catch (Exception e) {
+                sc.nextLine();
+            }
+        }
+
+        String area = "";
+        while (area.length() < 5 || area.length() > 20) {
+            System.out.println("Ingresar area (5 - 20 carácteres)");
+            area = sc.nextLine();
+        }
+
+        String experienciaPrevia = "";
+        while (experienciaPrevia.length() < 1 || experienciaPrevia.length() > 100) {
+            System.out.println("Ingresar experiencia previa (1 - 100 carácteres)");
+            experienciaPrevia = sc.nextLine();
+        }
+
+        sc.close();
+        Usuario administrativo = new Administrativo(nombre, apellido1, apellido2, fechaNac, run, area, experienciaPrevia);
+        this.getListaUsuarios().add(administrativo);
     }
 
     public void almacenarCapacitacion() {
