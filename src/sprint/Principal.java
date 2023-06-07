@@ -49,12 +49,13 @@ public class Principal {
                     System.out.println("------Perfil Profesional------");
                     System.out.println("Ingrese su titulo");
 
-                   /* Profesional profesional = new Profesional("Livio", "Gutierrez", "Franchesco", "05/12/1999", "92.666.666", scP.nextLine(),"15/12/09");
+                    Profesional profesional = new Profesional("Livio", "Gutierrez", "Franchesco", "05/12/1999", "92.666.666", "Titulo: " + scP.nextLine(),"Fecha de Ingreso: " + scP.nextLine());
                     if (profesional.getTitulo() != null && profesional.getTitulo().length() > 10 && profesional.getTitulo().length() < 50) {
                         System.out.println(profesional.getTitulo());
+                        System.out.println(profesional.getFechaDeIngreso());
                     }else {
                         System.out.println("Error: El titulo debe tener entre 10 y 50 caracteres.");
-                    }*/
+                    }
 
                     break;
                 case 3:
