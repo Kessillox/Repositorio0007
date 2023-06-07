@@ -3,9 +3,11 @@
 - Ejercicio Grupal 17:
 - - Comentarios principios SOLID
 - - Clase Accidente (Comentario Principio de Responsabilidad única).
+- - Clase Administrativo (Comentario Principio Abierto/Cerrado).
 - - Clase Usuario (Comentario Principio de Sustición de Liskov).
 - - Interfaz IAsesoria (Comentario de Segregación de Interfaces).
 
+    
 | Nombre:          |
 |------------------|
 | Leandro Villalba | 
