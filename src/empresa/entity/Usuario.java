@@ -18,6 +18,9 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
     
     // constructor con parametros, atributos de la clase
     public Usuario(String nombreUsuario, String apellido1, String apellido2, LocalDate fechaDeNacimiento, int run) {
+        if (nombreUsuario.length() < 10 || nombreUsuario.length() > 50) {
+            throw new IllegalArgumentException("El nombre debe tener entre 10 y 50 caracteres.");
+        }
         this.nombreUsuario = nombreUsuario;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;

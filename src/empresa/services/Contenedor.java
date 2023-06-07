@@ -1,6 +1,7 @@
 package empresa.services;
 
 import empresa.entity.Capacitacion;
+import empresa.entity.Usuario;
 import empresa.iservices.IAsesoria;
 
 
@@ -8,8 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Contenedor {
-    private List<IAsesoria> listaDeUsuarios = new ArrayList<IAsesoria>(); //Lista de interfaz
+    private List<IAsesoria> listaDeUsuarios = new ArrayList<>(); //Lista de interfaz
     private List<Capacitacion> listaCapacitaciones = new ArrayList<>(); //Lista de la clase capacitación
+
+    public Contenedor() {
+    }
 
     //Constructor
     public Contenedor(List<IAsesoria> listaDeUsuarios, List<Capacitacion> listaCapacitaciones) {
@@ -34,17 +38,26 @@ public class Contenedor {
         listaCapacitaciones.add(capacitaciones);
     }
 
-
-    public void eliminarUsuario(int rut) {
-        long run = rut;
-        listaDeUsuarios.removeIf(usuario -> usuario.getRun() == run);
-    }
-
     public void listarUsuarios() {
-       for (IAsesoria usuario : listaDeUsuarios) {
-           System.out.println(usuario.toString());
+        for (IAsesoria usuario : listaDeUsuarios) {
+            System.out.println(usuario.toString());
         }
     }
+    public void eliminarUsuario(int runUsuario){
+        boolean encontrado = false;
+        for (int i = 0; i < listaDeUsuarios.size(); i++) {
+            Usuario u = (Usuario) listaDeUsuarios.get(i);
+            if(u.getRun() == runUsuario){
+                encontrado = true;
+                System.out.println(encontrado);
+                listaDeUsuarios.remove(u);
+                System.out.println("Rut eliminado");
+                break;
+            }
+        }
+    }
+
+
 
 
 }
