@@ -1,9 +1,12 @@
 package sprint;
 
+import sprint.entity.Usuario;
+
 import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Usuario usuario1 = new Usuario ("Livio","Guitierrez","Zambrano", "09/03/1995","26.987.636-2");
 
         //VARIABLES
         int op =0;
@@ -11,7 +14,7 @@ public class Principal {
         System.out.println("Bienvenido, ¿en que perfil desea trabajar?");
         System.out.println("------Perfiles------");
         System.out.println("1 > Cliente");
-        System.out.println("2 > Profecional");
+        System.out.println("2 > Profesional");
         System.out.println("3 > Administrativo");
         System.out.println();
         op=sc.nextInt();
@@ -35,4 +38,11 @@ public class Principal {
             }
         }while (op>3);
     }
+
+       /** if ( Usuario.getnombre != null && nombre.length() >= 10 && nombre.length() <= 50) {
+            this.nombre = nombre;
+        } else {
+            System.out.println("Error: El nombre debe tener entre 10 y 50 caracteres.");
+        }**/
+
 }
