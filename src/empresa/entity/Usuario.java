@@ -82,8 +82,9 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
 
     }
 
+    //Método analizarUsuario implementado desde la interfaz
     @Override
     public void analizarUsuario() {
-        System.out.println("Nombre usuario: " + getNombreUsuario() +" " + getApellido1()+" " + getApellido2());
+        System.out.println("Nombre usuario: " + getNombreUsuario() +" " + getApellido1()+" " + getApellido2() + ", run usuario: " +getRun());
     }
 }

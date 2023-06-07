@@ -81,7 +81,7 @@ public class Capacitacion {// se crea la clase Capacitacion
 
     //Metodo mostrarDetalle
     public String mostrarDetalle(){
-        return "“La capacitación será en "+lugar+" las "+hora+" del día "+dia+" durará "+duracion+" minutos";
+        return "“La capacitación será en " +getLugar()+ " las " +getHora()+ " del día " +getDia()+ " durará " +getDuracion()+ " minutos";
     }
     
 }

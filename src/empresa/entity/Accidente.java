@@ -3,6 +3,7 @@ package empresa.entity;
 public class Accidente {
     //Atributos de la clase Accidente
     private int idAcc;
+    private long rutCliente;
     private String diaAcc;
     private  String horaAcc;
     private String lugarAcc;
@@ -14,8 +15,9 @@ public class Accidente {
     }
 
     //Constructor con atributos de la clase Accidente
-    public Accidente(int idAcc, String diaAcc, String horaAcc, String lugarAcc, String origenAcc, String consecuencias) {
+    public Accidente(int idAcc, long rutCliente, String diaAcc, String horaAcc, String lugarAcc, String origenAcc, String consecuencias) {
         this.idAcc = idAcc;
+        this.rutCliente = rutCliente;
         this.diaAcc = diaAcc;
         this.horaAcc = horaAcc;
         this.lugarAcc = lugarAcc;
@@ -30,6 +32,14 @@ public class Accidente {
 
     public void setIdAcc(int idAcc) {
         this.idAcc = idAcc;
+    }
+
+    public long getRutCliente() {
+        return rutCliente;
+    }
+
+    public void setRutCliente(long rutCliente) {
+        this.rutCliente = rutCliente;
     }
 
     public String getDiaAcc() {
@@ -77,6 +87,7 @@ public class Accidente {
     public String toString() {
         return "Accidente{" +
                 "idAcc=" + idAcc +
+                ", rutCliente=" + rutCliente +
                 ", diaAcc='" + diaAcc + '\'' +
                 ", horaAcc='" + horaAcc + '\'' +
                 ", lugarAcc='" + lugarAcc + '\'' +
