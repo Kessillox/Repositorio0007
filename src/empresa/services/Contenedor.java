@@ -35,10 +35,15 @@ public class Contenedor {
     }
 
 
-    public void eliminarUsuario(Long run) {
+    public void eliminarUsuario(int run) {
         listaDeUsuarios.removeIf(usuario -> usuario.getRun().equals(Long.valueOf(run)));
     }
 
+    public void listarUsuarios() {
+       for (IAsesoria usuario : listaDeUsuarios) {
+           System.out.println(usuario.toString());
+        }
+    }
 
 
 }
