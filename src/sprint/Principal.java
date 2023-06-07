@@ -22,6 +22,7 @@ public class Principal {
 
 
 
+
         //VARIABLES
         int op =0;
         String titulo ="";
@@ -49,12 +50,16 @@ public class Principal {
                     System.out.println("------Perfil Profesional------");
                     System.out.println("Ingrese su titulo");
 
-                    Profesional profesional = new Profesional("Livio", "Gutierrez", "Franchesco", "05/12/1999", 92666666, scP.nextLine(),"15/12/09");
+                   // Profesional profesional = new Profesional("Livio", "Gutierrez", "Franchesco", "05/12/1999", 92666666, scP.nextLine(),"15/12/09");
                     /*if (profesional.getTitulo() != null && profesional.getTitulo().length() > 10 && profesional.getTitulo().length() < 50) {
                         System.out.println(profesional.getTitulo());
                     }else {
                         System.out.println("Error: El titulo debe tener entre 10 y 50 caracteres.");
                     }*/
+
+
+                    System.out.println("------Perfil Profesional------");
+                    System.out.println("Ingrese su titulo");
 
                     break;
                 case 3:
