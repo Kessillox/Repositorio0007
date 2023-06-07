@@ -1,6 +1,6 @@
 package empresa.entity;
 import empresa.iservices.IAsesoria;
-
+import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
@@ -9,23 +9,53 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
     private String nombreUsuario;
     private String apellido1;
     private String apellido2;
-    private LocalDate fechaDeNacimiento;
+    private String fechaDeNacimiento;
     private int run;
+    Scanner sc = new Scanner(System.in);
     
     // constructor vacio
     public Usuario() {
     }
     
     // constructor con parametros, atributos de la clase
-    public Usuario(String nombreUsuario, String apellido1, String apellido2, LocalDate fechaDeNacimiento, int run) {
+    public Usuario(String nombreUsuario, String apellido1, String apellido2, String fechaDeNacimiento, int run) {
         if (nombreUsuario.length() < 10 || nombreUsuario.length() > 50) {
             throw new IllegalArgumentException("El nombre debe tener entre 10 y 50 caracteres.");
         }
         this.nombreUsuario = nombreUsuario;
+        if (apellido1.length() < 10 || apellido1.length() > 50) {
+            throw new IllegalArgumentException("El nombre debe tener entre 10 y 50 caracteres.");
+        }
         this.apellido1 = apellido1;
+        if (apellido2.length() < 10 || apellido2.length() > 50) {
+            throw new IllegalArgumentException("El nombre debe tener entre 10 y 50 caracteres.");
+        }
         this.apellido2 = apellido2;
-        this.fechaDeNacimiento = fechaDeNacimiento;
-        this.run = run;
+
+
+
+        while (fechaDeNacimiento.isEmpty()){ //Si viene en blanco entra al while, de lo contrario pasa de largo.
+            System.out.println("Dato no puede estar vacío, debe ingresar fecha de nacimiento con el siguiente formato DD/MM/YYYY");
+            fechaDeNacimiento = sc.nextLine();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            try {
+                LocalDate localDate = LocalDate.parse(fechaDeNacimiento, formatter);
+            } catch (Exception e){
+                System.out.println("Formato de fecha no valido");
+            }
+            this.fechaDeNacimiento = fechaDeNacimiento;
+        }
+
+
+        if (run < 999999999) {
+            this.run = run;
+        } else {
+            while (run > 999999999) {
+                System.out.println("El run no debe ser mayor a 99999999, vuelva a ingrear un run correcto.");
+                run = sc.nextInt();
+            }
+            this.run = run;
+        }
     }
 
     // metodos modificadores set y get
@@ -56,14 +86,24 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
         this.apellido2 = apellido2;
     }
 
-    public LocalDate getFechaDeNacimiento() {
+    public String getFechaDeNacimiento() {
         return fechaDeNacimiento;
     }
 
     public void setFechaDeNacimiento(String fechaDeNacimiento) {
-        //Se cambia el formato por defecto que tiene el método LocalDate
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        this.fechaDeNacimiento = LocalDate.parse(fechaDeNacimiento, formatter);
+
+        while (fechaDeNacimiento.isEmpty()){ //Si viene en blanco entra al while, de lo contrario pasa de largo.
+            System.out.println("Dato no puede estar vacío, debe ingresar fecha de nacimiento con el siguiente formato DD/MM/YYYY");
+            fechaDeNacimiento = sc.nextLine();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            try {
+                LocalDate localDate = LocalDate.parse(fechaDeNacimiento, formatter);
+            } catch (Exception e){
+                System.out.println("Formato de fecha no valido");
+            }
+            this.fechaDeNacimiento = fechaDeNacimiento;
+        }
+
     }
 
     public int getRun() {
@@ -71,10 +111,15 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
     }
 
     public void setRun(int run) {
-        if (run >= 99999999) {
-            throw new IllegalArgumentException("El RUN debe ser un número menor a 99.999.999.");
+        if (run < 999999999) {
+            this.run = run;
+        } else {
+            while (run > 999999999) {
+                System.out.println("El run no debe ser mayor a 99999999, vuelva a ingrear un run correcto.");
+                run = sc.nextInt();
+            }
+            this.run = run;
         }
-        this.run = run;
     }
 
     // metodo toString
@@ -84,12 +129,14 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
     }
 
     //Metodo mostrarEdad
-    public String mostrarEdad() {
+   /* public String mostrarEdad() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate fechaActual = LocalDate.now();
-        Period periodo = Period.between(fechaDeNacimiento, fechaActual);
-        return "El usuario tiene "+periodo.getYears()+" Años";
+        LocalDate fechaNacimiento = LocalDate.parse(fechaDeNacimiento, formatter);
+        Period periodo = Period.between(fechaNacimiento, fechaActual);
+        return "El usuario tiene " + periodo.getYears() + " años";
 
-    }
+    }*/
 
     //Método analizarUsuario implementado desde la interfaz
     @Override

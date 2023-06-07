@@ -10,19 +10,21 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) throws Exception {
         Contenedor cont = new Contenedor();
-        Administrativo user1 = new Administrativo("Cintiaaaaaaa", "Muñoz", "Valdés", LocalDate.of(2000, 05, 19), 22000000, "sidu", "5 años");
+        Administrativo user1 = new Administrativo("Cintiaaaaaaa", "Muñozzzzzzzz", "Valdészzzzzzzz", "19/09/2000", 22000000, "sidu", "5 años");
 
-        cont.almacenarAdministrativo(new Administrativo("Cintiaaaaaaa", "Muñoz", "Valdés", LocalDate.of(2000, 05, 19), 22000000, "sidu", "5 años") );
+        //cont.almacenarAdministrativo(new Administrativo("Cintiaaaaaaa", "Muñoz", "Valdés", LocalDate.of(2000, 05, 19), 22000000, "sidu", "5 años") );
 
+        //System.out.println(user1.mostrarEdad());
 
 
         System.out.println(user1.toString());
 
         cont.almacenarAdministrativo(user1);//Agregar a la lista
 
-        cont.listarUsuarios();
 
-        Scanner sc = new Scanner(System.in);
+        cont.listarUsuariosPorTipo(user1);
+
+        /*Scanner sc = new Scanner(System.in);
 
         int run;
         System.out.println("Ingrese run");
@@ -31,7 +33,7 @@ public class Principal {
         cont.eliminarUsuario(run);
         System.out.println();
 
-        cont.listarUsuarios();
+        cont.listarUsuarios();*/
 
 
 
