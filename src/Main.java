@@ -19,6 +19,8 @@ public class Main {
 
         Contenedor lista2 = new Contenedor(new ArrayList<>(), new ArrayList<>());
 
+        lista2.almacenarCliente();
+
 
     }
 }
