@@ -25,7 +25,7 @@ public class Cliente extends Usuario {
         this.comunaEmpresa = comunaEmpresa;
     }
 
-    public Cliente(String nombre, String apellido1, String apellido2, String fechaDeNacimiento, String run, String nombreEmpresa, String giroEmpresa, String rut, String telefonoRepresentante, String direccionEmpresa, String comunaEmpresa) {
+    public Cliente(String nombre, String apellido1, String apellido2, String fechaDeNacimiento, Integer run, String nombreEmpresa, String giroEmpresa, String rut, String telefonoRepresentante, String direccionEmpresa, String comunaEmpresa) {
         super(nombre, apellido1, apellido2, fechaDeNacimiento, run);
         this.nombreEmpresa = nombreEmpresa;
         this.giroEmpresa = giroEmpresa;

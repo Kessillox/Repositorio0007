@@ -12,8 +12,8 @@ public class Profesional extends Usuario {
         this.fechaDeIngreso = fechaDeIngreso;
     }
 
-    public Profesional(String nombre, String apellido1, String apellido2, String fechaDeNacimiento, String runORut, String titulo, String fechaDeIngreso) {
-        super(nombre, apellido1, apellido2, fechaDeNacimiento, runORut);
+    public Profesional(String nombre, String apellido1, String apellido2, String fechaDeNacimiento, Integer run, String titulo, String fechaDeIngreso) {
+        super(nombre, apellido1, apellido2, fechaDeNacimiento, run);
         this.titulo = titulo;
         this.fechaDeIngreso = fechaDeIngreso;
     }

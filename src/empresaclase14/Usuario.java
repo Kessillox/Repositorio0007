@@ -24,12 +24,12 @@ public class Usuario implements IAsesoria {
     private String apellido1;
     private String apellido2;
     private String fechaDeNacimiento;
-    private String run;
+    private Integer run;
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellido1, String apellido2, String fechaDeNacimiento, String run) {
+    public Usuario(String nombre, String apellido1, String apellido2, String fechaDeNacimiento, int run) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
@@ -69,11 +69,11 @@ public class Usuario implements IAsesoria {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
-    public String getRun() {
+    public Integer getRun() {
         return run;
     }
 
-    public void setRun(String run) {
+    public void setRun(Integer run) {
         this.run = run;
     }
 
@@ -96,6 +96,6 @@ public class Usuario implements IAsesoria {
 
     @Override
     public void analizarUsuario() {
-        System.out.println("Nombre de usuario: " +this.getNombre());
+        System.out.println("Nombre de usuario: " + this.getNombre());
     }
 }
