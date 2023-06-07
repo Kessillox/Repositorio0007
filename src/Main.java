@@ -12,82 +12,29 @@ import empresaclase14.*;
 public class Main {
     public static void main(String[] args) {
 
-        // Crear instancias de la clase Cliente con constructor vacío
-        Cliente cliente1 = new Cliente();
+        // Se instancia la clase Listado
+        Listado listadoDeUsuarios = new Listado();
 
-        // Crear instancia de clase cliente con constructor con todos los parámetros
-        Cliente cliente2 = new Cliente("11111111-1", "Pelayo", "Macario",
-                "Fernandez", "Torrealba", "123456789",
-                "Lejos 124", "Los Alpes");
+        // Se instancian 6 tipos de usuarrios
+        Usuario usuario1 = new Usuario("Brocacochi", "Chespi", "Rito", "10-10-1990", "3.333.333-3");
+        Usuario usuario2 = new Usuario("Benito", "Mussolini", "Repetto", "01/01/1941", "1.111.111-2");
 
-        // Imprimir datos de los clientes
-        System.out.println(cliente1);
-        System.out.println(cliente2);
+        Cliente cliente1 = new Cliente("Pelayo", "Fernandez", "Torrealba", "12/12/1990", "11.111.111-1", "Fundimax", "Fundidora", "123456789", "Lejos 124", "Los Alpes" );
+        Cliente cliente2 = new Cliente("Cristian", "Trureo", "Trureo", "11/11/1991", "22.222.222-1", "Awakelab", "Capacitaciones IT", "123123123123", "Lejos 777", "Los Alpes");
 
-        // Modificando datos de los clientes a través de métodos setters
-        cliente1.setRut("12345678-9");
-        cliente2.setNombreEmpresa("Tritón");
+        Profesional profesional1 = new Profesional("Luis", "Zambrano", "Zambrano", "06-06-2023", "18.685.014-9", "Analista Programador", "06-06-2023");
+        Profesional profesional2 = new Profesional("Livio", "Gut", "Guti", "10-10-2023", "33.333.333-3", "Ingeniero Físico Termonuclear", "10-12-2023");
 
-        // Imprimir los datos a través de métodos getters
-        System.out.println("El nuevo Rut del cliente 1 es: " + cliente1.getRut());
-        System.out.println("El nuevo nombre de la empresa del cliente 2 es: " + cliente2.getNombreEmpresa());
-        System.out.println();
+        // Se agregan las instancias de usuarios al Listado
+        listadoDeUsuarios.addElemento(usuario1);
+        listadoDeUsuarios.addElemento(usuario2);
+        listadoDeUsuarios.addElemento(cliente1);
+        listadoDeUsuarios.addElemento(cliente2);
+        listadoDeUsuarios.addElemento(profesional1);
+        listadoDeUsuarios.addElemento(profesional2);
 
+        // Se llama al método para desplegar los datos
+        listadoDeUsuarios.instanciasRegistradas();
 
-        // Crear instancias de la clase Usuario con constructor vacío
-        Usuario usuario1 = new Usuario();
-
-        // Crear instancias de la clase Usuario con constructor y tus parámetros
-        Usuario usuario2 = new Usuario("Brocacochi", "01/01/2000", "22222222-2");
-
-        // Imprimir datos de los usuarios
-        System.out.println(usuario1);
-        System.out.println(usuario2);
-
-        // Modificar datos de los usuarios a través de métodos setters
-        usuario1.setNombre("Radyk");
-        usuario2.setFechaDeNacimiento("28/06/1984");
-        System.out.println("El nuevo nombre del usuario 1 es: " + usuario1.getNombre());
-        System.out.println("La nueva fecha de nacimiento del usuario 2 es: " + usuario2.getFechaDeNacimiento());
-        System.out.println("");
-
-        // Crear instancias de la clase Capacitación
-        Capacitacion capacitacion1 = new Capacitacion();
-        Capacitacion capacitacion2 = new Capacitacion(1, "11111111-1", "25/03/2023",
-                "09:00", "La Punta del Cerro", 4, 20);
-
-        // Imprimir datos de las capacitaciones a través del método toString()
-        System.out.println(capacitacion1.toString());
-        System.out.println(capacitacion2.toString());
-
-        // Modificar datos de las capacitaciones a través de métodos setters
-        capacitacion1.setIdentificador(2);
-        capacitacion2.setRutCliente("33333333-3");
-
-        // Imprimir datos de las capacitaciones a través de métodos getters
-        System.out.println("El nuevo identificador de la capacitación 1 es: " + capacitacion1.getIdentificador());
-        System.out.println("El nuevo RUT del cliente de la capacitación 2 es: " + capacitacion2.getRutCliente());
-        System.out.println("");
-
-        // Imprimir datos del usuario llamando el método de interfaz
-        usuario1.analizarUsuario();
-        System.out.println("");
-
-        // Imprimir datos del Administrativo llamando el método de interfaz
-        Administrativo administrativo1 = new Administrativo("Talca","Ninguna");
-        administrativo1.setNombre(usuario1.getNombre());
-        administrativo1.analizarUsuario();
-        System.out.println("");
-
-        // Imprimir datos del Profesional llamando el método de interfaz
-        Profesional profesional1 = new Profesional("Ingeniero","02/05/2023");
-        profesional1.setNombre(usuario1.getNombre());
-        profesional1.analizarUsuario();
-        System.out.println("");
-
-        // Imprimir datos del Cliente llamando el método de interfaz
-        cliente1.setNombre(usuario1.getNombre());
-        cliente1.analizarUsuario();
-        System.out.println("");
     }
 }

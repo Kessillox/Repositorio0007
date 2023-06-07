@@ -4,13 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Listado {
-    private List<Usuario> listaDeUsuarios =  new ArrayList<Usuario>();;
+    private List<IAsesoria> listaDeUsuarios =  new ArrayList<IAsesoria>();;
 
     public Listado() {
     }
 
-    public Listado(List<Usuario> listaDeUsuarios) {
+    public Listado(List<IAsesoria> listaDeUsuarios) {
         this.listaDeUsuarios = listaDeUsuarios;
     }
 
+    public void addElemento(IAsesoria analizarUsuario) {
+        listaDeUsuarios.add(analizarUsuario);
+    }
+
+
+    public void instanciasRegistradas() {
+        for (IAsesoria analizarUsuario: listaDeUsuarios) {
+            analizarUsuario.analizarUsuario();
+            System.out.println();
+            
+        }
+    }
 }

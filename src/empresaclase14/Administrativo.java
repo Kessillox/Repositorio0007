@@ -1,5 +1,9 @@
 package empresaclase14;
-
+/**
+ * PRINCIPIO ABIERTO/CERRADO esta clase extiende desde la clase usuario, es decir hereda
+ * a su vez sus atributos están privados por lo que se puede amplicar sin modificar su
+ * implementación existente.
+ */
 public class Administrativo extends Usuario {
     private String area;
     private String experienciaPrevia;
@@ -8,6 +12,12 @@ public class Administrativo extends Usuario {
     }
 
     public Administrativo(String area, String experienciaPrevia) {
+        this.area = area;
+        this.experienciaPrevia = experienciaPrevia;
+    }
+
+    public Administrativo(String nombre, String apellido1, String apellido2, String fechaDeNacimiento, String runORut, String area, String experienciaPrevia) {
+        super(nombre, apellido1, apellido2, fechaDeNacimiento, runORut);
         this.area = area;
         this.experienciaPrevia = experienciaPrevia;
     }
