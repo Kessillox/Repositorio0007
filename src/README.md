@@ -1,6 +1,9 @@
 # Ejercicio Grupal 16 _Los Marines Espaciales_
 
-
+- Ejercicio Grupal 17:
+- - Comentarios principios SOLID
+- - Clase Accidente (Comentario Principio de Responsabilidad única).
+- - Interfaz IAsesoria (Comentario de Segregación de Interfaces).
 
 | Nombre:          |
 |------------------|
