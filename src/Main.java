@@ -12,34 +12,29 @@ import empresaclase14.*;
 public class Main {
     public static void main(String[] args) {
 
-        // Crear instancia de clase cliente con constructor con todos los parámetros
-        Cliente cliente1 = new Cliente("11.111.111-1", "Pelayo", "Macario",
-                "Fernandez", "Torrealba", "123456789",
-                "Lejos 124", "Los Alpes");
+        // Se instancia la clase Listado
+        Listado listadoDeUsuarios = new Listado();
 
-        Cliente cliente2 = new Cliente("22.222.222-2", "AwakeLab", "Cristian",
-                "Trureo", "Trureo", "123456789",
-                "Lejos 124", "Los Alpes");
+        // Se instancian 6 tipos de usuarrios
+        Usuario usuario1 = new Usuario("Brocacochi", "Chespi", "Rito", "10-10-1990", "3.333.333-3");
+        Usuario usuario2 = new Usuario("Benito", "Mussolini", "Repetto", "01/01/1941", "1.111.111-2");
 
-        // Crear instancias de la clase Usuario con constructor y tus parámetros
-        Usuario usuario1 = new Usuario("Brocacochi", "01/01/2000", "22222222-2");
-        Usuario usuario2 = new Usuario("Benito Mussolini", "01/01/2000", "33.333.333-3");
+        Cliente cliente1 = new Cliente("Pelayo", "Fernandez", "Torrealba", "12/12/1990", "11.111.111-1", "Fundimax", "Fundidora", "123456789", "Lejos 124", "Los Alpes" );
+        Cliente cliente2 = new Cliente("Cristian", "Trureo", "Trureo", "11/11/1991", "22.222.222-1", "Awakelab", "Capacitaciones IT", "123123123123", "Lejos 777", "Los Alpes");
 
-        // Crear instancias de la clase Profesional con constructor y tus parámetros
-        Profesional profesional1 = new Profesional("Luis", "06-06-2023", "18.685.014-9", "Analista Programador", "06-06-2023");
-        Profesional profesional2 = new Profesional("Livio", "10-10-2023", "33.333.333-3", "Ingeniero Físico Termonuclear", "10-12-2023");
+        Profesional profesional1 = new Profesional("Luis", "Zambrano", "Zambrano", "06-06-2023", "18.685.014-9", "Analista Programador", "06-06-2023");
+        Profesional profesional2 = new Profesional("Livio", "Gut", "Guti", "10-10-2023", "33.333.333-3", "Ingeniero Físico Termonuclear", "10-12-2023");
 
-        cliente1.analizarUsuario();
-        cliente2.analizarUsuario();
+        // Se agregan las instancias de usuarios al Listado
+        listadoDeUsuarios.addElemento(usuario1);
+        listadoDeUsuarios.addElemento(usuario2);
+        listadoDeUsuarios.addElemento(cliente1);
+        listadoDeUsuarios.addElemento(cliente2);
+        listadoDeUsuarios.addElemento(profesional1);
+        listadoDeUsuarios.addElemento(profesional2);
 
-        usuario1.analizarUsuario();
-        usuario2.analizarUsuario();
-
-        profesional1.analizarUsuario();
-        profesional2.analizarUsuario();
-
-
-
+        // Se llama al método para desplegar los datos
+        listadoDeUsuarios.instanciasRegistradas();
 
     }
 }

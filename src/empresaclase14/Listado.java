@@ -21,6 +21,7 @@ public class Listado {
     public void instanciasRegistradas() {
         for (IAsesoria analizarUsuario: listaDeUsuarios) {
             analizarUsuario.analizarUsuario();
+            System.out.println();
             
         }
     }

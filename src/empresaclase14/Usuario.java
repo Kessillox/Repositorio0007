@@ -11,16 +11,20 @@ package empresaclase14;
 
 public class Usuario implements IAsesoria {
     private String nombre;
+    private String apellido1;
+    private String apellido2;
     private String fechaDeNacimiento;
-    private String run;
+    private String runORut;
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String fechaDeNacimiento, String run) {
+    public Usuario(String nombre, String apellido1, String apellido2, String fechaDeNacimiento, String runORut) {
         this.nombre = nombre;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
         this.fechaDeNacimiento = fechaDeNacimiento;
-        this.run = run;
+        this.runORut = runORut;
     }
 
     public String getNombre() {
@@ -31,6 +35,30 @@ public class Usuario implements IAsesoria {
         this.nombre = nombre;
     }
 
+    public String getApellido1() {
+        return apellido1;
+    }
+
+    public void setApellido1(String apellido1) {
+        this.apellido1 = apellido1;
+    }
+
+    public String getApellido2() {
+        return apellido2;
+    }
+
+    public void setApellido2(String apellido2) {
+        this.apellido2 = apellido2;
+    }
+
+    public String getRunORut() {
+        return runORut;
+    }
+
+    public void setRunORut(String runORut) {
+        this.runORut = runORut;
+    }
+
     public String getFechaDeNacimiento() {
         return fechaDeNacimiento;
     }
@@ -39,21 +67,15 @@ public class Usuario implements IAsesoria {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
-    public String getRun() {
-        return run;
-    }
-
-    public void setRun(String run) {
-        this.run = run;
-    }
-
     @Override
     public String toString() {
         return "Usuario{" +
-                "\n nombre= '" + nombre + "'," +
-                "\n fechaDeNacimiento= '" + fechaDeNacimiento + "'," +
-                "\n run= '" + run + "'" +
-                "\n}";
+                "nombre='" + nombre + '\'' +
+                ", apellido1='" + apellido1 + '\'' +
+                ", apellido2='" + apellido2 + '\'' +
+                ", fechaDeNacimiento='" + fechaDeNacimiento + '\'' +
+                ", runORut='" + runORut + '\'' +
+                '}';
     }
 
     public String mostrarEdad(){
