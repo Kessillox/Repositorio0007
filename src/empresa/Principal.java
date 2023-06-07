@@ -3,9 +3,9 @@ package empresa;
 import empresa.entity.Administrativo;
 import empresa.entity.Cliente;
 import empresa.entity.Profesional;
-import empresa.iservices.IAsesoria;
 import empresa.services.Contenedor;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Principal {
@@ -14,16 +14,16 @@ public class Principal {
         Administrativo user1 = new Administrativo("Cintia", "Muñoz", "Valdés", "19/09/1957", 22000000, "sidu", "5 años");
         Administrativo user2 = new Administrativo("juan", "Perez", "Soto", "12/10/1978", 16560783, "sidu", "3 años");
 
-        //Profesional pro1 = new Profesional("Jose", "Perez", "Soto", "12/10/19", 20222121, "ingeniero",10/03/2022);
-        //Profesional pro2 = new Profesional();
+        Profesional pro1 = new Profesional("Jose", "Perez", "Soto", "12/10/19", 20222121, "ingeniero",LocalDate.of(2020 , 05,19));
+        Profesional pro2 = new Profesional();
 
-        //Cliente cli1 = new Cliente("oscar","fernandez","sepulveda","30/08/1987","lenovo");
-        //Cliente cli2 = new Cliente(runCliente, nombreCliente);
+        Cliente cli1 = new Cliente("juan", "Perez", "Soto", "12/10/2020", 16560783, "sidu", "3 años",  988550235,"21212121","las vegas","Temuco");
+         Cliente cli2 = new Cliente();
 
 
-        //cont.almacenarAdministrativo(new Administrativo("Cintiaaaaaaa", "Muñoz", "Valdés", LocalDate.of(2000, 05, 19), 22000000, "sidu", "5 años") );
+       // cont.almacenarAdministrativo(new Administrativo("Cintiaaaaaaa", "Muñoz", "Valdés", LocalDate.of(2000, 05, 19), 22000000, "sidu", "5 años") );
 
-        //System.out.println(user1.mostrarEdad());
+        System.out.println(user1.mostrarEdad());
 
 
         //System.out.println(user1.toString());
@@ -36,16 +36,15 @@ public class Principal {
 
         Scanner sc = new Scanner(System.in);
 
-        /*int run;
+        int run;
         System.out.println("Ingrese run");
         run = sc.nextInt();
 
-        cont.eliminarUsuario(run);
-        System.out.println();
+        //cont.eliminarUsuario(run);
 
         cont.listarUsuarios();
-*/
-        int opcion = 0;
+
+       /*int opcion = 0;
         while (opcion != 9) {
             mostrarMenu();
             opcion = sc.nextInt();
@@ -54,9 +53,28 @@ public class Principal {
             switch (opcion) {
                 case 1:
                     System.out.println("Ingrese el RUN del cliente:");
-                    int runCliente = sc.nextInt();
+                    int run = sc.nextInt();
                     System.out.println("Ingrese el nombre del cliente:");
-                    String nombreCliente = sc.next();
+                    String nombreUsuario = sc.next();
+
+                    System.out.println("Ingrese el fecha de Nacimiento:");
+                    String fechaDeNacimiento = sc.next();
+                    System.out.println("ingrese el Apellido1 del cliente:");
+                    String apellido1 = sc.next();
+                    System.out.println("Ingrese el Apellido2 del cliente:");
+                    String apellido2 = sc.next();
+                    System.out.println("ingrese razon social del cliente:");
+                    String razon = sc.next();
+                    System.out.println("ingrese giro del cliente:");
+                    String giroEmpresa = sc.next();
+                    System.out.println("ingrese telefono del cliente:");
+                    String telefonoRepresentante = sc.next();
+                    System.out.println("ingrese direccion del cliente:");
+                    String direccion = sc.next();
+                    System.out.println("ingrese comuna del cliente:");
+                    String comuna = sc.next();
+
+
                     cont.almacenarCliente(new Cliente());
                     break;
                 case 2:
@@ -116,7 +134,7 @@ public class Principal {
                     break;
             }
             System.out.println();
-        }
+        } */
     }
 
     private static void mostrarMenu() {
