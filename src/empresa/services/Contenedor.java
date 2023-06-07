@@ -56,8 +56,10 @@ public class Contenedor {
             }
         }
     }
-
-
-
+    public void listarCapacitaciones() {
+        for (Capacitacion capacitacion : listaCapacitaciones) {
+            System.out.println(capacitacion.toString());
+        }
+    }
 
 }
