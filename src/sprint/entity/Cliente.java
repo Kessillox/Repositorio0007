@@ -68,4 +68,8 @@ public class Cliente extends Usuario{
         Comuna = comuna;
     }
 
+
+    public String ObtenerNombre(){
+        return "El nombre es" + this.getNombre();
+    }
 }
