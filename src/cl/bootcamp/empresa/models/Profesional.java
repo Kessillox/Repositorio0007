@@ -1,7 +1,5 @@
 package cl.bootcamp.empresa.models;
 
-import java.util.Date;
-
 /**
  * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
  * La clase Profesional contiene 2 atributos
@@ -11,12 +9,12 @@ import java.util.Date;
 public class Profesional extends Usuario{
 
     private String titulo;
-    private Date fechaIngreso;
+    private String fechaIngreso;
 
     public Profesional() {
     }
 
-    public Profesional(String nombre, String apellido1, String apellido2, Date fechaNacimiento, String run, String titulo, Date fechaIngreso) {
+    public Profesional(String nombre, String apellido1, String apellido2, String fechaNacimiento, String run, String titulo, String fechaIngreso) {
         super(nombre, apellido1, apellido2, fechaNacimiento, run);
         this.titulo = titulo;
         this.fechaIngreso = fechaIngreso;
@@ -30,11 +28,11 @@ public class Profesional extends Usuario{
         this.titulo = titulo;
     }
 
-    public Date getFechaIngreso() {
+    public String getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(Date fechaIngreso) {
+    public void setFechaIngreso(String fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 }

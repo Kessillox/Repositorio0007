@@ -21,7 +21,10 @@ public class Capacitacion extends Usuario{
     public Capacitacion() {
     }
 
-    public Capacitacion(String nombre, String apellido1, String apellido2, Date fechaNacimiento, String run, int id, String rutEmpresa, int dia, int hora, String lugar, String duracion, int cantidadAsistentes) {
+    public Capacitacion(String nombre, String apellido1, String apellido2,
+                        String fechaNacimiento, String run, int id,
+                        String rutEmpresa, int dia, int hora, String lugar,
+                        String duracion, int cantidadAsistentes) {
         super(nombre, apellido1, apellido2, fechaNacimiento, run);
         this.id = id;
         this.rutEmpresa = rutEmpresa;
@@ -86,5 +89,16 @@ public class Capacitacion extends Usuario{
 
     public void setCantidadAsistentes(int cantidadAsistentes) {
         this.cantidadAsistentes = cantidadAsistentes;
+    }
+
+    @Override
+    public String toString() {
+        return  "id: " + id +
+                ", rut empresa: " + rutEmpresa +
+                ", dia: " + dia +
+                ", hora: " + hora +
+                ", lugar: " + lugar +
+                ", duración: " + duracion +
+                ", cantidad asistentes: " + cantidadAsistentes;
     }
 }

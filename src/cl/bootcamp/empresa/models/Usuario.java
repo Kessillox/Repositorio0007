@@ -15,14 +15,14 @@ public class Usuario implements IAsesoria {
     private String nombre;
     private String apellido1;
     private String apellido2;
-    private Date fechaNacimiento;
+    private String fechaNacimiento;
     private String run;
     private int edad;
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellido1, String apellido2, Date fechaNacimiento, String run) {
+    public Usuario(String nombre, String apellido1, String apellido2, String fechaNacimiento, String run) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
@@ -54,11 +54,11 @@ public class Usuario implements IAsesoria {
         this.apellido2 = apellido2;
     }
 
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -84,7 +84,7 @@ public class Usuario implements IAsesoria {
         return "nombre: " + nombre +
                 ", apellido1: " + apellido1 +
                 ", apellido2: " + apellido2 +
-                ", fechaNacimiento: " + fechaNacimiento +
+                ", fecha nacimiento: " + fechaNacimiento +
                 ", run: " + run +
                 ", edad: " + edad;
     }

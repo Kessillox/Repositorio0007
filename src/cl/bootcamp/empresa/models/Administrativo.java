@@ -17,7 +17,9 @@ public class Administrativo extends Usuario{
     public Administrativo() {
     }
 
-    public Administrativo(String nombre, String apellido1, String apellido2, Date fechaNacimiento, String run, String area, String experenciaArea) {
+    public Administrativo(String nombre, String apellido1, String apellido2,
+                          String fechaNacimiento, String run, String area,
+                          String experenciaArea) {
         super(nombre, apellido1, apellido2, fechaNacimiento, run);
         this.area = area;
         this.experenciaArea = experenciaArea;

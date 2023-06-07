@@ -1,7 +1,5 @@
 package cl.bootcamp.empresa.models;
 
-import java.util.Date;
-
 /**
  * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
  * La clase Cliente contiene 5 atributos
@@ -19,7 +17,10 @@ public class Cliente extends Usuario{
     public Cliente() {
     }
 
-    public Cliente(String nombre, String apellido1, String apellido2, Date fechaNacimiento, String run, String nombreEmpresa, String giroEmpresa, String telefonoRepresentante, String direccionEmpresa, String comunaEmpresa) {
+    public Cliente(String nombre, String apellido1, String apellido2,
+                   String fechaNacimiento, String run, String nombreEmpresa,
+                   String giroEmpresa, String telefonoRepresentante,
+                   String direccionEmpresa, String comunaEmpresa) {
         super(nombre, apellido1, apellido2, fechaNacimiento, run);
         this.nombreEmpresa = nombreEmpresa;
         this.giroEmpresa = giroEmpresa;
@@ -68,4 +69,12 @@ public class Cliente extends Usuario{
         this.comunaEmpresa = comunaEmpresa;
     }
 
+    @Override
+    public String toString() {
+        return "nombre empresa: " + nombreEmpresa +
+                ", giro empresa: " + giroEmpresa +
+                ", teléfono representante: " + telefonoRepresentante +
+                ", dirección empresa: " + direccionEmpresa +
+                ", comuna empresa: " + comunaEmpresa;
+    }
 }
