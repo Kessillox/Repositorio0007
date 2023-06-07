@@ -35,8 +35,9 @@ public class Contenedor {
     }
 
 
-    public void eliminarUsuario(int run) {
-        listaDeUsuarios.removeIf(usuario -> usuario.getRun().equals(Long.valueOf(run)));
+    public void eliminarUsuario(int rut) {
+        long run = rut;
+        listaDeUsuarios.removeIf(usuario -> usuario.getRun() == run);
     }
 
     public void listarUsuarios() {
