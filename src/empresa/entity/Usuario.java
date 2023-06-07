@@ -10,14 +10,14 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
     private String apellido1;
     private String apellido2;
     private LocalDate fechaDeNacimiento;
-    private Long run;
+    private int run;
     
     // constructor vacio
     public Usuario() {
     }
     
     // constructor con parametros, atributos de la clase
-    public Usuario(String nombreUsuario, String apellido1, String apellido2, LocalDate fechaDeNacimiento, Long run) {
+    public Usuario(String nombreUsuario, String apellido1, String apellido2, LocalDate fechaDeNacimiento, int run) {
         this.nombreUsuario = nombreUsuario;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
@@ -31,6 +31,9 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
     }
 
     public void setNombreUsuario(String nombreUsuario) {
+        if (nombreUsuario.length() < 10 || nombreUsuario.length() > 50) {
+            throw new IllegalArgumentException("El nombre debe tener entre 10 y 50 caracteres.");
+        }
         this.nombreUsuario = nombreUsuario;
     }
 
@@ -60,11 +63,14 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
         this.fechaDeNacimiento = LocalDate.parse(fechaDeNacimiento, formatter);
     }
 
-    public Long getRun() {
+    public int getRun() {
         return run;
     }
 
-    public void setRun(Long run) {
+    public void setRun(int run) {
+        if (run >= 99999999) {
+            throw new IllegalArgumentException("El RUN debe ser un número menor a 99.999.999.");
+        }
         this.run = run;
     }
 

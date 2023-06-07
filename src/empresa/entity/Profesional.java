@@ -14,7 +14,7 @@ public class Profesional extends Usuario {
     }
 
     //Constructor con atributos de la clase Profesional y de la clase Usuario
-    public Profesional(String nombreUsuario, String apellido1, String apellido2, LocalDate fechaDeNacimiento, Long run, String titulo, LocalDate fechaIngreso) {
+    public Profesional(String nombreUsuario, String apellido1, String apellido2, LocalDate fechaDeNacimiento, int run, String titulo, LocalDate fechaIngreso) {
         super(nombreUsuario, apellido1, apellido2, fechaDeNacimiento, run);
         this.titulo = titulo;
         this.fechaIngreso = fechaIngreso;
