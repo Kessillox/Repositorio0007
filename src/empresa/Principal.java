@@ -28,11 +28,11 @@ public class Principal {
 
         //System.out.println(user1.toString());
         user1.analizarUsuario();
-
+        pro1.analizarUsuario();
         cont.almacenarAdministrativo(user1);//Agregar a la lista
 
-
-        //cont.listarUsuariosPorTipo(user1);
+        cont.almacenarProfesional(pro1);
+        cont.listarUsuariosPorTipo(user1);
 
         Scanner sc = new Scanner(System.in);
 
