@@ -10,14 +10,15 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) throws Exception {
         Contenedor cont = new Contenedor();
-        Administrativo user1 = new Administrativo("Cintiaaaaaaa", "Muñozzzzzzzz", "Valdészzzzzzzz", "19/09/2000", 22000000, "sidu", "5 años");
+        Administrativo user1 = new Administrativo("Cintia", "Muñoz", "Valdés", "19/09/1957", 22000000, "sidu", "5 años");
 
         //cont.almacenarAdministrativo(new Administrativo("Cintiaaaaaaa", "Muñoz", "Valdés", LocalDate.of(2000, 05, 19), 22000000, "sidu", "5 años") );
 
         //System.out.println(user1.mostrarEdad());
 
 
-        System.out.println(user1.toString());
+        //System.out.println(user1.toString());
+        user1.analizarUsuario();
 
         cont.almacenarAdministrativo(user1);//Agregar a la lista
 
