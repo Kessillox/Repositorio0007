@@ -12,7 +12,7 @@ public class ValidacionProfesional {
     }
 
     public static boolean validarFechaDeIngreso(String str) {
-        if (!str.matches("\\d{2}/\\d{2}/\\d{4}")) {
+        if (str.matches("\\d{2}/\\d{2}/\\d{4}")) {
             System.out.println("Fecha ingresada correctamente");
             return true;
         } else {
