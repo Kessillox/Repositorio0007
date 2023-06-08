@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Contenedor {
-    List<Profesional> almacenarProfecional = new ArrayList<>();
+    List<Profesional> almacenarProfesional = new ArrayList<>();
 
-    public void almacenarProfecional(Profesional p){
-        almacenarProfecional.add(p);
+    public void almacenarProfesional(Profesional p){
+        almacenarProfesional.add(p);
     }
 
     public void mostrarProfesional(){
-        for (Profesional p : almacenarProfecional) {
+        for (Profesional p : almacenarProfesional) {
             System.out.println(p);
         }
     }

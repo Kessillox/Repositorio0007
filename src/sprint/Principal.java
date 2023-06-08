@@ -8,35 +8,29 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-
         Usuario usuario1 = new Usuario ("Livio","Guitierrez","Zambrano", "09/03/1995",269876362);
 
 
        // Usuario usuario1 = new Usuario ("Livio","Guitierrez","Zambrano", "09/03/1995",269876362);
 
-        String nombre;
-        String apellido1;
-        String apellido2;
-        String fechaNacimiento;
-        int run;
+        //VARIABLES Usuarios
+        String nombreUser="";
+        String apellido1User="";
+        String apellido2User="";
+        String fechaNacimientoUser="";
+        int runUser;
         System.out.println("favor ingrese un nombre entre 3 y 20 caracteres.");
-        nombre = sc.nextLine();
+        nombreUser = sc.nextLine();
 
-        while (nombre.length() < 3 || nombre.length() > 20){
+        while (nombreUser.length() < 3 || nombreUser.length() > 20){
             System.out.println("debe ser mayor a 3 y menor a 20");
-            nombre = sc.nextLine();
+            nombreUser = sc.nextLine();
         }
 
         //VARIABLES
 
         int op =0;
-        //VARIABLES Usuarios
-        String nombre="";
-        String apellido1="";
-        String apellido2="";
-        String fechaNacimiento="";
-        int run;
+
         //VARIABLES PROFESIONAL
         String titulo ="";
         String fechaIngreso="";
@@ -65,28 +59,27 @@ public class Principal {
                     Scanner scP = new Scanner(System.in);
                     System.out.println("------Perfil Profesional------");
                     System.out.println("Ingrese su nombre");
-                    nombre=scP.nextLine();
+                    nombreUser=scP.nextLine();
 
 
                     System.out.println("Ingrese su Apellido 1");
-                    apellido1=scP.nextLine();
+                    apellido1User=scP.nextLine();
 
-                   Profesional profesional = new Profesional("Livio", "Gutierrez", "Franchesco", "05/12/1999", 92666666, scP.nextLine(),"15/12/09");
-                    if (profesional.getTitulo() != null && profesional.getTitulo().length() > 10 && profesional.getTitulo().length() < 50) {
+                    /*if (profesional.getTitulo() != null && profesional.getTitulo().length() > 10 && profesional.getTitulo().length() < 50) {
                         System.out.println(profesional.getTitulo());
                     }else {
                         System.out.println("Error: El titulo debe tener entre 10 y 50 caracteres.");
                     }
-
+*/
 
                     System.out.println("Ingrese su Apellido 2");
-                    apellido2=scP.nextLine();
+                    apellido2User=scP.nextLine();
 
                     System.out.println("Ingrese su Fecha de nasimiento");
-                    fechaNacimiento=scP.nextLine();
+                    fechaNacimientoUser=scP.nextLine();
 
                     System.out.println("Ingrese su Run");
-                    run=scP.nextInt();
+                    runUser=scP.nextInt();
 
                     System.out.println("Ingrese su Titulo");
                     titulo=scP.next();
@@ -94,11 +87,11 @@ public class Principal {
                     System.out.println("Ingrese su Fecha de Ingreso");
                     fechaIngreso=scP.nextLine();
 
-                    Profesional profesional = new Profesional(nombre,apellido1,apellido2,fechaNacimiento,run,titulo,fechaIngreso);
+                    Profesional profesional = new Profesional(nombreUser,apellido1User,apellido2User,fechaNacimientoUser,runUser,titulo,fechaIngreso);
                     System.out.println(profesional.toString());
 
                     Contenedor contenedor = new Contenedor();
-                    contenedor.almacenarProfecional(profesional);
+                    contenedor.almacenarProfesional(profesional);
 
                     contenedor.mostrarProfesional();
 
