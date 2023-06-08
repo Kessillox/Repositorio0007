@@ -17,12 +17,12 @@ La clase Usuario está abierta a la extensión, ya que se pueden crear nuevas cl
 
 public class Usuario implements IAsesoria {
 
-    private String nombre;
-    private String apellido1;
-    private String apellido2;
-    private String fechaNacimiento;
-    private String run;
-    private int edad;
+    protected String nombre;
+    protected String apellido1;
+    protected String apellido2;
+    protected String fechaNacimiento;
+    protected String run;
+    protected int edad;
 
     public Usuario() {
     }
@@ -90,7 +90,7 @@ public class Usuario implements IAsesoria {
 
     @Override
     public void analizarUsuario() {
-        System.out.print(nombre + " " + apellido1 + " " + apellido2);
+        System.out.print(nombre + " " + apellido1 + " " + apellido2 + " con run: " + run);
     }
 
     @Override

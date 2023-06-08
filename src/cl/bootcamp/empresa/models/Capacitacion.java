@@ -105,7 +105,6 @@ public class Capacitacion {
      *
      * @return String
      */
-
     @Override
     public String toString() {
         return "id: " + id +

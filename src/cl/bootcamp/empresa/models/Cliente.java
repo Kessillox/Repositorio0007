@@ -88,8 +88,8 @@ public class Cliente extends Usuario {
         this.comunaEmpresa = comunaEmpresa;
     }
 
-    public String obtenerNombre (){
-        return nombreEmpresa;
+    public String obtenerNombre() {
+        return nombre + " " + apellido1 + " " + apellido2;
     }
 
     @Override
