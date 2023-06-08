@@ -12,10 +12,10 @@ public class ValidacionCliente {
     }
     public static boolean validarRut(int rut){
         if(rut < 99999999) {
-            System.out.println("RUT registrado correctamente.");
+            System.out.println("RUT Cliente registrado correctamente.");
             return true;
         }else{
-            System.out.println("RUT ingresado incorrectamente.");
+            System.out.println("RUT Cliente ingresado incorrectamente.");
             return false;
         }
     }
