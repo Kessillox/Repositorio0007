@@ -19,6 +19,7 @@ public class Principal {
         String apellido2User="";
         String fechaNacimientoUser="";
         int runUser;
+
         System.out.println("favor ingrese un nombre entre 3 y 20 caracteres.");
         nombreUser = sc.nextLine();
 
