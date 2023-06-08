@@ -1,5 +1,6 @@
 import empresaclase14.*;
 import java.util.Scanner;
+import static empresaclase14.functions.Funciones.esSoloLetras;
 
 /**
  * Esta es la clase Main donde se crea la instancia de los objetos Usuario, Capacitación y Cliente
@@ -14,17 +15,58 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
-
         String tituloMenu = "";
+        int opcion = 0;
+
+        // Variables de Usuario
+
+        String nombreUsuario = "";
+        String apellido1Usuario = "";
+        String apellido2Usuario = "";
+        String fechaDeNacimientoUsuario = "";
+        Integer runUsuario = 0;
 
         do{
             System.out.println("\n Bienvenido a Sprint Modulo 4 Programación en Java!");
             System.out.println("--------------------------------------");
             System.out.println("Que operación deseas realizar? (Debes pulsar un número)");
-            System.out.println("\n1.- Registrar");
+            System.out.println("\n1.- Registrar Usuario");
             System.out.println("2.- Salir");
-            tituloMenu = entrada.nextLine();
+            System.out.println("Selecciona una opción:");
+            opcion = entrada.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("Bienvenido al registro de usuarios.\n");
+                    System.out.println("Ingresa el nombre: ");
+                    nombreUsuario = entrada.next();
+                    System.out.println("Ingresa el primer apellido:\n");
+                    apellido1Usuario = entrada.next();
+                    System.out.println("Ingresa el segundo apellido:\n");
+                    apellido2Usuario = entrada.next();
+                    System.out.println("Ingresa la fecha de nacimiento:\n");
+                    fechaDeNacimientoUsuario = entrada.next();
+                    System.out.println("Ingresa el RUN:\n");
+                    runUsuario = entrada.nextInt();
+
+                    Usuario luis = new Usuario(nombreUsuario, apellido1Usuario, apellido2Usuario, fechaDeNacimientoUsuario, runUsuario);
+
+                    System.out.println("#################");
+                    System.out.println(luis.toString());;
+                    System.out.println("#################");
+
+                    /*
+                    *   String nombreUsuario = "";
+                        String apellido1Usuario = "";
+                        String apellido2Usuario = "";
+                        String fechaDeNacimientoUsuario = "";
+                        Integer run = 0;
+                    * */
+
+            }
+
         }while(tituloMenu.isEmpty());
+
 
         // Se instancia la clase Listado
         Listado listadoDeUsuarios = new Listado();
