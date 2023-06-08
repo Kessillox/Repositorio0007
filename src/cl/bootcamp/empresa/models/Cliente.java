@@ -9,6 +9,9 @@ La clase Cliente está abierta a la extensión, ya que se pueden crear nuevas cl
 /* Principio de sustitución de Liskov (LSP - Liskov Substitution Principle):
  La clase Cliente extiende de la clase Usuario. Según el principio de Liskov, los objetos de las clases derivadas pueden reemplazar a los objetos de la clase base (Usuario) sin alterar el comportamiento del programa.*/
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
  * La clase Cliente contiene 5 atributos
@@ -24,8 +27,14 @@ public class Cliente extends Usuario {
     private String telefonoRepresentante;
     private String direccionEmpresa;
     private String comunaEmpresa;
+    private List<Capacitacion> capacitaciones;
+    private List<Accidente> accidentes;
+    private List<VisitaTerreno> visitasTerreno;
 
     public Cliente() {
+        capacitaciones = new ArrayList<>();
+        accidentes = new ArrayList<>();
+        visitasTerreno = new ArrayList<>();
     }
 
     public Cliente(String nombre, String apellido1, String apellido2,
@@ -38,6 +47,9 @@ public class Cliente extends Usuario {
         this.telefonoRepresentante = telefonoRepresentante;
         this.direccionEmpresa = direccionEmpresa;
         this.comunaEmpresa = comunaEmpresa;
+        capacitaciones = new ArrayList<>();
+        accidentes = new ArrayList<>();
+        visitasTerreno = new ArrayList<>();
     }
 
     public String getNombreEmpresa() {
@@ -88,8 +100,41 @@ public class Cliente extends Usuario {
         this.comunaEmpresa = comunaEmpresa;
     }
 
-    public String obtenerNombre (){
-        return nombreEmpresa;
+    public String obtenerNombre() {
+        return nombre + " " + apellido1 + " " + apellido2;
+    }
+
+    public Cliente addCapacitacion(Capacitacion capacitacion) {
+        capacitaciones.add(capacitacion);
+        return this;
+    }
+
+    public void addCapacitacion(List<Capacitacion> capacitaciones) {
+        for (Capacitacion capacitacion : capacitaciones) {
+            this.capacitaciones.add(capacitacion);
+        }
+    }
+
+    public Cliente addAccidente(Accidente accidente) {
+        accidentes.add(accidente);
+        return this;
+    }
+
+    public void addAccidente(List<Accidente> accidentes) {
+        for (Accidente accidente : accidentes) {
+            this.accidentes.add(accidente);
+        }
+    }
+
+    public Cliente addVisitaTerreno(VisitaTerreno visitaTerrono) {
+        visitasTerreno.add(visitaTerrono);
+        return this;
+    }
+
+    public void addVisitaTerreno(List<VisitaTerreno> visitasTerreno) {
+        for (VisitaTerreno visitaTerreno : visitasTerreno) {
+            this.visitasTerreno.add(visitaTerreno);
+        }
     }
 
     @Override
