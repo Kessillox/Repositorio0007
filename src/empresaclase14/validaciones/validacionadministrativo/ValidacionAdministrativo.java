@@ -16,7 +16,7 @@ public class ValidacionAdministrativo {
             System.out.println("Experiencia previa ingresada correctamente");
             return true;
         }else{
-            System.out.println("Experienciaprevia no válida, ingrese entre 0 y 100 carácteres");
+            System.out.println("Experiencia previa no válida, ingrese entre 0 y 100 carácteres");
             return false;
         }
     }

@@ -23,4 +23,17 @@ public class ValidacionCapacitacion {
         }
     }
 
+
+    public class ValidacionCantidadAsistentes {
+        public static boolean validarId(int id){
+            if(id <1 && id >999) {
+                System.out.println("Ingrese un número válido(1-999)");
+                return false;
+            }else{
+                System.out.println("Cantidad de asistentes ingresada incorrectamente.");
+                return true;
+            }
+        }
+    }
+
 }
