@@ -12,7 +12,7 @@ public class ValidacionAdministrativo {
     }
 
     public static boolean validarExperienciaPrevia(String str){
-        if(str != null && str.length() >= 0 && str.length() <= 100){
+        if(str != null && str.length() >= 3 && str.length() <= 100){
             System.out.println("Experiencia previa ingresada correctamente");
             return true;
         }else{
