@@ -1,9 +1,9 @@
-package evaluacionFinalModuloJava;
+package evaluacionFinalModuloJava.entity;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Cliente extends Usuario{
+public class Cliente extends Usuario {
 
     private int rut;
     private String nombreEmpresa;

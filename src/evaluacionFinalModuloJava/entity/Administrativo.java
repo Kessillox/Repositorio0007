@@ -1,4 +1,4 @@
-package evaluacionFinalModuloJava;
+package evaluacionFinalModuloJava.entity;
 
 public class Administrativo extends Usuario {
     private String area;

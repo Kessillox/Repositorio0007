@@ -1,6 +1,6 @@
-package evaluacionFinalModuloJava;
+package evaluacionFinalModuloJava.entity;
 
-public class Profesional extends Usuario{
+public class Profesional extends Usuario {
     private String Titulo;
     private String fechaIngreso;
 

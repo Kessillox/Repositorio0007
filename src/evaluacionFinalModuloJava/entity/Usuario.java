@@ -1,10 +1,10 @@
-package evaluacionFinalModuloJava;
+package evaluacionFinalModuloJava.entity;
 
-import TG16.Asesoria;
+import evaluacionFinalModuloJava.interfac.IAsesoria;
 
 import java.time.LocalDate;
 
-public class Usuario implements Iasesoria {
+public class Usuario implements IAsesoria {
     private String nombre;
 
     private String apellido1;

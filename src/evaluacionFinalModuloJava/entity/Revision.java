@@ -1,4 +1,4 @@
-package evaluacionFinalModuloJava;
+package evaluacionFinalModuloJava.entity;
 
 public class Revision {
     private int idRevision;

@@ -1,5 +1,5 @@
 package evaluacionFinalModuloJava.interfac;
 
-public interface Iasesoria {
+public interface IAsesoria {
     public void analizarUsuario();
 }
