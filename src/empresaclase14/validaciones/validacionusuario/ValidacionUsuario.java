@@ -9,13 +9,11 @@ public class ValidacionUsuario {
                 return false;
             }
         }
-        System.out.println("El String son solo letras esta bien");
         return true;
     }
 
     public static boolean validarNombre(String str) {
         if(str != null && str.length() >= 10 && str.length() <= 50){
-            System.out.println("Nombre cumple el largo!");
             return true;
         }else{
             System.out.println("Nombre no cumple el largo.");
@@ -25,7 +23,6 @@ public class ValidacionUsuario {
 
     public static boolean esStringObligatorio(String str) {
         if(str != null && !str.isEmpty()){
-            System.out.println("Bien el nombre se esta!");
             return true;
         }else {
             System.out.println("El ingreso debe ser obligatorio!");
