@@ -71,23 +71,23 @@ public class Main {
                     do {
                         System.out.println("Ingresa el nombre: (mínimo 10 caracteres y máximo 50)");
                         nombreUsuario = entrada.next();
-                    } while (validarNombre(nombreUsuario) && esStringObligatorio(nombreUsuario) || esSoloLetras(nombreUsuario));
+                    } while (!validarNombre(nombreUsuario) || !esStringObligatorio(nombreUsuario) || !esSoloLetras(nombreUsuario));
                     do {
                         System.out.println("Ingresa el primer apellido:");
                         apellido1Usuario = entrada.next();
-                    } while (esStringObligatorio(apellido1Usuario) && esSoloLetras(apellido1Usuario));
+                    } while (!esStringObligatorio(apellido1Usuario) || !esSoloLetras(apellido1Usuario));
                     do {
                         System.out.println("Ingresa el segundo apellido:");
                         apellido2Usuario = entrada.next();
-                    } while (esStringObligatorio(apellido2Usuario) && esSoloLetras(apellido2Usuario));
+                    } while (!validarNombre(apellido2Usuario) || !esStringObligatorio(apellido2Usuario) || !esSoloLetras(apellido2Usuario));
                     do {
                         System.out.println("Ingresa la fecha de nacimiento:");
                         fechaDeNacimientoUsuario = entrada.next();
-                    } while (!esStringObligatorio(apellido2Usuario));
+                    } while (!validarFecha(fechaDeNacimientoUsuario));
                     do {
                         System.out.println("Ingresa el RUN sin punto ni guion");
                         runUsuario = entrada.nextInt();
-                    } while (!validarRun(runUsuario));
+                    } while (!validarRut(runUsuario));
                     Usuario usuarioEjemplo = new Usuario(nombreUsuario, apellido1Usuario, apellido2Usuario, fechaDeNacimientoUsuario, runUsuario);
 
                     System.out.println(usuarioEjemplo.toString());
