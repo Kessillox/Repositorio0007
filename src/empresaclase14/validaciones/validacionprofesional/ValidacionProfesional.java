@@ -1,4 +1,4 @@
-package empresaclase14.validaciones.validacionesprofesional;
+package empresaclase14.validaciones.validacionprofesional;
 
 public class ValidacionProfesional {
     public static boolean validarTitulo(String str) {
@@ -12,7 +12,7 @@ public class ValidacionProfesional {
     }
 
     public static boolean validarFechaDeIngreso(String str) {
-        if (str.matches("\\d{2}/\\d{2}/\\d{4}")) {
+        if (str != null && str.matches("\\d{2}/\\d{2}/\\d{4}")) {
             System.out.println("Fecha ingresada correctamente");
             return true;
         } else {
