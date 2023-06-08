@@ -93,13 +93,15 @@ public class Cliente extends Usuario {
         this.comunaEmpresa = comunaEmpresa;
     }
 
+    public String obtenerNombre (){
+        return nombreEmpresa;
+    }
+
     @Override
     public void analizarUsuario() {
         System.out.print("El cliente: ");
         super.analizarUsuario();
         System.out.println(", nombre empresa: " + nombreEmpresa +
-                ", giro empresa: " + giroEmpresa +
-                ", teléfono representante: " + telefonoRepresentante +
                 ", dirección empresa: " + direccionEmpresa +
                 ", comuna empresa: " + comunaEmpresa);
     }
