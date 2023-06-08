@@ -1,7 +1,7 @@
 import empresaclase14.*;
 import java.util.Scanner;
-import static empresaclase14.functions.Funciones.esSoloLetras;
-import static empresaclase14.functions.Funciones.validarNombre;
+
+import static empresaclase14.validaciones.validacionusuario.ValidacionUsuario.*;
 
 /**
  * Esta es la clase Main donde se crea la instancia de los objetos Usuario, Capacitación y Cliente
@@ -13,8 +13,11 @@ import static empresaclase14.functions.Funciones.validarNombre;
  */
 
 public class Main {
+
+
     public static void main(String[] args) {
 
+        Scanner entrada = new Scanner(System.in);
 
         String tituloMenu = "";
         int opcion = 0;
@@ -28,7 +31,7 @@ public class Main {
         Integer runUsuario = 0;
 
         do{
-            Scanner entrada = new Scanner(System.in);
+
             System.out.println("\n Bienvenido a Sprint Modulo 4 Programación en Java!");
             System.out.println("--------------------------------------");
             System.out.println("Que operación deseas realizar? (Debes pulsar un número)");
@@ -38,15 +41,16 @@ public class Main {
             opcion = entrada.nextInt();
 
             switch (opcion) {
-
                 case 1:
                     System.out.println("Bienvenido al registro de usuarios.\n");
-                    System.out.println("Ingresa el nombre: ");
                     do{
+                    System.out.println("Ingresa el nombre: ");
                         nombreUsuario = entrada.next();
-                    }while(!validarNombre(nombreUsuario));
-                    System.out.println("Ingresa el primer apellido:\n");
-                    apellido1Usuario = entrada.next();
+                    }while(!validarNombre(nombreUsuario) && esStringObligatorio(nombreUsuario));
+                    do {
+                        System.out.println("Ingresa el primer apellido:\n");
+                        apellido1Usuario = entrada.next();
+                    }while(apellido1Usuario.isEmpty() || apellido1Usuario.isBlank() || apellido1Usuario.equals("") || apellido1Usuario.equals(" "));
                     System.out.println("Ingresa el segundo apellido:\n");
                     apellido2Usuario = entrada.next();
                     System.out.println("Ingresa la fecha de nacimiento:\n");
@@ -55,7 +59,6 @@ public class Main {
                     runUsuario = entrada.nextInt();
                     entrada.close();
                     Usuario usuarioEjemplo = new Usuario(nombreUsuario, apellido1Usuario, apellido2Usuario, fechaDeNacimientoUsuario, runUsuario);
-
             }
 
         }while(nombreUsuario.isEmpty());

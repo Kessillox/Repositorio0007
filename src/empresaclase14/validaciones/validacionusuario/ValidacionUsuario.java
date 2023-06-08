@@ -1,6 +1,6 @@
-package empresaclase14.functions;
+package empresaclase14.validaciones.validacionusuario;
 
-public class Funciones {
+public class ValidacionUsuario {
 
     public static boolean esSoloLetras(String str) {
         for (int i = 0; i < str.length(); i++) {
@@ -21,5 +21,11 @@ public class Funciones {
         }
 
     }
+
+    public static boolean esStringObligatorio(String str) {
+        return (str != null && !str.isEmpty());
+    }
+
+
 
 }
