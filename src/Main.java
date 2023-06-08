@@ -57,7 +57,7 @@ public class Main {
                     System.out.println("Bienvenido al registro de usuarios.");
                     do {
                         System.out.println("Ingresa el nombre: (mínimo 10 caracteres y máximo 50)");
-                        nombreUsuario = entrada.nextLine();
+                        nombreUsuario = entrada.next();
                     } while (validarNombre(nombreUsuario) && esStringObligatorio(nombreUsuario) || esSoloLetras(nombreUsuario));
                     do {
                         System.out.println("Ingresa el primer apellido:");
