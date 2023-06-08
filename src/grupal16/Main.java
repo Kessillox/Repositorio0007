@@ -13,5 +13,6 @@ public class Main {
         listado.agregarUsuario(administrativo);
 
         listado.analizarUsuarios();
+        profesional.analizarUsuario();
     }
 }

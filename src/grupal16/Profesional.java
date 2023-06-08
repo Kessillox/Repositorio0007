@@ -10,6 +10,7 @@ public class Profesional extends Usuario {
         this.fechaIngreso = fechaIngreso;
     }
 
+    @Override
     public void analizarUsuario() {
         super.analizarUsuario();
         System.out.println("Título: " + titulo);
