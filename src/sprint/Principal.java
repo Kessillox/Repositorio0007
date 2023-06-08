@@ -27,6 +27,10 @@ public class Principal {
             nombreUser = sc.nextLine();
         }
 
+
+        //Accidentes
+
+
         //VARIABLES
 
         int op =0;
