@@ -1,6 +1,9 @@
 import cl.bootcamp.empresa.interfaces.IAsesoria;
 import cl.bootcamp.empresa.models.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /* Violación del Principio de inversión de dependencia (DIP):
 Se corrige el tipo de los objetos antes de las clases Administrativo, Profesional y Cliente,
  ahora del tipo de la interface IAsesoria para aplicar el principio DIP y depender de abstracciones.
@@ -24,6 +27,16 @@ public class Main {
                 .addUsuarios(cliente1);
 
         listadoUsuarios.analizarUsuarios();
+
+
+        Date date = new Date(); // Obtener la fecha actual
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
+        String dateString = format.format(date);
+        System.out.println("Fecha formateada: " + dateString);
+
+
+
 
     }
 }
