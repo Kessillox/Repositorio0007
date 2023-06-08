@@ -68,4 +68,42 @@ public class Principal {
             }
         }while (op>3);
     }
+
+
+    //Validaciones sergio
+    //Objeto VisitaTerreno
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
