@@ -1,4 +1,5 @@
 import empresaclase14.*;
+import java.util.Scanner;
 
 /**
  * Esta es la clase Main donde se crea la instancia de los objetos Usuario, Capacitación y Cliente
@@ -11,6 +12,19 @@ import empresaclase14.*;
 
 public class Main {
     public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        String tituloMenu = "";
+
+        do{
+            System.out.println("\n Bienvenido a Sprint Modulo 4 Programación en Java!");
+            System.out.println("--------------------------------------");
+            System.out.println("Que operación deseas realizar? (Debes pulsar un número)");
+            System.out.println("\n1.- Registrar");
+            System.out.println("2.- Salir");
+            tituloMenu = entrada.nextLine();
+        }while(tituloMenu.isEmpty());
 
         // Se instancia la clase Listado
         Listado listadoDeUsuarios = new Listado();
