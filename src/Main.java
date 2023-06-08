@@ -4,6 +4,17 @@ import java.util.Scanner;
 
 import static empresaclase14.validaciones.validacionusuario.ValidacionUsuario.*;
 import static empresaclase14.validaciones.validacioncliente.ValidacionCliente.*;
+import static empresaclase14.validaciones.validacionaccidente.ValidacionAccidente.*;
+import static empresaclase14.validaciones.validacionadministrativo.ValidacionAdministrativo.*;
+import static empresaclase14.validaciones.validacioncapacitacion.ValidacionCapacitacion.*;
+import static empresaclase14.validaciones.validacionidentificador.ValidacionIdentificador.*;
+import static empresaclase14.validaciones.validacionprofesional.ValidacionProfesional.*;
+import static empresaclase14.validaciones.validacionrevision.ValidacionRevision.*;
+import static empresaclase14.validaciones.validacionvisitaterreno.ValidacionVisitaTerreno.*;
+
+
+
+
 
 
 /**
