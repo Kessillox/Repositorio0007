@@ -2,7 +2,7 @@ package empresa.entity;
 
 public class VisitaTerreno {
     private int idVisit;
-    private long rutCliente;
+    private int rutCliente;
     private String dia;
     private String hora;
     private String lugar;
@@ -11,7 +11,7 @@ public class VisitaTerreno {
     public VisitaTerreno() {
     }
 
-    public VisitaTerreno(int idVisit, long rutCliente, String dia, String hora, String lugar, String comentarios) {
+    public VisitaTerreno(int idVisit, int rutCliente, String dia, String hora, String lugar, String comentarios) {
         this.idVisit = idVisit;
         this.rutCliente = rutCliente;
         this.dia = dia;
@@ -28,11 +28,11 @@ public class VisitaTerreno {
         this.idVisit = idVisit;
     }
 
-    public long getRutCliente() {
+    public int getRutCliente() {
         return rutCliente;
     }
 
-    public void setRutCliente(long rutCliente) {
+    public void setRutCliente(int rutCliente) {
         this.rutCliente = rutCliente;
     }
 

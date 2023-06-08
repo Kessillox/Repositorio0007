@@ -17,8 +17,7 @@ public class Cliente extends Usuario {
     }
 
     //Constructor con atributos de la clase Cliente y atributos heredados de la clase Usuario
-    public Cliente(String nombreUsuario, String apellido1, String apellido2, String fechaDeNacimiento, int run,
-                   String razonSocial, String giroEmpresa, int rut, String telefonoRepresentante, String direccion, String comuna) {
+    public Cliente(String nombreUsuario, String apellido1, String apellido2, String fechaDeNacimiento, int run, String razonSocial, String giroEmpresa, int rut, String telefonoRepresentante, String direccion, String comuna) {
         super(nombreUsuario, apellido1, apellido2, fechaDeNacimiento, run);
         this.razonSocial = razonSocial;
         this.giroEmpresa = giroEmpresa;
