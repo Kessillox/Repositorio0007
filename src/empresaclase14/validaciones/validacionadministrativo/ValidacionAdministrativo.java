@@ -12,11 +12,11 @@ public class ValidacionAdministrativo {
     }
 
     public static boolean validarExperienciaPrevia(String str){
-        if(str != null && str.length() >= 3 && str.length() <= 100){
+        if(str.length() <= 100){
             System.out.println("Experiencia previa ingresada correctamente");
             return true;
         }else{
-            System.out.println("Experienciaprevia no válida, ingrese entre 0 y 100 carácteres");
+            System.out.println("Experiencia previa no válida, ingrese entre 0 y 100 carácteres");
             return false;
         }
     }

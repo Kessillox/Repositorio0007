@@ -1,10 +1,12 @@
 import empresaclase14.*;
+
 import java.util.Scanner;
 
 import static empresaclase14.validaciones.validacionusuario.ValidacionUsuario.*;
 
 /**
  * Esta es la clase Main donde se crea la instancia de los objetos Usuario, Capacitación y Cliente
+ *
  * @author Leadro Villalba
  * @author Luis Zambrano
  * @author Gustavo Vargas
@@ -39,7 +41,7 @@ public class Main {
         String direccionEmpresa;
         String comunaEmpresa;
 
-        do{
+        do {
 
             System.out.println("\n Bienvenido a Sprint Modulo 4 Programación en Java!");
             System.out.println("--------------------------------------");
@@ -53,26 +55,26 @@ public class Main {
             switch (opcion) {
                 case 1:
                     System.out.println("Bienvenido al registro de usuarios.");
-                    do{
-                        System.out.println("Ingresa el nombre:");
+                    do {
+                        System.out.println("Ingresa el nombre: (mínimo 10 caracteres y máximo 50)");
                         nombreUsuario = entrada.next();
-                    }while(!validarNombre(nombreUsuario) && esStringObligatorio(nombreUsuario));
-                    do{
+                    } while (validarNombre(nombreUsuario) && esStringObligatorio(nombreUsuario) || esSoloLetras(nombreUsuario));
+                    do {
                         System.out.println("Ingresa el primer apellido:");
                         apellido1Usuario = entrada.next();
-                    }while(!esStringObligatorio(apellido1Usuario));
-                    do{
+                    } while (esStringObligatorio(apellido1Usuario) && esSoloLetras(apellido1Usuario));
+                    do {
                         System.out.println("Ingresa el segundo apellido:");
                         apellido2Usuario = entrada.next();
-                    }while(!esStringObligatorio(apellido2Usuario));
-                    do{
+                    } while (esStringObligatorio(apellido2Usuario) && esSoloLetras(apellido2Usuario));
+                    do {
                         System.out.println("Ingresa la fecha de nacimiento:");
                         fechaDeNacimientoUsuario = entrada.next();
-                    }while(!esStringObligatorio(apellido2Usuario));
-                    do{
+                    } while (!esStringObligatorio(apellido2Usuario));
+                    do {
                         System.out.println("Ingresa el RUN sin punto ni guion");
                         runUsuario = entrada.nextInt();
-                    }while(!validarRun(runUsuario));
+                    } while (!validarRun(runUsuario));
                     Usuario usuarioEjemplo = new Usuario(nombreUsuario, apellido1Usuario, apellido2Usuario, fechaDeNacimientoUsuario, runUsuario);
 
                     System.out.println(usuarioEjemplo.toString());
@@ -104,7 +106,7 @@ public class Main {
                     System.out.println(clienteEjemplo.toString());
             }
 
-        }while(nombreUsuario.isEmpty());
+        } while (nombreUsuario.isEmpty());
 
         // Se instancia la clase Listado
         Listado listadoDeUsuarios = new Listado();
@@ -114,8 +116,8 @@ public class Main {
         Usuario usuario2 = new Usuario("Benito", "Mussolini", "Repetto", "01/01/1941", 11111112);
 
         //  Se instancian los tipo cliente
-        Cliente cliente1 = new Cliente("Pelayo", "Fernandez", "Torrealba", "12/12/1990", 111111111, "Fundimax", "Fundidora", 99999999, "9845615498", "Lejos 124", "Los Alpes" );
-        Cliente cliente2 = new Cliente("Cristian", "Trureo", "Trureo", "11/11/1991", 222222221, "Awakelab", "Capacitaciones IT", 55555555,"123123123123", "Lejos 777", "Los Alpes");
+        Cliente cliente1 = new Cliente("Pelayo", "Fernandez", "Torrealba", "12/12/1990", 111111111, "Fundimax", "Fundidora", 99999999, "9845615498", "Lejos 124", "Los Alpes");
+        Cliente cliente2 = new Cliente("Cristian", "Trureo", "Trureo", "11/11/1991", 222222221, "Awakelab", "Capacitaciones IT", 55555555, "123123123123", "Lejos 777", "Los Alpes");
 
         Profesional profesional1 = new Profesional("Luis", "Zambrano", "Zambrano", "06-06-2023", 186850149, "Analista Programador", "06-06-2023");
         Profesional profesional2 = new Profesional("Livio", "Gut", "Guti", "10-10-2023", 333333333, "Ingeniero Físico Termonuclear", "10-12-2023");
