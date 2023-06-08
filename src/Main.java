@@ -3,6 +3,8 @@ import empresaclase14.*;
 import java.util.Scanner;
 
 import static empresaclase14.validaciones.validacionusuario.ValidacionUsuario.*;
+import static empresaclase14.validaciones.validacioncliente.ValidacionCliente.*;
+
 
 /**
  * Esta es la clase Main donde se crea la instancia de los objetos Usuario, Capacitación y Cliente
@@ -89,8 +91,9 @@ public class Main {
                     */
 
                     System.out.println("Bienvenido al registro de Clientes");
-                    System.out.println("Ingrese el nombre de la empresa");
-                    nombreEmpresa = entrada.next();
+                    do { System.out.println("Ingrese el nombre de la empresa");
+                    nombreEmpresa = entrada.next();}
+                    while (!validarNombreEmpresa(nombreEmpresa));
                     System.out.println("Ingrese el giro de la empresa");
                     giroEmpresa = entrada.next();
                     System.out.println("Ingrese el rut de la empresa");
