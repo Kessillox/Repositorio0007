@@ -5,11 +5,12 @@ public class ValidacionUsuario {
     public static boolean esSoloLetras(String str) {
         for (int i = 0; i < str.length(); i++) {
             if (!Character.isLetter(str.charAt(i))) {
-                System.out.println("Solo debe ingresar letras.");
-                return true;
+                System.out.println("Solo puedes ingresar letras.");
+                return false;
             }
         }
-        return false;
+
+        return true;
     }
 
     public static boolean validarNombre(String str) {
