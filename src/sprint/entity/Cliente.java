@@ -68,6 +68,17 @@ public class Cliente extends Usuario{
         Comuna = comuna;
     }
 
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "NombreEmpresa='" + NombreEmpresa + '\'' +
+                ", GiroEmpresa='" + GiroEmpresa + '\'' +
+                ", Rut='" + Rut + '\'' +
+                ", TlfRepresentante='" + TlfRepresentante + '\'' +
+                ", DireccionEmpresa='" + DireccionEmpresa + '\'' +
+                ", Comuna='" + Comuna + '\'' +
+                '}';
+    }
 
     public String ObtenerNombre(){
         return "El nombre es" + this.getNombre();

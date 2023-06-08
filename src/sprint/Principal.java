@@ -8,20 +8,20 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Usuario usuario1 = new Usuario ("Livio","Guitierrez","Zambrano", "09/03/1995",269876362);
+       // Usuario usuario1 = new Usuario ("Livio","Guitierrez","Zambrano", "09/03/1995",269876362);
 
-        if (usuario1.getNombre() != null && usuario1.getNombre().length() > 3 && usuario1.getNombre().length() < 20) {
-            System.out.println(usuario1.getNombre());
-        }else {
-            System.out.println("Error: El nombre debe tener entre 3 y 20 caracteres.");
+        String nombre;
+        String apellido1;
+        String apellido2;
+        String fechaNacimiento;
+        int run;
+        System.out.println("favor ingrese un nombre entre 3 y 20 caracteres.");
+        nombre = sc.nextLine();
+
+        while (nombre.length() < 3 || nombre.length() > 20){
+            System.out.println("debe ser mayor a 3 y menor a 20");
+            nombre = sc.nextLine();
         }
-
-        if(usuario1.getFechaNacimiento() != null)
-            System.out.println("No puede estar nulo.");
-
-
-
-
 
         //VARIABLES
         int op =0;
@@ -50,12 +50,12 @@ public class Principal {
                     System.out.println("------Perfil Profesional------");
                     System.out.println("Ingrese su titulo");
 
-                   // Profesional profesional = new Profesional("Livio", "Gutierrez", "Franchesco", "05/12/1999", 92666666, scP.nextLine(),"15/12/09");
-                    /*if (profesional.getTitulo() != null && profesional.getTitulo().length() > 10 && profesional.getTitulo().length() < 50) {
+                   Profesional profesional = new Profesional("Livio", "Gutierrez", "Franchesco", "05/12/1999", 92666666, scP.nextLine(),"15/12/09");
+                    if (profesional.getTitulo() != null && profesional.getTitulo().length() > 10 && profesional.getTitulo().length() < 50) {
                         System.out.println(profesional.getTitulo());
                     }else {
                         System.out.println("Error: El titulo debe tener entre 10 y 50 caracteres.");
-                    }*/
+                    }
 
 
                     System.out.println("------Perfil Profesional------");
