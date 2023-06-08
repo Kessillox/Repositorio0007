@@ -30,6 +30,15 @@ public class Main {
         String fechaDeNacimientoUsuario = "";
         Integer runUsuario = 0;
 
+        // Variables de Cliente
+
+        String nombreEmpresa;
+        String giroEmpresa;
+        int rut;
+        String telefonoRepresentante;
+        String direccionEmpresa;
+        String comunaEmpresa;
+
         do{
 
             System.out.println("\n Bienvenido a Sprint Modulo 4 Programación en Java!");
@@ -66,6 +75,32 @@ public class Main {
                     Usuario usuarioEjemplo = new Usuario(nombreUsuario, apellido1Usuario, apellido2Usuario, fechaDeNacimientoUsuario, runUsuario);
 
                     System.out.println(usuarioEjemplo.toString());
+                case 2:
+                    /*
+                    String nombreEmpresa;
+                    String giroEmpresa;
+                    int rut;
+                    String telefonoRepresentante;
+                    String direccionEmpresa;
+                    String comunaEmpresa;
+                    */
+
+                    System.out.println("Bienvenido al registro de Clientes");
+                    System.out.println("Ingrese el nombre de la empresa");
+                    nombreEmpresa = entrada.next();
+                    System.out.println("Ingrese el giro de la empresa");
+                    giroEmpresa = entrada.next();
+                    System.out.println("Ingrese el rut de la empresa");
+                    rut = entrada.nextInt();
+                    System.out.println("Ingrese el telefono de la empresa");
+                    telefonoRepresentante = entrada.next();
+                    System.out.println("Ingrese la dirección de la empresa");
+                    direccionEmpresa = entrada.next();
+                    System.out.println("Ingrese la comuna de la empresa");
+                    comunaEmpresa = entrada.next();
+                    Cliente clienteEjemplo = new Cliente(nombreEmpresa, giroEmpresa, rut, telefonoRepresentante, direccionEmpresa, comunaEmpresa);
+
+                    System.out.println(clienteEjemplo.toString());
             }
 
         }while(nombreUsuario.isEmpty());
