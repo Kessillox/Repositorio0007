@@ -1,8 +1,6 @@
 package empresa;
 
-import empresa.entity.Administrativo;
-import empresa.entity.Cliente;
-import empresa.entity.Profesional;
+import empresa.entity.*;
 import empresa.services.Contenedor;
 
 import java.util.Scanner;
@@ -26,6 +24,20 @@ public class Principal {
 
         cont.listarUsuariosPorTipo(user1);
 
+        Capacitacion capa = new Capacitacion();
+
+        capa.setIdentificador(1);
+        capa.setDia("Lunes");
+        capa.setRutCliente(345345555);
+        capa.setLugar("Talcahuano");
+        capa.setDuracion("duracion de 12 a 4");
+        capa.setCantidadDeAsistentes(10);
+        capa.setHora("10:45");
+
+        System.out.println(capa.toString());
+
+        Accidente acc = new Accidente();
+        acc.setDiaAcc("10/07/2022");
         /*Scanner sc = new Scanner(System.in);
 
         int run;
@@ -37,7 +49,7 @@ public class Principal {
 
         cont.listarUsuarios();*/
 
-        int opcion = 0;
+       /*int opcion = 0;
         while (opcion != 9) {
             mostrarMenu();
             opcion = sc.nextInt();
@@ -114,7 +126,7 @@ public class Principal {
                         return;
                     }
 
-                    cont.listarUsuariosPorTipo(usuarioTipo); */
+                    cont.listarUsuariosPorTipo(usuarioTipo);
                     break;
                 case 8:
                     cont.listarCapacitaciones();
@@ -143,10 +155,10 @@ public class Principal {
         System.out.println("7. Listar usuarios por tipo");
         System.out.println("8. Listar capacitaciones");
         System.out.println("9. Salir");
-        System.out.println("Ingrese una opción: ");
+        System.out.println("Ingrese una opción: ");*/
+    }
     }
 
-}
 
 
 
