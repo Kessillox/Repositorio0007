@@ -3,7 +3,7 @@ package sprint.entity;
 public class Cliente extends Usuario{
     private String NombreEmpresa;
     private String GiroEmpresa;
-    private String Rut;
+    private int Rut;
     private String TlfRepresentante;
     private String DireccionEmpresa;
     private String Comuna;
@@ -11,7 +11,7 @@ public class Cliente extends Usuario{
     public Cliente() {
     }
 
-    public Cliente(String nombreEmpresa, String giroEmpresa, String rut, String tlfRepresentante, String direccionEmpresa, String comuna) {
+    public Cliente(String nombreEmpresa, String giroEmpresa, int rut, String tlfRepresentante, String direccionEmpresa, String comuna) {
         NombreEmpresa = nombreEmpresa;
         GiroEmpresa = giroEmpresa;
         Rut = rut;
@@ -20,7 +20,7 @@ public class Cliente extends Usuario{
         Comuna = comuna;
     }
 
-    public Cliente(String nombre, String apellido1, String apellido2, String fechaNacimiento, int run, String nombreEmpresa, String giroEmpresa, String rut, String tlfRepresentante, String direccionEmpresa, String comuna) {
+    public Cliente(String nombre, String apellido1, String apellido2, String fechaNacimiento, int run, String nombreEmpresa, String giroEmpresa, int rut, String tlfRepresentante, String direccionEmpresa, String comuna) {
         super(nombre, apellido1, apellido2, fechaNacimiento, run);
         NombreEmpresa = nombreEmpresa;
         GiroEmpresa = giroEmpresa;
@@ -46,11 +46,11 @@ public class Cliente extends Usuario{
         GiroEmpresa = giroEmpresa;
     }
 
-    public String getRut() {
+    public int getRut() {
         return Rut;
     }
 
-    public void setRut(String rut) {
+    public void setRut(int rut) {
         Rut = rut;
     }
 

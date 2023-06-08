@@ -1,39 +1,37 @@
 package sprint;
 
+import sprint.entity.Cliente;
 import sprint.entity.Profesional;
 
 import sprint.entity.Usuario;
-
+import java.util.Date;
 import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Usuario usuario1 = new Usuario ("Livio","Guitierrez","Zambrano", "09/03/1995",269876362);
-
-
-       // Usuario usuario1 = new Usuario ("Livio","Guitierrez","Zambrano", "09/03/1995",269876362);
 
         //VARIABLES Usuarios
         String nombreUser="";
         String apellido1User="";
         String apellido2User="";
-        String fechaNacimientoUser="";
-        int runUser;
-        System.out.println("favor ingrese un nombre entre 3 y 20 caracteres.");
-        nombreUser = sc.nextLine();
+        String fechaNacimientoUser = "";
+        int runUser = 0 ;
+        Usuario usuario1 = new Usuario (nombreUser,apellido1User,apellido2User,fechaNacimientoUser,runUser);
 
-        while (nombreUser.length() < 3 || nombreUser.length() > 20){
-            System.out.println("debe ser mayor a 3 y menor a 20");
-            nombreUser = sc.nextLine();
-        }
+        //VARIABLES cliente
 
-        //VARIABLES
-
-        int op =0;
+        String nombreEmpresa = "";
+        String giroEmpresa = "";
+        int rut = 0 ;
+        String tlfRepresentante = "";
+        String direccionEmpresa = "";
+        String comunaEmpresa = "";
+        Cliente cliente1 = new Cliente(nombreUser,apellido1User,apellido2User,fechaNacimientoUser,runUser,nombreEmpresa, giroEmpresa, rut, tlfRepresentante, direccionEmpresa,comunaEmpresa);
 
         //VARIABLES PROFESIONAL
         String titulo ="";
         String fechaIngreso="";
+        int op =0;
 
 
         System.out.println("Bienvenido, ¿en que perfil desea trabajar?");
@@ -65,13 +63,6 @@ public class Principal {
                     System.out.println("Ingrese su Apellido 1");
                     apellido1User=scP.nextLine();
 
-                    /*if (profesional.getTitulo() != null && profesional.getTitulo().length() > 10 && profesional.getTitulo().length() < 50) {
-                        System.out.println(profesional.getTitulo());
-                    }else {
-                        System.out.println("Error: El titulo debe tener entre 10 y 50 caracteres.");
-                    }
-*/
-
                     System.out.println("Ingrese su Apellido 2");
                     apellido2User=scP.nextLine();
 
@@ -102,38 +93,38 @@ public class Principal {
                     break;
             }
         }while (op>3);
+
+
+
+
+        System.out.println("favor ingrese un nombre entre 3 y 20 caracteres.");
+        nombreUser = sc.nextLine();
+
+        while (nombreUser.length() < 3 || nombreUser.length() > 20){
+            System.out.println("debe ser mayor a 3 y menor a 20");
+            nombreUser = sc.nextLine();
+        }
+        System.out.println("Favor ingrese su fecha de nacimiento en el sig formato DD/MM/AAAA");
+        fechaNacimientoUser = sc.nextLine();
+
+        while (fechaNacimientoUser != null){
+            System.out.println("Favor ingrese una fecha valida con el siguiente formato DD/MM/AAAA");
+            fechaNacimientoUser = sc.nextLine();
+            break;
+        }
+        System.out.println("Favor ingrese su RUN, el cual debe ir sin punto, ni guion, ni digito verificador");
+        runUser = sc.nextInt();
+        while (runUser < 99999999){
+            System.out.println("Favor ingrese un run valido, sin puntos ni guion ni digito verificador");
+            runUser = sc.nextInt();
+        }
+
+
     }
 
 
     //Validaciones sergio
     //Objeto VisitaTerreno
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
