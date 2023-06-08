@@ -16,13 +16,11 @@ public class Principal {
         String apellido2User="";
 
         String fechaNacimientoUser="";
-        int runUser;
+        int runUser = 0;
 
         System.out.println("favor ingrese un nombre entre 3 y 20 caracteres.");
         nombreUser = sc.nextLine();
-
-        String fechaNacimientoUser = "";
-        int runUser = 0 ;
+        
         Usuario usuario1 = new Usuario (nombreUser,apellido1User,apellido2User,fechaNacimientoUser,runUser);
 
 
@@ -52,10 +50,19 @@ public class Principal {
 
 
         System.out.println("Bienvenido, ¿en que perfil desea trabajar?");
+
+
+
         System.out.println("------Perfiles------");
-        System.out.println("1 > Cliente");
-        System.out.println("2 > Profesional");
-        System.out.println("3 > Administrativo");
+        System.out.println("1 > Usuario");
+        System.out.println("2 > Cliente");
+        System.out.println("3 > Profesional");
+        System.out.println("4 > Administrativo");
+        System.out.println("5 > Capasitaciones");
+        System.out.println("6 > Accidente");
+        System.out.println("7 > Visita en Terreno");
+        System.out.println("8 > Revision");
+
         System.out.println();
         op=sc.nextInt();
 
@@ -67,10 +74,15 @@ public class Principal {
             }
             switch (op){
                 case 1:
-                    System.out.println("------Perfil Cliente------");
+                    System.out.println("------Usuario------");
+
 
                     break;
                 case 2:
+                    System.out.println("------Perfil Cliente------");
+
+                    break;
+                case 3:
                     Scanner scP = new Scanner(System.in);
                     System.out.println("------Perfil Profesional------");
                     System.out.println("Ingrese su nombre");
@@ -103,10 +115,21 @@ public class Principal {
 
                     contenedor.mostrarProfesional();
 
-
                     break;
-                case 3:
+                case 4:
                     System.out.println("------Perfil Administrativo------");
+                    break;
+                case 5:
+                    System.out.println("------Perfil Capasitaciones------");
+                    break;
+                case 6:
+                    System.out.println("------Perfil Accidente------");
+                    break;
+                case 7:
+                    System.out.println("------Perfil Visita en Terreno------");
+                    break;
+                case 8:
+                    System.out.println("------Perfil Revision------");
                     break;
             }
         }while (op>3);
