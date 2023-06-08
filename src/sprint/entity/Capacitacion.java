@@ -2,6 +2,7 @@ package sprint.entity;
 
 public class Capacitacion {
     int id;
+    String rutEmpresa;
     String dia;
     String hora;
     String lugar;
@@ -15,13 +16,14 @@ public class Capacitacion {
     public Capacitacion() {
     }
 
-    public Capacitacion(int id, String dia, String hora, String lugar, String duracion, int cantidadAsistente) {
+    public Capacitacion(int id, String dia, String hora, String lugar, String duracion, int cantidadAsistente, String rutEmpresa) {
         this.id = id;
         this.dia = dia;
         this.hora = hora;
         this.lugar = lugar;
         this.duracion = duracion;
         this.cantidadAsistente = cantidadAsistente;
+        this.rutEmpresa = rutEmpresa;
     }
 
     public int getId() {
@@ -72,11 +74,20 @@ public class Capacitacion {
         this.cantidadAsistente = cantidadAsistente;
     }
 
+    public String getRutEmpresa() {
+        return rutEmpresa;
+    }
+
+    public void setRutEmpresa(String rutEmpresa) {
+        this.rutEmpresa = rutEmpresa;
+    }
+
     @Override
     public String toString() {
         return "Capacitacion{" +
                 "id=" + id +
                 ", dia='" + dia + '\'' +
+                ", rutEmpresa='" + rutEmpresa + '\'' +
                 ", hora='" + hora + '\'' +
                 ", lugar='" + lugar + '\'' +
                 ", duracion='" + duracion + '\'' +

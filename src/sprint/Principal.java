@@ -1,39 +1,42 @@
 package sprint;
 
+import sprint.entity.Capacitacion;
 import sprint.entity.Profesional;
 
 import sprint.entity.Usuario;
+import sprint.entity.VisitaEnTerreno;
 
 import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Usuario usuario1 = new Usuario ("Livio","Guitierrez","Zambrano", "09/03/1995",269876362);
+        Usuario usuario1 = new Usuario("Livio", "Guitierrez", "Zambrano", "09/03/1995", 269876362);
 
 
-       // Usuario usuario1 = new Usuario ("Livio","Guitierrez","Zambrano", "09/03/1995",269876362);
+
+        // Usuario usuario1 = new Usuario ("Livio","Guitierrez","Zambrano", "09/03/1995",269876362);
 
         //VARIABLES Usuarios
-        String nombreUser="";
-        String apellido1User="";
-        String apellido2User="";
-        String fechaNacimientoUser="";
+        String nombreUser = "";
+        String apellido1User = "";
+        String apellido2User = "";
+        String fechaNacimientoUser = "";
         int runUser;
         System.out.println("favor ingrese un nombre entre 3 y 20 caracteres.");
         nombreUser = sc.nextLine();
 
-        while (nombreUser.length() < 3 || nombreUser.length() > 20){
+        while (nombreUser.length() < 3 || nombreUser.length() > 20) {
             System.out.println("debe ser mayor a 3 y menor a 20");
             nombreUser = sc.nextLine();
         }
 
         //VARIABLES
 
-        int op =0;
+        int op = 0;
 
         //VARIABLES PROFESIONAL
-        String titulo ="";
-        String fechaIngreso="";
+        String titulo = "";
+        String fechaIngreso = "";
 
 
         System.out.println("Bienvenido, ¿en que perfil desea trabajar?");
@@ -42,15 +45,15 @@ public class Principal {
         System.out.println("2 > Profesional");
         System.out.println("3 > Administrativo");
         System.out.println();
-        op=sc.nextInt();
+        op = sc.nextInt(); sc.nextLine(); //nextLine lo agregue para que no salte siguiente linea
 
         do {
-            if (op>3){
+            if (op > 3) {
                 System.out.println();
                 System.out.println("Opcion ingresada incorrecta, por favor ingrese una opcion valida");
-                op=sc.nextInt();
+                op = sc.nextInt();
             }
-            switch (op){
+            switch (op) {
                 case 1:
                     System.out.println("------Perfil Cliente------");
 
@@ -59,35 +62,35 @@ public class Principal {
                     Scanner scP = new Scanner(System.in);
                     System.out.println("------Perfil Profesional------");
                     System.out.println("Ingrese su nombre");
-                    nombreUser=scP.nextLine();
+                    nombreUser = scP.nextLine();
 
 
                     System.out.println("Ingrese su Apellido 1");
-                    apellido1User=scP.nextLine();
+                    apellido1User = scP.nextLine();
 
-                    /*if (profesional.getTitulo() != null && profesional.getTitulo().length() > 10 && profesional.getTitulo().length() < 50) {
+                    if (profesional.getTitulo() != null && profesional.getTitulo().length() > 10 && profesional.getTitulo().length() < 50) {
                         System.out.println(profesional.getTitulo());
                     }else {
                         System.out.println("Error: El titulo debe tener entre 10 y 50 caracteres.");
                     }
-*/
+
 
                     System.out.println("Ingrese su Apellido 2");
-                    apellido2User=scP.nextLine();
+                    apellido2User = scP.nextLine();
 
                     System.out.println("Ingrese su Fecha de nasimiento");
-                    fechaNacimientoUser=scP.nextLine();
+                    fechaNacimientoUser = scP.nextLine();
 
                     System.out.println("Ingrese su Run");
-                    runUser=scP.nextInt();
+                    runUser = scP.nextInt();
 
                     System.out.println("Ingrese su Titulo");
-                    titulo=scP.next();
+                    titulo = scP.next();
 
                     System.out.println("Ingrese su Fecha de Ingreso");
-                    fechaIngreso=scP.nextLine();
+                    fechaIngreso = scP.nextLine();
 
-                    Profesional profesional = new Profesional(nombreUser,apellido1User,apellido2User,fechaNacimientoUser,runUser,titulo,fechaIngreso);
+                    Profesional profesional = new Profesional(nombreUser, apellido1User, apellido2User, fechaNacimientoUser, runUser, titulo, fechaIngreso);
                     System.out.println(profesional.toString());
 
                     Contenedor contenedor = new Contenedor();
@@ -101,39 +104,26 @@ public class Principal {
                     System.out.println("------Perfil Administrativo------");
                     break;
             }
-        }while (op>3);
+        } while (op > 3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
-
-
-    //Validaciones sergio
-    //Objeto VisitaTerreno
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
