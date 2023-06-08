@@ -1,6 +1,7 @@
 import empresaclase14.*;
 import java.util.Scanner;
 import static empresaclase14.functions.Funciones.esSoloLetras;
+import static empresaclase14.functions.Funciones.validarNombre;
 
 /**
  * Esta es la clase Main donde se crea la instancia de los objetos Usuario, Capacitación y Cliente
@@ -14,7 +15,7 @@ import static empresaclase14.functions.Funciones.esSoloLetras;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner entrada = new Scanner(System.in);
+
         String tituloMenu = "";
         int opcion = 0;
 
@@ -27,6 +28,7 @@ public class Main {
         Integer runUsuario = 0;
 
         do{
+            Scanner entrada = new Scanner(System.in);
             System.out.println("\n Bienvenido a Sprint Modulo 4 Programación en Java!");
             System.out.println("--------------------------------------");
             System.out.println("Que operación deseas realizar? (Debes pulsar un número)");
@@ -36,10 +38,13 @@ public class Main {
             opcion = entrada.nextInt();
 
             switch (opcion) {
+
                 case 1:
                     System.out.println("Bienvenido al registro de usuarios.\n");
                     System.out.println("Ingresa el nombre: ");
-                    nombreUsuario = entrada.next();
+                    do{
+                        nombreUsuario = entrada.next();
+                    }while(!validarNombre(nombreUsuario));
                     System.out.println("Ingresa el primer apellido:\n");
                     apellido1Usuario = entrada.next();
                     System.out.println("Ingresa el segundo apellido:\n");
@@ -48,25 +53,12 @@ public class Main {
                     fechaDeNacimientoUsuario = entrada.next();
                     System.out.println("Ingresa el RUN:\n");
                     runUsuario = entrada.nextInt();
-
-                    Usuario luis = new Usuario(nombreUsuario, apellido1Usuario, apellido2Usuario, fechaDeNacimientoUsuario, runUsuario);
-
-                    System.out.println("#################");
-                    System.out.println(luis.toString());;
-                    System.out.println("#################");
-
-                    /*
-                    *   String nombreUsuario = "";
-                        String apellido1Usuario = "";
-                        String apellido2Usuario = "";
-                        String fechaDeNacimientoUsuario = "";
-                        Integer run = 0;
-                    * */
+                    entrada.close();
+                    Usuario usuarioEjemplo = new Usuario(nombreUsuario, apellido1Usuario, apellido2Usuario, fechaDeNacimientoUsuario, runUsuario);
 
             }
 
-        }while(tituloMenu.isEmpty());
-
+        }while(nombreUsuario.isEmpty());
 
         // Se instancia la clase Listado
         Listado listadoDeUsuarios = new Listado();
