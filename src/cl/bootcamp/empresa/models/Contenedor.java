@@ -23,6 +23,7 @@ public class Contenedor {
         asesorias.add(a);
     }
 
+    //almacena los datos de capacitacion
     public void almacenarCapacitacion(Capacitacion c) {
         capacitaciones.add(c);
     }
@@ -64,8 +65,8 @@ public class Contenedor {
     }
 
     public void listarCapacitaciones() {
-        for (Capacitacion capacitacion : capacitaciones) {
-            System.out.println(capacitacion);
+        for (Capacitacion c : capacitaciones) {
+            System.out.println(c);
         }
     }
 
