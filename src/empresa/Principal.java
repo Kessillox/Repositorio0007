@@ -98,12 +98,11 @@ public class Principal {
                     }
 
                     System.out.println("Ingrese el nombre del administrativo:");
-                    String nombreAdministrativo = sc.next();
-                    while(nombreAdministrativo.isEmpty() || nombreAdministrativo.length() > 20 || !nombreAdministrativo.matches("[a-zA-Z][a-zA-Z0]")){
-                        System.out.println("Nombre inválido. Por favor, ingrese un nombre valido");
-                        nombreAdministrativo = sc.next();
+                    String nombreAdministrativo = sc.nextLine();
+                    while (nombreAdministrativo.isEmpty() || nombreAdministrativo.length() < 3 || nombreAdministrativo.length() > 20 || !nombreAdministrativo.matches("[a-zA-Z]+")) {
+                        System.out.println("Nombre inválido. Por favor, ingrese un nombre válido:");
+                        nombreAdministrativo = sc.nextLine();
                     }
-
 
 
                     System.out.println("Ingrese el apellido1 del administrativo:");
