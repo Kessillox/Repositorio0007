@@ -7,6 +7,6 @@
 | Nombre:          |
 |------------------|
 | Leandro Villalba | 
-| Gustavo Vargas   |
+| Gustavo Vargas   | 👻
 | Cristian Trureo  | 💀💣
 | Luis Zambrano    | 😎
