@@ -28,6 +28,10 @@ public class Principal {
             nombreUser = sc.nextLine();
         }
 
+
+        //Accidentes
+
+
         //VARIABLES
 
         int op =0;
@@ -104,4 +108,37 @@ public class Principal {
             }
         }while (op>3);
     }
+
+
+    //Validaciones sergio
+    //Objeto VisitaTerreno
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
