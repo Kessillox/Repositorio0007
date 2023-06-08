@@ -118,26 +118,46 @@ public class Principal {
 
 
                     System.out.println("Ingrese el apellido1 del administrativo:");
-                    String apellido1Administrativo = sc.next();
+                    String apellido1Administrativo = sc.nextLine();
+                    while(apellido1Administrativo.isEmpty() || apellido1Administrativo.length() < 3 || apellido1Administrativo.length() > 20 ||!apellido1Administrativo.matches("[a-zA-Z]+")) {
+                        System.out.println("Apellido1 inválido. Por favor, ingrese un apellido1 válido:");
+                        apellido1Administrativo = sc.nextLine();
+                    }
 
 
                     System.out.println("Ingrese apellido2 del administrativo:");
-                    String apellido2Administrativo = sc.next();
+                    String apellido2Administrativo = sc.nextLine();
+                    while(apellido2Administrativo.isEmpty() || apellido2Administrativo.length() < 3 || apellido2Administrativo.length() > 20 ||!apellido2Administrativo.matches("[a-zA-Z]+")) {
+                        System.out.println("Apellido2 inválido. Por favor, ingrese un apellido2 válido:");
+                        apellido2Administrativo = sc.nextLine();
+                    }
 
 
-                    System.out.println("Ingrese fecha de nacimiento:");
-                    int fechaDeNacimientoAdministrativo = sc.nextInt();
-
+                    System.out.println("Ingrese fecha de nacimiento (dd/mm/aaaa):");
+                    String fechaDeNacimientoAdministrativo = sc.nextLine();
+                    while (!fechaDeNacimientoAdministrativo.matches("^(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4}$")) {
+                        System.out.println("Fecha de nacimiento inválida. Por favor, ingrese una fecha válida en el formato dd/mm/aaaa:");
+                        fechaDeNacimientoAdministrativo = sc.nextLine();
+                    }
 
                     System.out.println("Ingrese experiencia del administrativo:");
-                    String experienciaAdministrativo = sc.next();
+                    String experienciaAdministrativo = sc.nextLine();
+                    while (experienciaAdministrativo.isEmpty() || experienciaAdministrativo.length() > 70 || !experienciaAdministrativo.matches("^[a-zA-Z0-9 ]*$")) {
+                        System.out.println("Experiencia inválida. Por favor, ingrese una experiencia válida:");
+                        experienciaAdministrativo = sc.nextLine();
+                    }
 
 
-                    System.out.println("Ingrese area del administrativo:");
-                    String areaAdministrativo = sc.next();
+                    System.out.println("Ingrese área del administrativo:");
+                    String areaAdministrativo = sc.nextLine();
+                    while (!areaAdministrativo.matches("^[a-zA-Z ]+$")) {
+                        System.out.println("Área inválida. Por favor, ingrese un área válida:");
+                        areaAdministrativo = sc.nextLine();
+                    }
 
 
-                    cont.almacenarAdministrativo(new Administrativo(runAdministrativo, nombreAdministrativo, apellido1Administrativo, apellido2Administrativo,fechaDeNacimientoAdministrativo,experienciaAdministrativo,areaAdministrativo));
+
+                    cont.almacenarAdministrativo(new Administrativo());
 
 
                     break;
