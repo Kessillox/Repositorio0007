@@ -11,7 +11,7 @@ public class ValidacionProfesional {
         }
     }
 
-    public static boolean validarFechaDeIngreso(String str) {
+    public static boolean validarFecha(String str) {
         if (str != null && str.matches("\\d{2}/\\d{2}/\\d{4}")) {
             System.out.println("Fecha ingresada correctamente");
             return true;
