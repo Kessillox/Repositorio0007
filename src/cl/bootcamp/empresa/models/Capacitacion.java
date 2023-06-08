@@ -1,19 +1,25 @@
 package cl.bootcamp.empresa.models;
 
 /**
- * @author Cristian Durán (el más bacán del grupo potrero), Ignacio Aránguiz e Iván Becerra
+ * @author Cristian Durán - Ignacio Aránguiz - Iván Becerra
  * La clase Capacitacion contiene 7 atributos.
  * @version 1.0.0
  * @see Capacitacion
  */
-public class Capacitacion{
+public class Capacitacion {
 
     private int id;
+
     private String rutEmpresa;
+
     private int dia;
+
     private int hora;
+
     private String lugar;
+
     private String duracion;
+
     private int cantidadAsistentes;
 
     public Capacitacion() {
@@ -88,6 +94,7 @@ public class Capacitacion{
     /**
      * Concatena e imprime por consola los datos de la capacitación
      */
+
     public void mostrarDetalle() {
         System.out.println("La capacitación será en " + lugar + " a las " + hora
                 + " del día " + dia + ", y durará " + duracion + " minutos");
@@ -95,8 +102,10 @@ public class Capacitacion{
 
     /**
      * Sobre escritura del método toString
+     *
      * @return String
      */
+
     @Override
     public String toString() {
         return "id: " + id +

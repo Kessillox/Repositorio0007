@@ -15,9 +15,10 @@ La clase Profesional está abierta a la extensión, ya que se pueden crear nueva
  * @version 1.0.0
  * @see Profesional
  */
-public class Profesional extends Usuario{
+public class Profesional extends Usuario {
 
     private String titulo;
+
     private String fechaIngreso;
 
     public Profesional() {

@@ -15,6 +15,7 @@ La clase Administrador está abierta a la extensión, ya que se pueden crear nue
  * @version 1.0.0
  * @see Administrativo
  */
+
 public class Administrativo extends Usuario {
 
     private String area;
