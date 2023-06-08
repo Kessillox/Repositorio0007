@@ -93,6 +93,18 @@ public class Usuario implements IAsesoria {
         System.out.print(nombre + " " + apellido1 + " " + apellido2);
     }
 
+    /*sobrescribe los datos a través de la función listaUsuario()
+    creaada en contenedor*/
+    @Override
+    public void listaUsuario() {
+        System.out.println("nombre: " + nombre +
+                ", apellido1: " + apellido1 +
+                ", apellido2: " + apellido2 +
+                ", fecha nacimiento: " + fechaNacimiento +
+                ", run: " + run +
+                ", edad: " + edad);
+    }
+
     @Override
     public String toString() {
         return "nombre: " + nombre +

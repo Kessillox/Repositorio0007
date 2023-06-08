@@ -9,4 +9,6 @@ La interfaz IAsesoria tiene una única responsabilidad que es definir el método
  La interfaz está diseñada de manera que los clientes que implementan esta interfaz no dependen de métodos que no utilizan.*/
 public interface IAsesoria {
     void analizarUsuario();
+
+    void listaUsuario();
 }

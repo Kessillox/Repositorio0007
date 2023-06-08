@@ -2,44 +2,72 @@ package cl.bootcamp.empresa.models;
 
 import cl.bootcamp.empresa.interfaces.IAsesoria;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Contenedor {
 
-    private List<IAsesoria> asesorias;
+    private List<IAsesoria> asesorias = new ArrayList<>();
 
-    private List<Capacitacion> capacitaciones;
+    private List<Capacitacion> capacitaciones= new ArrayList<>();
 
-    public Contenedor() {
+    private List<Cliente> cliente = new ArrayList<>();
+
+    private List<Profesional> profesional = new ArrayList<>();
+
+    private List<Administrativo> administrativo = new ArrayList<>();
+
+    /* Este método permite almacenar los datos de cliente, profesional o
+    administrativo en una sola lista*/
+    public void almacenarUsuario(IAsesoria a) {
+        asesorias.add(a);
     }
 
-    public Contenedor(List<IAsesoria> asesorias, List<Capacitacion> capacitaciones) {
-        this.asesorias = asesorias;
-        this.capacitaciones = capacitaciones;
+    public void almacenarCapacitacion(Capacitacion c) {
+        capacitaciones.add(c);
     }
 
-    public void almacenarCliente (IAsesoria cliente){
-        asesorias.add(cliente);
+    /*como su nombre lo indica, permite eliminar a un usuario utilizando
+    el atributo run */
+    public void eliminarUsuario(String run) {
+        for (int i = 0; i < asesorias.size(); i++) {
+            Usuario u = (Usuario) asesorias.get(i);
+            if (u.getRun() == run) {
+                asesorias.remove(u);
+                System.out.println("Usuario eliminado");
+                break;
+            }
+        }
     }
 
-    public void almacenarProfesional (IAsesoria capacitacion){
-        asesorias.add(capacitacion);
+    public void listarUsuarios(){
+        for (IAsesoria asesoria : asesorias) {
+            asesoria.listaUsuario();
+        }
     }
 
-    public void almacenarAdministrativo (IAsesoria administrativo){
-        asesorias.add(administrativo);
+    public void listarUsuariosPorTipo(String tipo){
+        for (IAsesoria asesorias: asesorias) {
+            if(asesorias.getClass().getSimpleName().equals(tipo)){
+                asesorias.listaUsuario();
+            }
+
+        }
     }
 
-    public void almacenarCapacitacion (Capacitacion capacitacion){
-        capacitaciones.add(capacitacion);
+    /*permite iterar sobre la lista de objetos que se implementan en la
+    interfaz IAsesoria y llama al método listaUsuario() de cada objeto*/
+    public void listaUsuario() {
+        for (IAsesoria a : asesorias) {
+            a.listaUsuario();
+        }
     }
 
-    public void eliminarUsuario (IAsesoria run){
-
+    public void listarCapacitaciones() {
+        for (Capacitacion capacitacion : capacitaciones) {
+            System.out.println(capacitacion);
+        }
     }
-
-
-
 
 
 
