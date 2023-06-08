@@ -3,7 +3,7 @@ package sprint.entity;
 public class Accidente {
     private int id;
     private String dia;
-    private int hora;
+    private String hora;
     private String lugar;
     private String origen;
     private String consecuencia;
@@ -11,7 +11,7 @@ public class Accidente {
     public Accidente() {
     }
 
-    public Accidente(int id, String dia, int hora, String lugar, String origen, String consecuencia) {
+    public Accidente(int id, String dia, String hora, String lugar, String origen, String consecuencia) {
         this.id = id;
         this.dia = dia;
         this.hora = hora;
@@ -36,11 +36,11 @@ public class Accidente {
         this.dia = dia;
     }
 
-    public int getHora() {
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(int hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 

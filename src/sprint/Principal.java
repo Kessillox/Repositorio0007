@@ -20,6 +20,7 @@ public class Principal {
 
         //VARIABLES cliente
 
+
         String nombreEmpresa = "";
         String giroEmpresa = "";
         int rut = 0 ;
@@ -28,10 +29,18 @@ public class Principal {
         String comunaEmpresa = "";
         Cliente cliente1 = new Cliente(nombreUser,apellido1User,apellido2User,fechaNacimientoUser,runUser,nombreEmpresa, giroEmpresa, rut, tlfRepresentante, direccionEmpresa,comunaEmpresa);
 
+
+        //Accidentes
+
+
+        //VARIABLES
+
+        int op =0;
+
         //VARIABLES PROFESIONAL
         String titulo ="";
         String fechaIngreso="";
-        int op =0;
+
 
 
         System.out.println("Bienvenido, ¿en que perfil desea trabajar?");
