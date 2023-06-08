@@ -9,12 +9,12 @@ public class Usuario implements Asesoria {
     private String Apellido1;
     private String Apellido2;
     private String FechaNacimiento;
-    private String run;
+    private int run;
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellido1, String apellido2, String fechaNacimiento, String run) {
+    public Usuario(String nombre, String apellido1, String apellido2, String fechaNacimiento, int run) {
         Nombre = nombre;
         Apellido1 = apellido1;
         Apellido2 = apellido2;
@@ -54,18 +54,12 @@ public class Usuario implements Asesoria {
         FechaNacimiento = fechaNacimiento;
     }
 
-    public String getRun() {
+    public int getRun() {
         return run;
     }
 
-    public void setRun(String run) {
+    public void setRun(int run) {
         this.run = run;
-    }
-
-    public String mostrarEdad(){
-        int edad;
-        edad = (2023 - Integer.parseInt(FechaNacimiento));
-        return "El usuario tiene " + edad;
     }
 
     @Override
