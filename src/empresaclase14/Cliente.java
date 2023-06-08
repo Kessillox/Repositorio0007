@@ -38,7 +38,7 @@ public class Cliente extends Usuario {
         } else {
             throw new IllegalArgumentException("Ingrese una dirección válida (5 a 70 caracteres)");
         }
-        if(comunaEmpresa.length() >5 && comunaEmpresa.length() <= 70) {
+        if(comunaEmpresa.length() >5 && comunaEmpresa.length() <= 50) {
             this.comunaEmpresa = comunaEmpresa;
         } else {
             throw new IllegalArgumentException("Ingrese una dirección válida (5 a 50 caracteres)");
@@ -63,8 +63,16 @@ public class Cliente extends Usuario {
             throw new IllegalArgumentException("Ingrese un número menor a 99.999.999");
         }
         this.telefonoRepresentante = telefonoRepresentante;
-        this.direccionEmpresa = direccionEmpresa;
-        this.comunaEmpresa = comunaEmpresa;
+        if(direccionEmpresa.length() >5 && direccionEmpresa.length() <= 70) {
+            this.direccionEmpresa = direccionEmpresa;
+        } else {
+            throw new IllegalArgumentException("Ingrese una dirección válida (5 a 70 caracteres)");
+        }
+        if(comunaEmpresa.length() >5 && comunaEmpresa.length() <= 50) {
+            this.comunaEmpresa = comunaEmpresa;
+        } else {
+            throw new IllegalArgumentException("Ingrese una dirección válida (5 a 50 caracteres)");
+        }
     }
 
     public String getNombreEmpresa() {
