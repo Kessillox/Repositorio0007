@@ -42,23 +42,30 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    System.out.println("Bienvenido al registro de usuarios.\n");
+                    System.out.println("Bienvenido al registro de usuarios.");
                     do{
-                    System.out.println("Ingresa el nombre: ");
+                        System.out.println("Ingresa el nombre:");
                         nombreUsuario = entrada.next();
                     }while(!validarNombre(nombreUsuario) && esStringObligatorio(nombreUsuario));
-                    do {
-                        System.out.println("Ingresa el primer apellido:\n");
+                    do{
+                        System.out.println("Ingresa el primer apellido:");
                         apellido1Usuario = entrada.next();
-                    }while(apellido1Usuario.isEmpty() || apellido1Usuario.isBlank() || apellido1Usuario.equals("") || apellido1Usuario.equals(" "));
-                    System.out.println("Ingresa el segundo apellido:\n");
-                    apellido2Usuario = entrada.next();
-                    System.out.println("Ingresa la fecha de nacimiento:\n");
-                    fechaDeNacimientoUsuario = entrada.next();
-                    System.out.println("Ingresa el RUN:\n");
-                    runUsuario = entrada.nextInt();
-                    entrada.close();
+                    }while(!esStringObligatorio(apellido1Usuario));
+                    do{
+                        System.out.println("Ingresa el segundo apellido:");
+                        apellido2Usuario = entrada.next();
+                    }while(!esStringObligatorio(apellido2Usuario));
+                    do{
+                        System.out.println("Ingresa la fecha de nacimiento:");
+                        fechaDeNacimientoUsuario = entrada.next();
+                    }while(!esStringObligatorio(apellido2Usuario));
+                    do{
+                        System.out.println("Ingresa el RUN sin guion ni digito verificador");
+                        runUsuario = entrada.nextInt();
+                    }while(validarRun(runUsuario));
                     Usuario usuarioEjemplo = new Usuario(nombreUsuario, apellido1Usuario, apellido2Usuario, fechaDeNacimientoUsuario, runUsuario);
+
+                    System.out.println(usuarioEjemplo.toString());
             }
 
         }while(nombreUsuario.isEmpty());
