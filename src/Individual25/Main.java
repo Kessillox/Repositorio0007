@@ -1,3 +1,5 @@
+package Individual25;
+
 import Individual25.Trabajador;
 
 public class  Main {
