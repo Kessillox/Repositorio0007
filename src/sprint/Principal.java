@@ -8,24 +8,20 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         Usuario usuario1 = new Usuario ("Livio","Guitierrez","Zambrano", "09/03/1995",269876362);
 
-        if (usuario1.getNombre() != null && usuario1.getNombre().length() > 3 && usuario1.getNombre().length() < 20) {
-            System.out.println(usuario1.getNombre());
-        }else {
-            System.out.println("Error: El nombre debe tener entre 3 y 20 caracteres.");
-        }
-
-        if(usuario1.getFechaNacimiento() != null)
-            System.out.println("No puede estar nulo.");
-
-
-
-
-
-        //VARIABLES
         int op =0;
+        //VARIABLES Usuarios
+        String nombre="";
+        String apellido1="";
+        String apellido2="";
+        String fechaNacimiento="";
+        int run;
+        //VARIABLES PROFESIONAL
         String titulo ="";
+        String fechaIngreso="";
+
 
         System.out.println("Bienvenido, ¿en que perfil desea trabajar?");
         System.out.println("------Perfiles------");
@@ -44,23 +40,40 @@ public class Principal {
             switch (op){
                 case 1:
                     System.out.println("------Perfil Cliente------");
+
                     break;
                 case 2:
                     Scanner scP = new Scanner(System.in);
                     System.out.println("------Perfil Profesional------");
-                    System.out.println("Ingrese su titulo");
+                    System.out.println("Ingrese su nombre");
+                    nombre=scP.nextLine();
 
-                    Profesional profesional = new Profesional("Livio", "Gutierrez", "Franchesco", "05/12/1999", "92.666.666", "Titulo: " + scP.nextLine(),"Fecha de Ingreso: " + scP.nextLine());
-                    if (profesional.getTitulo() != null && profesional.getTitulo().length() > 10 && profesional.getTitulo().length() < 50){
-                        System.out.println(profesional.getTitulo());
-                        System.out.println(profesional.getFechaDeIngreso());
-                    }else {
-                        System.out.println("Error: El titulo debe tener entre 10 y 50 caracteres.");
-                    }
+                    System.out.println("Ingrese su Apellido 1");
+                    apellido1=scP.nextLine();
 
+                    System.out.println("Ingrese su Apellido 2");
+                    apellido2=scP.nextLine();
 
-                    System.out.println("------Perfil Profesional------");
-                    System.out.println("Ingrese su titulo");
+                    System.out.println("Ingrese su Fecha de nasimiento");
+                    fechaNacimiento=scP.nextLine();
+
+                    System.out.println("Ingrese su Run");
+                    run=scP.nextInt();
+
+                    System.out.println("Ingrese su Titulo");
+                    titulo=scP.next();
+
+                    System.out.println("Ingrese su Fecha de Ingreso");
+                    fechaIngreso=scP.nextLine();
+
+                    Profesional profesional = new Profesional(nombre,apellido1,apellido2,fechaNacimiento,run,titulo,fechaIngreso);
+                    System.out.println(profesional.toString());
+
+                    Contenedor contenedor = new Contenedor();
+                    contenedor.almacenarProfecional(profesional);
+
+                    contenedor.mostrarProfesional();
+
 
                     break;
                 case 3:

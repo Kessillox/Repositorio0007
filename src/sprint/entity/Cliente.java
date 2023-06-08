@@ -20,6 +20,16 @@ public class Cliente extends Usuario{
         Comuna = comuna;
     }
 
+    public Cliente(String nombre, String apellido1, String apellido2, String fechaNacimiento, int run, String nombreEmpresa, String giroEmpresa, String rut, String tlfRepresentante, String direccionEmpresa, String comuna) {
+        super(nombre, apellido1, apellido2, fechaNacimiento, run);
+        NombreEmpresa = nombreEmpresa;
+        GiroEmpresa = giroEmpresa;
+        Rut = rut;
+        TlfRepresentante = tlfRepresentante;
+        DireccionEmpresa = direccionEmpresa;
+        Comuna = comuna;
+    }
+
     public String getNombreEmpresa() {
         return NombreEmpresa;
     }
