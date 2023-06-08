@@ -44,8 +44,9 @@ public class Main {
             System.out.println("\n Bienvenido a Sprint Modulo 4 Programación en Java!");
             System.out.println("--------------------------------------");
             System.out.println("Que operación deseas realizar? (Debes pulsar un número)");
-            System.out.println("\n1.- Registrar Usuario");
-            System.out.println("2.- Salir");
+            System.out.println("1.- Registrar Usuario");
+            System.out.println("2.- Registrar Cliente");
+            System.out.println("3.- Salir");
             System.out.println("Selecciona una opción:");
             opcion = entrada.nextInt();
 
