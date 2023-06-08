@@ -92,14 +92,6 @@ public class Main {
 
                     System.out.println(usuarioEjemplo.toString());
                 case 2:
-                    /*
-                    String nombreEmpresa;
-                    String giroEmpresa;
-                    int rut;
-                    String telefonoRepresentante;
-                    String direccionEmpresa;
-                    String comunaEmpresa;
-                    */
 
                     System.out.println("Bienvenido al registro de Clientes");
                     do { System.out.println("Ingrese el nombre de la empresa");
@@ -125,6 +117,34 @@ public class Main {
                     Cliente clienteEjemplo = new Cliente(nombreEmpresa, giroEmpresa, rut, telefonoRepresentante, direccionEmpresa, comunaEmpresa);
 
                     System.out.println(clienteEjemplo.toString());
+
+                    // Acá el resto del Switch ladies
+
+                case 3: // Profesional
+
+
+
+                case 4: // Administrativo
+
+
+
+                case 5: // Capacitacion
+
+
+
+                case 6: // Accidente
+
+
+
+
+                case 7: // Visita en terreno
+
+
+
+                case 8: // Revision
+
+
+
             }
 
         } while (nombreUsuario.isEmpty());
