@@ -3,7 +3,8 @@ import empresaclase14.*;
 import java.util.Scanner;
 
 import static empresaclase14.validaciones.validacionusuario.ValidacionUsuario.*;
-import static empresaclase14.validaciones.validacionprofesional.ValidacionProfesional.*;
+import static empresaclase14.validaciones.validacioncliente.ValidacionCliente.*;
+
 
 /**
  * Esta es la clase Main donde se crea la instancia de los objetos Usuario, Capacitación y Cliente
@@ -59,19 +60,19 @@ public class Main {
                     do {
                         System.out.println("Ingresa el nombre: (mínimo 10 caracteres y máximo 50)");
                         nombreUsuario = entrada.next();
-                    } while (!validarNombre(nombreUsuario) || !esStringObligatorio(nombreUsuario) || !esSoloLetras(nombreUsuario));
+                    } while (validarNombre(nombreUsuario) && esStringObligatorio(nombreUsuario) || esSoloLetras(nombreUsuario));
                     do {
                         System.out.println("Ingresa el primer apellido:");
                         apellido1Usuario = entrada.next();
-                    } while (!esStringObligatorio(apellido1Usuario) || !esSoloLetras(apellido1Usuario));
+                    } while (esStringObligatorio(apellido1Usuario) && esSoloLetras(apellido1Usuario));
                     do {
                         System.out.println("Ingresa el segundo apellido:");
                         apellido2Usuario = entrada.next();
-                    } while (!validarNombre(apellido2Usuario) || !esStringObligatorio(apellido2Usuario) || !esSoloLetras(apellido2Usuario));
+                    } while (esStringObligatorio(apellido2Usuario) && esSoloLetras(apellido2Usuario));
                     do {
                         System.out.println("Ingresa la fecha de nacimiento:");
                         fechaDeNacimientoUsuario = entrada.next();
-                    } while (!esStringObligatorio(apellido2Usuario) && validarFecha(fechaDeNacimientoUsuario));
+                    } while (!esStringObligatorio(apellido2Usuario));
                     do {
                         System.out.println("Ingresa el RUN sin punto ni guion");
                         runUsuario = entrada.nextInt();
@@ -90,8 +91,9 @@ public class Main {
                     */
 
                     System.out.println("Bienvenido al registro de Clientes");
-                    System.out.println("Ingrese el nombre de la empresa");
-                    nombreEmpresa = entrada.next();
+                    do { System.out.println("Ingrese el nombre de la empresa");
+                    nombreEmpresa = entrada.next();}
+                    while (!validarNombreEmpresa(nombreEmpresa));
                     System.out.println("Ingrese el giro de la empresa");
                     giroEmpresa = entrada.next();
                     System.out.println("Ingrese el rut de la empresa");

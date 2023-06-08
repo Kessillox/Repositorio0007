@@ -6,7 +6,7 @@ public class ValidacionCliente {
             System.out.println("Nombre ingresado correctamente!");
             return true;
         }else{
-            System.out.println("El nombre no es válido");
+            System.out.println("El nombre no es válido (5-30 caracteres)");
             return false;
         }
     }
