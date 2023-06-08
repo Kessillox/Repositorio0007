@@ -10,6 +10,7 @@ public class Administrativo extends Usuario {
         this.experienciaPrevia = experienciaPrevia;
     }
 
+    @Override
     public void analizarUsuario() {
         super.analizarUsuario();
         System.out.println("Área: " + area);
