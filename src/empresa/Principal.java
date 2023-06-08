@@ -157,7 +157,7 @@ public class Principal {
 
 
 
-                    cont.almacenarAdministrativo(new Administrativo());
+                    //cont.almacenarAdministrativo(new Administrativo());
 
 
                     break;
