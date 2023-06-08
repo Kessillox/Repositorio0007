@@ -1,94 +1,155 @@
-package evaluacionFinalModuloJava.servicios;
+package modelos.contenedor;
 
-import evaluacionFinalModuloJava.entity.*;
 import evaluacionFinalModuloJava.interfac.IAsesoria;
+import evaluacionFinalModuloJava.entity.Administrativo;
+import evaluacionFinalModuloJava.entity.Capacitacion;
+import evaluacionFinalModuloJava.entity.Cliente;
+import evaluacionFinalModuloJava.entity.Profesional;
+import evaluacionFinalModuloJava.entity.Usuario;
 
 import java.util.ArrayList;
-import java.util.function.Predicate;
+import java.util.List;
 
 public class Contenedor {
-    private ArrayList<IAsesoria> IAsesorias;//almacena distintos tipos de usuarios
-    private ArrayList<Capacitacion> capacitaciones;//
-
+    private List<IAsesoria> listaUsuariosIAsesoria = new ArrayList<>();
+    private List<Capacitacion> capacitaciones = new ArrayList<>();
+    private List<Usuario> listaUsuarios = new ArrayList<>();
+    /**
+     * Constructor Vacio
+     */
     public Contenedor() {
     }
 
-    public Contenedor(ArrayList<IAsesoria> IAsesorias, ArrayList<Capacitacion> capacitaciones) {
-        this.IAsesorias = IAsesorias;
+    /**
+     * Constructor de la clase con parametros
+     * @param listaUsuariosIAsesoria
+     * @param capacitaciones
+     */
+    public Contenedor(List<IAsesoria> listaUsuariosIAsesoria, List<Capacitacion> capacitaciones) {
+        this.listaUsuariosIAsesoria = listaUsuariosIAsesoria;
         this.capacitaciones = capacitaciones;
     }
 
-    public ArrayList<IAsesoria> getIAsesorias() {
-        return IAsesorias;
-    }
-
-    public void setIAsesorias(ArrayList<IAsesoria> IAsesorias) {
-        this.IAsesorias = IAsesorias;
-    }
-
-    public ArrayList<Capacitacion> getCapacitaciones() {
-        return capacitaciones;
-    }
-
-    public void setCapacitacion(ArrayList<Capacitacion> capacitaciones) {
-        this.capacitaciones = capacitaciones;
-    }
-
+    /**
+     * Metodo que devuelve los parametros y valores de la clase
+     * @return String con los datos de la clase
+     */
     @Override
     public String toString() {
         return "Contenedor{" +
-                "IAsesorias=" + IAsesorias +
-                ", capacitacion=" + capacitaciones +
+                "tiposUsuarios=" + listaUsuariosIAsesoria +
+                ", capacitaciones=" + capacitaciones +
                 '}';
     }
 
-    public void almacenarCliente(Cliente cliente) {
-        IAsesorias.add(cliente);
+
+    //Metodos solicitados
+
+    /**
+     * Metodo que permite agregar un nuevo cliente a la lista de instancias
+     * de la interface IAsesoria.
+     * @param cliente
+     */
+    public void almacenarCliente(Cliente cliente){
+        listaUsuariosIAsesoria.add(cliente);
     }
 
-    public void almacenarProfesional(Profesional profesional) {
-        IAsesorias.add(profesional);
+//    public void agregarUsuario(IAsesoria  a){
+//        tiposUsuarios.add(a);
+//    }
+
+    /**
+     * Metodo que permite agregar un nuevo profesional a la lista de
+     * instancias de la interface IAsesoria.
+     * @param profesional
+     */
+    public void almacenarProfesional(Profesional profesional){
+        listaUsuariosIAsesoria.add(profesional);
+        listaUsuarios.add(profesional);
     }
 
-    public void almacenarAdministrativo(Administrativo administrativo) {
-        IAsesorias.add(administrativo);
+    /**
+     * Metodo que permite agregar un nuevo administrativo a la lista de
+     * instancias de la interface IAsesoria.
+     * @param administrativo
+     */
+    public void almacenarAdministrativo(Administrativo administrativo){
+        listaUsuariosIAsesoria.add(administrativo);
+        listaUsuarios.add(administrativo);
     }
 
-    public void almacenarCapacitacion(Capacitacion capacitacion) {
-        getCapacitaciones().add(capacitacion);
+    /**
+     * Metodo que permite agregar una nueva capacitación a la lista de
+     * instancias de la clase Capacitación.
+     * @param capacitacion
+     */
+    public void almacenarCapacitacion(Capacitacion capacitacion){
+        capacitaciones.add(capacitacion);
     }
 
-    public void eliminarUsuario(IAsesoria run) {
-        getIAsesorias().removeIf((Predicate<? super IAsesoria>) run);
-    }
-
-    public void listarUsuarios() {
-        for (IAsesoria i : IAsesorias) {
-            System.out.println(i);
+    public void eliminarUsuario(String run){
+        if (listaUsuariosIAsesoria.isEmpty()){
+            System.out.println("No existen registros en la tabla");
+        }else{
+            for (int i = 0; i < listaUsuarios.size(); i++) {
+                if( listaUsuarios.get(i).getRun().equals(run)){
+                    listaUsuariosIAsesoria.remove(i);
+                    listaUsuarios.remove(i);
+                }
+            }
+            System.out.println("Usuario rut: "+run+" eliminado");
         }
     }
-    public void listarClientes() {
-        for (IAsesoria cliente : IAsesorias) {
-            System.out.println(cliente);
+
+    /**
+     * Metodo que permite desplegar la lista completa de usuarios, independiente
+     * del tipo. En este método solo se deben desplegar los datos de la clase usuario.
+     */
+    public void listarUsuario(){
+        if (listaUsuariosIAsesoria.isEmpty()){
+            System.out.println("Actualmente no existen registros en la lista usuarios");
+        }else{
+            for (IAsesoria tiposUsuario : listaUsuariosIAsesoria) {
+                tiposUsuario.listarDatos();
+            }
         }
     }
 
-    public void listarAdministrador(){
-        for (IAsesoria administrador: IAsesorias) {
-            System.out.println(administrador);
+    /**
+     * Recibe un tipo de usuario (cliente, administrador o
+     * profesional), y retorna los datos respectivos según el tipo de usuario.
+     * @param tipoUsuario
+     */
+    public void listarUsuarioPorTipo(String tipoUsuario){
+        if (listaUsuariosIAsesoria.isEmpty()) {
+            System.out.println("Actualmente no existen registros en la lista usuarios");
+        }else{
+            for (int i = 0; i < listaUsuarios.size(); i++) {
+                if(tipoUsuario.equals(listaUsuarios.get(i).getClass().getSimpleName())){
+                    listaUsuarios.get(i).listarDatos();
+                }
+            }
         }
     }
 
-    public void listarProfessional(){
-        for (IAsesoria profesional: IAsesorias) {
-            System.out.println(profesional);
-        }
-    }
-
+    /**
+     * Método despliega las capacitaciones registradas en la
+     * lista respectiva, junto con los datos del cliente al que está asociada dicha
+     * capacitación.
+     */
     public void listarCapacitaciones(){
-        for (Capacitacion capacitacion: capacitaciones) {
-            System.out.println( capacitaciones);
+        if(capacitaciones.isEmpty()){
+            System.out.println("Actualmente no existen capacitaciones almacenadas \n");
+        }else{
+            for (Capacitacion cap: capacitaciones) {
+                System.out.println(cap);
+                for (Usuario user: listaUsuarios) {
+                    //todo: verificar funcionamiento
+                    if (user.getRun().equals(cap.getRut())){
+                        user.listarDatos();
+                    }
+                }
+            }
         }
     }
-
 }
