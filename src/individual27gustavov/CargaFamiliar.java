@@ -1,5 +1,7 @@
 package individual27gustavov;
 
+import java.util.Scanner;
+
 /**
  * Individual 27: Crear una clase CargaFamiliar creando algunos metodos.
  *
@@ -20,9 +22,10 @@ public class CargaFamiliar {
 
     /**
      * Constructor con parámetros
+     *
      * @param nombres
      * @param apellidos
-     * @param "Run del" trabajador
+     * @param "Run       del" trabajador
      * @param parentesco
      * @param edad
      */
@@ -96,4 +99,39 @@ public class CargaFamiliar {
                 "\n}";
     }
 
+    public int ingresarParentesco() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        int parentesco = 0;
+
+        System.out.println("Ingrese el parentesco de la carga familiar:");
+        System.out.println("1. Cónyuge");
+        System.out.println("2. Hijo/a");
+        System.out.println("3. Otro");
+
+        do {
+            int opcion = scanner.nextInt();
+            scanner.nextLine(); // Realizar salto de línea después de la opción
+
+            switch (opcion) {
+                case 1:
+                    parentesco = 1; //"Cónyuge"
+                    break;
+                case 2:
+                    parentesco = 2; //"Hijo/a"
+                    break;
+                case 3:
+                    parentesco = 3; //"Otro"
+                    break;
+                default:
+                    System.out.println("Opción inválida. Intente nuevamente.");
+                    break;
+            }
+        } while (parentesco == 0);
+
+        // Asignar el valor del parentesco a la variable de instancia
+        this.parentesco = parentesco;
+        return parentesco;
+    }
 }
