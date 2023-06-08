@@ -24,36 +24,8 @@ public class Main {
         System.out.println();
 
         // Ingreso del parentesco de la carga familiar
-        Scanner scanner = new Scanner(System.in);
-
-        int parentesco = 0;
-        String parentescoDescripcion;
-        String runFamiliar = trabajador.getRun();
-
-        System.out.println("Ingrese el parentesco de la carga familiar:");
-        System.out.println("1. Cónyuge");
-        System.out.println("2. Hijo/a");
-        System.out.println("3. Otro");
-
-        do {
-            int opcion = scanner.nextInt();
-            scanner.nextLine(); // Realizar salto de línea después de la opción
-
-            switch (opcion) {
-                case 1:
-                    parentesco = 1; //"Cónyuge"
-                    break;
-                case 2:
-                    parentesco = 2; //"Hijo/a"
-                    break;
-                case 3:
-                    parentesco = 3; //"Otro"
-                    break;
-                default:
-                    System.out.println("Opción inválida. Por favor, ingrese una opción válida.");
-                    break;
-            }
-        } while (parentesco == 0);
+        CargaFamiliar carga = new CargaFamiliar();
+        int parentesco = carga.ingresarParentesco();
 
         // Crear una instancia de CargaFamiliar utilizando los datos ingresados
         CargaFamiliar carga1 = new CargaFamiliar("25123456-7", "Catalina", "Vargas Barde",
