@@ -4,7 +4,7 @@ public class Capacitacion {// se crea la clase Capacitacion
 
     // se crea los atributos de la clase
     private int identificador;
-    private long rut;
+    private int rut;
     private String dia;
     private String hora;
     private String lugar;
@@ -16,7 +16,7 @@ public class Capacitacion {// se crea la clase Capacitacion
     }
 
     // constructor con parametros, atributos de la clase
-    public Capacitacion(int identificador, long rut, String dia, String hora, String lugar, String duracion,
+    public Capacitacion(int identificador, int rut, String dia, String hora, String lugar, String duracion,
             int cantidadDeAsistentes) {
         this.identificador = identificador;
         this.rut = rut;
@@ -34,10 +34,10 @@ public class Capacitacion {// se crea la clase Capacitacion
     public void setIdentificador(int identificador) {
         this.identificador = identificador;
     }
-    public long getRut() {
+    public int getRut() {
         return rut;
     }
-    public void setRut(long rut) {
+    public void setRut(int rut) {
         this.rut = rut;
     }
     public String getDia() {

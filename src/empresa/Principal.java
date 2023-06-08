@@ -1,11 +1,7 @@
 package empresa;
 
 import empresa.entity.Administrativo;
-import empresa.entity.Usuario;
 import empresa.services.Contenedor;
-
-import java.time.LocalDate;
-import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) throws Exception {

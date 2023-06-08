@@ -1,27 +1,25 @@
 package empresa.entity;
 
-import empresa.entity.Usuario;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Profesional extends Usuario {
     private String titulo;
-    private LocalDate fechaIngreso;
+    private String fechaIngreso;
 
     //Constructor vacío
     public Profesional() {
     }
 
     //Constructor con atributos de la clase Profesional y de la clase Usuario
-    public Profesional(String nombreUsuario, String apellido1, String apellido2, String  fechaDeNacimiento, int run, String titulo, LocalDate fechaIngreso) {
+    public Profesional(String nombreUsuario, String apellido1, String apellido2, String  fechaDeNacimiento, int run, String titulo, String fechaIngreso) {
         super(nombreUsuario, apellido1, apellido2, fechaDeNacimiento, run);
         this.titulo = titulo;
         this.fechaIngreso = fechaIngreso;
     }
 
     //Constructor con atributos de la clase Profesional
-    public Profesional(String titulo, LocalDate fechaIngreso) {
+    public Profesional(String titulo, String fechaIngreso) {
         this.titulo = titulo;
         this.fechaIngreso = fechaIngreso;
     }
@@ -35,14 +33,14 @@ public class Profesional extends Usuario {
         this.titulo = titulo;
     }
 
-    public LocalDate getFechaIngreso() {
+    public String getFechaIngreso() {
         return fechaIngreso;
     }
 
     public void setFechaIngreso(String fechaIngreso) {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        this.fechaIngreso = LocalDate.parse(fechaIngreso, formatter);
+        this.fechaIngreso = String.valueOf(LocalDate.parse(fechaIngreso, formatter));
     }
 
     //Método toString
