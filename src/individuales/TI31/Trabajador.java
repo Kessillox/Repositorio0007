@@ -6,26 +6,13 @@ import java.util.Arrays;
  * @author Manuel Pinot
  */
 public class Trabajador {
+    private String nombres;
+    private String apellidos;
+    private String run;
+    private String telefono;
+    private int edad;
 
-        private String nombres;
-        private String apellidos;
-        private String run;
-        private int telefono;
-        private int edad;
-
-        //Constructor vacio
-        public Trabajador() {
-        }
-
-    /**
-     * Constructor con atributos
-     * @param nombres
-     * @param apellidos
-     * @param run
-     * @param telefono
-     * @param edad
-     */
-    public Trabajador(String nombres, String apellidos, String run, int telefono, int edad) {
+    public Trabajador(String nombres, String apellidos, String run, String telefono, int edad) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.run = run;
@@ -33,36 +20,60 @@ public class Trabajador {
         this.edad = edad;
     }
 
-
-    // Método para obtener el nombre completo del trabajador
-    public String nombreCompleto() {
-        return nombres + " " + apellidos;
+    public String getNombres() {
+        return nombres;
     }
 
-    // Método para descomponer el RUN y obtener el número antes del guion y dígito verificador
-    public int descomponerRun() {
-        int guionIndex = run.indexOf("-");
-        String[] numeroRun = run.split("-");
-        return Integer.parseInt(Arrays.toString(numeroRun));
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
+    public String getApellidos() {
+        return apellidos;
+    }
 
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
 
-    // Método toString() para representar el objeto en forma de cadena @Override
+    public String getRun() {
+        return run;
+    }
+
+    public void setRun(String run) {
+        this.run = run;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public void mostrarDatos() {
+        System.out.println("Teléfono: " + telefono);
+        System.out.println("Edad: " + edad);
+    }
+
     @Override
     public String toString() {
-        return "Individual25{" +
+        return "Trabajador{" +
                 "nombres='" + nombres + '\'' +
                 ", apellidos='" + apellidos + '\'' +
                 ", run='" + run + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", edad=" + edad +
                 '}';
-    }
-
-
-    public String mostrarDatos() {
-        return telefono + " " + edad;
     }
 }
 
