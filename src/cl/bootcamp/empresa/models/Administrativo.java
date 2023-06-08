@@ -19,7 +19,6 @@ La clase Administrador está abierta a la extensión, ya que se pueden crear nue
 public class Administrativo extends Usuario {
 
     private String area;
-
     private String experenciaArea;
 
     public Administrativo() {
