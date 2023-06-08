@@ -1,4 +1,5 @@
 /*
+UTILIZACIÓN PRINCIPIOS SOLID
 LSP: La clase cumple el principio de Liskov, ya que una instancia de Profesional puede ser usada cuando una instancia de la clase Usuario es la esperada.
 */
 
