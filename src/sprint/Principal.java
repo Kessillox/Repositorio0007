@@ -1,21 +1,25 @@
 package sprint;
 
-import sprint.entity.Cliente;
-import sprint.entity.Profesional;
+
 
 import sprint.entity.Usuario;
 
+import sprint.entity.*;
+
 import java.util.Date;
+
 import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+
         //VARIABLES Usuarios
         String nombreUser = "";
         String apellido1User = "";
         String apellido2User = "";
+
         String fechaNacimientoUser = "";
         int runUser = 0;
         Usuario usuario1 = new Usuario(nombreUser, apellido1User, apellido2User, fechaNacimientoUser, runUser);
@@ -57,6 +61,9 @@ public class Principal {
 
         System.out.println();
         op = sc.nextInt();
+
+        sc.nextLine(); //nextLine lo agregue para que no salte siguiente linea
+
 
         do {
             if (op > 3) {
@@ -185,6 +192,43 @@ public class Principal {
                     break;
                 case 5:
                     System.out.println("------Perfil Capacitaciones------");
+
+                    VisitaEnTerreno visita = new VisitaEnTerreno();
+
+
+                    //llamar rut otra clase?
+
+                    //Objeto Capacitacion
+                    Capacitacion capaci = new Capacitacion();
+
+                    sc.nextLine();
+                    System.out.println("Ingrese rut empresa");
+                    capaci.setRutEmpresa(sc.nextLine());
+                    System.out.println(capaci.getRutEmpresa());
+
+                    System.out.println("Ingrese ID capacitacion (solo numeros enteros)");
+                    capaci.setId(sc.nextInt());
+                    System.out.println(capaci.getId()); sc.nextLine();
+
+                    System.out.println("Ingrese dia de capacitacion");
+                    capaci.setDia(sc.nextLine());
+                    System.out.println(capaci.getDia());
+
+                    System.out.println("Ingrese hora de capacitacion (ej: 20:00)");
+                    capaci.setHora(sc.nextLine());
+                    System.out.println(capaci.getLugar());
+
+                    System.out.println("Ingrese lugar de capactitacion");
+                    capaci.setLugar(sc.nextLine());
+                    System.out.println(capaci.getLugar());
+
+                    System.out.println("Ingrese duracion en horas(numero entero)de capacitacion");
+                    capaci.setHora(sc.nextLine());
+                    System.out.println(capaci.getHora() + "horas");
+
+                    System.out.println("Ingrese cantidad de asistente a la capacitacion");
+                    capaci.setCantidadAsistente(sc.nextInt());
+                    System.out.println(capaci.getCantidadAsistente() + "Asistentes");
                     break;
                 case 6:
                     System.out.println("------Perfil Accidente------");
@@ -196,14 +240,24 @@ public class Principal {
                     System.out.println("------Perfil Revision------");
                     break;
             }
+
         } while (op > 3);
 
 
+        //Validaciones sergio
+        //Objeto VisitaTerreno
+
+        VisitaEnTerreno visita = new VisitaEnTerreno();
+
+
+        //llamar rut otra clase?
+
+        //Objeto Capacitacion
+        //Capacitacion capaci = new Capacitacion();
+
+
+
+
+
     }
-
-
-    //Validaciones sergio
-    //Objeto VisitaTerreno
-
-
 }
