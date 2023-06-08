@@ -25,7 +25,7 @@ public class ValidacionUsuario {
         return (str != null && !str.isEmpty());
     }
 
-    public static boolean validarRun(int run){
+    public static boolean validarRun(long run){
         if(run < 99999999) {
             System.out.println("RUN registrado correctamente.");
             return true;

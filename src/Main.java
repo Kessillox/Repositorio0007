@@ -60,9 +60,9 @@ public class Main {
                         fechaDeNacimientoUsuario = entrada.next();
                     }while(!esStringObligatorio(apellido2Usuario));
                     do{
-                        System.out.println("Ingresa el RUN sin guion ni digito verificador");
+                        System.out.println("Ingresa el RUN sin punto ni guion");
                         runUsuario = entrada.nextInt();
-                    }while(validarRun(runUsuario));
+                    }while(!validarRun(runUsuario));
                     Usuario usuarioEjemplo = new Usuario(nombreUsuario, apellido1Usuario, apellido2Usuario, fechaDeNacimientoUsuario, runUsuario);
 
                     System.out.println(usuarioEjemplo.toString());
