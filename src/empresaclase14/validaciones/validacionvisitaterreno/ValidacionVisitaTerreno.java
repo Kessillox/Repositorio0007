@@ -22,10 +22,10 @@ public class ValidacionVisitaTerreno {
     }
 
     // Validacion de Comentarios
-    public static boolean validarComentario(String str){
-        if(str == null || str.length() == 0) {
+    public static boolean validarComentario(String str) {
+        if (str == null || str.length() == 0) {
             return false;
-        } else if(str.length() >= 1 && str.length() <= 100) {
+        } else if (str.length() >= 1 && str.length() <= 100) {
             System.out.println("Comentario ingresado correctamente");
             return true;
         } else {

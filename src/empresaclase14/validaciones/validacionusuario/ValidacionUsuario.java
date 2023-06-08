@@ -6,10 +6,10 @@ public class ValidacionUsuario {
         for (int i = 0; i < str.length(); i++) {
             if (!Character.isLetter(str.charAt(i))) {
                 System.out.println("Solo debe ingresar letras.");
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     public static boolean validarNombre(String str) {
