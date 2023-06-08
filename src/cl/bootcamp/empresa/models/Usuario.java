@@ -14,13 +14,19 @@ La clase Usuario está abierta a la extensión, ya que se pueden crear nuevas cl
  * @version 1.0.0
  * @see Usuario
  */
+
 public class Usuario implements IAsesoria {
 
     private String nombre;
+
     private String apellido1;
+
     private String apellido2;
+
     private String fechaNacimiento;
+
     private String run;
+
     private int edad;
 
     public Usuario() {
