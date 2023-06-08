@@ -1,5 +1,8 @@
 package cl.bootcamp.empresa.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class VisitaTerreno {
 
     private int id;
@@ -7,11 +10,14 @@ public class VisitaTerreno {
     private String hora;
     private String lugar;
     private String comentario;
+    private List<Revision> revisiones;
 
     public VisitaTerreno() {
+        revisiones = new ArrayList<>();
     }
 
     public VisitaTerreno(int id, String dia, String hora, String lugar, String comentario) {
+        this();
         this.id = id;
         this.dia = dia;
         this.hora = hora;
@@ -57,6 +63,17 @@ public class VisitaTerreno {
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
+    }
+
+    public VisitaTerreno addRevision(Revision revision) {
+        revisiones.add(revision);
+        return this;
+    }
+
+    public void addRevision(List<Revision> revisiones) {
+        for (Revision revision : revisiones) {
+            this.revisiones.add(revision);
+        }
     }
 
     @Override
