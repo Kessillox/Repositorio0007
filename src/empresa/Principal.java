@@ -75,14 +75,60 @@ public class Principal {
                     int runProfesional = sc.nextInt();
                     System.out.println("Ingrese el nombre del profesional:");
                     String nombreProfesional = sc.next();
-                    cont.almacenarProfesional(new Profesional());
+                    System.out.println("Ingrese el fecha de Nacimiento:");
+                    String fechaDeNacimientoProfesional = sc.next();
+                    System.out.println("Ingrese apellido1 del profesional:");
+                    String apellido1Profesional = sc.next();
+                    System.out.println("Ingrese apellido2 del profesional:");
+                    String apellido2Profesional = sc.next();
+                    System.out.println("Ingrese titulo del Profesional:");
+                    String tituloProfesional = sc.next();
+                    System.out.println("Ingrese fecha de ingreso:");
+                    String fechaIngreso = sc.next();
+
+
+                    cont.almacenarProfesional(new Profesional(nombreProfesional, apellido1Profesional, apellido2Profesional, tituloProfesional,runProfesional,fechaIngreso,fechaDeNacimientoProfesional));
                     break;
                 case 3:
                     System.out.println("Ingrese el RUN del administrativo:");
-                    int runAdministrativo = sc.nextInt();
+                    String runAdministrativo = sc.nextLine();
+                    while ( !runAdministrativo.matches("[0-9]{7,8}-[0-9kK]")) {
+                        System.out.println("RUN inválido. Por favor, ingrese un RUN válido:");
+                        runAdministrativo = sc.nextLine();
+                    }
+
                     System.out.println("Ingrese el nombre del administrativo:");
                     String nombreAdministrativo = sc.next();
-                    cont.almacenarAdministrativo(new Administrativo());
+                    while(nombreAdministrativo.isEmpty() || nombreAdministrativo.length() > 20 || !nombreAdministrativo.matches("[a-zA-Z][a-zA-Z0]")){
+                        System.out.println("Nombre inválido. Por favor, ingrese un nombre valido");
+                        nombreAdministrativo = sc.next();
+                    }
+
+
+
+                    System.out.println("Ingrese el apellido1 del administrativo:");
+                    String apellido1Administrativo = sc.next();
+
+
+                    System.out.println("Ingrese apellido2 del administrativo:");
+                    String apellido2Administrativo = sc.next();
+
+
+                    System.out.println("Ingrese fecha de nacimiento:");
+                    int fechaDeNacimientoAdministrativo = sc.nextInt();
+
+
+                    System.out.println("Ingrese experiencia del administrativo:");
+                    String experienciaAdministrativo = sc.next();
+
+
+                    System.out.println("Ingrese area del administrativo:");
+                    String areaAdministrativo = sc.next();
+
+
+                    cont.almacenarAdministrativo(new Administrativo(runAdministrativo, nombreAdministrativo, apellido1Administrativo, apellido2Administrativo,fechaDeNacimientoAdministrativo,experienciaAdministrativo,areaAdministrativo));
+
+
                     break;
                 case 4:
                     System.out.println("Ingrese el nombre de la capacitación:");
