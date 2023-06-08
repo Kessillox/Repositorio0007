@@ -3,26 +3,55 @@ package evaluacionFinalModuloJava.entity;
 import evaluacionFinalModuloJava.interfac.IAsesoria;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Usuario implements IAsesoria {
     private String nombre;
-
     private String apellido1;
     private String apellido2;
-    private LocalDate fechaNacimiento;//dd/mm/yy
-    private int run;
+    private LocalDate fechaNacimiento;
+    private String run;
 
+    /**
+     * Constructor vacio de la clase
+     */
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellido1, String apellido2, LocalDate fechaNacimiento, int run, int edad) {
+    /**
+     * Constructor de la clase
+     *
+     * @param nombre
+     * @param apellido1
+     * @param apellido2
+     * @param fechaNacimiento
+     * @param run
+     */
+    public Usuario(String nombre, String apellido1, String apellido2, LocalDate fechaNacimiento, String run) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
         this.fechaNacimiento = fechaNacimiento;
         this.run = run;
-
     }
+
+
+    /**
+     * Metodo que retorna parametros y valores de la clase
+     *
+     * @return mensaje con valores y parametros
+     */
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido1='" + apellido1 + '\'' +
+                ", apellido2='" + apellido2 + '\'' +
+                ", fechaNacimiento=" + fechaNacimiento +
+                ", run='" + run + '\'' +
+                '}';
+    }
+
 
     public String getNombre() {
         return nombre;
@@ -30,6 +59,11 @@ public class Usuario implements IAsesoria {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getFechaNacimiento() {
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        return fechaNacimiento.format(dateFormat);
     }
 
     public String getApellido1() {
@@ -48,31 +82,44 @@ public class Usuario implements IAsesoria {
         this.apellido2 = apellido2;
     }
 
-    public LocalDate getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public int getRun() {
+    public String getRun() {
         return run;
     }
 
-    public void setRun(int run) {
+    public void setRun(String run) {
         this.run = run;
     }
 
-    public void mostrarEdad(){
-        //System.out.println("El usuario tiene "+ (LocalDate.now().getDayOfYear()- this.getFechaNacimiento())+" anos");
+    /**
+     * Metodo que calcula la edad del usuario
+     *
+     * @return mensaje con la edad en años de usuarios
+     */
+    public String mostrarEdad() {
+        int anioActual = LocalDate.now().getYear();
+        return "El usuario tiene " + (anioActual - this.fechaNacimiento.getYear()) + "años.";
     }
 
-
+    /**
+     * Metodo implementado de IAsesoria que muestra por consola el nombre y rut del
+     * usuario
+     */
     @Override
     public void analizarUsuario() {
-        mostrarEdad();
+        String mensaje = "Nombre: " + this.nombre + "\n Run: " + this.run;
+        System.out.println(mensaje);
+    }
 
-
+    @Override
+    public void listarDatos() {
+        System.out.println("Datos \nnombre=" + nombre  +
+                ", apellido1=" + apellido1 +
+                ", apellido2=" + apellido2 +
+                ", fechaNacimiento=" + fechaNacimiento +
+                ", run=" + run);
     }
 }

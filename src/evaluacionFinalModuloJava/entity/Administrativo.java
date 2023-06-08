@@ -1,15 +1,62 @@
 package evaluacionFinalModuloJava.entity;
 
-public class Administrativo extends Usuario {
-    private String area;
-    private String experienciaPrevia;
+import java.time.LocalDate;
 
+import evaluacionFinalModuloJava.interfac.IAsesoria;
+import evaluacionFinalModuloJava.entity.Usuario;
+
+/**
+ *
+ * @author nehemiasmunoz
+ *
+ */
+public class Administrativo extends Usuario implements IAsesoria {
+    private String area;
+    private String experiencia;
+
+    /**
+     * Constructor vacio
+     */
     public Administrativo() {
     }
 
-    public Administrativo(String area, String experienciaPrevia) {
+//	/**
+//	 * Constructor de la clase
+//	 *
+//	 * @param area
+//	 * @param experiencia
+//	 */
+//	public Administrativo(String area, String experiencia) {
+//		this.area = area;
+//		this.experiencia = experiencia;
+//	}
+
+    /**
+     * Constructor con parametros y herencia
+     *
+     * @param nombre
+     * @param apellido1
+     * @param apellido2
+     * @param fechaNacimiento
+     * @param run
+     * @param area
+     * @param experiencia
+     */
+    public Administrativo(String nombre, String apellido1, String apellido2, LocalDate fechaNacimiento, String run,
+                          String area, String experiencia) {
+        super(nombre, apellido1, apellido2, fechaNacimiento, run);
         this.area = area;
-        this.experienciaPrevia = experienciaPrevia;
+        this.experiencia = experiencia;
+    }
+
+    /**
+     * Metodo que retorna los parametros y valores de la clase
+     *
+     * @return String que contiene los parametros y valores de la clase
+     */
+    @Override
+    public String toString() {
+        return "Administrativo{" + "area='" + area + '\'' + ", experiencia='" + experiencia + '\'' + '}';
     }
 
     public String getArea() {
@@ -20,18 +67,26 @@ public class Administrativo extends Usuario {
         this.area = area;
     }
 
-    public String getExperienciaPrevia() {
-        return experienciaPrevia;
+    public String getExperiencia() {
+        return experiencia;
     }
 
-    public void setExperienciaPrevia(String experienciaPrevia) {
-        this.experienciaPrevia = experienciaPrevia;
+    public void setExperiencia(String experiencia) {
+        this.experiencia = experiencia;
+    }
+
+    /**
+     * Metodo que complementado con la interfaz muestra por consola datos del
+     * usuario Administrativo
+     */
+    @Override
+    public void analizarUsuario() {
+        System.out.println("Area: " + area + "\nExperiencia: " + experiencia);
     }
 
     @Override
-    public void analizarUsuario() {
-        super.analizarUsuario();
-        System.out.println("El Administrativo pertenece a la area: "+this.getArea());
-        System.out.println("La experiencia del administrativo es de: "+this.getExperienciaPrevia());
+    public void listarDatos() {
+        super.listarDatos();
+        System.out.println("Tipo administrativo \n area='" + area + ", experiencia='" + experiencia );
     }
 }
