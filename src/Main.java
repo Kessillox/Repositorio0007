@@ -54,6 +54,10 @@ public class Main {
         String direccionEmpresa;
         String comunaEmpresa;
 
+        // Variables de Accidente
+        int idAccidente = 0;
+        String dia, hora, lugar, origen, consecuencias;
+
         do {
 
             System.out.println("\n Bienvenido a Sprint Modulo 4 Programación en Java!");
@@ -61,7 +65,13 @@ public class Main {
             System.out.println("Que operación deseas realizar? (Debes pulsar un número)");
             System.out.println("1.- Registrar Usuario");
             System.out.println("2.- Registrar Cliente");
-            System.out.println("3.- Salir");
+            System.out.println("3.- Registrar Cliente");
+            System.out.println("4.- Registrar Cliente");
+            System.out.println("5.- Registrar Cliente");
+            System.out.println("6.- Registrar Accidente");
+            System.out.println("7.- Registrar Cliente");
+            System.out.println("8.- Registrar Cliente");
+            System.out.println("9.- Salir");
             System.out.println("Selecciona una opción:");
             opcion = entrada.nextInt();
 
@@ -133,7 +143,30 @@ public class Main {
 
 
                 case 6: // Accidente
+                    System.out.println("Se encuentra en el Registro de Accidentes");
+                    do { System.out.println("Ingrese el ID Accidente");
+                        idAccidente = entrada.nextInt();
+                    } while (!validarId(idAccidente));
+                    System.out.println("Ingrese el día  del accidente");
+                    dia = entrada.next();
+                    do {
+                        System.out.println("Ingrese la hora del accidente");
+                        hora = entrada.next();
+                    } while (!validarHora(hora));
+                    System.out.println("Ingrese el lugar del accidente");
+                    lugar = entrada.next();
+                    do {
+                        System.out.println("Ingrese el origen del accidente");
+                        origen = entrada.next();
+                    } while (!validarOrigenConsecuencias(origen));
+                    do {
+                        System.out.println("Ingrese las concecuencias del accidente");
+                        consecuencias = entrada.next();
+                    } while (!validarOrigenConsecuencias(consecuencias));
 
+                    Accidente accidente1 = new Accidente(idAccidente, dia, hora, lugar, origen, consecuencias);
+
+                    System.out.println(accidente1.toString());
 
 
 
