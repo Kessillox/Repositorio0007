@@ -8,7 +8,7 @@ public class Administrativo extends Usuario {
     private String experiencia;
 
     //Constructor vacío
-    public Administrativo() {
+    public Administrativo(int runAdministrativo, String nombreAdministrativo, String apellido1Administrativo, String apellido2Administrativo, int fechaDeNacimientoAdministrativo, String experienciaAdministrativo, String areaAdministrativo) {
     }
 
     //Constructor con atributos de la clase Administrativo
