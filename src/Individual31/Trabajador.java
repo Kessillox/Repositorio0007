@@ -1,4 +1,4 @@
-package Individual27;
+package Individual31;
 
 public class Trabajador {
     private String nombre;
@@ -89,4 +89,11 @@ public class Trabajador {
         numTotal= Integer.parseInt(numConcatenado);
         return numTotal;
     }
+
+    public void mostrarDatos(){
+        System.out.println("El telefono del trabajador es: "+this.getTelefono()+" Y su edad es: "+
+                this.getEdad());
+    }
+
+
 }
