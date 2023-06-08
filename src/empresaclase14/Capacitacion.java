@@ -13,6 +13,7 @@ public class Capacitacion {
     private String lugar;
     private int duracion;
     private int cantidadDeAsistentes;
+    public Cliente cliente;
 
     public Capacitacion() {
     }
@@ -98,6 +99,6 @@ public class Capacitacion {
     // Se considera que el atributo duración es ingresado en formato HORA
     public String mostrarDetalle(){
         return "La capacitación será en " + lugar + " a las " + hora + "hrs. del día " + dia +
-                ", y durará " + (duracion*60) + " minutos";
+                ", y durará " + duracion + " minutos";
     }
 }

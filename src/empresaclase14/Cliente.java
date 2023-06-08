@@ -1,5 +1,8 @@
 package empresaclase14;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Clase que representa un Cliente, contiene 8 atributos privados.
  * @author Luis Zambrano
@@ -12,6 +15,9 @@ public class Cliente extends Usuario {
     private  String telefonoRepresentante;
     private String direccionEmpresa;
     private String comunaEmpresa;
+    public List<Capacitacion> capacitacionList = new ArrayList<>();
+    public List<Accidente> accidenteList = new ArrayList<>();
+    public List<VisitaEnTerreno> visitaEnTerrenoList = new ArrayList<>();
 
     public Cliente() {
     }
@@ -101,7 +107,9 @@ public class Cliente extends Usuario {
 
     @Override
     public void analizarUsuario() {
-        System.out.println("El nombre del usuario es: " + super.getNombre());
-        System.out.println("La información del Cliente es: " + this.toString());
+        super.analizarUsuario();
+        System.out.println("La dirección es "+ this.getDireccionEmpresa() + ", comuna de " + this.getComunaEmpresa());
+        //System.out.println("El nombre del usuario es: " + super.getNombre());
+        //System.out.println("La información del Cliente es: " + this.toString());
     }
 }

@@ -1,11 +1,16 @@
 package empresaclase14;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class VisitaEnTerreno {
     private int idVisitaTerreno;
     private String dia;
     private String hora;
     private String lugar;
     private String comentarios;
+    public Cliente cliente;
+    public List<Revision> revisionList = new ArrayList<>();
 
     public VisitaEnTerreno() {
     }

@@ -91,7 +91,7 @@ public class Usuario implements IAsesoria {
     public String mostrarEdad(){
         int edad;
         edad = (2023 - Integer.parseInt(fechaDeNacimiento));
-        return "El usuario tiene " + edad;
+        return "El usuario tiene " + edad + " años";
     }
 
     @Override

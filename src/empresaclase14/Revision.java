@@ -5,6 +5,7 @@ public class Revision {
     private String nombreRevision;
     private String detalleRevision;
     private int estado;
+    public VisitaEnTerreno visitaEnTerreno;
 
     public Revision() {
     }

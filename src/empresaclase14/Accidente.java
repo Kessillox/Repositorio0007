@@ -13,6 +13,7 @@ public class Accidente {
     private String lugar;
     private String origen;
     private String consecuencias;
+    public Cliente cliente;
 
     public Accidente() {
     }
