@@ -96,6 +96,6 @@ public class Usuario implements IAsesoria {
 
     @Override
     public void analizarUsuario() {
-        System.out.println("Nombre de usuario: " + this.getNombre());
+        System.out.println("Nombre de usuario: " + this.getNombre() +", run: "+ this.getRun());
     }
 }
