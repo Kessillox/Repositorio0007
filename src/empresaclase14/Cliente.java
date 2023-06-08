@@ -8,7 +8,7 @@ public class Cliente extends Usuario {
 
     private String nombreEmpresa;
     private String giroEmpresa;
-    private String rut;
+    private int rut;
     private  String telefonoRepresentante;
     private String direccionEmpresa;
     private String comunaEmpresa;
@@ -16,20 +16,52 @@ public class Cliente extends Usuario {
     public Cliente() {
     }
 
-    public Cliente(String nombreEmpresa, String giroEmpresa, String rut, String telefonoRepresentante, String direccionEmpresa, String comunaEmpresa) {
-        this.nombreEmpresa = nombreEmpresa;
+    public Cliente(String nombreEmpresa, String giroEmpresa, int rut, String telefonoRepresentante, String direccionEmpresa, String comunaEmpresa) {
+        // Validación de campo nombreEmpresa
+        if (nombreEmpresa.length() >=5 && nombreEmpresa.length() <= 30) {
+            this.nombreEmpresa = nombreEmpresa;
+        } else {
+            // Si ingresamos un argumento que no coincide con lo pedido en el argumento, lanza una excepción
+            throw new IllegalArgumentException("Ingrese un nombre correcto (5 a 30 caracteres)");
+        }
         this.giroEmpresa = giroEmpresa;
-        this.rut = rut;
+        // Validación de campo rut
+        if (rut < 99999999) {
+            this.rut = rut;
+        } else {
+            // Si ingresamos un argumento que no coincide con lo pedido en el argumento, lanza una excepción
+            throw new IllegalArgumentException("Ingrese un número menor a 99.999.999");
+        }
         this.telefonoRepresentante = telefonoRepresentante;
-        this.direccionEmpresa = direccionEmpresa;
-        this.comunaEmpresa = comunaEmpresa;
+        if(direccionEmpresa.length() >5 && direccionEmpresa.length() <= 70) {
+            this.direccionEmpresa = direccionEmpresa;
+        } else {
+            throw new IllegalArgumentException("Ingrese una dirección válida (5 a 70 caracteres)");
+        }
+        if(comunaEmpresa.length() >5 && comunaEmpresa.length() <= 70) {
+            this.comunaEmpresa = comunaEmpresa;
+        } else {
+            throw new IllegalArgumentException("Ingrese una dirección válida (5 a 50 caracteres)");
+        }
     }
 
-    public Cliente(String nombre, String apellido1, String apellido2, String fechaDeNacimiento, Integer run, String nombreEmpresa, String giroEmpresa, String rut, String telefonoRepresentante, String direccionEmpresa, String comunaEmpresa) {
+    public Cliente(String nombre, String apellido1, String apellido2, String fechaDeNacimiento, Integer run, String nombreEmpresa, String giroEmpresa, int rut, String telefonoRepresentante, String direccionEmpresa, String comunaEmpresa) {
         super(nombre, apellido1, apellido2, fechaDeNacimiento, run);
-        this.nombreEmpresa = nombreEmpresa;
+        // Validación de campo nombreEmpresa
+        if (nombreEmpresa.length() >=5 && nombreEmpresa.length() <= 30) {
+            this.nombreEmpresa = nombreEmpresa;
+        } else {
+            // Si ingresamos un argumento que no coincide con lo pedido en el argumento, lanza una excepción
+            throw new IllegalArgumentException("Ingrese un nombre correcto (5 a 30 caracteres)");
+        }
         this.giroEmpresa = giroEmpresa;
-        this.rut = rut;
+        // Validación de campo rut
+        if (rut < 99999999) {
+            this.rut = rut;
+        } else {
+            // Si ingresamos un argumento que no coincide con lo pedido en el argumento, lanza una excepción
+            throw new IllegalArgumentException("Ingrese un número menor a 99.999.999");
+        }
         this.telefonoRepresentante = telefonoRepresentante;
         this.direccionEmpresa = direccionEmpresa;
         this.comunaEmpresa = comunaEmpresa;
@@ -51,11 +83,11 @@ public class Cliente extends Usuario {
         this.giroEmpresa = giroEmpresa;
     }
 
-    public String getRut() {
+    public int getRut() {
         return rut;
     }
 
-    public void setRut(String rut) {
+    public void setRut(int rut) {
         this.rut = rut;
     }
 
