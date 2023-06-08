@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+        /*
         Listado lista = new Listado();
         Usuario usuario1 = new Cliente("Juan", "Perez", "Lopez", "02/01/1995", 17237181, "Juan Enterprise", "Lapices", "+569283192", "Calle 1", "Marte City", 99);
         Usuario usuario2 = new Administrativo("Roberto", "Perez", "Lopez", "02/01/1995", 17237182, "Lapiceras", "-Armado de sacapuntas");
@@ -16,11 +17,12 @@ public class Main {
         lista.agregar(usuario5);
 
         lista.mostrarDatos();
+        */
 
-        Contenedor lista2 = new Contenedor(new ArrayList<>(), new ArrayList<>());
+        Contenedor contenedor = new Contenedor(new ArrayList<>(), new ArrayList<>());
 
-        lista2.almacenarCliente();
 
+        contenedor.eliminarUsuario();
 
     }
 }

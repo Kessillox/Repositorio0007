@@ -5,10 +5,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Contenedor {
-    private List<IAsesoria> listaUsuarios;
+    private List<Usuario> listaUsuarios;
     private List<Capacitacion> listaCapacitaciones;
 
-    public Contenedor(List<IAsesoria> listaUsuarios, List<Capacitacion> listaCapacitaciones) {
+    public Contenedor(List<Usuario> listaUsuarios, List<Capacitacion> listaCapacitaciones) {
         this.listaUsuarios = listaUsuarios;
         this.listaCapacitaciones = listaCapacitaciones;
     }
@@ -21,11 +21,11 @@ public class Contenedor {
                 '}';
     }
 
-    public List<IAsesoria> getListaUsuarios() {
+    public List<Usuario> getListaUsuarios() {
         return listaUsuarios;
     }
 
-    public void setListaUsuarios(List<IAsesoria> listaUsuarios) {
+    public void setListaUsuarios(List<Usuario> listaUsuarios) {
         this.listaUsuarios = listaUsuarios;
     }
 
@@ -60,7 +60,7 @@ public class Contenedor {
         }
 
         String fechaNac = "";
-        Pattern patron = Pattern.compile("(0[1-9]|1[0-2])/([0-2][1-9]|3[0-1])/(19\\d\\d|20[0-2][0-9])");
+        Pattern patron = Pattern.compile("(0[1-9]|1\\d|2\\d|3[01])/(0[1-9]|1[0-2])/(19\\d\\d|20[0-2][0-9])");
         Matcher matcher = patron.matcher(fechaNac);
         while (!matcher.matches()) {
             System.out.println("Ingresar fecha de nacimiento (dd/MM/YYYY)");
@@ -128,12 +128,13 @@ public class Contenedor {
             } catch (Exception e) {
                 sc.nextLine();
             }
-
         }
 
-        sc.close();
         Usuario cliente = new Cliente(nombre, apellido1, apellido2, fechaNac, run, nombreEmpresa, giroEmpresa, strTelefonoRepresentante, direccionEmpresa, comunaEmpresa, edad);
         this.getListaUsuarios().add(cliente);
+
+        System.out.println("CLIENTE REGISTRADO CORRECTAMENTE");
+        sc.nextLine();
     }
 
     public void almacenarProfesional() {
@@ -159,7 +160,7 @@ public class Contenedor {
         }
 
         String fechaNac = "";
-        Pattern patron = Pattern.compile("(0[1-9]|1[0-2])/([0-2][1-9]|3[0-1])/(19\\d\\d|20[0-2][0-9])");
+        Pattern patron = Pattern.compile("(0[1-9]|1\\d|2\\d|3[01])/(0[1-9]|1[0-2])/(19\\d\\d|20[0-2][0-9])");
         Matcher matcher = patron.matcher(fechaNac);
         while (!matcher.matches()) {
             System.out.println("Ingresar fecha de nacimiento (dd/MM/YYYY)");
@@ -192,9 +193,11 @@ public class Contenedor {
             matcher2 = patron.matcher(fechaIngreso);
         }
 
-        sc.close();
         Usuario profesional = new Profesional(nombre, apellido1, apellido2, fechaNac, run, titulo, fechaIngreso);
         this.getListaUsuarios().add(profesional);
+
+        System.out.println("PROFESIONAL REGISTRADO CORRECTAMENTE");
+        sc.nextLine();
     }
 
     public void almacenarAdministrativo() {
@@ -220,7 +223,7 @@ public class Contenedor {
         }
 
         String fechaNac = "";
-        Pattern patron = Pattern.compile("(0[1-9]|1[0-2])/([0-2][1-9]|3[0-1])/(19\\d\\d|20[0-2][0-9])");
+        Pattern patron = Pattern.compile("(0[1-9]|1\\d|2\\d|3[01])/(0[1-9]|1[0-2])/(19\\d\\d|20[0-2][0-9])");
         Matcher matcher = patron.matcher(fechaNac);
         while (!matcher.matches()) {
             System.out.println("Ingresar fecha de nacimiento (dd/MM/YYYY)");
@@ -251,17 +254,120 @@ public class Contenedor {
             experienciaPrevia = sc.nextLine();
         }
 
-        sc.close();
         Usuario administrativo = new Administrativo(nombre, apellido1, apellido2, fechaNac, run, area, experienciaPrevia);
         this.getListaUsuarios().add(administrativo);
+
+        System.out.println("ADMINISTRATIVO REGISTRADO CORRECTAMENTE");
+        sc.nextLine();
     }
 
     public void almacenarCapacitacion() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("= = = REGISTRAR CAPACITACIÓN = = =");
 
+        int id = 0;
+        while (id < 1) {
+            try {
+                System.out.println("Ingresar id (1 - *)");
+                id = sc.nextInt();
+                sc.nextLine();
+            } catch (Exception e) {
+                sc.nextLine();
+            }
+        }
+
+        int runCliente = 100000000;
+        while (runCliente >= 99999999) {
+            try {
+                System.out.println("Ingresar rut del cliente sin digito verificador (XXXXXXXX)");
+                runCliente = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+            }
+        }
+
+        String dia = "";
+        String[] diasSemana = {"lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"};
+        while (dia == "") {
+            System.out.println("Ingresar día de la semana (Lunes - Martes - Miercoles - Jueves - Viernes - Sabado - Domingo)");
+            dia = sc.nextLine();
+            for (String diaValido : diasSemana) {
+                if (diaValido.equalsIgnoreCase(dia)) {
+                    break;
+                }
+            }
+        }
+
+        String hora = "";
+        Pattern patronHora = Pattern.compile("^([01]?[0-9]|2[0-3]):[0-5][0-9]$");
+        Matcher matcherHora = patronHora.matcher(hora);
+        while (!matcherHora.matches()) {
+            System.out.println("Ingresar hora de la capacitación (HH:MM)");
+            hora = sc.nextLine();
+            matcherHora = patronHora.matcher(hora);
+        }
+
+        String lugar = "";
+        while (lugar.length() < 10 || lugar.length() > 50) {
+            System.out.println("Ingresar lugar de la capacitación (10 - 50 carácteres)");
+            lugar = sc.nextLine();
+        }
+
+        int duracion = 0;
+        while (duracion < 1 || duracion > 1000000000) {
+            try {
+                System.out.println("Ingresar duración de la capacitación en minutos (1 - *)");
+                duracion = sc.nextInt();
+            } catch (Exception e) {
+            }
+        }
+
+        int cantidadAsistentes = 1001;
+        while (cantidadAsistentes > 1000) {
+            System.out.println("Ingresar cantidad de asistentes");
+            try {
+                cantidadAsistentes = sc.nextInt();
+                sc.nextLine();
+            } catch (Exception e) {
+                sc.nextLine();
+            }
+        }
+
+        Capacitacion capacitacion = new Capacitacion(id, runCliente, dia, hora, lugar, duracion, cantidadAsistentes);
+        this.getListaCapacitaciones().add(capacitacion);
+
+        System.out.println("CAPACITACIÓN REGISTRADA CORRECTAMENTE");
+        sc.nextLine();
     }
 
     public void eliminarUsuario() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("= = = ELIMINAR USUARIO = = =");
 
+        boolean usuarioEliminado = false;
+        while (!usuarioEliminado) {
+            try {
+                System.out.println("Ingresar RUN o RUT del usuario sin dígito verificador o 'Salir' para volver al menu principal");
+                String runUsuarioEliminar = sc.nextLine();
+                if (runUsuarioEliminar.equalsIgnoreCase("salir")) {
+                    break;
+                } else {
+                    int intRunUsuarioEliminar = Integer.parseInt(runUsuarioEliminar);
+                    for (Usuario usuario : this.getListaUsuarios()) {
+                        if (usuario.getRun() == intRunUsuarioEliminar) {
+                            this.getListaUsuarios().remove(usuario);
+                            System.out.println("Usuario encontrado y eliminado");
+                            usuarioEliminado = true;
+                            break;
+                        }
+                    }
+                    if (!usuarioEliminado) {
+                        System.out.println("Usuario no encontrado");
+                    }
+                }
+            } catch (Exception e) {
+                System.out.println("RUN o RUT en formato incorrecto");
+            }
+        }
     }
 
     public void listarUsuarios() {
