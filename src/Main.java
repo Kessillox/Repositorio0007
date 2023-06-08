@@ -103,18 +103,25 @@ public class Main {
 
                     System.out.println("Bienvenido al registro de Clientes");
                     do { System.out.println("Ingrese el nombre de la empresa");
-                    nombreEmpresa = entrada.next();}
-                    while (!validarNombreEmpresa(nombreEmpresa));
+                    nombreEmpresa = entrada.next();
+                    } while (!validarNombreEmpresa(nombreEmpresa));
                     System.out.println("Ingrese el giro de la empresa");
                     giroEmpresa = entrada.next();
-                    System.out.println("Ingrese el rut de la empresa");
-                    rut = entrada.nextInt();
+                    do {
+                        System.out.println("Ingrese el rut de la empresa");
+                        rut = entrada.nextInt();
+                    } while (!validarRut(rut));
                     System.out.println("Ingrese el telefono de la empresa");
                     telefonoRepresentante = entrada.next();
-                    System.out.println("Ingrese la dirección de la empresa");
-                    direccionEmpresa = entrada.next();
-                    System.out.println("Ingrese la comuna de la empresa");
+                    do {
+                        System.out.println("Ingrese la dirección de la empresa");
+                        direccionEmpresa = entrada.next();
+                    } while (!validarDireccionEmpresa(direccionEmpresa));
+                    do {
+                        System.out.println("Ingrese la comuna de la empresa");
                     comunaEmpresa = entrada.next();
+                    } while (!validarComunaEmpresa(comunaEmpresa));
+
                     Cliente clienteEjemplo = new Cliente(nombreEmpresa, giroEmpresa, rut, telefonoRepresentante, direccionEmpresa, comunaEmpresa);
 
                     System.out.println(clienteEjemplo.toString());
