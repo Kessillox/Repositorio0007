@@ -42,7 +42,7 @@ public class Contenedor {
                 '}';
     }
 
-    public void almacenaCliente(Cliente cliente) {
+    public void almacenarCliente(Cliente cliente) {
         IAsesorias.add(cliente);
     }
 
@@ -54,11 +54,11 @@ public class Contenedor {
         IAsesorias.add(administrativo);
     }
 
-    public void AlmacenarCapacitacion(Capacitacion capacitacion) {
+    public void almacenarCapacitacion(Capacitacion capacitacion) {
         getCapacitaciones().add(capacitacion);
     }
 
-    public void EliminarUsuario(IAsesoria run) {
+    public void eliminarUsuario(IAsesoria run) {
         getIAsesorias().removeIf((Predicate<? super IAsesoria>) run);
     }
 

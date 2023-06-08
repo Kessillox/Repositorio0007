@@ -135,7 +135,7 @@ public class App {
                 contenedor.eliminarUsuario(scan.next());
                 break;
             case 6:
-                contenedor.listarUsuario();
+                contenedor.listarUsuarios();
                 break;
             case 7:
 //                contenedor.listarUsuarios
