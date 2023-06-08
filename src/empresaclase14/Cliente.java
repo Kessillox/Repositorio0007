@@ -107,9 +107,14 @@ public class Cliente extends Usuario {
 
     @Override
     public void analizarUsuario() {
-        super.analizarUsuario();
-        System.out.println("La dirección es "+ this.getDireccionEmpresa() + ", comuna de " + this.getComunaEmpresa());
-        //System.out.println("El nombre del usuario es: " + super.getNombre());
-        //System.out.println("La información del Cliente es: " + this.toString());
+
+        System.out.println("El nombre del usuario es: " + super.getNombre()+", run: "+ super.getRun());
+        System.out.println("La dirección del cliente es: " + this.getDireccionEmpresa() +
+                "\n La comuna del cliente es: " + this.getComunaEmpresa());
     }
 }
+
+/*14.- Cliente: el método obtenerNombre(), que retorna un String con el nombre completo del cliente
+(nombres + apellidos), el método obtenerSistemaSalud() que de acuerdo al valor registrado en el objeto
+despliega el tipo de sistema de salud, y el método analizarUsuario() que debe desplegar los datos del
+método del mismo nombre correspondiente a la clase padre y la dirección del cliente junto con la comuna.*/
