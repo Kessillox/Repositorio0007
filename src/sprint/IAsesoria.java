@@ -1,5 +1,5 @@
 package sprint;
 
-public interface Asesoria {
+public interface IAsesoria {
    public void analizarUsuario();
 }

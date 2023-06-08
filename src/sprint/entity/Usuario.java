@@ -1,10 +1,8 @@
 package sprint.entity;
 
-import sprint.Asesoria;
+import sprint.IAsesoria;
 
-import java.util.Date;
-
-public class Usuario implements Asesoria {
+public class Usuario implements IAsesoria {
     private String Nombre;
     private String Apellido1;
     private String Apellido2;
@@ -60,6 +58,17 @@ public class Usuario implements Asesoria {
 
     public void setRun(int run) {
         this.run = run;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "Nombre='" + Nombre + '\'' +
+                ", Apellido1='" + Apellido1 + '\'' +
+                ", Apellido2='" + Apellido2 + '\'' +
+                ", FechaNacimiento='" + FechaNacimiento + '\'' +
+                ", run=" + run +
+                '}';
     }
 
     @Override
