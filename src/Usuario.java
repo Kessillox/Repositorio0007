@@ -77,7 +77,7 @@ public class Usuario implements IAsesoria {
 
     public void analizarUsuario() {
         System.out.println("Nombre: " + this.getNombre() );
-        System.out.println("RUT: " + this.getRun());
+        System.out.println("RUT o RUN: " + this.getRun());
     };
 }
 

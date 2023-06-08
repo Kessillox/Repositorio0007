@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -35,6 +37,12 @@ public class Contenedor {
 
     public void setListaCapacitaciones(List<Capacitacion> listaCapacitaciones) {
         this.listaCapacitaciones = listaCapacitaciones;
+    }
+
+    public String convertirFechaAString(LocalDate fecha) {
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String fechaString = fecha.format(formato);
+        return fechaString;
     }
 
     public void almacenarCliente() {
@@ -187,7 +195,7 @@ public class Contenedor {
 
         String fechaIngreso = "";
         Matcher matcher2 = patron.matcher(fechaIngreso);
-        while (!matcher.matches()) {
+        while (!matcher2.matches()) {
             System.out.println("Ingresar fecha de ingreso (dd/MM/YYYY)");
             fechaIngreso = sc.nextLine();
             matcher2 = patron.matcher(fechaIngreso);
@@ -286,12 +294,14 @@ public class Contenedor {
         }
 
         String dia = "";
+        boolean diaEncontrado = false;
         String[] diasSemana = {"lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"};
-        while (dia == "") {
+        while (!diaEncontrado) {
             System.out.println("Ingresar día de la semana (Lunes - Martes - Miercoles - Jueves - Viernes - Sabado - Domingo)");
             dia = sc.nextLine();
             for (String diaValido : diasSemana) {
                 if (diaValido.equalsIgnoreCase(dia)) {
+                    diaEncontrado = true;
                     break;
                 }
             }
@@ -352,15 +362,10 @@ public class Contenedor {
                     break;
                 } else {
                     int intRunUsuarioEliminar = Integer.parseInt(runUsuarioEliminar);
-                    for (Usuario usuario : this.getListaUsuarios()) {
-                        if (usuario.getRun() == intRunUsuarioEliminar) {
-                            this.getListaUsuarios().remove(usuario);
-                            System.out.println("Usuario encontrado y eliminado");
-                            usuarioEliminado = true;
-                            break;
-                        }
-                    }
-                    if (!usuarioEliminado) {
+                    if (this.getListaUsuarios().removeIf(usuario -> (usuario.getRun() == intRunUsuarioEliminar))) {
+                        System.out.println("Usuario encontrado y eliminado");
+                        usuarioEliminado = true;
+                    } else {
                         System.out.println("Usuario no encontrado");
                     }
                 }
@@ -371,14 +376,76 @@ public class Contenedor {
     }
 
     public void listarUsuarios() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("= = = LISTA DE USUARIOS = = =");
+        System.out.println("= = = = = = = = = = = = = = =");
 
+        for (Usuario usuario : this.getListaUsuarios()) {
+            usuario.analizarUsuario();
+            System.out.println("Primer apellido: " + usuario.getApellido1());
+            System.out.println("Segundo apellido: " + usuario.getApellido2());
+            System.out.println("Fecha de nacimiento: " + this.convertirFechaAString(usuario.getFechaNac()));
+            System.out.println("= = = = = = = = = = = = = = =");
+        }
+        sc.nextLine();
     }
 
-    public void listarUsuariosPorTipo() {
-
+    public void listarUsuariosPorTipo(String tipoDeUsuario) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("= = = LISTA DE USUARIOS DE TIPO " + tipoDeUsuario + " = = =");
+        for (Usuario usuario : this.getListaUsuarios()) {
+            if (usuario.getClass().getSimpleName().equalsIgnoreCase(tipoDeUsuario)) {
+                usuario.analizarUsuario();
+                System.out.println("Primer apellido: " + usuario.getApellido1());
+                System.out.println("Segundo apellido: " + usuario.getApellido2());
+                System.out.println("Fecha de nacimiento: " + this.convertirFechaAString(usuario.getFechaNac()));
+                if (tipoDeUsuario.equals("CLIENTE")) {
+                        Cliente cliente = (Cliente) usuario;
+                        System.out.println("Nombre de la empresa: " + cliente.getNombreEmpresa());
+                        System.out.println("Giro de la empresa: " + cliente.getGiroEmpresa());
+                        System.out.println("Teléfono del representante: " + cliente.getTelefonoRepresentante());
+                        System.out.println("Dirección de la empresa: " + cliente.getDireccionEmpresa());
+                        System.out.println("Comuna de la empresa: " + cliente.getComunaEmpresa());
+                        System.out.println("Edad del representante: " + cliente.getEdad());
+                        System.out.println("= = = = = = = = = = = = = = =");
+                } else {
+                    System.out.println("= = = = = = = = = = = = = = =");
+                }
+            }
+        }
+        sc.nextLine();
     }
 
     public void listarCapacitaciones() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("= = = LISTA DE CAPACITACIONES = = =");
 
+        for (Capacitacion capacitacion : this.getListaCapacitaciones()) {
+            System.out.println("ID: " + capacitacion.getIdentificador());
+            System.out.println("RUT del cliente: " + capacitacion.getRutCliente());
+            System.out.println("Día de realización: " + capacitacion.getDia());
+            System.out.println("Hora de realización: " + capacitacion.getHora());
+            System.out.println("Lugar de realización: " + capacitacion.getLugar());
+            System.out.println("Duración: " + capacitacion.getDuracion());
+            System.out.println("Cantidad de asistentes: " + capacitacion.getCantidadAsistentes());
+            for (Usuario usuario : this.getListaUsuarios()) {
+                if (usuario instanceof Cliente && usuario.getRun() == capacitacion.getRutCliente()) {
+                    Cliente cliente = (Cliente) usuario;
+                    System.out.println("- - - CLIENTE ASOCIADO - - -");
+                    usuario.analizarUsuario();
+                    System.out.println("Primer apellido: " + usuario.getApellido1());
+                    System.out.println("Segundo apellido: " + usuario.getApellido2());
+                    System.out.println("Fecha de nacimiento: " + this.convertirFechaAString(usuario.getFechaNac()));
+                    System.out.println("Nombre de la empresa: " + cliente.getNombreEmpresa());
+                    System.out.println("Giro de la empresa: " + cliente.getGiroEmpresa());
+                    System.out.println("Teléfono del representante: " + cliente.getTelefonoRepresentante());
+                    System.out.println("Dirección de la empresa: " + cliente.getDireccionEmpresa());
+                    System.out.println("Comuna de la empresa: " + cliente.getComunaEmpresa());
+                    System.out.println("Edad del representante: " + cliente.getEdad());
+                }
+            }
+            System.out.println("= = = = = = = = = = = = = = =");
+        }
+        sc.nextLine();
     }
 }
