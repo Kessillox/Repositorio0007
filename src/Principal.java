@@ -414,9 +414,6 @@ public class Principal {
         }
     }
 
-    /**
-     * @deprecated
-     */
     public boolean validacionIdVisita(String idVisitaTerreno) {
         try {
             Integer.parseInt(idVisitaTerreno);
@@ -426,9 +423,6 @@ public class Principal {
         }
     }
 
-    /**
-     * @deprecated
-     */
     public boolean validacionNombreRevision(String nombre) {
         if (nombre.length() > 50 || nombre.length() < 10) {
             return false;
@@ -437,9 +431,6 @@ public class Principal {
         }
     }
 
-    /**
-     * @deprecated
-     */
     public boolean validacionDetalleRevision(String detalle) {
         if (detalle.length() <= 100) {
             return true;
@@ -448,9 +439,6 @@ public class Principal {
         }
     }
 
-    /**
-     * @deprecated
-     */
     public boolean validacionEstadoRevision(int estado) {
 
         return estado <= 3 && estado >= 1;
@@ -472,6 +460,7 @@ public class Principal {
                 return fechaFormateada.toString();
             } catch (DateTimeParseException error) {
                 System.out.println("Fecha Ingresada no cumple el formato. Intente nuevamente (dd/MM/yyyy).");
+                System.out.println("Deje vacío para Sin Fecha");
                 fecha = sc.nextLine();
                 }
             }
@@ -479,9 +468,6 @@ public class Principal {
         return "Sin Fecha";
     }
 
-    /**
-     * @deprecated
-     */
     public boolean validacionHora(String hora) {
         if (hora.isEmpty()) {
             return false;
