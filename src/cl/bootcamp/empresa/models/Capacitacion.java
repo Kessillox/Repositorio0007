@@ -9,23 +9,17 @@ package cl.bootcamp.empresa.models;
 public class Capacitacion {
 
     private int id;
-
     private String rutEmpresa;
-
-    private int dia;
-
-    private int hora;
-
+    private String dia;
+    private String hora;
     private String lugar;
-
     private String duracion;
-
     private int cantidadAsistentes;
 
     public Capacitacion() {
     }
 
-    public Capacitacion(int id, String rutEmpresa, int dia, int hora, String lugar, String duracion, int cantidadAsistentes) {
+    public Capacitacion(int id, String rutEmpresa, String dia, String hora, String lugar, String duracion, int cantidadAsistentes) {
         this.id = id;
         this.rutEmpresa = rutEmpresa;
         this.dia = dia;
@@ -51,19 +45,19 @@ public class Capacitacion {
         this.rutEmpresa = rutEmpresa;
     }
 
-    public int getDia() {
+    public String getDia() {
         return dia;
     }
 
-    public void setDia(int dia) {
+    public void setDia(String dia) {
         this.dia = dia;
     }
 
-    public int getHora() {
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(int hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 

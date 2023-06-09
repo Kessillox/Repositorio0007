@@ -45,7 +45,7 @@ public class Main {
         contenedor.eliminarUsuario("13.333.333-3");
         contenedor.listaUsuario();
 
-        Capacitacion capacitacion1 = new Capacitacion(123, "111",1, 1, "conce", "3 dias" , 40);
+        Capacitacion capacitacion1 = new Capacitacion(123, "111","Lunes", "23:00", "conce", "3 dias" , 40);
         contenedor.almacenarCapacitacion(capacitacion1);
         contenedor.listarCapacitaciones();
 

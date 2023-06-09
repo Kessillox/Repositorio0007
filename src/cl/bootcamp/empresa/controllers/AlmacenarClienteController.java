@@ -1,11 +1,8 @@
 package cl.bootcamp.empresa.controllers;
 
-import cl.bootcamp.empresa.interfaces.IAsesoria;
 import cl.bootcamp.empresa.models.Cliente;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Scanner;
 
 public class AlmacenarClienteController {

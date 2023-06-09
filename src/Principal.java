@@ -1,4 +1,5 @@
 import cl.bootcamp.empresa.controllers.AlmacenarAdministrativoController;
+import cl.bootcamp.empresa.controllers.AlmacenarCapacitacionController;
 import cl.bootcamp.empresa.controllers.AlmacenarClienteController;
 import cl.bootcamp.empresa.controllers.AlmacenarProfesionalController;
 import cl.bootcamp.empresa.models.Contenedor;
@@ -47,6 +48,8 @@ public class Principal {
                     break;
                 case 4:
                     System.out.println("=== Almacenar Capacitación ===");
+                    AlmacenarCapacitacionController almacenarCapacitacionController = new AlmacenarCapacitacionController();
+                    almacenarCapacitacionController.almacenarCapacitacionController();
                     break;
                 case 5:
                     System.out.println("=== Eliminar Usuario ===");
