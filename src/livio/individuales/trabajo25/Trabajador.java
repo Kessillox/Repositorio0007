@@ -93,13 +93,15 @@ public class Trabajador {
                 '}';
     }
 
+    public String nombreCompletos(){
+        return "Nombre: " + nombre+ " "+ apellido1+ " " + apellido2;
+    }
+
     public int descomponerRun(){
 
-        /**replace reemplaza l que no necesito y se coloca en los corchetes (lo que no necesito), luego con el replacement
-         * que se coloca entre "" se coloca lo que quiero que aparezca.
-         */
         String soloRun = run.replaceAll("[.-]", "");
         String runAnterior = soloRun.substring(0, soloRun.length() - 1);
         return Integer.parseInt(runAnterior);
+
     }
 }
