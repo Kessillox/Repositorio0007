@@ -368,7 +368,7 @@ public class Principal {
                 obligatorio = false;
                 return fechaFormateada.toString();
             } catch (DateTimeParseException error) {
-                System.out.println("Fecha Ingresada no cumple el formato. Intente nuevamente.");
+                System.out.println("Fecha Ingresada no cumple el formato. Intente nuevamente (dd/MM/yyyy).");
                 fecha = sc.nextLine();
                 }
             }
