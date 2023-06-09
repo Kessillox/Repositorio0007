@@ -33,9 +33,7 @@ public class ValidacionCapacitacion {
         }
     }
 
-
-    public class ValidacionCantidadAsistentes {
-        public static boolean validarId(int id){
+        public static boolean validarCantidadAsistentes(int id){
             if(id <1 && id >999) {
                 System.out.println("Ingrese un número válido(1-999)");
                 return false;
