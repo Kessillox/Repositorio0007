@@ -118,14 +118,14 @@ public class Principal {
         pro.setApellido2(cadenaMinimoMaximoLenght(sc.nextLine(),5,30,
                 "Ingrese Apellido Materno válido: ",true));
         System.out.println("Ingrese fecha de nacimiento: ");
-        pro.setFechaDeNacimientoUsuario(sc.nextLine());
+        pro.setFechaDeNacimientoUsuario(validacionFecha(sc.nextLine(), true));
         System.out.println("Ingrese RUN: ");
         pro.setRunUsuario(sc.nextLine());
         System.out.println("Ingrese Titulo: ");
         pro.setTitulo(cadenaMinimoMaximoLenght(sc.nextLine(),5,20,
                 "Ingrese Titulo válido: ",true));
         System.out.println("Ingrese la fecha de ingreso: ");
-        pro.setFechaDeIngreso(sc.nextLine());
+        pro.setFechaDeIngreso(validacionFecha(sc.nextLine(), true));
         contenedor.almacenarProfesional(pro);
         System.out.println("Registros agregados correctamente ~(^.^)~");
     }
@@ -161,12 +161,12 @@ public class Principal {
         sc.nextLine();
         System.out.println("---- Agregar Capacitación ----");
         Capacitacion cap = new Capacitacion();
-        System.out.println("Ingrese ID: ");
-        cap.setIdCapacitacion(sc.nextLine());
+        //System.out.println("Ingrese ID: ");
+        cap.setIdCapacitacion(validarInt("Ingrese ID: "));
         System.out.println("Ingrese Rut Empresa: ");
         cap.setRutEmpresa(sc.nextLine());
         System.out.println("Ingrese fecha: ");
-        cap.setDiaCapacitacion(sc.nextLine());
+        cap.setDiaCapacitacion(validacionFecha(sc.nextLine(), true));
         System.out.println("Ingrese Hora: ");
         cap.setHoraCapacitacion(sc.nextLine());
         System.out.println("Ingrese Lugar: ");
@@ -262,11 +262,6 @@ public class Principal {
         return cadena;
     }
 
-    /*
-    VALIDACIONES REVISION Y VISITA TERRENO (En progreso aún)
-
-     */
-
     /**
      * @deprecated
      */
@@ -279,9 +274,9 @@ public class Principal {
         }
     }
 
-
-
-
+    /**
+     * @deprecated
+     */
     public boolean validacionIdVisita(String idVisitaTerreno) {
         try {
             Integer.parseInt(idVisitaTerreno);
@@ -291,6 +286,9 @@ public class Principal {
         }
     }
 
+    /**
+     * @deprecated
+     */
     public boolean validacionNombreRevision(String nombre) {
         if (nombre.length() > 50 || nombre.length() < 10) {
             return false;
@@ -299,6 +297,9 @@ public class Principal {
         }
     }
 
+    /**
+     * @deprecated
+     */
     public boolean validacionDetalleRevision(String detalle) {
         if (detalle.length() <= 100) {
             return true;
@@ -307,24 +308,35 @@ public class Principal {
         }
     }
 
+    /**
+     *
+     */
     public boolean validacionEstadoRevision(int estado) {
+
         return estado <= 3 && estado >= 1;
     }
 
-
-    // visita terreno
-    //misma funcion que revision para el mismo parametro
-
-    // funcion hechas en accidente rut, lugar
-
-    public boolean validacionFecha(String fecha) {
+    private static String validacionFecha(String fecha, boolean obligatorio) {
+        LocalDate fechaFormateada;
         DateTimeFormatter formateadorFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        try {
-            LocalDate.parse(fecha, formateadorFecha);
-            return true;
-        } catch (DateTimeParseException error) {
-            return false;
-        }
+
+        while (obligatorio) {
+
+            if (fecha.isEmpty()) {
+                return "Sin Fecha";
+            }
+
+            try {
+                fechaFormateada = LocalDate.parse(fecha, formateadorFecha);
+                obligatorio = false;
+                return fechaFormateada.toString();
+            } catch (DateTimeParseException error) {
+                System.out.println("Fecha Ingresada no cumple el formato. Intente nuevamente.");
+                fecha = sc.nextLine();
+                }
+            }
+
+        return "Sin Fecha";
     }
 
     public boolean validacionHora(String hora) {

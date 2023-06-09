@@ -1,6 +1,6 @@
 
 public class Capacitacion {
-    private String idCapacitacion;
+    private int idCapacitacion;
     private String rutEmpresa;
     private String diaCapacitacion;
     private String horaCapacitacion;
@@ -24,7 +24,7 @@ public class Capacitacion {
     public Capacitacion() {
     }
 
-    public Capacitacion(String idCapacitacion, String rutEmpresa,
+    public Capacitacion(int idCapacitacion, String rutEmpresa,
                         String diaCapacitacion, String horaCapacitacion,
                         String lugarCapacitacion, int duracionCapacitacion,
                         int cantidadDeAsistentes) {
@@ -37,11 +37,11 @@ public class Capacitacion {
         this.cantidadDeAsistentes = cantidadDeAsistentes;
     }
 
-    public String getIdCapacitacion() {
+    public int getIdCapacitacion() {
         return idCapacitacion;
     }
 
-    public void setIdCapacitacion(String idCapacitacion) {
+    public void setIdCapacitacion(int idCapacitacion) {
         this.idCapacitacion = idCapacitacion;
     }
 
