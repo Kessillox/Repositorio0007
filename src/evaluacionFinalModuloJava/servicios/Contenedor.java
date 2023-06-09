@@ -52,6 +52,7 @@ public class Contenedor {
      */
     public void almacenarCliente(Cliente cliente){
         listaUsuariosIAsesoria.add(cliente);
+        listaUsuarios.add(cliente);
     }
 
 //    public void agregarUsuario(IAsesoria  a){
@@ -91,7 +92,7 @@ public class Contenedor {
         if (listaUsuariosIAsesoria.isEmpty()){
             System.out.println("No existen registros en la tabla");
         }else{
-            for (int i = 0; i < listaUsuarios.size(); i++) {
+            for (int i = 0; i < listaUsuariosIAsesoria.size(); i++) {
                 if( listaUsuarios.get(i).getRun().equals(run)){
                     listaUsuariosIAsesoria.remove(i);
                     listaUsuarios.remove(i);
