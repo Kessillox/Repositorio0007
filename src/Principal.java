@@ -363,7 +363,7 @@ public class Principal {
     }
 
     /**
-     *
+     * @deprecated
      */
     public boolean validacionEstadoRevision(int estado) {
 
@@ -393,6 +393,9 @@ public class Principal {
         return "Sin Fecha";
     }
 
+    /**
+     * @deprecated
+     */
     public boolean validacionHora(String hora) {
         if (hora.isEmpty()) {
             return false;
