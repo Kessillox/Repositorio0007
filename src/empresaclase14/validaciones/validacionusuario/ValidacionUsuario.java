@@ -40,12 +40,12 @@ public class ValidacionUsuario {
         }
     }
 
-    public static boolean validarRun(long run){
-        if(run < 99999999) {
-            System.out.println("RUN registrado correctamente.");
+    public static boolean validarRunUser(int rut){
+        if(rut < 99999999) {
+            System.out.println("RUN Usuario registrado correctamente.");
             return true;
         }else{
-            System.out.println("RUN ingresado incorrectamente.");
+            System.out.println("RUT Usuario ingresado incorrectamente.");
             return false;
         }
     }

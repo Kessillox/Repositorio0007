@@ -34,28 +34,34 @@ public class Main {
 
         do {
             System.out.println("Ingresa el nombre: (mínimo 3 caracteres y máximo 50)");
-            nombreUsuario = entrada.next();
+            nombreUsuario = entrada.nextLine();
         } while (esSoloLetras(nombreUsuario) || validarLargoString(nombreUsuario, 2, 30, "Nombre de usuario"));
 
         do {
             System.out.println("Ingresa el primer apellido:");
-            apellido1Usuario = entrada.next();
+            apellido1Usuario = entrada.nextLine();
         } while (esSoloLetras(apellido1Usuario) || validarLargoString(apellido1Usuario, 2, 30, "Primer apellido"));
 
         do {
             System.out.println("Ingresa el segundo apellido:");
-            apellido2Usuario = entrada.next();
+            apellido2Usuario = entrada.nextLine();
         } while (esSoloLetras(apellido2Usuario) || validarLargoString(apellido2Usuario, 2, 30, "Segundo apellido"));
 
         do {
             System.out.println("Ingresa la fecha de nacimiento:");
-            fechaDeNacimientoUsuario = entrada.next();
+            fechaDeNacimientoUsuario = entrada.nextLine();
         } while (!validarFecha(fechaDeNacimientoUsuario));
 
         do {
             System.out.println("Ingresa el RUN sin punto ni guion");
+
+            while (!entrada.hasNextInt()) {
+                System.out.println("RUT Cliente ingresado incorrectamente. Por favor, ingrese solo números.");
+                entrada.next(); // Leer y descartar el token no válido
+            }
             runUsuario = entrada.nextInt();
-        } while (!validarRut(runUsuario));
+            entrada.nextLine(); // Consumir el carácter de nueva línea pendiente
+        } while (!validarRunUser(runUsuario));
 
         return new Usuario(nombreUsuario, apellido1Usuario, apellido2Usuario, fechaDeNacimientoUsuario, runUsuario);
 
@@ -129,24 +135,39 @@ public class Main {
 
                         do {
                             System.out.println("Ingrese el nombre de la empresa");
-                            nombreEmpresa = entrada.next();
+                            nombreEmpresa = entrada.nextLine();
                         } while (esSoloLetras(nombreEmpresa) || validarLargoString(nombreEmpresa, 2, 30, "Nombre de Empresa"));
 
-                        System.out.println("Ingrese el giro de la empresa");
-                        giroEmpresa = entrada.next();
                         do {
-                            System.out.println("Ingrese el rut de la empresa");
+                            System.out.println("Ingrese giro de la empresa");
+                            giroEmpresa = entrada.nextLine();
+                        } while (esSoloLetras(giroEmpresa) || validarLargoString(giroEmpresa, 2, 30, "Giro de Empresa"));
+
+                        do {
+                            System.out.println("Ingrese el RUT de la empresa");
+
+                            while (!entrada.hasNextInt()) {
+                                System.out.println("RUT de la empresa ingresado incorrectamente. Por favor, ingrese solo números.");
+                                entrada.next(); // Leer y descartar el token no válido
+                            }
                             rut = entrada.nextInt();
                         } while (!validarRut(rut));
-                        System.out.println("Ingrese el telefono de la empresa");
-                        telefonoRepresentante = entrada.next();
+
+                        do{
+                            System.out.println("Ingrese el telefono de la empresa");
+                            telefonoRepresentante = entrada.next();
+                            entrada.nextLine();
+                        } while (!esStringObligatorio(telefonoRepresentante));
+
+
                         do {
                             System.out.println("Ingrese la dirección de la empresa");
-                            direccionEmpresa = entrada.next();
+                            direccionEmpresa = entrada.nextLine();
                         } while (!validarDireccionEmpresa(direccionEmpresa));
+
                         do {
                             System.out.println("Ingrese la comuna de la empresa");
-                            comunaEmpresa = entrada.next();
+                            comunaEmpresa = entrada.nextLine();
                         } while (!validarComunaEmpresa(comunaEmpresa));
 
                         Cliente clienteEjemplo = new Cliente(usuarioCliente.getNombre(), usuarioCliente.getApellido1(), usuarioCliente.getApellido2(), usuarioCliente.getFechaDeNacimiento(), usuarioCliente.getRun(), nombreEmpresa, giroEmpresa, rut, telefonoRepresentante, direccionEmpresa, comunaEmpresa);
@@ -165,11 +186,11 @@ public class Main {
 
                         do {
                             System.out.println("Ingrese título del profesional");
-                            titulo = entrada.next();
+                            titulo = entrada.nextLine();
                         } while (!validarTitulo(titulo));
                         do {
                             System.out.println("Ingresa la fecha de ingreso:");
-                            fechaDeIngreso = entrada.next();
+                            fechaDeIngreso = entrada.nextLine();
                         } while (!validarFecha(fechaDeIngreso));
 
                         Profesional profesionalEjemplo = new Profesional(usuarioProfesional.getNombre(), usuarioProfesional.getApellido1(), usuarioProfesional.getApellido2(), usuarioProfesional.getFechaDeNacimiento(), usuarioProfesional.getRun(), titulo, fechaDeIngreso);
@@ -187,11 +208,11 @@ public class Main {
 
                         do {
                             System.out.println("Ingrese area de administración");
-                            area = entrada.next();
+                            area = entrada.nextLine();
                         } while (!validarArea(area));
                         do {
                             System.out.println("Ingrese experiencia previa");
-                            experienciaPrevia = entrada.next();
+                            experienciaPrevia = entrada.nextLine();
                         } while (!validarExperienciaPrevia(experienciaPrevia));
 
                         Administrativo administrativoEjemplo = new Administrativo(usuarioAdministrativo.getNombre(), usuarioAdministrativo.getApellido1(), usuarioAdministrativo.getApellido2(), usuarioAdministrativo.getFechaDeNacimiento(), usuarioAdministrativo.getRun(), area, experienciaPrevia);
@@ -205,32 +226,8 @@ public class Main {
                     case 5: //
 
 
-                    case 6: // Accidente
-                        System.out.println("Se encuentra en el Registro de Accidentes");
-                        do {
-                            System.out.println("Ingrese el ID Accidente");
-                            idAccidente = entrada.nextInt();
-                        } while (!validarId(idAccidente));
-                        System.out.println("Ingrese el día  del accidente");
-                        dia = entrada.next();
-                        do {
-                            System.out.println("Ingrese la hora del accidente");
-                            hora = entrada.next();
-                        } while (!validarHora(hora));
-                        System.out.println("Ingrese el lugar del accidente");
-                        lugar = entrada.next();
-                        do {
-                            System.out.println("Ingrese el origen del accidente");
-                            origen = entrada.next();
-                        } while (!validarOrigenConsecuencias(origen));
-                        do {
-                            System.out.println("Ingrese las concecuencias del accidente");
-                            consecuencias = entrada.next();
-                        } while (!validarOrigenConsecuencias(consecuencias));
+                    case 6: // LISTAR USUARIOS
 
-                        Accidente accidente1 = new Accidente(idAccidente, dia, hora, lugar, origen, consecuencias);
-
-                        System.out.println(accidente1.toString());
 
 
                     case 7: // Lógica para listar usuarios por tipo
