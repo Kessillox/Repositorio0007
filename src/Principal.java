@@ -1,4 +1,7 @@
+import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class Principal {
@@ -215,20 +218,132 @@ public class Principal {
     }
 
     /**********Validaciones***********/
-    private static String cadenaMinimoMaximoLenght (String cadena, int min, int max,String mensajeError){
-            while (cadena.length() < min || cadena.length() > max){
-                if(cadena.length() < min){
-                    System.out.println("Como mínimo "+min+" caracteres.");
-                }
-                else{
-                    System.out.println("Como máximo "+max+" caracteres.");
-                }
-                System.out.println(mensajeError);
-
-                cadena = sc.nextLine();
+    private static String cadenaMinimoMaximoLenght (String cadena, int min, int max,String mensajeError) {
+        while (cadena.length() < min || cadena.length() > max) {
+            if (cadena.length() < min) {
+                System.out.println("Como mínimo " + min + " caracteres.");
+            } else {
+                System.out.println("Como máximo " + max + " caracteres.");
             }
-            return cadena;
+            System.out.println(mensajeError);
+
+            cadena = sc.nextLine();
+        }
+        return cadena;
+    }
+
+    /*
+    VALIDACIONES REVISION Y VISITA TERRENO (En progreso aún)
+
+     */
 
 
+        public boolean validacionIdRevision (String idRevision){
+            try {
+                Integer.parseInt(idRevision);
+                return true;
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        }
+
+
+
+
+    public boolean validacionIdVisita(String idVisitaTerreno) {
+        try {
+            Integer.parseInt(idVisitaTerreno);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    public boolean validacionNombreRevision(String nombre) {
+        if (nombre.length() > 50 || nombre.length() < 10) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public boolean validacionDetalleRevision(String detalle) {
+        if (detalle.length() <= 100) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean validacionEstadoRevision(int estado) {
+        return estado <= 3 && estado >= 1;
+    }
+
+
+    // visita terreno
+    //misma funcion que revision para el mismo parametro
+
+    // funcion hechas en accidente rut, lugar
+
+    public boolean validacionFecha(String fecha) {
+        DateTimeFormatter formateadorFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        try {
+            LocalDate.parse(fecha, formateadorFecha);
+            return true;
+        } catch (DateTimeParseException error) {
+            return false;
+        }
+    }
+
+    public boolean validacionHora(String hora) {
+        if (hora.isEmpty()) {
+            return false;
+        } else {
+            String[] horaSeparada = hora.split(":");
+            if (horaSeparada.length > 2) {
+                return false;
+            } else {
+                try {
+                    int digitosHora = Integer.parseInt(horaSeparada[0]);
+                    //CONTINUAR
+                } catch (NumberFormatException error) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public boolean validacionComentariosVisitaTerreno(String comentarios) {
+        return comentarios.length() <= 100;
+    }
+    //Validacion de las variables de la clase Accidente
+    public boolean validarCamposAccidente(Integer idAccidente, String diaAccidente, String horaAccidente, String lugar, String origen, String consecuencia) {
+        if (idAccidente <= 0) {
+            return false;
+        }
+
+        if (diaAccidente == null || diaAccidente.length() == 10) {
+            return false;
+        }
+
+        if (horaAccidente == null || horaAccidente.length() == 5) {
+            return false;
+        }
+
+        if (lugar == null || lugar.length() < 10 || lugar.length() > 50) {
+            return false;
+        }
+
+        if (origen != null && origen.length() > 100) {
+            return false;
+        }
+
+        if (consecuencia != null && consecuencia.length() > 100) {
+            return false;
+        }
+
+        return true;
     }
 }
+
