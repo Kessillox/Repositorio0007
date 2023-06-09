@@ -25,6 +25,19 @@ public class Capacitacion {
         this.cantidadAsistentes = cantidadAsistentes;
     }
 
+    @Override
+    public String toString() {
+        return "Capacitacion{" +
+                "identificador=" + identificador +
+                ", rut=" + rut +
+                ", dia=" + dia +
+                ", hora=" + hora +
+                ", lugar='" + lugar + '\'' +
+                ", duracion=" + duracion +
+                ", cantidadAsistentes=" + cantidadAsistentes +
+                '}';
+    }
+
     public int getIdentificador() {
         return identificador;
     }
@@ -41,11 +54,11 @@ public class Capacitacion {
         this.rut = rut;
     }
 
-    public LocalDate getDia() {
-        return dia;
-    }
+    public LocalDate getDia() { return dia; }
 
-    public void setDia(String s) { this.dia = dia; }
+    public void setDia(String s) {
+        this.dia = dia;
+    }
 
     public LocalTime getHora() {
         return hora;
