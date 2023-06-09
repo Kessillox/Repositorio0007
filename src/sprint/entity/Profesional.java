@@ -1,5 +1,9 @@
 package sprint.entity;
-
+/**
+ * @author Livio Guiterrez
+ * @version 1
+ * var nombre, apellido1, apellido2, fechaNacimiento, run, titulo, fechaDeIngreso
+ * **/
 public class Profesional extends Usuario{
     private String titulo;
     private String fechaDeIngreso;
