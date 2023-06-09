@@ -11,6 +11,23 @@ public class Principal {
         contenedor = new Contenedor();
         sc = new Scanner(System.in);
 
+        // Crear una instancia de Usuario
+        Usuario usuario = new Usuario();
+
+        usuario.setNombreUsuario("John");
+        usuario.setApellido1("Doe");
+        usuario.setApellido2("Smith");
+        usuario.setFechaDeNacimientoUsuario("30/12/2020");
+        usuario.setRunUsuario("12345678-9");
+        usuario.setRutEmpresa("12345678-9");
+
+        System.out.println("Ingrese Nombre: " + usuario.getNombreUsuario());
+        System.out.println("Ingrese Apellido Paterno: " + usuario.getApellido1());
+        System.out.println("Ingrese Apellido Materno: " + usuario.getApellido2());
+        System.out.println("Ingrese Fecha de Nacimiento: " + usuario.getFechaDeNacimientoUsuario());
+        System.out.println("Ingrese RUN: " + usuario.getRunUsuario());
+        System.out.println("Ingrese RUT Empresa: " + usuario.getRutEmpresa());
+
         boolean salir = false;
         int opcion;
 
