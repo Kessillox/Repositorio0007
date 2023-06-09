@@ -5,16 +5,8 @@ import java.util.Scanner;
 import static empresaclase14.validaciones.validacionusuario.ValidacionUsuario.*;
 import static empresaclase14.validaciones.validacioncliente.ValidacionCliente.*;
 import static empresaclase14.validaciones.validacionaccidente.ValidacionAccidente.*;
-import static empresaclase14.validaciones.validacionadministrativo.ValidacionAdministrativo.*;
-import static empresaclase14.validaciones.validacioncapacitacion.ValidacionCapacitacion.*;
 import static empresaclase14.validaciones.validacionidentificador.ValidacionIdentificador.*;
 import static empresaclase14.validaciones.validacionprofesional.ValidacionProfesional.*;
-import static empresaclase14.validaciones.validacionrevision.ValidacionRevision.*;
-import static empresaclase14.validaciones.validacionvisitaterreno.ValidacionVisitaTerreno.*;
-
-
-
-
 
 
 /**
@@ -29,6 +21,41 @@ import static empresaclase14.validaciones.validacionvisitaterreno.ValidacionVisi
 
 public class Main {
 
+    public static Usuario almacenarUsuario(Scanner entrada) {
+        String nombreUsuario;
+        String apellido1Usuario;
+        String apellido2Usuario;
+        String fechaDeNacimientoUsuario;
+        int runUsuario;
+
+
+        do {
+            System.out.println("Ingresa el nombre: (mínimo 3 caracteres y máximo 50)");
+            nombreUsuario = entrada.next();
+        } while (!validarNombre(nombreUsuario) || !esStringObligatorio(nombreUsuario) || !esSoloLetras(nombreUsuario));
+
+        do {
+            System.out.println("Ingresa el primer apellido:");
+            apellido1Usuario = entrada.next();
+        } while (!validarApellido(apellido1Usuario) ||!esStringObligatorio(apellido1Usuario) || !esSoloLetras(apellido1Usuario));
+
+        do {
+            System.out.println("Ingresa el segundo apellido:");
+            apellido2Usuario = entrada.next();
+        } while (!validarApellido(apellido2Usuario) || !esStringObligatorio(apellido2Usuario) || !esSoloLetras(apellido2Usuario));
+
+        do {
+            System.out.println("Ingresa la fecha de nacimiento:");
+            fechaDeNacimientoUsuario = entrada.next();
+        } while (!validarFecha(fechaDeNacimientoUsuario));
+
+        do {
+            System.out.println("Ingresa el RUN sin punto ni guion");
+            runUsuario = entrada.nextInt();
+        } while (!validarRut(runUsuario));
+
+        return new Usuario(nombreUsuario, apellido1Usuario, apellido2Usuario, fechaDeNacimientoUsuario, runUsuario);
+    }
 
     public static void main(String[] args) {
 
@@ -54,58 +81,41 @@ public class Main {
         String direccionEmpresa;
         String comunaEmpresa;
 
+        //Variables de Profesional
+        String titulo;
+        String fechaDeIngreso;
         // Variables de Accidente
         int idAccidente = 0;
         String dia, hora, lugar, origen, consecuencias;
+
+        //Cliente clienteEjemplo = new Cliente();
+        // CONTENEDOR
+        Contenedor contenedor = new Contenedor();
 
         do {
 
             System.out.println("\n Bienvenido a Sprint Modulo 4 Programación en Java!");
             System.out.println("--------------------------------------");
             System.out.println("Que operación deseas realizar? (Debes pulsar un número)");
-            System.out.println("1.- Registrar Usuario");
-            System.out.println("2.- Registrar Cliente");
-            System.out.println("3.- Registrar Cliente");
-            System.out.println("4.- Registrar Cliente");
-            System.out.println("5.- Registrar Cliente");
-            System.out.println("6.- Registrar Accidente");
-            System.out.println("7.- Registrar Cliente");
-            System.out.println("8.- Registrar Cliente");
-            System.out.println("9.- Salir");
+            System.out.println("(1) Almacenar cliente");
+            System.out.println("(2) Almacenar profesional");
+            System.out.println("(3) Almacenar administrativo");
+            System.out.println("(4) Almacenar capacitacion");
+            System.out.println("(5) Eliminar usuario");
+            System.out.println("(6) Listar usuarios");
+            System.out.println("(7) Listar usuarios por tipo");
+            System.out.println("(8) Listar capacitaciones");
+            System.out.println("(9) Salir");
             System.out.println("Selecciona una opción:");
             opcion = entrada.nextInt();
 
             switch (opcion) {
                 case 1:
-                    System.out.println("Bienvenido al registro de usuarios.");
-                    do {
-                        System.out.println("Ingresa el nombre: (mínimo 10 caracteres y máximo 50)");
-                        nombreUsuario = entrada.next();
-                    } while (!validarNombre(nombreUsuario) || !esStringObligatorio(nombreUsuario) || !esSoloLetras(nombreUsuario));
-                    do {
-                        System.out.println("Ingresa el primer apellido:");
-                        apellido1Usuario = entrada.next();
-                    } while (!esStringObligatorio(apellido1Usuario) || !esSoloLetras(apellido1Usuario));
-                    do {
-                        System.out.println("Ingresa el segundo apellido:");
-                        apellido2Usuario = entrada.next();
-                    } while (!validarNombre(apellido2Usuario) || !esStringObligatorio(apellido2Usuario) || !esSoloLetras(apellido2Usuario));
-                    do {
-                        System.out.println("Ingresa la fecha de nacimiento:");
-                        fechaDeNacimientoUsuario = entrada.next();
-                    } while (!validarFecha(fechaDeNacimientoUsuario));
-                    do {
-                        System.out.println("Ingresa el RUN sin punto ni guion");
-                        runUsuario = entrada.nextInt();
-                    } while (!validarRut(runUsuario));
-                    Usuario usuarioEjemplo = new Usuario(nombreUsuario, apellido1Usuario, apellido2Usuario, fechaDeNacimientoUsuario, runUsuario);
-
-                    System.out.println(usuarioEjemplo.toString());
-                case 2:
-
                     System.out.println("Bienvenido al registro de Clientes");
+                    Usuario usuarioCliente = almacenarUsuario(entrada);
+
                     do { System.out.println("Ingrese el nombre de la empresa");
-                    nombreEmpresa = entrada.next();
+                        nombreEmpresa = entrada.next();
                     } while (!validarNombreEmpresa(nombreEmpresa));
                     System.out.println("Ingrese el giro de la empresa");
                     giroEmpresa = entrada.next();
@@ -121,14 +131,41 @@ public class Main {
                     } while (!validarDireccionEmpresa(direccionEmpresa));
                     do {
                         System.out.println("Ingrese la comuna de la empresa");
-                    comunaEmpresa = entrada.next();
+                        comunaEmpresa = entrada.next();
                     } while (!validarComunaEmpresa(comunaEmpresa));
 
-                    Cliente clienteEjemplo = new Cliente(nombreEmpresa, giroEmpresa, rut, telefonoRepresentante, direccionEmpresa, comunaEmpresa);
+                    Cliente clienteEjemplo = new Cliente(usuarioCliente.getNombre(), usuarioCliente.getApellido1(), usuarioCliente.getApellido2(), usuarioCliente.getFechaDeNacimiento(), usuarioCliente.getRun(), nombreEmpresa, giroEmpresa, rut, telefonoRepresentante, direccionEmpresa, comunaEmpresa);
 
-                    System.out.println(clienteEjemplo.toString());
+                    //System.out.println(clienteEjemplo.toString());
+                    clienteEjemplo.analizarUsuario();
+                    contenedor.almacenarCliente(clienteEjemplo);
 
-                    // Acá el resto del Switch ladies
+
+
+                    break;
+                case 2:  // Profesional
+
+
+                    System.out.println("Bienvenido al registro de Profesionales");
+                    Usuario usuarioProfesional = almacenarUsuario(entrada);
+
+                    do { System.out.println("Ingrese título del profesional");
+                        titulo = entrada.next();
+                    } while (!validarNombreEmpresa(titulo));
+                    do {
+                        System.out.println("Ingresa la fecha de ingreso:");
+                        fechaDeIngreso = entrada.next();
+                    } while (!validarFecha(fechaDeIngreso));
+
+                    Profesional profesionalEjemplo = new Profesional(usuarioProfesional.getNombre(), usuarioProfesional.getApellido1(), usuarioProfesional.getApellido2(), usuarioProfesional.getFechaDeNacimiento(), usuarioProfesional.getRun(), titulo, fechaDeIngreso);
+
+
+                    //System.out.println(profesionalEjemplo.toString());
+                    profesionalEjemplo.analizarUsuario();
+
+                    break;
+
+
 
                 case 3: // Profesional
 
@@ -177,35 +214,27 @@ public class Main {
                 case 8: // Revision
 
 
-
+                case 9: break;
             }
 
+
+
         } while (nombreUsuario.isEmpty());
+/**
+        // Creo Instancia Contenedor
+        Contenedor prueba = new Contenedor();
+        // Agrego Cliente a ListaDeUsuarios
+        prueba.almacenarCliente(clienteEjemplo);
 
-        // Se instancia la clase Listado
-        Listado listadoDeUsuarios = new Listado();
+        //Muestro Lista
 
-        // Se instancian 6 tipos de usuarios
-        Usuario usuario1 = new Usuario("Brocacochi", "Chespi", "Rito", "10-10-1990", 33333333);
-        Usuario usuario2 = new Usuario("Benito", "Mussolini", "Repetto", "01/01/1941", 11111112);
+        prueba.listarUsuarios();
 
-        //  Se instancian los tipo cliente
-        Cliente cliente1 = new Cliente("Pelayo", "Fernandez", "Torrealba", "12/12/1990", 111111111, "Fundimax", "Fundidora", 99999999, "9845615498", "Lejos 124", "Los Alpes");
-        Cliente cliente2 = new Cliente("Cristian", "Trureo", "Trureo", "11/11/1991", 222222221, "Awakelab", "Capacitaciones IT", 55555555, "123123123123", "Lejos 777", "Los Alpes");
+        //prueba.listarUsuariosPorTipo(clienteEjemplo);
+        System.out.println(clienteEjemplo.getClass());
+*/
 
-        Profesional profesional1 = new Profesional("Luis", "Zambrano", "Zambrano", "06-06-2023", 186850149, "Analista Programador", "06-06-2023");
-        Profesional profesional2 = new Profesional("Livio", "Gut", "Guti", "10-10-2023", 333333333, "Ingeniero Físico Termonuclear", "10-12-2023");
 
-        // Se agregan las instancias de usuarios al Listado
-        listadoDeUsuarios.addElemento(usuario1);
-        listadoDeUsuarios.addElemento(usuario2);
-        listadoDeUsuarios.addElemento(cliente1);
-        listadoDeUsuarios.addElemento(cliente2);
-        listadoDeUsuarios.addElemento(profesional1);
-        listadoDeUsuarios.addElemento(profesional2);
-
-        // Se llama al método para desplegar los datos
-        listadoDeUsuarios.instanciasRegistradas();
 
     }
 }

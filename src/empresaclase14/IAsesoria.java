@@ -12,6 +12,7 @@ public interface IAsesoria {
      * Este método está siendo implementado por todas las clases que implementen esta interfaz.
      */
     public void analizarUsuario();
+
 }
 
 /*
