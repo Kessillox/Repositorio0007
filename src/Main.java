@@ -224,6 +224,7 @@ public class Main {
                         System.out.println("Ingrese el RUN del usuario que desea eliminar:");
                         int run = entrada.nextInt();
                         contenedor.eliminarUsuario(run);
+                        break;
 
                     case 6:   // Accidente
                         System.out.println("Se encuentra en el Registro de Accidentes");
