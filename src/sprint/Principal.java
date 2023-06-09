@@ -57,7 +57,7 @@ public class Principal {
             System.out.println("1 > Cliente");
             System.out.println("2 > Profesional");
             System.out.println("3 > Administrativo");
-            System.out.println("4 > Capasitacion");
+            System.out.println("4 > Capacitación");
             System.out.println("5 > Listar Usuarios");
             System.out.println("6 > Listar Usuario por tipo");
             System.out.println("7 > Eliminar Usuario");
@@ -155,43 +155,41 @@ public class Principal {
                     case 3:
 
                         do {
-
-                            Scanner scP = new Scanner(System.in);
                             System.out.println("------Perfil Profesional------");
 
                             System.out.println("Ingrese su nombre");
-                            nombreUser = scP.nextLine();
+                            nombreUser = sc.nextLine();
                             while (nombreUser.length() < 3 || nombreUser.length() > 20) {
                                 System.out.println("debe ser mayor a 3 caracteres y menor a 20 caracteres");
                                 nombreUser = sc.nextLine();
                             }
 
                             System.out.println("Ingrese su Apellido 1");
-                            apellido1User = scP.nextLine();
+                            apellido1User = sc.nextLine();
 
                             System.out.println("Ingrese su Apellido 2");
-                            apellido2User = scP.nextLine();
+                            apellido2User = sc.nextLine();
 
                             System.out.println("Ingrese su Fecha de nacimiento");
-                            fechaNacimientoUser = scP.nextLine();
+                            fechaNacimientoUser = sc.nextLine();
 
 
 
                             System.out.println("Ingrese su Run");
-                            runUser = scP.nextInt();
+                            runUser = sc.nextInt();
                             while (runUser > 99999999 || runUser < 1111111) {
                                 System.out.println("Favor ingrese un run valido, sin puntos ni guion ni digito verificador");
                                 runUser = sc.nextInt();
                             }
 
                             System.out.println("Ingrese su Titulo");
-                            titulo = scP.next();
+                            titulo = sc.next();
                             while (titulo.length() < 3 || titulo.length() > 50) {
                                 System.out.println("debe ser mayor a 3 caracteres y menor a 20 caracteres");
                                 titulo = sc.nextLine();
                             }
                             System.out.println("Ingrese su Fecha de Ingreso");//Falta la validacion y que lo entrege en formato DD/MM/AAAA
-                            fechaIngreso = scP.next();
+                            fechaIngreso = sc.next();
                             //Instanciando una clase y pasando parametros
                             Profesional profesional = new Profesional(nombreUser, apellido1User, apellido2User, fechaNacimientoUser, runUser, titulo, fechaIngreso);
                             //almacenando profecional
