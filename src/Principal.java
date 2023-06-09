@@ -237,15 +237,17 @@ public class Principal {
 
      */
 
-
-        public boolean validacionIdRevision (String idRevision){
-            try {
-                Integer.parseInt(idRevision);
-                return true;
-            } catch (NumberFormatException e) {
-                return false;
-            }
+    /**
+     * @deprecated
+     */
+    public boolean validacionIdRevision (String idRevision){
+        try {
+            Integer.parseInt(idRevision);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
         }
+    }
 
 
 
