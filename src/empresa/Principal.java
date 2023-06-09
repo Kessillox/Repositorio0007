@@ -327,6 +327,7 @@ public class Principal {
                         hora = sc.nextLine();
                     }
 
+
                     System.out.print("Ingrese el lugar dónde se realizará la capacitación (min 10 y max 70 caracteres): ");
                     System.out.println("*Este campo es obligatorio");
                     String lugar = sc.nextLine();
