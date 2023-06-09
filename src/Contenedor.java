@@ -326,8 +326,8 @@ public class Contenedor {
         while (duracion < 1 || duracion > 1000000000) {
             try {
                 System.out.println("Ingresar duración de la capacitación en minutos (1 - *)");
-                duracion = sc.nextInt();
-            } catch (Exception e) {
+                duracion = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
             }
         }
 

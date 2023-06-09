@@ -54,8 +54,7 @@ public class Main {
                 System.out.println("7) Listar usuarios según tipo");
                 System.out.println("8) Listar capacitaciones");
                 System.out.println("9) Salir");
-                selector = sc.nextInt();
-                sc.nextLine();
+                selector = Integer.parseInt(sc.nextLine());
 
                 switch (selector) {
                     case 1:
