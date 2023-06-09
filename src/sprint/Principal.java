@@ -7,14 +7,12 @@ import sprint.entity.Usuario;
 
 import sprint.entity.*;
 
-import java.util.Date;
-
 import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Contenedor contenedorP = new Contenedor();
+        Contenedor contenedor = new Contenedor();
 
         //VARIABLES Usuarios
         String nombreUser = "";
@@ -23,7 +21,6 @@ public class Principal {
 
         String fechaNacimientoUser = "";
         int runUser = 0;
-        Usuario usuario1 = new Usuario(nombreUser, apellido1User, apellido2User, fechaNacimientoUser, runUser);
 
         //VARIABLES cliente
         String nombreEmpresa = "";
@@ -32,7 +29,7 @@ public class Principal {
         String tlfRepresentante = "";
         String direccionEmpresa = "";
         String comunaEmpresa = "";
-        Cliente cliente1 = new Cliente(nombreUser, apellido1User, apellido2User, fechaNacimientoUser, runUser, nombreEmpresa, giroEmpresa, rut, tlfRepresentante, direccionEmpresa, comunaEmpresa);
+        Cliente cliente = new Cliente(nombreUser,apellido1User,apellido2User,fechaNacimientoUser,runUser,nombreEmpresa,giroEmpresa,rut,tlfRepresentante,direccionEmpresa,comunaEmpresa);
 
 
         //Accidentes
@@ -106,8 +103,6 @@ public class Principal {
                             runUser = sc.nextInt();
                         }
 
-
-
                         System.out.println("Favor ingrese el nombre de la empresa");
                         nombreEmpresa = sc.nextLine();
                         while (nombreEmpresa.length() < 5 || nombreEmpresa.length() > 30) {
@@ -146,14 +141,13 @@ public class Principal {
                             System.out.println("favor ingrese un un nombre valido de mas de 5 caracteres y menos de 50.");
                             comunaEmpresa = sc.nextLine();
                         }
-                        Cliente cliente = new Cliente(nombreUser,apellido1User,apellido2User,fechaNacimientoUser,runUser,nombreEmpresa,giroEmpresa,rut,tlfRepresentante,direccionEmpresa,comunaEmpresa);
-                        contenedorP.almacenarUsuarios(cliente);
-                        contenedorP.alamacenaCliente(cliente);
+
+                        contenedor.almacenarUsuarios(cliente);
+                        contenedor.alamacenaCliente(cliente);
 
 
                         break;
-                    case 3:
-
+                    case 2:
                         do {
                             System.out.println("------Perfil Profesional------");
 
@@ -166,14 +160,20 @@ public class Principal {
 
                             System.out.println("Ingrese su Apellido 1");
                             apellido1User = sc.nextLine();
+                            while (apellido1User.length() < 3 || apellido1User.length() > 20) {
+                                System.out.println("debe ser mayor a 3 caracteres y menor a 20 caracteres");
+                                apellido1User = sc.nextLine();
+                            }
 
                             System.out.println("Ingrese su Apellido 2");
                             apellido2User = sc.nextLine();
+                            while (apellido2User.length() < 3 || apellido2User.length() > 20) {
+                                System.out.println("debe ser mayor a 3 caracteres y menor a 20 caracteres");
+                                apellido2User = sc.nextLine();
+                            }
 
                             System.out.println("Ingrese su Fecha de nacimiento");
                             fechaNacimientoUser = sc.nextLine();
-
-
 
                             System.out.println("Ingrese su Run");
                             runUser = sc.nextInt();
@@ -190,10 +190,11 @@ public class Principal {
                             }
                             System.out.println("Ingrese su Fecha de Ingreso");//Falta la validacion y que lo entrege en formato DD/MM/AAAA
                             fechaIngreso = sc.next();
+
                             //Instanciando una clase y pasando parametros
                             Profesional profesional = new Profesional(nombreUser, apellido1User, apellido2User, fechaNacimientoUser, runUser, titulo, fechaIngreso);
                             //almacenando profecional
-                            contenedorP.almacenarProfesional(profesional);
+                            contenedor.almacenarProfesional(profesional);
 
                             System.out.println("¿Desea Registrar otro Profesional?");
                             System.out.println("1. Si");
@@ -205,47 +206,55 @@ public class Principal {
                                 res=sc.nextInt();
                             }
                         }while (res==1);
-                        //Mostando la lista del profrecional
-                        contenedorP.mostrarProfesional();
                         break;
-                    case 4:
-                        Contenedor contenedorA = new Contenedor();
+                    case 3:
                         do {
-                            Scanner scA = new Scanner(System.in);
                             System.out.println("------Perfil Administrativo------");
 
                             System.out.println("Ingrese su nombre");
-                            nombreUser = scA.nextLine();
+                            nombreUser = sc.nextLine();
                             while (nombreUser.length() < 3 || nombreUser.length() > 20) {
                                 System.out.println("debe ser mayor a 3 caracteres y menor a 20 caracteres");
                                 nombreUser = sc.nextLine();
                             }
 
                             System.out.println("Ingrese su Apellido 1");
-                            apellido1User = scA.nextLine();
+                            apellido1User = sc.nextLine();
+                            while (apellido1User.length() < 3 || apellido1User.length() > 20) {
+                                System.out.println("debe ser mayor a 3 caracteres y menor a 20 caracteres");
+                                apellido1User = sc.nextLine();
+                            }
 
                             System.out.println("Ingrese su Apellido 2");
-                            apellido2User = scA.nextLine();
+                            apellido2User = sc.nextLine();
+                            while (apellido2User.length() < 3 || apellido2User.length() > 20) {
+                                System.out.println("debe ser mayor a 3 caracteres y menor a 20 caracteres");
+                                apellido2User = sc.nextLine();
+                            }
 
                             System.out.println("Ingrese su Fecha de nacimiento");
-                            fechaNacimientoUser = scA.nextLine();
+                            fechaNacimientoUser = sc.nextLine();
+                            while (fechaNacimientoUser.length() < 3 || fechaNacimientoUser.length() > 20) {
+                                System.out.println("debe ser mayor a 3 caracteres y menor a 20 caracteres");
+                                fechaNacimientoUser = sc.nextLine();
+                            }
 
                             System.out.println("Ingrese su Run");
-                            runUser = scA.nextInt();
+                            runUser = sc.nextInt();
                             while (runUser > 99999999 || runUser < 1111111) {
                                 System.out.println("Favor ingrese un run valido, sin puntos ni guion ni digito verificador");
                                 runUser = sc.nextInt();
                             }
 
                             System.out.println("Ingrese su area");
-                            area = scA.next();
+                            area = sc.next();
                             while (area.length() < 3 || area.length() > 20) {
                                 System.out.println("debe ser mayor a 3 caracteres y menor a 20 caracteres");
                                 area = sc.nextLine();
                             }
 
                             System.out.println("Ingrese su Experiencia Previa");
-                            experienciaPrevia=scA.next();
+                            experienciaPrevia=sc.next();
                             while (experienciaPrevia.length() > 100) {
                                 System.out.println("Por favor, ingrese menos de 100 caracteres");
                                 experienciaPrevia = sc.nextLine();
@@ -253,7 +262,7 @@ public class Principal {
 
                             //Instansanciando clases y añadiendo y mostrando datos de la clase Administrativo
                             Administrativo administrativo = new Administrativo(nombreUser,apellido1User,apellido2User,fechaNacimientoUser,runUser,area,experienciaPrevia);
-                            contenedorA.almacenarAdministrativo(administrativo);
+                            contenedor.almacenarAdministrativo(administrativo);
 
                             System.out.println("¿Desea Registrar otro Profesional?");
                             System.out.println("1. Si");
@@ -266,57 +275,48 @@ public class Principal {
                             }
 
                         }while (res==1);
-                        contenedorA.mostrarAdministrativo();
+                        break;
+                    case 4:
+                        System.out.println("------Capacitación------");
 
                         break;
                     case 5:
-                        System.out.println("------Perfil Capacitaciones------");
+                        System.out.println("------Listar Usuarios------");
 
-                        VisitaEnTerreno visita = new VisitaEnTerreno();
-
-
-                        //llamar rut otra clase?
-
-                        //Objeto Capacitacion
-                        Capacitacion capaci = new Capacitacion();
-
-                        sc.nextLine();
-                        System.out.println("Ingrese rut empresa");
-                        capaci.setRutEmpresa(sc.nextLine());
-                        System.out.println(capaci.getRutEmpresa());
-
-                        System.out.println("Ingrese ID capacitacion (solo numeros enteros)");
-                        capaci.setId(sc.nextInt());
-                        System.out.println(capaci.getId()); sc.nextLine();
-
-                        System.out.println("Ingrese dia de capacitacion");
-                        capaci.setDia(sc.nextLine());
-                        System.out.println(capaci.getDia());
-
-                        System.out.println("Ingrese hora de capacitacion (ej: 20:00)");
-                        capaci.setHora(sc.nextLine());
-                        System.out.println(capaci.getLugar());
-
-                        System.out.println("Ingrese lugar de capactitacion");
-                        capaci.setLugar(sc.nextLine());
-                        System.out.println(capaci.getLugar());
-
-                        System.out.println("Ingrese duracion en horas(numero entero)de capacitacion");
-                        capaci.setHora(sc.nextLine());
-                        System.out.println(capaci.getHora() + "horas");
-
-                        System.out.println("Ingrese cantidad de asistente a la capacitacion");
-                        capaci.setCantidadAsistente(sc.nextInt());
-                        System.out.println(capaci.getCantidadAsistente() + "Asistentes");
                         break;
                     case 6:
-                        System.out.println("------Perfil Accidente------");
+                        System.out.println("------Listar Usuario por tipo------");
+                        System.out.println("------tipo de Usuario------");
+                        System.out.println("1 > Cliente");
+                        System.out.println("2 > Profesional");
+                        System.out.println("3 > Administrativo");
+                        op=sc.nextInt();
+
+                        switch (op){
+                            case 1:
+                                System.out.println("------Cliente------");
+
+                                break;
+                            case 2:
+                                System.out.println("------Profesional------");
+                                contenedor.mostrarProfesional();
+                                break;
+                            case 3:
+                                System.out.println("------Administrativo------");
+                                contenedor.mostrarAdministrativo();
+                                break;
+                        }
+
+
+
                         break;
                     case 7:
-                        System.out.println("------Perfil Visita en Terreno------");
+                        System.out.println("------Eliminar Usuario------");
+
                         break;
                     case 8:
                         System.out.println("------Salir------");
+
                         break;
                 }
 
