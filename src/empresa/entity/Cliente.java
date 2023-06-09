@@ -1,6 +1,5 @@
 package empresa.entity;
 
-import java.util.Scanner;
 
 // Clase Cliente que hereda los atributos y métodos de la clase Usuario
 public class Cliente extends Usuario {
@@ -11,6 +10,7 @@ public class Cliente extends Usuario {
     private String telefonoRepresentante;
     private String direccion;
     private String comuna;
+
 
     // constructor vacio
     public Cliente() {
@@ -29,7 +29,7 @@ public class Cliente extends Usuario {
 
 
     // constructor con parametros, atributos de la clase Cliente
-    public Cliente(String razonSocial, String giroEmpresa, String telefonoRepresentante, String direccion, String comuna, Scanner sc) {
+    public Cliente(String razonSocial, String giroEmpresa, String telefonoRepresentante, String direccion, String comuna) {
         this.razonSocial = razonSocial;
         this.giroEmpresa = giroEmpresa;
         this.telefonoRepresentante = telefonoRepresentante;
@@ -86,22 +86,23 @@ public class Cliente extends Usuario {
         this.comuna = comuna;
     }
 
-    // metodo toString
     @Override
     public String toString() {
-        return "Cliente{" +
+        return super.toString() +
+                " " +
+                "Cliente{" +
                 "razonSocial='" + razonSocial + '\'' +
                 ", giroEmpresa='" + giroEmpresa + '\'' +
-                ", rut=" + rut +
+                ", rut='" + rut + '\'' +
                 ", telefonoRepresentante='" + telefonoRepresentante + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", comuna='" + comuna + '\'' +
-                '}';
+                "} ";
     }
 
     //Metodo obtenerNombre
-    public String obtenerNombre(){
-        return "El nombre del representante legal es: "+getNombreUsuario()+" "+getApellido1()+" "+getApellido2();
+    public String obtenerNombre() {
+        return "El nombre del representante legal es: " + getNombreUsuario() + " " + getApellido1() + " " + getApellido2();
     }
 
     //Metodo heredado de Usuario
@@ -115,7 +116,7 @@ public class Cliente extends Usuario {
         System.out.println("Razón social: " + getRazonSocial());
         System.out.println("Giro de la empresa: " + getGiroEmpresa());
         System.out.println("Teléfono del representante: " + getTelefonoRepresentante());
-        System.out.println("Dirección: " + getDireccion() + " Comuna: " + getComuna() );
+        System.out.println("Dirección: " + getDireccion() + " Comuna: " + getComuna());
         System.out.println("*******************************************");
     }
 }

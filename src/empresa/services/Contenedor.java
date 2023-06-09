@@ -39,6 +39,7 @@ public class Contenedor {
     }
 
     public void listarUsuarios() {
+        System.out.println("***LISTA DE USUARIOS***");
         for (IAsesoria usuario : listaDeUsuarios) {
             System.out.println(usuario.toString());
         }
@@ -51,18 +52,20 @@ public class Contenedor {
                 encontrado = true;
                 System.out.println(encontrado);
                 listaDeUsuarios.remove(u);
-                System.out.println("Rut eliminado");
+                System.out.println("Usuario eliminado");
                 break;
             }
         }
     }
     public void listarCapacitaciones() {
+        System.out.println("***LISTA DE CAPACITACIONES***");
         for (Capacitacion capacitacion : listaCapacitaciones) {
             System.out.println(capacitacion.toString());
         }
     }
 
     public void listarUsuariosPorTipo(IAsesoria tipo) {
+        System.out.println("***LISTA DE USUARIOS POR TIPO***");
         for (IAsesoria usuario : listaDeUsuarios) {
             if(usuario.getClass().equals(tipo.getClass())){
                 System.out.println(usuario.toString());

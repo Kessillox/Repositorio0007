@@ -1,9 +1,11 @@
 package empresa.entity;
+
 import empresa.iservices.IAsesoria;
-import java.util.Scanner;
+
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+
 public class Usuario implements IAsesoria { // se crea la clase Usuario
     // se crea los atributos de la clase
     private String nombreUsuario;
@@ -11,12 +13,12 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
     private String apellido2;
     private String fechaDeNacimiento;
     private String run;
-    Scanner sc = new Scanner(System.in);
-    
+
+
     // constructor vacio
     public Usuario() {
     }
-    
+
     // constructor con parametros, atributos de la clase
     public Usuario(String nombreUsuario, String apellido1, String apellido2, String fechaDeNacimiento, String run) {
 
@@ -61,29 +63,18 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
 
     }
 
-
     public String getRun() {
         return run;
     }
 
     public void setRun(String run) {
-            this.run = run;
+        this.run = run;
     }
 
     // metodo toString
     @Override
     public String toString() {
         return "Usuario [nombre=" + nombreUsuario + apellido1 + apellido1 + ", fechaDeNacimiento=" + fechaDeNacimiento + ", run=" + run + "]";
-    }
-
-    private boolean validarFormatoFecha(String fecha) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        try {
-            LocalDate.parse(fecha, formatter);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
     }
 
     //Metodo mostrarEdad
@@ -100,7 +91,7 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
     //Método analizarUsuario implementado desde la interfaz
     @Override
     public void analizarUsuario() {
-        System.out.println("Nombre usuario: " + getNombreUsuario() +" " + getApellido1()+" " + getApellido2() + ", run usuario: " +getRun());
-        System.out.println(mostrarEdad() );
+        System.out.println("Nombre usuario: " + getNombreUsuario() + " " + getApellido1() + " " + getApellido2() + ", run usuario: " + getRun());
+        System.out.println(mostrarEdad());
     }
 }

@@ -12,7 +12,7 @@ public class Profesional extends Usuario {
     }
 
     //Constructor con atributos de la clase Profesional y de la clase Usuario
-    public Profesional(String nombreUsuario, String apellido1, String apellido2, String  fechaDeNacimiento, String run, String titulo, String fechaIngreso) {
+    public Profesional(String nombreUsuario, String apellido1, String apellido2, String fechaDeNacimiento, String run, String titulo, String fechaIngreso) {
         super(nombreUsuario, apellido1, apellido2, fechaDeNacimiento, run);
         this.titulo = titulo;
         this.fechaIngreso = fechaIngreso;
@@ -43,13 +43,15 @@ public class Profesional extends Usuario {
         this.fechaIngreso = String.valueOf(LocalDate.parse(fechaIngreso, formatter));
     }
 
-    //Método toString
+    //Metodo toString
     @Override
     public String toString() {
-        return "Profesional{" +
+        return super.toString() +
+                " " +
+                "Profesional{" +
                 "titulo='" + titulo + '\'' +
                 ", fechaIngreso='" + fechaIngreso + '\'' +
-                '}';
+                "} ";
     }
 
     //Método analizarUsuario heredada de la clase Usuario

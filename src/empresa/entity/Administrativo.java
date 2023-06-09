@@ -41,13 +41,15 @@ public class Administrativo extends Usuario {
         this.experiencia = experiencia;
     }
 
-    //Método toString
+    //Metodo toString
     @Override
     public String toString() {
-        return "Administrativo{" +
+        return super.toString() +
+                " " +
+                "Administrativo{" +
                 "area='" + area + '\'' +
                 ", experiencia='" + experiencia + '\'' +
-                '}';
+                "} ";
     }
 
     //Metodo analizarUsuario heredado de la clase Usuario
