@@ -14,6 +14,7 @@ public class ValidacionStrings {
         }
     }
 
+<<<<<<< HEAD
     // USO SOLO LETRAS
     public static boolean esSoloLetras(String str) {
         for (int i = 0; i < str.length(); i++) {
@@ -84,4 +85,26 @@ public class ValidacionStrings {
             return false;
         }
     }
+=======
+    public static boolean validarDia(String dia){
+        switch (dia.toLowerCase()) {
+            case "lunes":
+            case "martes":
+            case "miércoles":
+            case "miercoles":
+            case "jueves":
+            case "viernes":
+            case "sábado":
+            case "sabado":
+            case "domingo":
+                System.out.println("Día válido");
+                return true;
+            default:
+                System.out.println("Ingrese un día válidao (lunes - Domingo)");
+                return false;
+
+        }
+    }
+
+>>>>>>> 7fae7626fa35a1b5ffa6b14cca050fcf39b2cc9a
 }

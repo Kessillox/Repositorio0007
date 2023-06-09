@@ -226,32 +226,9 @@ public class Main {
                         contenedor.eliminarUsuario(run);
                         break;
 
-                    case 6:   // Accidente
-                        System.out.println("Se encuentra en el Registro de Accidentes");
-                        do {
-                            System.out.println("Ingrese el ID Accidente");
-                            idAccidente = entrada.nextInt();
-                        } while (!validarId(idAccidente));
-                        System.out.println("Ingrese el día  del accidente");
-                        dia = entrada.next();
-                        do {
-                            System.out.println("Ingrese la hora del accidente");
-                            hora = entrada.next();
-                        } while (!validarHora(hora));
-                        System.out.println("Ingrese el lugar del accidente");
-                        lugar = entrada.next();
-                        do {
-                            System.out.println("Ingrese el origen del accidente");
-                            origen = entrada.next();
-                        } while (!validarOrigenConsecuencias(origen));
-                        do {
-                            System.out.println("Ingrese las concecuencias del accidente");
-                            consecuencias = entrada.next();
-                        } while (!validarOrigenConsecuencias(consecuencias));
-
-                        Accidente accidente1 = new Accidente(idAccidente, dia, hora, lugar, origen, consecuencias);
-
-                        System.out.println(accidente1.toString());
+                    case 6: // Listar Usuarios: se llama al método listarUsuarios() de la Clase Contenedor
+                        System.out.println("Los usuarios ingresados son:\n");
+                       contenedor.listarUsuarios();
 
 
                     case 7:   // Listar usuarios por Tipo

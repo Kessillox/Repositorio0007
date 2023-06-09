@@ -50,7 +50,7 @@ public class Contenedor {
     public void listarUsuarios() {
         for (IAsesoria usuario : listaDeUsuarios) {
             if (usuario instanceof Usuario) {
-                System.out.println(usuario.toString());
+                System.out.println(usuario.toString() + "\n");
             }
         }
     }
