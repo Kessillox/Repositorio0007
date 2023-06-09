@@ -63,8 +63,6 @@ public class Principal {
             System.out.println("5 > Listar Usuarios");
             System.out.println("6 > Listar Usuario por tipo");
             System.out.println("7 > Eliminar Usuario");
-            System.out.println("8 > Salir");
-
 
             System.out.println();
             op = sc.nextInt();
@@ -275,6 +273,7 @@ public class Principal {
                             //Instansanciando clases y añadiendo y mostrando datos de la clase Administrativo
                             Administrativo administrativo = new Administrativo(nombreUser,apellido1User,apellido2User,fechaNacimientoUser,runUser,area,experienciaPrevia);
                             contenedor.almacenarAdministrativo(administrativo);
+                            contenedor.almacenarUsuarios(administrativo);
 
                             System.out.println("¿Desea Registrar otro Profesional?");
                             System.out.println("1. Si");
@@ -319,8 +318,6 @@ public class Principal {
                                 contenedor.mostrarAdministrativo();
                                 break;
                         }
-
-
                         break;
                     case 7:
                         System.out.println("------Eliminar Usuario------");
