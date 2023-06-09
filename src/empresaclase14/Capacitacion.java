@@ -36,11 +36,11 @@ public class Capacitacion {
         this.idCapacitacion = idCapacitacion;
     }
 
-    public String getRutCliente() {
+    public Integer getRutCliente() {
         return rutCliente;
     }
 
-    public void setRutCliente(String rutCliente) {
+    public void setRutCliente(Integer rutCliente) {
         this.rutCliente = rutCliente;
     }
 
