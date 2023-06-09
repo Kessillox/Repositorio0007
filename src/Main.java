@@ -89,6 +89,8 @@ public class Main {
         String dia, hora, lugar, origen, consecuencias;
 
         //Cliente clienteEjemplo = new Cliente();
+        // CONTENEDOR
+        Contenedor contenedor = new Contenedor();
 
         do {
 
@@ -136,6 +138,9 @@ public class Main {
 
                     //System.out.println(clienteEjemplo.toString());
                     clienteEjemplo.analizarUsuario();
+                    contenedor.almacenarCliente(clienteEjemplo);
+
+
 
                     break;
                 case 2:  // Profesional
@@ -228,5 +233,8 @@ public class Main {
         //prueba.listarUsuariosPorTipo(clienteEjemplo);
         System.out.println(clienteEjemplo.getClass());
 */
+
+
+
     }
 }

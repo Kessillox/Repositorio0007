@@ -57,6 +57,7 @@ public class Contenedor {
         }
     }
 
+    /**
     public void listarUsuariosPorTipo(IAsesoria tipo) {
         for (IAsesoria usuario : listaDeUsuarios) {
             if(usuario.getClass().equals(tipo.getClass())){
@@ -65,5 +66,12 @@ public class Contenedor {
         }
 
     }
-
+    */
+    public void listarUsuariosPorTipo(Class<? extends IAsesoria> tipo) {
+        for (IAsesoria usuario : listaDeUsuarios) {
+            if (tipo.isInstance(usuario)) {
+                System.out.println(usuario.toString());
+            }
+        }
+    }
 }
