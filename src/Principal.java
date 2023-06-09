@@ -299,4 +299,32 @@ public class Principal {
     public boolean validacionComentariosVisitaTerreno(String comentarios) {
         return comentarios.length() <= 100;
     }
+    //Validacion de las variables de la clase Accidente
+    public boolean validarCamposAccidente(Integer idAccidente, String diaAccidente, String horaAccidente, String lugar, String origen, String consecuencia) {
+        if (idAccidente <= 0) {
+            return false;
+        }
+
+        if (diaAccidente == null || diaAccidente.length() == 10) {
+            return false;
+        }
+
+        if (horaAccidente == null || horaAccidente.length() == 5) {
+            return false;
+        }
+
+        if (lugar == null || lugar.length() < 10 || lugar.length() > 50) {
+            return false;
+        }
+
+        if (origen != null && origen.length() > 100) {
+            return false;
+        }
+
+        if (consecuencia != null && consecuencia.length() > 100) {
+            return false;
+        }
+
+        return true;
+    }
 }
