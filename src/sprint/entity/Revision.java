@@ -1,4 +1,9 @@
 package sprint.entity;
+/**
+ * @author Nazly SotoLabarca
+ * @version 1
+ * var nombre, apellido1, apellido2, fechaNacimiento, run, area, experienciaPrevia
+ * **/
 
 public class Revision {
     private int id;
@@ -6,9 +11,19 @@ public class Revision {
     private String detalle;
     private String estado;
 
+    /**
+     * se crea constructor vacio.
+     */
     public Revision() {
     }
 
+    /**
+     * se crea constructor con parametros.
+     * @param id
+     * @param nombre
+     * @param detalle
+     * @param estado
+     */
     public Revision(int id, String nombre, String detalle, String estado) {
         this.id = id;
         this.nombre = nombre;
@@ -48,6 +63,10 @@ public class Revision {
         this.estado = estado;
     }
 
+    /**
+     * se crea toString que retorna todos los parametros.
+     * @return
+     */
     @Override
     public String toString() {
         return "Revision{" +
