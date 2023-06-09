@@ -17,8 +17,8 @@ public class AlmacenarProfesionalController {
         // ======================= Validaciones Profesional =======================
         System.out.println("(obligatorio) Ingresar título profesional: ");
         while (true) {
-            profesional.setNombre(sc.nextLine().trim());
-            if (profesional.getNombre().length() > 70) {
+            profesional.setTitulo(sc.nextLine().trim());
+            if (profesional.getTitulo().length() > 70) {
                 System.out.println("Error, ingresar título profesional de máximo 70 caracteres");
             } else {
                 break;
@@ -29,7 +29,7 @@ public class AlmacenarProfesionalController {
         while (true) {
             SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
             try {
-                profesional.setFechaNacimiento(df.format(df.parse(sc.next())));
+                profesional.setFechaIngreso(df.format(df.parse(sc.next())));
                 break;
             } catch (ParseException e) {
                 System.err.println("La fecha tiene un formato incorrecto");

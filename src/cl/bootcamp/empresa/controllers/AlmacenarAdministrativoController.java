@@ -16,8 +16,8 @@ public class AlmacenarAdministrativoController {
         // ======================= Validaciones Profesional =======================
         System.out.println("(obligatorio) Ingresar área: ");
         while (true) {
-            administrativo.setNombre(sc.nextLine().trim());
-            if (administrativo.getNombre().length() < 5 || administrativo.getNombre().length() > 20) {
+            administrativo.setArea(sc.nextLine().trim());
+            if (administrativo.getArea().length() < 5 || administrativo.getArea().length() > 20) {
                 System.out.println("Error, ingresar experencia previa entre 5 y 20 caracteres");
             } else {
                 break;
@@ -26,8 +26,8 @@ public class AlmacenarAdministrativoController {
 
         System.out.println("(obligatorio) Ingresar experiencia previa: ");
         while (true) {
-            administrativo.setNombre(sc.nextLine().trim());
-            if (administrativo.getNombre().length() > 100) {
+            administrativo.setExperenciaArea(sc.nextLine().trim());
+            if (administrativo.getExperenciaArea().length() > 100) {
                 System.out.println("Error, ingresar título profesional máximo 100 caracteres");
             } else {
                 break;
