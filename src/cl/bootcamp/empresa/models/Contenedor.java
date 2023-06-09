@@ -1,5 +1,12 @@
 package cl.bootcamp.empresa.models;
 
+/**
+ * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
+ * La clase Cliente contiene 5 atributos de tipo lista
+ * @version 1.0.0
+ * @see Contenedor
+ */
+
 import cl.bootcamp.empresa.interfaces.IAsesoria;
 
 import java.util.ArrayList;
@@ -9,7 +16,7 @@ public class Contenedor {
 
     private List<IAsesoria> asesorias = new ArrayList<>();
 
-    private List<Capacitacion> capacitaciones= new ArrayList<>();
+    private List<Capacitacion> capacitaciones = new ArrayList<>();
 
     private List<Cliente> cliente = new ArrayList<>();
 
@@ -41,15 +48,15 @@ public class Contenedor {
         }
     }
 
-    public void listarUsuarios(){
+    public void listarUsuarios() {
         for (IAsesoria asesoria : asesorias) {
             asesoria.listaUsuario();
         }
     }
 
-    public void listarUsuariosPorTipo(String tipo){
-        for (IAsesoria asesorias: asesorias) {
-            if(asesorias.getClass().getSimpleName().equals(tipo)){
+    public void listarUsuariosPorTipo(String tipo) {
+        for (IAsesoria asesorias : asesorias) {
+            if (asesorias.getClass().getSimpleName().equals(tipo)) {
                 asesorias.listaUsuario();
             }
 
@@ -69,9 +76,5 @@ public class Contenedor {
             System.out.println(c);
         }
     }
-
-
-
-
 
 }
