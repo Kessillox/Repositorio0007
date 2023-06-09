@@ -180,12 +180,13 @@ public class Principal {
         Capacitacion cap = new Capacitacion();
         //System.out.println("Ingrese ID: ");
         cap.setIdCapacitacion(validarInt("Ingrese ID: "));
+        sc.nextLine();
         System.out.println("Ingrese Rut Empresa: ");
         cap.setRutEmpresa(validarRun(sc.nextLine(),"RUT"));
         System.out.println("Ingrese fecha: ");
         cap.setDiaCapacitacion(validacionFecha(sc.nextLine(), true));
         System.out.println("Ingrese Hora: ");
-        cap.setHoraCapacitacion(sc.nextLine());
+        cap.setHoraCapacitacion(validarHora(sc.nextLine()));
         System.out.println("Ingrese Lugar: ");
         cap.setLugarCapacitacion(cadenaMinimoMaximoLenght(sc.nextLine(),10,50,
                 "Ingrese Lugar válido: ",true));
@@ -317,6 +318,27 @@ public class Principal {
             }
         }
         return cadena;
+    }
+
+    public static String validarHora(String horaCadena){
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("HH:mm");
+        LocalTime hora= null;
+        boolean validar = false;
+        while (!validar) {
+            try {
+                hora = LocalTime.parse(horaCadena, formato);
+                horaCadena = String.valueOf(hora);
+                validar = true;
+            } catch (DateTimeParseException e) {
+                System.out.println("<(¬_¬)> Formato correcto HH:mm, ejemplo: 23:59");
+                System.out.println("Ingrese una hora correcta: ");
+                horaCadena = sc.nextLine();
+                validar = false;
+            }
+        }
+        System.out.println(hora);
+        System.out.println(horaCadena);
+        return  horaCadena;
     }
 
     public boolean validacionIdRevision (String idRevision){
