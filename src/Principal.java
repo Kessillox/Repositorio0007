@@ -84,14 +84,14 @@ public class Principal {
         System.out.println("Ingrese fecha de nacimiento: ");
         cli.setFechaDeNacimientoUsuario(sc.nextLine());
         System.out.println("Ingrese RUN: ");
-        cli.setRunUsuario(sc.nextLine());
+        cli.setRunUsuario(validarRun(sc.nextLine(),"RUN"));
         System.out.println("Ingrese Nombre Empresa: ");
         cli.setNombreEmpresa(cadenaMinimoMaximoLenght(sc.nextLine(),5,30,
                 "Ingrese Nombre Empresa válido: ",true));
         System.out.println("Ingrese Giro Empresa: ");
         cli.setGiroEmpresa(sc.nextLine());
         System.out.println("Ingrese RUT: ");
-        cli.setRutEmpresa(sc.nextLine());
+        cli.setRutEmpresa(validarRun(sc.nextLine(),"RUT"));
         System.out.println("Ingrese Telefono: ");
         cli.setTelefonoRepresentanteLegal(sc.nextLine());
         System.out.println("Direccion Empresa: ");
@@ -120,7 +120,7 @@ public class Principal {
         System.out.println("Ingrese fecha de nacimiento: ");
         pro.setFechaDeNacimientoUsuario(validacionFecha(sc.nextLine(), true));
         System.out.println("Ingrese RUN: ");
-        pro.setRunUsuario(sc.nextLine());
+        pro.setRunUsuario(validarRun(sc.nextLine(),"RUN"));
         System.out.println("Ingrese Titulo: ");
         pro.setTitulo(cadenaMinimoMaximoLenght(sc.nextLine(),5,20,
                 "Ingrese Titulo válido: ",true));
@@ -146,7 +146,7 @@ public class Principal {
         System.out.println("Ingrese fecha de nacimiento: ");
         adm.setFechaDeNacimientoUsuario(sc.nextLine());
         System.out.println("Ingrese RUN: ");
-        adm.setRunUsuario(sc.nextLine());
+        adm.setRunUsuario(validarRun(sc.nextLine(),"RUN"));
         System.out.println("Ingrese Área: ");
         adm.setArea(cadenaMinimoMaximoLenght(sc.nextLine(),5,20,
                 "Ingrese Área válida: ",true));
@@ -164,7 +164,7 @@ public class Principal {
         //System.out.println("Ingrese ID: ");
         cap.setIdCapacitacion(validarInt("Ingrese ID: "));
         System.out.println("Ingrese Rut Empresa: ");
-        cap.setRutEmpresa(sc.nextLine());
+        cap.setRutEmpresa(validarRun(sc.nextLine(),"RUT"));
         System.out.println("Ingrese fecha: ");
         cap.setDiaCapacitacion(validacionFecha(sc.nextLine(), true));
         System.out.println("Ingrese Hora: ");
@@ -262,9 +262,46 @@ public class Principal {
         return cadena;
     }
 
-    /**
-     * @deprecated
-     */
+    public static String validarRun(String cadena,String tipoIdentidad){
+        boolean valido = false;
+        while (!valido){
+            int posicionGuion=-1, intNumerosRun=0;
+            String strNumerosRun ="";
+
+            for (int i = 0; i < cadena.length() ; i++) {
+                char caracter = cadena.charAt(i);
+                if(caracter=='-'){
+                    posicionGuion = i;
+                }
+            }
+            if(posicionGuion!=-1){
+                for (int x=0; x <= posicionGuion; x++){
+                    char caracter = cadena.charAt(x);
+                    if(Character.isDigit(caracter)){
+                        strNumerosRun +=String.valueOf(caracter);
+                    }
+                }
+            }else{
+                for (int x=0; x < cadena.length(); x++){
+                    char caracter = cadena.charAt(x);
+                    if(Character.isDigit(caracter)){
+                        strNumerosRun +=String.valueOf(caracter);
+                    }
+                }
+            }  if(!strNumerosRun.isEmpty()){intNumerosRun = Integer.parseInt(strNumerosRun);}
+
+            if (intNumerosRun > 99999999 || intNumerosRun==0){
+                System.out.println("El "+tipoIdentidad+" "+ intNumerosRun +" no es valido <(u_u)>");
+                System.out.println("99.999.999-k");
+                System.out.println("Ingrese un "+tipoIdentidad+" valido: <(¬_¬)>");
+                cadena=sc.nextLine();
+            }else{
+                valido=true;
+            }
+        }
+        return cadena;
+    }
+
     public boolean validacionIdRevision (String idRevision){
         try {
             Integer.parseInt(idRevision);
@@ -367,33 +404,41 @@ public class Principal {
     public boolean validacionComentariosVisitaTerreno(String comentarios) {
         return comentarios.length() <= 100;
     }
+
     //Validacion de las variables de la clase Accidente
-    public boolean validarCamposAccidente(Integer idAccidente, String diaAccidente, String horaAccidente, String lugar, String origen, String consecuencia) {
-        if (idAccidente <= 0) {
-            return false;
-        }
+    public boolean validarIdAccidente(Integer idAccidente) {
+        return idAccidente > 0;
+    }
 
-        if (diaAccidente == null || diaAccidente.length() == 10) {
-            return false;
-        }
+    public boolean validarDiaAccidente(String diaAccidente) {
+        return diaAccidente != null && diaAccidente.length() == 10;
+    }
 
-        if (horaAccidente == null || horaAccidente.length() == 5) {
-            return false;
-        }
+    public boolean validarHoraAccidente(String horaAccidente) {
+        return horaAccidente != null && horaAccidente.length() == 5;
+    }
 
-        if (lugar == null || lugar.length() < 10 || lugar.length() > 50) {
-            return false;
-        }
+    public boolean validarLugar(String lugar) {
+        return lugar != null && lugar.length() >= 10 && lugar.length() <= 50;
+    }
 
-        if (origen != null && origen.length() > 100) {
-            return false;
-        }
+    public boolean validarOrigen(String origen) {
+        return origen == null || origen.length() <= 100;
+    }
 
-        if (consecuencia != null && consecuencia.length() > 100) {
-            return false;
-        }
+    public boolean validarConsecuencia(String consecuencia) {
+        return consecuencia == null || consecuencia.length() <= 100;
+    }
 
-        return true;
+    public boolean validarIngresoAccidente(Integer idAccidente, String diaAccidente, String horaAccidente, String lugar, String origen, String consecuencia) {
+        boolean isIdValid = validarIdAccidente(idAccidente);
+        boolean isDiaValid = validarDiaAccidente(diaAccidente);
+        boolean isHoraValid = validarHoraAccidente(horaAccidente);
+        boolean isLugarValid = validarLugar(lugar);
+        boolean isOrigenValid = validarOrigen(origen);
+        boolean isConsecuenciaValid = validarConsecuencia(consecuencia);
+
+        return isIdValid && isDiaValid && isHoraValid && isLugarValid && isOrigenValid && isConsecuenciaValid;
     }
 }
 
