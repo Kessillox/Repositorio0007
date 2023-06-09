@@ -7,7 +7,7 @@ package empresaclase14;
 public class Capacitacion {
 
     private int idCapacitacion;
-    private String rutCliente;
+    private Integer rutCliente;
     private String dia;
     private String hora;
     private String lugar;
@@ -18,7 +18,7 @@ public class Capacitacion {
     public Capacitacion() {
     }
 
-    public Capacitacion(int idCapacitacion, String rutCliente, String dia, String hora, String lugar, int duracion, int cantidadDeAsistentes) {
+    public Capacitacion(int idCapacitacion, Integer rutCliente, String dia, String hora, String lugar, int duracion, int cantidadDeAsistentes) {
         this.idCapacitacion = idCapacitacion;
         this.rutCliente = rutCliente;
         this.dia = dia;

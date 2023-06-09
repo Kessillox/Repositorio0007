@@ -2,6 +2,7 @@ import empresaclase14.*;
 
 import java.util.Scanner;
 
+import static empresaclase14.validaciones.ValidacionStrings.validarDia;
 import static empresaclase14.validaciones.ValidacionStrings.validarLargoString;
 import static empresaclase14.validaciones.validacionadministrativo.ValidacionAdministrativo.validarArea;
 import static empresaclase14.validaciones.validacionadministrativo.ValidacionAdministrativo.validarExperienciaPrevia;
@@ -10,6 +11,7 @@ import static empresaclase14.validaciones.validacioncliente.ValidacionCliente.*;
 import static empresaclase14.validaciones.validacionaccidente.ValidacionAccidente.*;
 import static empresaclase14.validaciones.validacionidentificador.ValidacionIdentificador.*;
 import static empresaclase14.validaciones.validacionprofesional.ValidacionProfesional.*;
+import static empresaclase14.validaciones.validacioncapacitacion.ValidacionCapacitacion.*;
 
 
 /**
@@ -100,11 +102,11 @@ public class Main {
 
         // Variables de Capacitacion
         Integer idCapacitacion = 0;
-        String rutEmpresaCapacitacion = "";
+        Integer rutEmpresaCapacitacion = 0;
         String diaCapacitacion = "";
         String horaCapacitacion = "";
         String lugarCapacitacion = "";
-        Integer duracionCapacitacion = 0;
+        String duracionCapacitacion = "";
         Integer cantidadAsistentesCapacitacion = 0;
 
         //Cliente clienteEjemplo = new Cliente();
@@ -229,26 +231,37 @@ public class Main {
 
                     case 4: // Capacitacion
                         System.out.println("Bienvenido a el Registro de Capacitación");
-                        System.out.println("Ingrese el ID de Capacitación");
-                        idCapacitacion = entrada.nextInt();
-                        System.out.println("Ingresa el rut de la empresa");
-                        rutEmpresaCapacitacion = entrada.next();
-                        System.out.println("Ingrese el día en el que se va a realizar la capacitación");
-                        diaCapacitacion = entrada.next();
-                        System.out.println("Ingrese la hora en la que se va a realizar la capacitación");
-                        horaCapacitacion = entrada.next();
-                        System.out.println("Ingresa el lugar donde se va a realizar al capacitación");
-                        lugarCapacitacion = entrada.next();
-                        System.out.println("Ingresa la duración de la capacitación");
-                        duracionCapacitacion = entrada.nextInt();
-                        System.out.println("Ingresa la cantidad de asistentes");
-                        cantidadAsistentesCapacitacion = entrada.nextInt();
-
+                        do {
+                            System.out.println("Ingrese el ID de Capacitación");
+                            idCapacitacion = entrada.nextInt();
+                        }while(validarId(idCapacitacion));
+                        do {
+                            System.out.println("Ingresa el rut de la empresa");
+                            rutEmpresaCapacitacion = entrada.nextInt();
+                        }while(!validarRut(rutEmpresaCapacitacion));
+                        do{
+                            System.out.println("Ingrese el día en el que se va a realizar la capacitación");
+                            diaCapacitacion = entrada.next();
+                        }while(validarDia(diaCapacitacion));
+                        do {
+                            System.out.println("Ingrese la hora en la que se va a realizar la capacitación");
+                            horaCapacitacion = entrada.next();
+                        }while(validarHora(horaCapacitacion));
+                        do {
+                            System.out.println("Ingresa el lugar donde se va a realizar al capacitación");
+                            lugarCapacitacion = entrada.next();
+                        }while(validarLugar(lugarCapacitacion));
+                        do {
+                            System.out.println("Ingresa la duración de la capacitación");
+                            duracionCapacitacion = entrada.next();
+                        }while(validarDuracion(duracionCapacitacion));
+                            System.out.println("Ingresa la cantidad de asistentes");
+                            cantidadAsistentesCapacitacion = entrada.nextInt();
                         Capacitacion capacitacion = new Capacitacion(idCapacitacion, rutEmpresaCapacitacion, diaCapacitacion, horaCapacitacion, lugarCapacitacion, duracionCapacitacion, cantidadAsistentesCapacitacion);
-                        Capacitacion capacitacion2 = new Capacitacion(2, "186894939", "27", "13:00", "ConCon", 4, 16);
-                        Capacitacion capacitacion3 = new Capacitacion(3, "168452189", "15", "12:00", "Concepción", 5, 14);
-                        Capacitacion capacitacion4 = new Capacitacion(4, "648541238", "12", "14:00", "Cohigueco", 7, 15);
-                        Capacitacion capacitacion5 = new Capacitacion(5, "789451236", "5", "15:00", "Berlin", 8, 12);
+                        Capacitacion capacitacion2 = new Capacitacion(2, 186894939, "27", "13:00", "ConCon", 4, 16);
+                        Capacitacion capacitacion3 = new Capacitacion(3, 168452189, "15", "12:00", "Concepción", 5, 14);
+                        Capacitacion capacitacion4 = new Capacitacion(4, 648541238, "12", "14:00", "Cohigueco", 7, 15);
+                        Capacitacion capacitacion5 = new Capacitacion(5, 789451236, "5", "15:00", "Berlin", 8, 12);
 
                         System.out.println(capacitacion.toString());
 

@@ -13,6 +13,16 @@ public class ValidacionCapacitacion {
 
     // validacion lugar está en validaciones.visitaenterreno
 
+    public static boolean validarLugar(String str) {
+        if (str != null && str.length() >= 10 && str.length() <= 50) {
+            System.out.println("Lugar ingresado correctamente");
+            return true;
+        } else {
+            System.out.println("Lugar no válido, ingrese entre 10 y 50 caracteres");
+            return false;
+        }
+    }
+
     public static boolean validarDuracion(String str) {
         if(str != null && str.length() >= 5 && str.length() <= 70){
             System.out.println("Duración ingresada correctamente!");
