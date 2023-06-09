@@ -1,4 +1,7 @@
+import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class Principal {
@@ -214,4 +217,86 @@ public class Principal {
     }
 
 
+    /*
+    VALIDACIONES REVISION Y VISITA TERRENO (En progreso aún)
+
+     */
+
+
+    public boolean validacionIdRevision(String idRevision) {
+        try {
+            Integer.parseInt(idRevision);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
+
+    public boolean validacionIdVisita(String idVisitaTerreno) {
+        try {
+            Integer.parseInt(idVisitaTerreno);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    public boolean validacionNombreRevision(String nombre) {
+        if (nombre.length() > 50 || nombre.length() < 10) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public boolean validacionDetalleRevision(String detalle) {
+        if (detalle.length() <= 100) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean validacionEstadoRevision(int estado) {
+        return estado <= 3 && estado >= 1;
+    }
+
+
+    // visita terreno
+    //misma funcion que revision para el mismo parametro
+
+    // funcion hechas en accidente rut, lugar
+
+    public boolean validacionFecha(String fecha) {
+        DateTimeFormatter formateadorFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        try {
+            LocalDate.parse(fecha, formateadorFecha);
+            return true;
+        } catch (DateTimeParseException error) {
+            return false;
+        }
+    }
+
+    public boolean validacionHora(String hora) {
+        if (hora.isEmpty()) {
+            return false;
+        } else {
+            String[] horaSeparada = hora.split(":");
+            if (horaSeparada.length > 2) {
+                return false;
+            } else {
+                try {
+                    int digitosHora = Integer.parseInt(horaSeparada[0]);
+                    //CONTINUAR
+                } catch (NumberFormatException error) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public boolean validacionComentariosVisitaTerreno(String comentarios) {
+        return comentarios.length() <= 100;
+    }
+}
