@@ -13,19 +13,27 @@ public class ValidacionCapacitacion {
 
     // validacion lugar está en validaciones.visitaenterreno
 
-    public static boolean validarDuracion(String str) {
-        if(str != null && str.length() >= 5 && str.length() <= 70){
-            System.out.println("Duración ingresada correctamente!");
+    public static boolean validarLugar(String str) {
+        if (str != null && str.length() >= 10 && str.length() <= 50) {
+            System.out.println("Lugar ingresado correctamente");
             return true;
-        }else{
-            System.out.println("Duración no válida inserte entre 5 y 70 carácteres");
+        } else {
+            System.out.println("Lugar no válido, ingrese entre 10 y 50 caracteres");
             return false;
         }
     }
 
+    public static boolean validarDuracion(int duracion) {
+        if(duracion > 0){
+            System.out.println("Duración ingresada correctamente!");
+            return true;
+        }else{
+            System.out.println("Duración no válida");
+            return false;
+        }
+    }
 
-    public class ValidacionCantidadAsistentes {
-        public static boolean validarId(int id){
+        public static boolean validarCantidadAsistentes(int id){
             if(id <1 && id >999) {
                 System.out.println("Ingrese un número válido(1-999)");
                 return false;
@@ -35,5 +43,3 @@ public class ValidacionCapacitacion {
             }
         }
     }
-
-}

@@ -107,20 +107,9 @@ public class Cliente extends Usuario {
 
     @Override
     public void analizarUsuario() {
-
-        System.out.println("El nombre del usuario es: " + super.getNombre()+", run: "+ super.getRun());
+        super.analizarUsuario();
         System.out.println("La dirección del cliente es: " + this.getDireccionEmpresa() +
                 "\n La comuna del cliente es: " + this.getComunaEmpresa());
-    }
-
-    public void agregarCapacitacion(Capacitacion capacitacion) {
-        this.capacitacionList.add(capacitacion);
-    }
-    public void agregarAccidente(Accidente accidente) {
-        this.accidenteList.add(accidente);
-    }
-    public void agregarVisitaTerreno(VisitaEnTerreno visitaEnTerreno) {
-        this.visitaEnTerrenoList.add(visitaEnTerreno);
     }
 
 }

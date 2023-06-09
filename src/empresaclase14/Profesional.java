@@ -37,14 +37,14 @@ public class Profesional extends Usuario {
     @Override
     public String toString() {
         return "Profesional{" +
-                "\n titulo= '" + titulo + "'," +
-                "\n fechaDeIngreso= '" + fechaDeIngreso + "'," +
-                "\n}";
+                "titulo='" + titulo + '\'' +
+                ", fechaDeIngreso='" + fechaDeIngreso + '\'' +
+                '}';
     }
 
     @Override
     public void analizarUsuario() {
-        System.out.println("El nombre del usuario es: " + this.getNombre()+", run: "+ this.getRun());
+        super.analizarUsuario();
         System.out.println("La información del Profesional es: " + this.toString());
     }
 }
