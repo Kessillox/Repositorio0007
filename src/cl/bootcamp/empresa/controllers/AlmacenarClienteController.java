@@ -1,22 +1,37 @@
 package cl.bootcamp.empresa.controllers;
 
 import cl.bootcamp.empresa.models.Cliente;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
+/**
+ * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
+ * @version 1.0.0
+ * @see AlmacenarClienteController
+ * Creación de la clase AlmacenarClienteController, contiene las
+ * validaciones para Usuario y Cliente
+ */
 public class AlmacenarClienteController {
 
     Scanner sc = new Scanner(System.in);
+
     Cliente cliente = new Cliente();
 
+    /**
+     * Sobrescritura del método Cliente
+     *
+     * @return Cliente
+     */
     public Cliente almacenarClienteController() {
 
         // ======================= Validaciones Usuario =======================
         System.out.println("(obligatorio) Ingresar nombre: ");
         while (true) {
             cliente.setNombre(sc.nextLine().trim());
-            if (cliente.getNombre().length() < 10 || cliente.getNombre().length() > 50) {
+            if (cliente.getNombre().length() < 10 ||
+                    cliente.getNombre().length() > 50) {
                 System.err.println("Error, ingresar nombre de 10 a 50 caracteres");
             } else {
                 break;
@@ -26,8 +41,10 @@ public class AlmacenarClienteController {
         System.out.println("(obligatorio) Ingresar primer apellido: ");
         while (true) {
             cliente.setApellido1(sc.nextLine().trim());
-            if (cliente.getApellido1().length() < 5 || cliente.getApellido1().length() > 30) {
-                System.err.println("Error, ingresar apellido de 5 a 30 caracteres");
+            if (cliente.getApellido1().length() < 5 ||
+                    cliente.getApellido1().length() > 30) {
+                System.err.println("Error, ingresar apellido de 5 a " +
+                        "30 caracteres");
             } else {
                 break;
             }
@@ -36,14 +53,17 @@ public class AlmacenarClienteController {
         System.out.println("(obligatorio) Ingresar segundo apellido: ");
         while (true) {
             cliente.setApellido2(sc.nextLine().trim());
-            if (cliente.getApellido2().length() < 5 || cliente.getApellido2().length() > 30) {
-                System.err.println("Error, ingresar apellido de 5 a 30 caracteres");
+            if (cliente.getApellido2().length() < 5 ||
+                    cliente.getApellido2().length() > 30) {
+                System.err.println("Error, ingresar apellido de 5 a " +
+                        "30 caracteres");
             } else {
                 break;
             }
         }
 
-        System.out.println("(obligatorio) Ingresar fecha de nacimiento con formato dd/MM/yyyy: ");
+        System.out.println("(obligatorio) Ingresar fecha de nacimiento " +
+                "con formato dd/MM/yyyy: ");
         while (true) {
             SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
             try {
@@ -63,7 +83,8 @@ public class AlmacenarClienteController {
                 cliente.setRun(runIngresado);
                 break;
             } else {
-                System.err.println("El RUN ingresado no cumple con el formato requerido.");
+                System.err.println("El RUN ingresado no cumple con el " +
+                        "formato requerido.");
             }
         }
         sc.nextLine(); // Consumir el salto de línea
@@ -72,8 +93,10 @@ public class AlmacenarClienteController {
         System.out.println("(obligatorio) Ingresar nombre de la Empresa: ");
         while (true) {
             cliente.setNombreEmpresa(sc.nextLine().trim());
-            if (cliente.getNombreEmpresa().length() < 5 || cliente.getNombreEmpresa().length() > 30) {
-                System.err.println("Error, ingresar nombre Empresa entre 5 y 30 caracteres");
+            if (cliente.getNombreEmpresa().length() < 5 ||
+                    cliente.getNombreEmpresa().length() > 30) {
+                System.err.println("Error, ingresar nombre Empresa entre " +
+                        "5 y 30 caracteres");
             } else {
                 break;
             }
@@ -83,13 +106,15 @@ public class AlmacenarClienteController {
         while (true) {
             cliente.setGiroEmpresa(sc.nextLine().trim());
             if (cliente.getGiroEmpresa().length() < 5 || cliente.getGiroEmpresa().length() > 30) {
-                System.err.println("Error, ingresar giro de la empresa entre 5 y 30 caracteres");
+                System.err.println("Error, ingresar giro de la empresa entre " +
+                        "5 y 30 caracteres");
             } else {
                 break;
             }
         }
 
-        System.out.println("(obligatorio) Ingresar RUT empresa con el formato 00000000-k: ");
+        System.out.println("(obligatorio) Ingresar RUT empresa con el " +
+                "formato 00000000-k: ");
         while (true) {
             String rutIngresado = sc.next();
 
@@ -97,7 +122,8 @@ public class AlmacenarClienteController {
                 cliente.setRut(rutIngresado);
                 break;
             } else {
-                System.err.println("El RUT empresa ingresado no cumple con el formato requerido.");
+                System.err.println("El RUT empresa ingresado no cumple con el " +
+                        "formato requerido.");
             }
         }
         sc.nextLine(); // Consumir el salto de línea
@@ -112,11 +138,13 @@ public class AlmacenarClienteController {
             }
         }
 
-        System.out.println("(opcional) Ingresar dirección de la empresa menor a 70 caracteres: ");
+        System.out.println("(opcional) Ingresar dirección de la empresa " +
+                "menor a 70 caracteres: ");
         while (true) {
             cliente.setDireccionEmpresa(sc.nextLine());
             if (cliente.getDireccionEmpresa().length() > 70) {
-                System.err.println("Error, la dirección debe ser menor a 70 caracteres");
+                System.err.println("Error, la dirección debe ser menor a " +
+                        "70 caracteres");
             } else {
                 break;
             }
@@ -126,7 +154,8 @@ public class AlmacenarClienteController {
         while (true) {
             cliente.setComunaEmpresa(sc.nextLine());
             if (cliente.getComunaEmpresa().length() > 70) {
-                System.err.println("Error, la comuna debe ser menor a 70 caracteres");
+                System.err.println("Error, la comuna debe ser menor a " +
+                        "70 caracteres");
             } else {
                 break;
             }

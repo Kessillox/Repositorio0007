@@ -10,6 +10,12 @@ import java.util.List;
  Esto permite que Listado trabaje con cualquier objeto que implemente la interfaz IAsesoria,
  lo que cumple con el principio de depender de abstracciones en lugar de detalles concretos.*/
 
+/**
+ * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
+ * @version 1.1.0
+ * @see Listado
+ * Creación de la clase Listado
+ */
 public class Listado {
 
     List<IAsesoria> usuarios = new ArrayList<>();

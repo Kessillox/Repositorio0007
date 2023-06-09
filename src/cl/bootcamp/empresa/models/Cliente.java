@@ -14,28 +14,54 @@ import java.util.List;
 
 /**
  * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
- * La clase Cliente contiene 5 atributos
- * @version 1.0.0
+ * @version 1.1.0
  * @see Cliente
+ * Creación de la clase Cliente, contiene 9 atributos
  */
 
 public class Cliente extends Usuario {
 
     private String nombreEmpresa;
+
     private String giroEmpresa;
+
     private String rut;
+
     private String telefonoRepresentante;
+
     private String direccionEmpresa;
+
     private String comunaEmpresa;
+
     private List<Capacitacion> capacitaciones;
+
     private List<Accidente> accidentes;
+
     private List<VisitaTerreno> visitasTerreno;
+
 
     public Cliente() {
         capacitaciones = new ArrayList<>();
         accidentes = new ArrayList<>();
         visitasTerreno = new ArrayList<>();
     }
+
+    /**
+     * Constructor que inicializa los parámetros del objeto Cliente
+     *
+     * @param nombre
+     * @param apellido1
+     * @param apellido2
+     * @param fechaNacimiento
+     * @param run
+     * @param edad
+     * @param nombreEmpresa
+     * @param giroEmpresa
+     * @param telefonoRepresentante
+     * @param direccionEmpresa
+     * @param comunaEmpresa
+     * @param rut
+     */
 
     public Cliente(String nombre, String apellido1, String apellido2,
                    String fechaNacimiento, String run, int edad, String nombreEmpresa,
@@ -137,6 +163,9 @@ public class Cliente extends Usuario {
         }
     }
 
+    /**
+     * Sobrescritura del método analizarUsuario()
+     */
     @Override
     public void analizarUsuario() {
         System.out.print("El cliente: ");
@@ -146,6 +175,11 @@ public class Cliente extends Usuario {
                 ", comuna empresa: " + comunaEmpresa);
     }
 
+    /**
+     * Sobrescritura del método toString
+     *
+     * @return String
+     */
     @Override
     public String toString() {
         return super.toString() +

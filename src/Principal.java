@@ -3,9 +3,16 @@ import cl.bootcamp.empresa.controllers.AlmacenarCapacitacionController;
 import cl.bootcamp.empresa.controllers.AlmacenarClienteController;
 import cl.bootcamp.empresa.controllers.AlmacenarProfesionalController;
 import cl.bootcamp.empresa.models.Contenedor;
+import cl.bootcamp.empresa.models.VisitaTerreno;
 
 import java.util.Scanner;
 
+/**
+ * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
+ * @version 1.1.0
+ * @see Principal
+ * Creación de la clase Principal, contiene la clase main
+ */
 public class Principal {
     public static void main(String[] args) throws InterruptedException {
 

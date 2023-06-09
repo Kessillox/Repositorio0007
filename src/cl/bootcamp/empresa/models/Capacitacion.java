@@ -1,25 +1,43 @@
 package cl.bootcamp.empresa.models;
 
 /**
- * @author Cristian Durán - Ignacio Aránguiz - Iván Becerra
- * La clase Capacitacion contiene 7 atributos.
- * @version 1.0.0
+ * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
+ * @version 1.1.0
  * @see Capacitacion
+ * Creación de la clase Capacitacion, contiene 7 atributos
  */
 public class Capacitacion {
 
     private int id;
+
     private String rutEmpresa;
+
     private String dia;
+
     private String hora;
+
     private String lugar;
+
     private String duracion;
+
     private int cantidadAsistentes;
 
     public Capacitacion() {
     }
 
-    public Capacitacion(int id, String rutEmpresa, String dia, String hora, String lugar, String duracion, int cantidadAsistentes) {
+    /**
+     * Constructor que inicializa los parámetros del objeto Capacitacion
+     *
+     * @param id
+     * @param rutEmpresa
+     * @param dia
+     * @param hora
+     * @param lugar
+     * @param duracion
+     * @param cantidadAsistentes
+     */
+    public Capacitacion(int id, String rutEmpresa, String dia, String hora,
+                        String lugar, String duracion, int cantidadAsistentes) {
         this.id = id;
         this.rutEmpresa = rutEmpresa;
         this.dia = dia;
@@ -90,8 +108,8 @@ public class Capacitacion {
      */
 
     public void mostrarDetalle() {
-        System.out.println("La capacitación será en " + lugar + " a las " + hora
-                + " del día " + dia + ", y durará " + duracion + " minutos");
+        System.out.println("La capacitación será en " + lugar + " a las " +
+                hora + " del día " + dia + ", y durará " + duracion + " minutos");
     }
 
     /**

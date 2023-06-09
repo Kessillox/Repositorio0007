@@ -1,18 +1,40 @@
 package cl.bootcamp.empresa.models;
 
+/**
+ * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
+ * @version 1.1.0
+ * @see Accidente
+ * Creación de la clase Accidente, contiene 6 atributos
+ */
 public class Accidente {
 
     private int id;
+
     private String dia;
+
     private String hora;
+
     private String lugar;
+
     private String origen;
+
     private String consecuencia;
 
     public Accidente() {
     }
 
-    public Accidente(int id, String dia, String hora, String lugar, String origen, String consecuencias) {
+    /**
+     * Constructor que inicializa los parámetros del objeto Accidente
+     *
+     * @param id
+     * @param dia
+     * @param hora
+     * @param lugar
+     * @param origen
+     * @param consecuencias
+     */
+    public Accidente(int id, String dia, String hora, String lugar,
+                     String origen, String consecuencias) {
         this.id = id;
         this.dia = dia;
         this.hora = hora;
@@ -68,6 +90,12 @@ public class Accidente {
     public void setConsecuencia(String consecuencia) {
         this.consecuencia = consecuencia;
     }
+
+    /**
+     * Sobrescritura del método toString
+     *
+     * @return String
+     */
 
     @Override
     public String toString() {

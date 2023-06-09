@@ -1,16 +1,16 @@
 package cl.bootcamp.empresa.models;
 
-/**
- * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
- * La clase Cliente contiene 5 atributos de tipo lista
- * @version 1.0.0
- * @see Contenedor
- */
-
 import cl.bootcamp.empresa.interfaces.IAsesoria;
 
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
+ * @version 1.1.0
+ * @see Contenedor
+ * Creación de la clase Contenedor, contiene 5 atributos
+ */
 
 public class Contenedor {
 
@@ -24,25 +24,30 @@ public class Contenedor {
 
     private List<Administrativo> administrativo = new ArrayList<>();
 
-    /* Este método permite almacenar los datos de cliente, profesional o
+    /* Este método permite almacenar los datos de cliente, profesional y
     administrativo en una sola lista*/
     public void almacenarUsuario(IAsesoria a) {
         asesorias.add(a);
     }
 
-    public void almacenarCliente(Cliente c) {cliente.add(c);}
+    public void almacenarCliente(Cliente c) {
+        cliente.add(c);
+    }
 
-    public void almacenarProfesiona(Profesional p) {profesional.add(p);}
+    public void almacenarProfesiona(Profesional p) {
+        profesional.add(p);
+    }
 
-    public void almacenarAdministrativo(Administrativo a){administrativo.add(a);}
+    public void almacenarAdministrativo(Administrativo a) {
+        administrativo.add(a);
+    }
 
     //almacena los datos de capacitacion
     public void almacenarCapacitacion(Capacitacion c) {
         capacitaciones.add(c);
     }
 
-    /*como su nombre lo indica, permite eliminar a un usuario utilizando
-    el atributo run */
+    /*permite eliminar a un usuario utilizando el atributo run */
     public void eliminarUsuario(String run) {
         for (int i = 0; i < asesorias.size(); i++) {
             Usuario u = (Usuario) asesorias.get(i);
@@ -62,15 +67,15 @@ public class Contenedor {
 
     public void listarUsuariosPorTipo() {
         System.out.println("Lista de clientes");
-        for(Cliente c : cliente) {
+        for (Cliente c : cliente) {
             System.out.println(c);
         }
         System.out.println("Lista de profesionales");
-        for(Profesional p : profesional){
+        for (Profesional p : profesional) {
             System.out.println(p);
         }
         System.out.println("Lista de administrativo");
-        for(Administrativo a : administrativo){
+        for (Administrativo a : administrativo) {
             System.out.println(a);
         }
     }

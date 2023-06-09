@@ -11,9 +11,9 @@ La clase Administrador está abierta a la extensión, ya que se pueden crear nue
 
 /**
  * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
- * La clase Administrativo contiene 2 atributos
- * @version 1.0.0
+ * @version 1.1.0
  * @see Administrativo
+ * Creación de la clase Administrativo, contiene 2 atributos
  */
 
 public class Administrativo extends Usuario {
@@ -23,6 +23,19 @@ public class Administrativo extends Usuario {
 
     public Administrativo() {
     }
+
+    /**
+     * Constructor que inicializa los parámetros del objeto Administrativo
+     *
+     * @param nombre
+     * @param apellido1
+     * @param apellido2
+     * @param fechaNacimiento
+     * @param run
+     * @param edad
+     * @param area
+     * @param experenciaArea
+     */
 
     public Administrativo(String nombre, String apellido1, String apellido2,
                           String fechaNacimiento, String run, int edad, String area,
@@ -48,6 +61,9 @@ public class Administrativo extends Usuario {
         this.experenciaArea = experenciaArea;
     }
 
+    /**
+     * Sobrescritura del método analizarUsuario()
+     */
     @Override
     public void analizarUsuario() {
         System.out.print("El administrativo: ");
@@ -55,6 +71,11 @@ public class Administrativo extends Usuario {
         System.out.println(", área: " + area + ", experiencia: " + experenciaArea);
     }
 
+    /**
+     * Sobrescritura del método toString
+     *
+     * @return String
+     */
     @Override
     public String toString() {
         return super.toString() +

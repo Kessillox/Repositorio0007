@@ -3,20 +3,41 @@ package cl.bootcamp.empresa.models;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
+ * @version 1.1.0
+ * @see VisitaTerreno
+ * Creación de la clase VisitaTerreno, contiene 6 atributos
+ */
 public class VisitaTerreno {
 
     private int id;
+
     private String dia;
+
     private String hora;
+
     private String lugar;
+
     private String comentario;
+
     private List<Revision> revisiones;
 
     public VisitaTerreno() {
         revisiones = new ArrayList<>();
     }
 
-    public VisitaTerreno(int id, String dia, String hora, String lugar, String comentario) {
+    /**
+     * Constructor que inicializa los parámetros del objeto VisitaTerreno
+     *
+     * @param id
+     * @param dia
+     * @param hora
+     * @param lugar
+     * @param comentario
+     */
+    public VisitaTerreno(int id, String dia, String hora, String lugar,
+                         String comentario) {
         this();
         this.id = id;
         this.dia = dia;
@@ -76,6 +97,11 @@ public class VisitaTerreno {
         }
     }
 
+    /**
+     * Sobrescritura del método toString
+     *
+     * @return String
+     */
     @Override
     public String toString() {
         return "id: " + id +

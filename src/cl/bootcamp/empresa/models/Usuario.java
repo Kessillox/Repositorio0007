@@ -3,31 +3,50 @@ package cl.bootcamp.empresa.models;
 import cl.bootcamp.empresa.interfaces.IAsesoria;
 
 /* Principio de responsabilidad única (SRP - Single Responsibility Principle):
-La clase Usuario tiene la responsabilidad de representar los datos de un usuario y proporciona métodos para acceder y modificar esos datos.*/
+La clase Usuario tiene la responsabilidad de representar los datos de un
+usuario y proporciona métodos para acceder y modificar esos datos.*/
 
 /* Principio de abierto/cerrado (OCP - Open/Closed Principle):
-La clase Usuario está abierta a la extensión, ya que se pueden crear nuevas clases derivadas para representar diferentes tipos de usuarios, sin modificar el código existente.*/
+La clase Usuario está abierta a la extensión, ya que se pueden crear nuevas
+clases derivadas para representar diferentes tipos de usuarios, sin modificar
+el código existente.*/
 
 /**
  * @author Cristian Durán - Iván Becerra - Ignacio Aránguiz
- * La clase Usuario contiene 5 atributos
- * @version 1.0.0
+ * @version 1.1.0
  * @see Usuario
+ * Creación de la clase Usuario, contiene 6 atributos
  */
 
 public class Usuario implements IAsesoria {
 
     protected String nombre;
+
     protected String apellido1;
+
     protected String apellido2;
+
     protected String fechaNacimiento;
+
     protected String run;
+
     protected int edad;
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellido1, String apellido2, String fechaNacimiento, String run, int edad) {
+    /**
+     * Constructor que inicializa los parámetros del objeto Usuario
+     *
+     * @param nombre
+     * @param apellido1
+     * @param apellido2
+     * @param fechaNacimiento
+     * @param run
+     * @param edad
+     */
+    public Usuario(String nombre, String apellido1, String apellido2,
+                   String fechaNacimiento, String run, int edad) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
@@ -88,13 +107,18 @@ public class Usuario implements IAsesoria {
         System.out.println(nombre + " tiene " + edad + " años");
     }
 
+    /**
+     * Concatena el nombre, apellido1 y apellido2 de Usuario
+     */
     @Override
     public void analizarUsuario() {
-        System.out.print(nombre + " " + apellido1 + " " + apellido2 + " con run: " + run);
+        System.out.print(nombre + " " + apellido1 + " " + apellido2 +
+                " con run: " + run);
     }
 
-    /*sobrescribe los datos a través de la función listaUsuario()
-    creaada en contenedor*/
+    /**
+     * Sobrescritura del método listaUsuario()
+     */
     @Override
     public void listaUsuario() {
         System.out.println("nombre: " + nombre +
@@ -104,6 +128,12 @@ public class Usuario implements IAsesoria {
                 ", run: " + run +
                 ", edad: " + edad);
     }
+
+    /**
+     * Sobrescritura del método toString
+     *
+     * @return String
+     */
 
     @Override
     public String toString() {
