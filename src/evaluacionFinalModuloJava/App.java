@@ -166,6 +166,11 @@ public class App {
                 int idCap=0;
                 int rut = 0;
                 String diaCap ="";
+                String lugar ="";
+                int canAsis = 0;
+
+
+
                 System.out.println("Ingrese Numero interno de capacitacion");
                 idCap = scan.nextInt();
                 nuevaCapacitacion.setIdentificador(idCap);
@@ -184,14 +189,25 @@ public class App {
 
                 System.out.println("Ingrese hora de la capacitacion \n Formato: (00:00) hora:minuto");
                 nuevaCapacitacion.setHora(LocalTime.parse(scan.nextLine()));
-                System.out.println("Ingrese lugar de la capacitacion");
-                nuevaCapacitacion.setLugar(scan.nextLine());
-                System.out.println("Ingrese la duracion de la capacitacion \n Formato:(00:00) hora:minuto");
-                nuevaCapacitacion.setDuracion(LocalTime.parse(scan.nextLine()));
-                System.out.println("Ingrese la cantidad de asistentes");
-                nuevaCapacitacion.setCantidadAsistentes(Integer.parseInt(scan.nextLine()));
+
+                while( lugar.length() < 10 || lugar.length() < 51){
+                    System.out.println("Ingrese lugar de la capacitacion");
+                    lugar = scan.nextLine();
+                    nuevaCapacitacion.setLugar(lugar);
+                }
+
+
+                    System.out.println("Ingrese la duracion de la capacitacion \n Formato:(00:00) hora:minuto");
+                    nuevaCapacitacion.setDuracion(LocalTime.parse(scan.nextLine()));
+
+                while( canAsis > 1000){
+                    System.out.println("Ingrese la cantidad de asistentes");
+                    canAsis = Integer.parseInt(scan.nextLine());
+                    nuevaCapacitacion.setCantidadAsistentes(canAsis);
+                }
                 contenedor.almacenarCapacitacion(nuevaCapacitacion);
                 System.out.println("Capacitacion añadido");
+
             }
             case 5 -> {
                 System.out.println("Ingrese run de usuario a eliminar:");
