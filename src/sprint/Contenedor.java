@@ -43,8 +43,8 @@ public class Contenedor {
         almacenarClientes.add(c);
     }
     public void mostrarUsuarios(Cliente cliente){
-        for (IAsesoria Us : almacenarUsuarios) {
-            System.out.println(Us);
+        for (IAsesoria U : almacenarUsuarios) {
+            System.out.println(U);
         }
     }
 }
