@@ -1,23 +1,47 @@
 package empresa.entity;
 
 
-//Clase Administrativo que hereda atributos y métodos desde la clase Usuario
+
+/**Clase Administrativo que hereda los atributos y métodos de la clase Usuario
+ * @author Cintia Muñoz, Oscar Fernandez, Joaquin baeza, Hans Schiess
+ * @version 1.
+ *
+ *
+ *
+ */
+
+
 public class Administrativo extends Usuario {
     //Atributos de la clase Administrativo
     private String area;
     private String experiencia;
 
-    //Constructor vacío
+    /**Constructor vacío
+     *
+     */
     public Administrativo() {
     }
 
-    //Constructor con atributos de la clase Administrativo
+    /**Constructor con atributos de la clase Administrativo
+     *
+     * @param area
+     * @param experiencia
+     */
     public Administrativo(String area, String experiencia) {
         this.area = area;
         this.experiencia = experiencia;
     }
 
-    //Constructor con atributos de la clase Administrativos y atributos heredados de la clase Usuario
+    /**Constructor con atributos de la clase Administrativos y atributos heredados de la clase Usuario
+     *
+     * @param nombreUsuario
+     * @param apellido1
+     * @param apellido2
+     * @param fechaDeNacimiento
+     * @param run
+     * @param area
+     * @param experiencia
+     */
     public Administrativo(String nombreUsuario, String apellido1, String apellido2, String fechaDeNacimiento, String run, String area, String experiencia) {
         super(nombreUsuario, apellido1, apellido2, fechaDeNacimiento, run);
         this.area = area;
@@ -52,7 +76,9 @@ public class Administrativo extends Usuario {
                 "} ";
     }
 
-    //Metodo analizarUsuario heredado de la clase Usuario
+    /**Metodo analizarUsuario heredado de la clase Usuario
+     *
+     */
     @Override
     public void analizarUsuario() {
         System.out.println();

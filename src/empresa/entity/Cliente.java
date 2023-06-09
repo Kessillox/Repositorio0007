@@ -1,7 +1,16 @@
 package empresa.entity;
 
+/**Clase Cliente que hereda los atributos y métodos de la clase Usuario
+ * @author Cintia Muñoz, Oscar Fernandez, Joaquin baeza, Hans Schiess
+ * @version 1.
+ *
+ *
+ *
+ */
 
-// Clase Cliente que hereda los atributos y métodos de la clase Usuario
+
+
+
 public class Cliente extends Usuario {
     // se crea los atributos de la clase
     private String razonSocial; //es el nombre de la empresa
@@ -12,7 +21,10 @@ public class Cliente extends Usuario {
     private String comuna;
 
 
-    // constructor vacio
+    /** constructor vacio
+     *
+     *
+     */
     public Cliente() {
     }
 
@@ -28,7 +40,14 @@ public class Cliente extends Usuario {
     }
 
 
-    // constructor con parametros, atributos de la clase Cliente
+    /** constructor con parametros, atributos de la clase Cliente
+     *
+     * @param razonSocial
+     * @param giroEmpresa
+     * @param telefonoRepresentante
+     * @param direccion
+     * @param comuna
+     */
     public Cliente(String razonSocial, String giroEmpresa, String telefonoRepresentante, String direccion, String comuna) {
         this.razonSocial = razonSocial;
         this.giroEmpresa = giroEmpresa;
@@ -37,7 +56,10 @@ public class Cliente extends Usuario {
         this.comuna = comuna;
     }
 
-    //Getters y setters
+    /**Getters y setters
+     *
+     * @return
+     */
     public String getRazonSocial() {
         return razonSocial;
     }
@@ -100,12 +122,18 @@ public class Cliente extends Usuario {
                 "} ";
     }
 
-    //Metodo obtenerNombre
+    /**Metodo obtenerNombre
+     *
+     * @return
+     */
     public String obtenerNombre() {
         return "El nombre del representante legal es: " + getNombreUsuario() + " " + getApellido1() + " " + getApellido2();
     }
 
-    //Metodo heredado de Usuario
+    /**Metodo heredado de Usuario
+     *
+     *
+     */
     @Override
     public void analizarUsuario() {
         System.out.println();

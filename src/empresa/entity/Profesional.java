@@ -3,6 +3,16 @@ package empresa.entity;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**Clase Profesional que hereda los atributos y métodos de la clase Usuario
+ * @author Cintia Muñoz, Oscar Fernandez, Joaquin baeza, Hans Schiess
+ * @version 1.
+ *
+ *
+ *
+ */
+
+
+
 public class Profesional extends Usuario {
     private String titulo;
     private String fechaIngreso;
@@ -11,7 +21,16 @@ public class Profesional extends Usuario {
     public Profesional() {
     }
 
-    //Constructor con atributos de la clase Profesional y de la clase Usuario
+    /**Constructor con atributos de la clase Profesional y de la clase Usuario
+     *
+     * @param nombreUsuario
+     * @param apellido1
+     * @param apellido2
+     * @param fechaDeNacimiento
+     * @param run
+     * @param titulo
+     * @param fechaIngreso
+     */
     public Profesional(String nombreUsuario, String apellido1, String apellido2, String fechaDeNacimiento, String run, String titulo, String fechaIngreso) {
         super(nombreUsuario, apellido1, apellido2, fechaDeNacimiento, run);
         this.titulo = titulo;
@@ -54,7 +73,9 @@ public class Profesional extends Usuario {
                 "} ";
     }
 
-    //Método analizarUsuario heredada de la clase Usuario
+    /**Método analizarUsuario heredada de la clase Usuario
+     *
+     */
     @Override
     public void analizarUsuario() {
         System.out.println();

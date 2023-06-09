@@ -6,8 +6,20 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
+
+/**
+ * Clase que representa a un Usuario.
+ * @author Joaquin Baeza, Cintia Muñoz,Hans Schiess, Oscar Fernandez
+ * @Version 1
+ *
+ *
+ *
+ */
+
+
+
 public class Usuario implements IAsesoria { // se crea la clase Usuario
-    // se crea los atributos de la clase
+
     private String nombreUsuario;
     private String apellido1;
     private String apellido2;
@@ -15,11 +27,21 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
     private String run;
 
 
-    // constructor vacio
+    /** constructor vacio
+     *
+     */
     public Usuario() {
     }
 
-    // constructor con parametros, atributos de la clase
+    /**
+     * Constructor de Usuario que recibe los atributos.
+     *
+     * @param nombreUsuario     Nombre del usuario.
+     * @param apellido1         Primer apellido del usuario.
+     * @param apellido2         Segundo apellido del usuario.
+     * @param fechaDeNacimiento Fecha de nacimiento del usuario en formato "dd/MM/yyyy".
+     * @param run               RUN del usuario.
+     */
     public Usuario(String nombreUsuario, String apellido1, String apellido2, String fechaDeNacimiento, String run) {
 
         this.nombreUsuario = nombreUsuario;
@@ -87,8 +109,10 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
         return "El usuario tiene " + edad + " años";
 
     }
+    /**
+     * Método que analiza y muestra información del usuario implementado desde la Interfaz.
+     */
 
-    //Método analizarUsuario implementado desde la interfaz
     @Override
     public void analizarUsuario() {
         System.out.println("Nombre usuario: " + getNombreUsuario() + " " + getApellido1() + " " + getApellido2() + ", run usuario: " + getRun());
