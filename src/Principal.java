@@ -282,18 +282,24 @@ public class Principal {
             return false;
         } else {
             String[] horaSeparada = hora.split(":");
-            if (horaSeparada.length > 2) {
+            if (horaSeparada.length != 2) {
                 return false;
             } else {
                 try {
                     int digitosHora = Integer.parseInt(horaSeparada[0]);
-                    //CONTINUAR
+                    if (digitosHora < 0 || digitosHora > 23) {
+                        return false;
+                    }
+                    int digitosMinutos = Integer.parseInt(horaSeparada[1]);
+                    if (digitosMinutos < 0 || digitosMinutos > 59) {
+                        return false;
+                    }
                 } catch (NumberFormatException error) {
                     return false;
                 }
+                return true;
             }
         }
-        return true;
     }
 
     public boolean validacionComentariosVisitaTerreno(String comentarios) {
