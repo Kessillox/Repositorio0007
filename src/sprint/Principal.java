@@ -10,8 +10,7 @@ public class Principal {
         Scanner sc = new Scanner(System.in);
         Usuario usuario1 = new Usuario ("Livio","Guitierrez","Zambrano", "09/03/1995",269876362);
 
-
-       // Usuario usuario1 = new Usuario ("Livio","Guitierrez","Zambrano", "09/03/1995",269876362);
+        // Usuario usuario1 = new Usuario ("Livio","Guitierrez","Zambrano", "09/03/1995",269876362);
 
         //VARIABLES Usuarios
         String nombreUser="";
@@ -22,17 +21,11 @@ public class Principal {
         System.out.println("favor ingrese un nombre entre 3 y 20 caracteres.");
         nombreUser = sc.nextLine();
 
-        while (nombreUser.length() < 3 || nombreUser.length() > 20){
+        while (nombreUser.length() > 3 && nombreUser.length() < 20){
             System.out.println("debe ser mayor a 3 y menor a 20");
             nombreUser = sc.nextLine();
         }
-
-
-        //Accidentes
-
-
         //VARIABLES
-
         int op =0;
 
         //VARIABLES PROFESIONAL
@@ -79,7 +72,7 @@ public class Principal {
                     System.out.println("Ingrese su Apellido 2");
                     apellido2User=scP.nextLine();
 
-                    System.out.println("Ingrese su Fecha de nasimiento");
+                    System.out.println("Ingrese su Fecha de nacimiento");
                     fechaNacimientoUser=scP.nextLine();
 
                     System.out.println("Ingrese su Run");
