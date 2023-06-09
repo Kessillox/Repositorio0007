@@ -1,5 +1,6 @@
 import empresaclase14.*;
 
+import java.util.List;
 import java.util.Scanner;
 
 import static empresaclase14.validaciones.ValidacionStrings.validarLargoString;
@@ -221,7 +222,14 @@ public class Main {
 
 
                     case 5:   // Eliminar usuario
-                        System.out.println("Ingrese el RUN del usuario que desea eliminar:");
+                        List<IAsesoria> listaDeUsuarios = contenedor.getListaDeUsuarios();
+                        for (int i = 0; i < listaDeUsuarios.size(); i++) {
+                            if (listaDeUsuarios.get(i) instanceof Usuario) {
+                                Usuario usuario = (Usuario) listaDeUsuarios.get(i);
+                                System.out.println("Nombre de usuario: " + usuario.getNombre() + " " + usuario.getApellido1() + " " + usuario.getApellido2() + ", run: " + usuario.getRun());
+                            }
+                        }
+                        System.out.println("\nIngrese el RUN del usuario que desea eliminar:");
                         int run = entrada.nextInt();
                         contenedor.eliminarUsuario(run);
                         break;

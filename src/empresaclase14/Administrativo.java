@@ -53,7 +53,5 @@ public class Administrativo extends Usuario {
     public void analizarUsuario() {
         super.analizarUsuario();
         System.out.println("Pertenece a área de " + this.getArea() + " y su experiencia previa es " + this.getExperienciaPrevia());
-        //System.out.println("El nombre del usuario es: " + super.getNombre()+", run: "+super.getRun());
-        //System.out.println("La información del Administrativo es: " + this.toString());
     }
 }

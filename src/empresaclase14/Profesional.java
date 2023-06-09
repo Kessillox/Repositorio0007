@@ -44,7 +44,7 @@ public class Profesional extends Usuario {
 
     @Override
     public void analizarUsuario() {
-        System.out.println("El nombre del usuario es: " + this.getNombre()+", run: "+ this.getRun());
+        super.analizarUsuario();
         System.out.println("La información del Profesional es: " + this.toString());
     }
 }

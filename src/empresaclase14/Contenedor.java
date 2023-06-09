@@ -16,6 +16,22 @@ public class Contenedor {
         this.listaCapacitaciones = listaCapacitaciones;
     }
 
+    public List<IAsesoria> getListaDeUsuarios() {
+        return listaDeUsuarios;
+    }
+
+    public void setListaDeUsuarios(List<IAsesoria> listaDeUsuarios) {
+        this.listaDeUsuarios = listaDeUsuarios;
+    }
+
+    public List<Capacitacion> getListaCapacitaciones() {
+        return listaCapacitaciones;
+    }
+
+    public void setListaCapacitaciones(List<Capacitacion> listaCapacitaciones) {
+        this.listaCapacitaciones = listaCapacitaciones;
+    }
+
     //Agregar cliente, administrativo y profesional a la lista de instancias de IAsesoria
     public void almacenarCliente(IAsesoria cliente) {
         listaDeUsuarios.add(cliente);
