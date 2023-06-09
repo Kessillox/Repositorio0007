@@ -1,4 +1,9 @@
 package sprint.entity;
+/**
+ * @author Nazly SotoLabarca
+ * @version 1
+ * var nombre, apellido1, apellido2, fechaNacimiento, run, area, experienciaPrevia
+ * **/
 
 public class Accidente {
     private int id;
@@ -8,9 +13,21 @@ public class Accidente {
     private String origen;
     private String consecuencia;
 
+    /**
+     *se crea constructor vacio.
+     */
     public Accidente() {
     }
 
+    /**
+     *se crea constructor con parametros
+     * @param id
+     * @param dia
+     * @param hora
+     * @param lugar
+     * @param origen
+     * @param consecuencia
+     */
     public Accidente(int id, String dia, String hora, String lugar, String origen, String consecuencia) {
         this.id = id;
         this.dia = dia;
@@ -68,6 +85,10 @@ public class Accidente {
         this.consecuencia = consecuencia;
     }
 
+    /**
+     * se crea toString que retorna todos los parametros.
+     * @return
+     */
     @Override
     public String toString() {
         return "Accidente{" +

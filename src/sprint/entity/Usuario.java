@@ -1,7 +1,11 @@
 package sprint.entity;
 
 import sprint.IAsesoria;
-
+/**
+ * @author Genesis paola
+ * @version 1
+ * var NombreEmpresa, GiroEmpresa, Rut, TlfRepresentante, DireccionEmpresa, Comuna.
+ * **/
 public class Usuario implements IAsesoria {
     private String Nombre;
     private String Apellido1;
@@ -9,9 +13,20 @@ public class Usuario implements IAsesoria {
     private String FechaNacimiento;
     private int run;
 
+    /**
+     * se crea el constructor vacio.
+     */
     public Usuario() {
     }
 
+    /**
+     *se crean los constructores con los parametros.
+     * @param nombre
+     * @param apellido1
+     * @param apellido2
+     * @param fechaNacimiento
+     * @param run
+     */
     public Usuario(String nombre, String apellido1, String apellido2, String fechaNacimiento, int run) {
         Nombre = nombre;
         Apellido1 = apellido1;
@@ -59,7 +74,9 @@ public class Usuario implements IAsesoria {
     public void setRun(int run) {
         this.run = run;
     }
-
+    /**
+     * se crea metodo toString que retorna todo los datos de los usuarios
+     * **/
     @Override
     public String toString() {
         return "Usuario{" +
@@ -70,7 +87,9 @@ public class Usuario implements IAsesoria {
                 ", run=" + run +
                 '}';
     }
-
+    /**
+     * se crea metodo analizar usuario que muesta nombre y run
+     * **/
     @Override
     public void analizarUsuario() {
         System.out.println("Nombre " + this.getNombre() + "Su run es " + this.getRun());
