@@ -274,6 +274,7 @@ public class Principal {
                         System.out.println("Datos agregados de forma incorrecta. Por favor ingrese el área nuevamente");
                         areaAdministrativo = sc.nextLine();
                     }
+
                     cont.almacenarAdministrativo(new Administrativo(nombreAdministrativo, apellido1Administrativo, apellido2Administrativo, fechaDeNacimientoAdministrativo, runAdministrativo, areaAdministrativo, experienciaAdministrativo));
 
 
