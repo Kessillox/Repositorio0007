@@ -3,6 +3,7 @@ package sprint;
 import sprint.entity.Administrativo;
 import sprint.entity.Cliente;
 import sprint.entity.Profesional;
+import sprint.entity.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,12 @@ public class Contenedor {
     public void alamacenaCliente(Cliente c){
         almacenarClientes.add(c);
     }
-    public void mostrarUsuarios(Cliente cliente){
+    public void mostrarCliente(){
+        for ( Cliente c : almacenarClientes) {
+            System.out.println(c);
+        }
+    }
+    public void mostrarUsuarios(){
         for (IAsesoria U : almacenarUsuarios) {
             System.out.println(U);
         }
