@@ -1,4 +1,4 @@
-package trabajo25;
+package livio.individuales.trabajo25;
 
 public class Principal {
     public static void main(String[] args) {
