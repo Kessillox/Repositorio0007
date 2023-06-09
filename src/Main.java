@@ -98,6 +98,15 @@ public class Main {
         int idAccidente = 0;
         String dia, hora, lugar, origen, consecuencias;
 
+        // Variables de Capacitacion
+        Integer idCapacitacion = 0;
+        String rutEmpresaCapacitacion = "";
+        String diaCapacitacion = "";
+        String horaCapacitacion = "";
+        String lugarCapacitacion = "";
+        Integer duracionCapacitacion = 0;
+        Integer cantidadAsistentesCapacitacion = 0;
+
         //Cliente clienteEjemplo = new Cliente();
         // CONTENEDOR
         Contenedor contenedor = new Contenedor();
@@ -200,8 +209,39 @@ public class Main {
 
                         break;
                     case 4: // Capacitacion
+                        System.out.println("Bienvenido a el Registro de Capacitación");
+                        System.out.println("Ingrese el ID de Capacitación");
+                        idCapacitacion = entrada.nextInt();
+                        System.out.println("Ingresa el rut de la empresa");
+                        rutEmpresaCapacitacion = entrada.next();
+                        System.out.println("Ingrese el día en el que se va a realizar la capacitación");
+                        diaCapacitacion = entrada.next();
+                        System.out.println("Ingrese la hora en la que se va a realizar la capacitación");
+                        horaCapacitacion = entrada.next();
+                        System.out.println("Ingresa el lugar donde se va a realizar al capacitación");
+                        lugarCapacitacion = entrada.next();
+                        System.out.println("Ingresa la duración de la capacitación");
+                        duracionCapacitacion = entrada.nextInt();
+                        System.out.println("Ingresa la cantidad de asistentes");
+                        cantidadAsistentesCapacitacion = entrada.nextInt();
 
+                        Capacitacion capacitacion = new Capacitacion(idCapacitacion, rutEmpresaCapacitacion, diaCapacitacion, horaCapacitacion, lugarCapacitacion, duracionCapacitacion, cantidadAsistentesCapacitacion);
+                        Capacitacion capacitacion2 = new Capacitacion(2, "186894939", "27", "13:00", "ConCon", 4, 16);
+                        Capacitacion capacitacion3 = new Capacitacion(3, "168452189", "15", "12:00", "Concepción", 5, 14);
+                        Capacitacion capacitacion4 = new Capacitacion(4, "648541238", "12", "14:00", "Cohigueco", 7, 15);
+                        Capacitacion capacitacion5 = new Capacitacion(5, "789451236", "5", "15:00", "Berlin", 8, 12);
 
+                        System.out.println(capacitacion.toString());
+
+                        contenedor.almacenarCapacitacion(capacitacion);
+                        contenedor.almacenarCapacitacion(capacitacion2);
+                        contenedor.almacenarCapacitacion(capacitacion3);
+                        contenedor.almacenarCapacitacion(capacitacion4);
+                        contenedor.almacenarCapacitacion(capacitacion5);
+
+                        contenedor.listarCapacitaciones();
+
+                        break;
                     case 5: //
 
 
