@@ -256,8 +256,12 @@ public class Main {
                         System.out.println("Bienvenido a el Registro de Capacitación");
                         do {
                             System.out.println("Ingrese el ID de Capacitación");
+                            while (!entrada.hasNextInt()) {
+                                System.out.println("Ingrese un valor numérico válido.");
+                                entrada.next(); // Descartar el valor no numérico
+                            }
                             idCapacitacion = entrada.nextInt();
-                        }while(validarId(idCapacitacion));
+                        } while (validarId(idCapacitacion));
 
 
                         do {
@@ -273,27 +277,42 @@ public class Main {
                         do{
                             System.out.println("Ingrese el día en el que se va a realizar la capacitación");
                             diaCapacitacion = entrada.next();
+                            entrada.nextLine();
                         }while(!validarDia(diaCapacitacion));
+
                         do {
                             System.out.println("Ingrese la hora en la que se va a realizar la capacitación");
-                            horaCapacitacion = entrada.next();
+                            horaCapacitacion = entrada.nextLine();
                         }while(!validarHora(horaCapacitacion));
+
                         do {
                             System.out.println("Ingresa el lugar donde se va a realizar al capacitación");
-                            lugarCapacitacion = entrada.next();
+                            lugarCapacitacion = entrada.nextLine();
                         }while(!validarLugar(lugarCapacitacion));
 
                         do {
                             System.out.println("Ingresa la duración de la capacitación");
-                          if(entrada.hasNextInt()){
-                              duracionCapacitacion = entrada.nextInt();
-                          }
-                        }while(!validarDuracion(duracionCapacitacion));
+                            if (entrada.hasNextInt()) {
+                                duracionCapacitacion = entrada.nextInt();
+                                entrada.nextLine(); // Consumir el salto de línea pendiente
+                            } else {
+                                System.out.println("Duración no válida. Ingrese un número.");
+                                entrada.next(); // Descartar el token no válido
+                                continue; // Volver al inicio del bucle
+                            }
+                        } while (!validarDuracion(duracionCapacitacion));
 
                         do {
                             System.out.println("Ingresa la cantidad de asistentes");
-                            cantidadAsistentesCapacitacion = entrada.nextInt();
-                        }while(!validarCantidadAsistentes(cantidadAsistentesCapacitacion));
+                            if (entrada.hasNextInt()) {
+                                cantidadAsistentesCapacitacion = entrada.nextInt();
+                                entrada.nextLine(); // Consumir el salto de línea pendiente
+                            } else {
+                                System.out.println("Cantidad de asistentes no válida. Ingrese un número.");
+                                entrada.next(); // Descartar el token no válido
+                                continue; // Volver al inicio del bucle
+                            }
+                        } while (!validarCantidadAsistentes(cantidadAsistentesCapacitacion));
 
                         Capacitacion capacitacion = new Capacitacion(idCapacitacion, rutEmpresaCapacitacion, diaCapacitacion, horaCapacitacion, lugarCapacitacion, duracionCapacitacion, cantidadAsistentesCapacitacion);
                         Capacitacion capacitacion2 = new Capacitacion(2, 18689493, "27", "13:00", "ConCon", 4, 16);

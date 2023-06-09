@@ -14,7 +14,7 @@ public class ValidacionCapacitacion {
     // validacion lugar está en validaciones.visitaenterreno
 
     public static boolean validarLugar(String str) {
-        if (str != null && str.length() >= 3 && str.length() <= 50) {
+        if (str != null && str.length() >= 2 && str.length() <= 50) {
             System.out.println("Lugar ingresado correctamente");
             return true;
         } else {
