@@ -1,3 +1,5 @@
+import cl.bootcamp.empresa.controllers.AlmacenarClienteController;
+import cl.bootcamp.empresa.controllers.AlmacenarProfesionalController;
 import cl.bootcamp.empresa.models.Contenedor;
 
 import java.util.Scanner;
@@ -27,9 +29,13 @@ public class Principal {
             switch (opcionMenu) {
                 case 1:
                     System.out.println("=== Almacenar Cliente ===");
+                    AlmacenarClienteController almacenarClienteController = new AlmacenarClienteController();
+                    contenedor.almacenarUsuario(almacenarClienteController.almacenarClienteController());
                     break;
                 case 2:
                     System.out.println("=== Almacenar Profesional ===");
+                    AlmacenarProfesionalController almacenarProfesionalController = new AlmacenarProfesionalController();
+                    contenedor.almacenarUsuario(almacenarProfesionalController.almacenarProfesionalController());
                     break;
                 case 3:
                     System.out.println("=== Almacenar Administrativo ===");
