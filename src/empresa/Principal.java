@@ -104,7 +104,7 @@ public class Principal {
                     System.out.println("*Este campo es obligatorio");
                     String razonSocial = sc.nextLine();
                     while (razonSocial.isEmpty() || !razonSocial.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ]{3,20}")) {
-                        System.out.println("Razón social. Por favor, ingrese un apellido válido:");
+                        System.out.println("Razón social mal ingresada o campo vacío. Por favor, vuelva a ingresala:");
                         razonSocial = sc.nextLine();
                     }
 
@@ -168,56 +168,63 @@ public class Principal {
                     cont.almacenarProfesional(new Profesional(nombreProfesional, apellido1Profesional, apellido2Profesional, tituloProfesional,runProfesional,fechaIngreso,fechaDeNacimientoProfesional));
                     break;
                 case 3:
-                    System.out.println("Ingrese el RUN del administrativo:");
+                    System.out.println("Ingrese el RUN del administrativo (Ejemplo: 12345678-9):");
+                    System.out.println("*Este campo es obligatorio");
                     String runAdministrativo = sc.nextLine();
                     while ( !runAdministrativo.matches("[0-9]{7,8}-[0-9kK]")) {
-                        System.out.println("RUN inválido. Por favor, ingrese un RUN válido:");
+                        System.out.println("RUN incorrecto. Por favor, ingrese un RUN válido (Ejemplo:12345678-9), sin espacios y que no sea mayor a 99999999");
                         runAdministrativo = sc.nextLine();
                     }
 
-                    System.out.println("Ingrese el nombre del administrativo:");
+                    System.out.println("Ingrese el nombre administrativo:");
+                    System.out.println("*Este campo es obligatorio");
                     String nombreAdministrativo = sc.nextLine();
-                    while (nombreAdministrativo.isEmpty() || nombreAdministrativo.length() < 3 || nombreAdministrativo.length() > 20 || !nombreAdministrativo.matches("[a-zA-Z]+")) {
-                        System.out.println("Nombre inválido. Por favor, ingrese un nombre válido:");
+                    while (nombreAdministrativo.isEmpty() || !nombreAdministrativo.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ]{3,20}")) {
+                        System.out.println("Nombre incorrecto. Por favor, ingrese un nombre con mínimo 3 y máximo 20 caracteres. Este campo no puede quedar vacío");
                         nombreAdministrativo = sc.nextLine();
                     }
 
 
-                    System.out.println("Ingrese el apellido1 del administrativo:");
+                    System.out.print("Ingrese el primer apellido del administrativo: ");
+                    System.out.println("*Este campo es obligatorio");
                     String apellido1Administrativo = sc.nextLine();
-                    while(apellido1Administrativo.isEmpty() || apellido1Administrativo.length() < 3 || apellido1Administrativo.length() > 20 ||!apellido1Administrativo.matches("[a-zA-Z]+")) {
-                        System.out.println("Apellido1 inválido. Por favor, ingrese un apellido1 válido:");
+                    while(apellido1Administrativo.isEmpty() || !apellido1Administrativo.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ]{3,20}")) {
+                        System.out.println("Apellido ingresado de forma incorrecta. Por favor, ingrese un apellido válido y no deje este campo vacío");
                         apellido1Administrativo = sc.nextLine();
                     }
 
 
-                    System.out.println("Ingrese apellido2 del administrativo:");
+                    System.out.print("Ingrese el segundo apellido del administrativo: ");
+                    System.out.println("*Este campo es obligatorio");
                     String apellido2Administrativo = sc.nextLine();
-                    while(apellido2Administrativo.isEmpty() || apellido2Administrativo.length() < 3 || apellido2Administrativo.length() > 20 ||!apellido2Administrativo.matches("[a-zA-Z]+")) {
-                        System.out.println("Apellido2 inválido. Por favor, ingrese un apellido2 válido:");
+                    while(apellido2Administrativo.isEmpty() || !apellido2Administrativo.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ]{3,20}")) {
+                        System.out.println("Apellido ingresado de forma incorrecta. Por favor, ingrese un apellido válido y no deje este campo vacío");
                         apellido2Administrativo = sc.nextLine();
                     }
 
 
-                    System.out.println("Ingrese fecha de nacimiento (dd/mm/aaaa):");
+                    System.out.println("Ingrese fecha de nacimiento considerando el siguiente formato -> dd/mm/aaaa:");
+                    System.out.println("*Este campo es obligatorio");
                     String fechaDeNacimientoAdministrativo = sc.nextLine();
                     while (!fechaDeNacimientoAdministrativo.matches("^(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4}$")) {
-                        System.out.println("Fecha de nacimiento inválida. Por favor, ingrese una fecha válida en el formato dd/mm/aaaa:");
+                        System.out.println("Fecha de nacimiento inválida. Por favor, ingrese una fecha válida con el formato dd/mm/aaaa y no deje este campo vacío");
                         fechaDeNacimientoAdministrativo = sc.nextLine();
                     }
 
-                    System.out.println("Ingrese experiencia del administrativo:");
+                    System.out.println("Ingrese experiencia del administrativo (máximo 100 caracteres):");
+                    System.out.println("*Este campo es obligatorio");
                     String experienciaAdministrativo = sc.nextLine();
-                    while (experienciaAdministrativo.isEmpty() || experienciaAdministrativo.length() > 70 || !experienciaAdministrativo.matches("^[a-zA-Z0-9 ]*$")) {
-                        System.out.println("Experiencia inválida. Por favor, ingrese una experiencia válida:");
+                    while (experienciaAdministrativo.isEmpty() || experienciaAdministrativo.length() > 100 || !experienciaAdministrativo.matches("^[a-zA-Z0-9 ]*$")) {
+                        System.out.println("Supera el máximo de caracteres permitidos (100) o se dejó este campo vacío, por favor vuelva a intentarlo:");
                         experienciaAdministrativo = sc.nextLine();
                     }
 
 
                     System.out.println("Ingrese área del administrativo:");
+                    System.out.println("*Este campo es obligatorio");
                     String areaAdministrativo = sc.nextLine();
-                    while (!areaAdministrativo.matches("^[a-zA-Z ]+$")) {
-                        System.out.println("Área inválida. Por favor, ingrese un área válida:");
+                    while (areaAdministrativo.isEmpty() || !areaAdministrativo.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ]{5,20}")) {
+                        System.out.println("Datos agregados de forma incorrecta. Por favor ingrese el área nuevamente");
                         areaAdministrativo = sc.nextLine();
                     }
 
