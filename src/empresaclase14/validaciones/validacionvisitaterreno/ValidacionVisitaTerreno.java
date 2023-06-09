@@ -34,4 +34,8 @@ public class ValidacionVisitaTerreno {
         }
     }
 
+    //Validar cantidad de Asistentes
+
+
+
 }

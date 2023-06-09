@@ -7,18 +7,18 @@ package empresaclase14;
 public class Capacitacion {
 
     private int idCapacitacion;
-    private String rutCliente;
+    private Integer rutCliente;
     private String dia;
     private String hora;
     private String lugar;
-    private int duracion;
+    private Integer duracion;
     private int cantidadDeAsistentes;
     public Cliente cliente;
 
     public Capacitacion() {
     }
 
-    public Capacitacion(int idCapacitacion, String rutCliente, String dia, String hora, String lugar, int duracion, int cantidadDeAsistentes) {
+    public Capacitacion(int idCapacitacion, Integer rutCliente, String dia, String hora, String lugar, int duracion, int cantidadDeAsistentes) {
         this.idCapacitacion = idCapacitacion;
         this.rutCliente = rutCliente;
         this.dia = dia;
@@ -36,11 +36,11 @@ public class Capacitacion {
         this.idCapacitacion = idCapacitacion;
     }
 
-    public String getRutCliente() {
+    public Integer getRutCliente() {
         return rutCliente;
     }
 
-    public void setRutCliente(String rutCliente) {
+    public void setRutCliente(Integer rutCliente) {
         this.rutCliente = rutCliente;
     }
 
@@ -68,11 +68,11 @@ public class Capacitacion {
         this.lugar = lugar;
     }
 
-    public int getDuracion() {
+    public Integer getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(int duracion) {
+    public void setDuracion(Integer duracion) {
         this.duracion = duracion;
     }
 

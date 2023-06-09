@@ -68,7 +68,7 @@ public class ValidacionStrings {
             System.out.println("Ingrese un número válido(1-999)");
             return false;
         }else{
-            System.out.println("Cantidad de asistentes ingresada incorrectamente.");
+            System.out.println("ID ingresado correctamente.");
             return true;
         }
     }
