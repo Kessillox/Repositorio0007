@@ -256,6 +256,11 @@ public class Main {
                         break;
 
                     case 8: // Listar capacitaciones
+                        System.out.println("Las capacitaciones ingresadas son:\n");
+                        contenedor.listarCapacitaciones();
+                        break;
+
+
 
 
                     case 9: // Salir del programa
