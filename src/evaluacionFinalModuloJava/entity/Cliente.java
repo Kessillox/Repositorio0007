@@ -86,6 +86,7 @@ public class Cliente extends Usuario implements IAsesoria {
     public void setNombreEmpresa(String nombreEmpresa) {
         this.nombreEmpresa = nombreEmpresa;
     }
+
     public String getGiroEmpresa() {
         return giroEmpresa;
     }

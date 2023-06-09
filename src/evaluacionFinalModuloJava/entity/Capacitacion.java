@@ -9,7 +9,7 @@ public class Capacitacion {
     private LocalDate dia;
     private LocalTime hora;
     private String lugar;
-    private int duracion;
+    private LocalTime duracion;
     private int cantidadAsistentes;
 
     public Capacitacion() {
@@ -21,7 +21,7 @@ public class Capacitacion {
         this.dia = dia;
         this.hora = hora;
         this.lugar = lugar;
-        this.duracion = duracion;
+        this.duracion = LocalTime.ofSecondOfDay(duracion);
         this.cantidadAsistentes = cantidadAsistentes;
     }
 
@@ -45,9 +45,7 @@ public class Capacitacion {
         return dia;
     }
 
-    public void setDia() {
-        this.dia = dia;
-    }
+    public void setDia(String s) { this.dia = dia; }
 
     public LocalTime getHora() {
         return hora;
@@ -65,21 +63,18 @@ public class Capacitacion {
         this.lugar = lugar;
     }
 
-    public int getDuracion() {
+    public LocalTime getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(int duracion) {
+    public void setDuracion(LocalTime duracion) {
         this.duracion = duracion;
-    }
-
-    public int getCantidadAsistentes() {
-        return cantidadAsistentes;
     }
 
     public void setCantidadAsistentes(int cantidadAsistentes) {
         this.cantidadAsistentes = cantidadAsistentes;
     }
+    public int getCantidadAsistentes() { return cantidadAsistentes; }
 
     public void mostrarDetalles(){
         System.out.println("La capacitacion sera "+ this.getLugar()+ " a las "+this.getHora()+" y durara "+this.getDuracion()+ "minutos" );

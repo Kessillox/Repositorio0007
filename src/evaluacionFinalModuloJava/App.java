@@ -1,3 +1,5 @@
+package evaluacionFinalModuloJava;
+
 import evaluacionFinalModuloJava.entity.Administrativo;
 import evaluacionFinalModuloJava.entity.Capacitacion;
 import evaluacionFinalModuloJava.entity.Cliente;
@@ -116,7 +118,7 @@ public class App {
                 Capacitacion nuevaCapacitacion = new Capacitacion();
                 nuevaCapacitacion.setIdentificador(1);
                 System.out.println("Ingrese rut de la empresa");
-                nuevaCapacitacion.setRut(scan.nextLine()); //todo: reemplazo tipo de dato en capacitacion
+                nuevaCapacitacion.setRut(Integer.parseInt(scan.nextLine())); //todo: reemplazo tipo de dato en capacitacion
                 System.out.println("Ingrese dia de la capacitacion \n Formato: (Lunes - Domingo) escrito en palabras");
                 nuevaCapacitacion.setDia(scan.nextLine());
                 System.out.println("Ingrese hora de la capacitacion \n Formato: (00:00) hora:minuto");

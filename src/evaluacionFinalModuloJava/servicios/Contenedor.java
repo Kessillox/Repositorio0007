@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Contenedor {
     private List<IAsesoria> listaUsuariosIAsesoria = new ArrayList<>();
-    private List<Capacitacion> capacitaciones = new ArrayList<>();
+    private List<Capacitacion> listaCapacitaciones = new ArrayList<>();
     private List<Usuario> listaUsuarios = new ArrayList<>();
     /**
      * Constructor Vacio
@@ -23,11 +23,11 @@ public class Contenedor {
     /**
      * Constructor de la clase con parametros
      * @param listaUsuariosIAsesoria
-     * @param capacitaciones
+     * @param listaCapacitaciones
      */
-    public Contenedor(List<IAsesoria> listaUsuariosIAsesoria, List<Capacitacion> capacitaciones) {
+    public Contenedor(List<IAsesoria> listaUsuariosIAsesoria, List<Capacitacion> listaCapacitaciones) {
         this.listaUsuariosIAsesoria = listaUsuariosIAsesoria;
-        this.capacitaciones = capacitaciones;
+        this.listaCapacitaciones = listaCapacitaciones;
     }
 
     /**
@@ -38,7 +38,7 @@ public class Contenedor {
     public String toString() {
         return "Contenedor{" +
                 "tiposUsuarios=" + listaUsuariosIAsesoria +
-                ", capacitaciones=" + capacitaciones +
+                ", capacitaciones=" + listaCapacitaciones +
                 '}';
     }
 
@@ -84,7 +84,7 @@ public class Contenedor {
      * @param capacitacion
      */
     public void almacenarCapacitacion(Capacitacion capacitacion){
-        capacitaciones.add(capacitacion);
+        listaCapacitaciones.add(capacitacion);
     }
 
     public void eliminarUsuario(String run){
@@ -138,10 +138,10 @@ public class Contenedor {
      * capacitación.
      */
     public void listarCapacitaciones(){
-        if(capacitaciones.isEmpty()){
+        if(listaCapacitaciones.isEmpty()){
             System.out.println("Actualmente no existen capacitaciones almacenadas \n");
         }else{
-            for (Capacitacion cap: capacitaciones) {
+            for (Capacitacion cap: listaCapacitaciones) {
                 System.out.println(cap);
                 for (Usuario user: listaUsuarios) {
                     //todo: verificar funcionamiento
