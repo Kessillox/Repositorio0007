@@ -1,5 +1,10 @@
 package empresa.entity;
 
+/**
+ * Clase que representa una revisión.
+ * @author Cintia Muñoz, Oscar Fenández, Joaquín Baeza, Hans Schiess
+ * @version 1.0
+ */
 public class Revision {
     private int idRevision;
     private int idVisita;
@@ -11,7 +16,14 @@ public class Revision {
     public Revision() {
     }
 
-    //Constructor con atributos
+    /**
+     * Constructor de la clase Revision con atributos.
+     * @param idRevision El ID de la revisión.
+     * @param idVisita El ID de la visita asociada a la revisión.
+     * @param nombreRevision El nombre de la revisión.
+     * @param detalle El detalle de la revisión.
+     * @param estado El estado de la revisión.
+     */
     public Revision(int idRevision, int idVisita, String nombreRevision, String detalle, int estado) {
         this.idRevision = idRevision;
         this.idVisita = idVisita;
@@ -61,7 +73,10 @@ public class Revision {
         this.estado = estado;
     }
 
-    //Método toString
+    /**
+     * Devuelve una representación en cadena de la revisión.
+     * @return La representación en cadena de la revisión.
+     */
     @Override
     public String toString() {
         return "Revision{" +

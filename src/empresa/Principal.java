@@ -9,13 +9,22 @@ import java.util.Date;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+/**
+ * Clase Principal dónde se ejecuta el proyecto, contiene el menú y métodos para validar datos
+ * @author Oscar Fernandez,Cintia Muñoz, Joaquin Baeza, Hans Schiess
+ * @version 1.2
+ *
+ */
 public class Principal {
     public static void main(String[] args) throws Exception {
-
+        //Instancias de la clase Scanner y la clase Contenedor
         Scanner sc = new Scanner(System.in);
         Contenedor cont = new Contenedor();
 
-
+/**
+ * Inicio del menú que contiene 9 opciones
+ *las cuales incluyen agregar, eliminar y listar los datos de usuarios y capacitaciones ingresados
+ */
         int opcion = 0;
         while (opcion != 9) {
             mostrarMenu();
@@ -24,7 +33,10 @@ public class Principal {
 
             switch (opcion) {
                 case 1:
-
+                    /**
+                     * Validaciones de la clase Cliente
+                     */
+                    //Validar RUN del representante de la empresa
                     System.out.println("Ingrese el RUN del representante de la empresa (Ejemplo: 12345678-9):");
                     System.out.println("*Este campo es obligatorio");
                     String runCliente = sc.nextLine();
@@ -33,6 +45,7 @@ public class Principal {
                         runCliente = sc.nextLine();
                     }
 
+                    //Validar nombre del representante de la empresa
                     System.out.println("Ingrese el nombre del representante de la empresa (entre 3 y 20 caracteres):");
                     System.out.println("*Este campo es obligatorio");
                     String nombreCliente = sc.nextLine();
@@ -41,6 +54,7 @@ public class Principal {
                         nombreCliente = sc.nextLine();
                     }
 
+                    //Validar primer apellido del representante de la empresa
                     System.out.print("Ingrese el primer apellido del representante de la empresa (entre 3 y 20 caracteres): ");
                     System.out.println("*Este campo es obligatorio");
                     String apellido1 = sc.nextLine();
@@ -49,6 +63,7 @@ public class Principal {
                         apellido1 = sc.nextLine();
                     }
 
+                    //Validar segundo apellido del representante de la empresa
                     System.out.print("Ingrese el segundo apellido del representante de la empresa (entre 3 y 20 caracteres): ");
                     System.out.println("*Este campo es obligatorio");
                     String apellido2 = sc.nextLine();
@@ -57,7 +72,7 @@ public class Principal {
                         apellido2 = sc.nextLine();
                     }
 
-
+                    //Validar fecha de nacimiento del representante de la empresa
                     System.out.println("Ingrese fecha de nacimiento considerando el siguiente formato -> dd/mm/aaaa:");
                     System.out.println("*Este campo es obligatorio");
                     String fechaDeNacimientoCliente = sc.nextLine();
@@ -66,7 +81,7 @@ public class Principal {
                         fechaDeNacimientoCliente = sc.nextLine();
                     }
 
-
+                    //Nombre de la empresa
                     System.out.print("Ingrese la Razón Social (nombre) de la empresa (entre 3 y 20 caracteres): ");
                     System.out.println("*Este campo es obligatorio");
                     String razonSocial = sc.nextLine();
@@ -75,6 +90,7 @@ public class Principal {
                         razonSocial = sc.nextLine();
                     }
 
+                    //Giro de la empresa
                     System.out.print("Ingrese el giro de la empresa (entre 3 y 20 caracteres): ");
                     System.out.println("*Este campo es obligatorio");
                     String giroEmpresa = sc.nextLine();
@@ -83,6 +99,7 @@ public class Principal {
                         giroEmpresa = sc.nextLine();
                     }
 
+                    //RUT de la empresa
                     System.out.println("Ingrese el RUT de la empresa (Ejemplo: 72345678-9):");
                     System.out.println("*Este campo es obligatorio");
                     String rutEmpresa = sc.nextLine();
@@ -91,6 +108,7 @@ public class Principal {
                         rutEmpresa = sc.nextLine();
                     }
 
+                    //Teléfono del representante de la empresa
                     System.out.print("Ingrese el número de teléfono del representante (formato +569XXXXXXXX): ");
                     System.out.println("*Este campo es obligatorio");
                     String telefonoRepresentante = sc.nextLine();
@@ -103,6 +121,7 @@ public class Principal {
                         }
                     }
 
+                    //Dirección de la empresa
                     System.out.print("Dirección  de la empresa (máximo 70 caracteres): ");
                     System.out.println("*Este campo es obligatorio");
                     String direccion = sc.nextLine();
@@ -111,6 +130,7 @@ public class Principal {
                         direccion = sc.nextLine();
                     }
 
+                    //Comuna de la empresa
                     System.out.print("Comuna  de la empresa (máximo 50 caracteres): ");
                     System.out.println("*Este campo es obligatorio");
                     String comuna = sc.nextLine();
@@ -119,9 +139,15 @@ public class Principal {
                         comuna = sc.nextLine();
                     }
 
+                    //Se agregan los datos validados al Contenedor con el método almacenarClientes
                     cont.almacenarCliente(new Cliente(nombreCliente, apellido1, apellido2, fechaDeNacimientoCliente, runCliente, razonSocial, giroEmpresa, rutEmpresa, telefonoRepresentante, direccion, comuna));
                     break;
+
                 case 2:
+                    /**
+                     * Validación de datos del profesional
+                     */
+                    //RUN profesional
                     System.out.println("Ingrese el RUN del profesional (Ejemplo: 12345678-9):");
                     System.out.println("*Este campo es obligatorio");
                     String runProfesional = sc.nextLine();
@@ -130,6 +156,7 @@ public class Principal {
                         runProfesional = sc.nextLine();
                     }
 
+                    //Nombre del profesional
                     System.out.println("Ingrese el nombre del profesional (entre 3 y 20 caracteres):");
                     System.out.println("*Este campo es obligatorio");
                     String nombreProfesional = sc.nextLine();
@@ -138,6 +165,7 @@ public class Principal {
                         nombreProfesional = sc.nextLine();
                     }
 
+                    //Primer apellido del profesional
                     System.out.print("Ingrese el primer apellido del profesional (entre 3 y 20 caracteres): ");
                     System.out.println("*Este campo es obligatorio");
                     String apellido1Prof = sc.nextLine();
@@ -146,6 +174,7 @@ public class Principal {
                         apellido1Prof = sc.nextLine();
                     }
 
+                    //Segundo apellido del profesional
                     System.out.print("Ingrese el segundo apellido del profesional (entre 3 y 20 caracteres): ");
                     System.out.println("*Este campo es obligatorio");
                     String apellido2Prof = sc.nextLine();
@@ -154,6 +183,7 @@ public class Principal {
                         apellido2Prof = sc.nextLine();
                     }
 
+                    //Fecha de nacimiento del profesional
                     System.out.println("Ingrese fecha de nacimiento considerando el siguiente formato -> dd/mm/aaaa:");
                     System.out.println("*Este campo es obligatorio");
                     String fechaDeNacimientoProfesional = sc.nextLine();
@@ -162,6 +192,7 @@ public class Principal {
                         fechaDeNacimientoProfesional = sc.nextLine();
                     }
 
+                    //Título profesional
                     System.out.print("Ingrese el título del profesional (min 10 y max 50 caracteres): ");
                     System.out.println("*Este campo es obligatorio");
                     String titulo = sc.nextLine();
@@ -170,6 +201,7 @@ public class Principal {
                         titulo = sc.nextLine();
                     }
 
+                    //Fecha de ingreso a la institución
                     System.out.println("Ingrese fecha de ingreso a la institución considerando el siguiente formato -> dd/mm/aaaa:");
                     System.out.println("*Este campo es obligatorio");
                     String fechaIngreso = sc.nextLine();
@@ -178,10 +210,14 @@ public class Principal {
                         fechaIngreso = sc.nextLine();
                     }
 
-
+                    //Se agregan los datos validados al Contenedor con el método almacenarProfesional
                     cont.almacenarProfesional(new Profesional(nombreProfesional, apellido1Prof, apellido2Prof, fechaDeNacimientoProfesional, runProfesional, titulo, fechaIngreso));
                     break;
                 case 3:
+                    /**
+                     * Validación de datos del administrativo
+                     */
+                    //RUN del administrativo
                     System.out.println("Ingrese el RUN del administrativo (Ejemplo: 12345678-9):");
                     System.out.println("*Este campo es obligatorio");
                     String runAdministrativo = sc.nextLine();
@@ -190,6 +226,7 @@ public class Principal {
                         runAdministrativo = sc.nextLine();
                     }
 
+                    //Nombre del administrativo
                     System.out.println("Ingrese el nombre administrativo (entre 3 y 20 caracteres):");
                     System.out.println("*Este campo es obligatorio");
                     String nombreAdministrativo = sc.nextLine();
@@ -198,7 +235,7 @@ public class Principal {
                         nombreAdministrativo = sc.nextLine();
                     }
 
-
+                    //Primer apellido del administrativo
                     System.out.print("Ingrese el primer apellido del administrativo (entre 3 y 20 caracteres): ");
                     System.out.println("*Este campo es obligatorio");
                     String apellido1Administrativo = sc.nextLine();
@@ -207,7 +244,7 @@ public class Principal {
                         apellido1Administrativo = sc.nextLine();
                     }
 
-
+                    //Segundo apellido del administrativo
                     System.out.print("Ingrese el segundo apellido del administrativo(entre 3 y 20 caracteres): ");
                     System.out.println("*Este campo es obligatorio");
                     String apellido2Administrativo = sc.nextLine();
@@ -216,7 +253,7 @@ public class Principal {
                         apellido2Administrativo = sc.nextLine();
                     }
 
-
+                    //Fecha de nacimiento del administrativo
                     System.out.println("Ingrese fecha de nacimiento considerando el siguiente formato -> dd/mm/aaaa:");
                     System.out.println("*Este campo es obligatorio");
                     String fechaDeNacimientoAdministrativo = sc.nextLine();
@@ -225,6 +262,7 @@ public class Principal {
                         fechaDeNacimientoAdministrativo = sc.nextLine();
                     }
 
+                    //Experiencia laboral del administrativo
                     System.out.println("Ingrese experiencia del administrativo (máximo 100 caracteres):");
                     System.out.println("*Este campo es obligatorio");
                     String experienciaAdministrativo = sc.nextLine();
@@ -233,7 +271,7 @@ public class Principal {
                         experienciaAdministrativo = sc.nextLine();
                     }
 
-
+                    //Area del administrativo
                     System.out.println("Ingrese área del administrativo (entre 5 y 20 caracteres):");
                     System.out.println("*Este campo es obligatorio");
                     String areaAdministrativo = sc.nextLine();
@@ -242,11 +280,17 @@ public class Principal {
                         areaAdministrativo = sc.nextLine();
                     }
 
+                    //Se agregan los datos validados al Contenedor con el método almacenarAdministrativo
                     cont.almacenarAdministrativo(new Administrativo(nombreAdministrativo, apellido1Administrativo, apellido2Administrativo, fechaDeNacimientoAdministrativo, runAdministrativo, areaAdministrativo, experienciaAdministrativo));
 
 
                     break;
                 case 4:
+                    /**
+                     * Validación de datos de Capacitacion
+                     */
+
+                    //Identificador de la capacitación
                     System.out.println("Ingrese ID de la capacitación:");
                     String idCapacitacion;
                     do {
@@ -258,6 +302,7 @@ public class Principal {
 
                     int idCapacitacionInt = Integer.parseInt(idCapacitacion);
 
+                    //RUT de la empresa
                     System.out.println("Ingrese el RUT de la empresa (Ejemplo: 72345678-9):");
                     System.out.println("*Este campo es obligatorio");
                     String rutClienteCap = sc.nextLine();
@@ -266,7 +311,7 @@ public class Principal {
                         rutClienteCap = sc.nextLine();
                     }
 
-                    //Agregar validacion dias
+                    //Validación del día de la capacitación
                     System.out.println("Ingrese el dia de la capacitación considerando el siguiente formato -> dd/mm/aaaa::");
                     String fechaStr = sc.nextLine();
                     Date fecha = null;
@@ -283,7 +328,7 @@ public class Principal {
                         System.out.println("Fecha formateada: " + fechaFormateada);
                     }
 
-                    // Agregar validacion hora
+                    //Validación hora de la capacitación
                     System.out.println("Ingrese la hora de la capacitación considerando el siguiente formato -> HH:MM:");
                     String hora = sc.nextLine();
                     while (!validarHora(hora)) {
@@ -291,7 +336,7 @@ public class Principal {
                         hora = sc.nextLine();
                     }
 
-
+                    //Lugar de la capacitación
                     System.out.print("Ingrese el lugar dónde se realizará la capacitación (min 10 y max 70 caracteres): ");
                     System.out.println("*Este campo es obligatorio");
                     String lugar = sc.nextLine();
@@ -300,6 +345,7 @@ public class Principal {
                         lugar = sc.nextLine();
                     }
 
+                    //Duración de la capacitación
                     System.out.print("Ingrese la duración de la capacitación (Ejemplo: 1 hora) ");
                     System.out.println("*Este campo es obligatorio");
                     String duracion = sc.nextLine();
@@ -308,6 +354,7 @@ public class Principal {
                         duracion = sc.nextLine();
                     }
 
+                    //Cantidad de asistentes a la capacitación
                     System.out.print("Ingrese la cantidad de asistentes (máximo 1000): ");
                     int cantidadAsistentes;
                     while (true) {
@@ -324,23 +371,37 @@ public class Principal {
                         }
                     }
 
+                    //Se agregan los datos validados al Contenedor con el método almacenarCapacitaciones
                     cont.almacenarCapacitacion(new Capacitacion(idCapacitacionInt, rutClienteCap, fechaStr, hora, lugar, duracion, cantidadAsistentes));
                     break;
                 case 5:
+                    /**
+                     * Eliminar usuario a través del RUN con el método eliminarUsuario()
+                     */
                     System.out.println("Ingrese el RUN del usuario a eliminar:");
                     String runEliminar = sc.nextLine();
                     cont.eliminarUsuario(runEliminar);
                     break;
                 case 6:
+                    /**
+                     * Listar usuarios a través del método listarUsuarios()
+                     *
+                     */
                     cont.listarUsuarios();
                     break;
                 case 7:
+                    /**
+                     * Listar usuario según el tipo
+                     * Se llama al método listarUsuariosPorTipo() de la clase Contenedor
+                     */
                     System.out.println("Ingrese un número para el tipo de usuario a listar (1.- cliente, 2.- profesional o 3.- administrativo):");
                     String tipoUsuario = sc.nextLine();
                     while (!tipoUsuario.matches("[1-3]")) {
                         System.out.println("Ingrese un número correspondiente al tipo de usuario (1.- cliente, 2.- profesional o 3.- administrativo). El dato ingresado no es correcto.");
                         tipoUsuario = sc.nextLine();
                     }
+
+                    //Menú para seleccionar el usuario
                     Usuario usuarioTipo;
                     switch (tipoUsuario) {
                         case "1":
@@ -360,9 +421,16 @@ public class Principal {
                     cont.listarUsuariosPorTipo(usuarioTipo);
                     break;
                 case 8:
+                    /**
+                     * Listar capacitaciones
+                     * Se llama al método listarCapacitaciones() de la clase Contenedor
+                     */
                     cont.listarCapacitaciones();
                     break;
                 case 9:
+                    /**
+                     * Se finaliza el programa
+                     */
                     System.out.println("Saliendo del programa...");
                     System.out.println("PROGRAMA FINALIZADO");
                     break;
@@ -374,9 +442,10 @@ public class Principal {
         }
     }
 
-
+    /**
+     * Metodo mostrarMenu()
+     */
     private static void mostrarMenu() {
-
 
         System.out.println("----- MENÚ -----");
         System.out.println("1. Agregar cliente");
@@ -391,6 +460,11 @@ public class Principal {
         System.out.println("Ingrese una opción: ");
     }
 
+    /**
+     * Este método valida que la hora se ingrese en el formato correcto (HH:MM)
+     * @param hora
+     * @return boolean
+     */
     public static boolean validarHora(String hora) {
         // Expresión regular para validar el formato HH:MM
         String patron = "^([01]\\d|2[0-3]):([0-5]\\d)$";
@@ -411,11 +485,22 @@ public class Principal {
         return true; // La hora es válida
     }
 
+    /**
+     * Metodo para parsear fecha al formato adecuado (dd/mm/yyyy)
+     * @param fechaString
+     * @return
+     * @throws ParseException
+     */
     public static Date parseFecha(String fechaString) throws ParseException {
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         return formato.parse(fechaString);
     }
 
+    /**
+     * Metodo para darle el formato adecuado a la fecha ingresada
+     * @param fecha
+     * @return
+     */
     public static String formatFecha(Date fecha) {
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         return formato.format(fecha);

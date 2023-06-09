@@ -4,7 +4,7 @@ package empresa.entity;
 
 /**Clase Administrativo que hereda los atributos y métodos de la clase Usuario
  * @author Cintia Muñoz, Oscar Fernandez, Joaquin baeza, Hans Schiess
- * @version 1.
+ * @version 1.0.2
  *
  *
  *

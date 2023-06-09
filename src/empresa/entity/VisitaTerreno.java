@@ -1,5 +1,10 @@
 package empresa.entity;
 
+/**
+ * Clase que representa una visita de terreno
+ *@author Cintia Muñoz, Oscar Fenández, Joaquín Baeza, Hans Schiess
+  * @version 1.0
+ */
 public class VisitaTerreno {
     private int idVisit;
     private int rutCliente;
@@ -13,7 +18,15 @@ public class VisitaTerreno {
     public VisitaTerreno() {
     }
 
-    //Constructor con los atributos de la clase
+    /**
+     * Constructor de la clase VisitaTerreno con atributos.
+     * @param idVisit El ID de la visita de terreno.
+     * @param rutCliente El RUT del cliente asociado a la visita de terreno.
+     * @param dia El día de la visita de terreno.
+     * @param hora La hora de la visita de terreno.
+     * @param lugar El lugar de la visita de terreno.
+     * @param comentarios Los comentarios de la visita de terreno.
+     */
     public VisitaTerreno(int idVisit, int rutCliente, String dia, String hora, String lugar, String comentarios) {
         this.idVisit = idVisit;
         this.rutCliente = rutCliente;
@@ -72,7 +85,10 @@ public class VisitaTerreno {
         this.comentarios = comentarios;
     }
 
-    //Metodo toString
+    /**
+     * Devuelve una representación en cadena de la visita de terreno.
+     * @return Una cadena que representa la visita de terreno.
+     */
     @Override
     public String toString() {
         return "VisitaTerreno{" +

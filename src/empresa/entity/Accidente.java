@@ -1,5 +1,13 @@
 package empresa.entity;
 
+/**
+ * La clase Accidente representa un accidente registrado en una empresa.
+ * Contiene información como el identificador del accidente, el RUT del cliente involucrado,
+ * el día y hora del accidente, el lugar donde ocurrió, el origen del accidente y las consecuencias del mismo.
+ * @author Cintia Muñoz, Oscar Fenández, Joaquín Baeza, Hans Schiess
+ * @version 1.0
+ */
+
 public class Accidente {
     //Atributos de la clase Accidente
     private int idAcc;
@@ -14,6 +22,17 @@ public class Accidente {
     public Accidente() {
     }
 
+    /**
+     * Constructor con atributos de la clase Accidente.
+     *
+     * @param idAcc          El identificador del accidente.
+     * @param rutCliente     El RUT del cliente involucrado en el accidente.
+     * @param diaAcc         El día del accidente.
+     * @param horaAcc        La hora del accidente.
+     * @param lugarAcc       El lugar donde ocurrió el accidente.
+     * @param origenAcc      El origen del accidente.
+     * @param consecuencias  Las consecuencias del accidente.
+     */
     //Constructor con atributos de la clase Accidente
     public Accidente(int idAcc, int rutCliente, String diaAcc, String horaAcc, String lugarAcc, String origenAcc, String consecuencias) {
         this.idAcc = idAcc;
@@ -82,6 +101,11 @@ public class Accidente {
         this.consecuencias = consecuencias;
     }
 
+    /**
+     * Devuelve una representación en forma de cadena de texto del objeto Accidente.
+     *
+     * @return Una cadena que representa al objeto Accidente, incluyendo todos sus atributos.
+     */
     //Método toString
     @Override
     public String toString() {

@@ -1,5 +1,10 @@
 package empresa.entity;
 
+/**
+ * La clase Capacitacion representa una capacitación realizada a un cliente.
+ * @author Cintia Muñoz, Oscar Fenández, Joaquín Baeza, Hans Schiess
+ * @version 1.0
+ */
 public class Capacitacion {// se crea la clase Capacitacion
 
     // se crea los atributos de la clase
@@ -15,7 +20,17 @@ public class Capacitacion {// se crea la clase Capacitacion
     public Capacitacion() {
     }
 
-    // constructor con parametros, atributos de la clase
+    /**
+     * Constructor con parámetros de la clase Capacitacion.
+     *
+     * @param identificador         El identificador de la capacitación.
+     * @param rutCliente            El RUT del cliente al que se le realiza la capacitación.
+     * @param dia                   El día de la capacitación.
+     * @param hora                  La hora de la capacitación.
+     * @param lugar                 El lugar donde se realizará la capacitación.
+     * @param duracion              La duración de la capacitación.
+     * @param cantidadDeAsistentes  La cantidad de asistentes a la capacitación.
+     */
     public Capacitacion(int identificador, String rutCliente, String dia, String hora, String lugar, String duracion, int cantidadDeAsistentes) {
         this.identificador = identificador;
         this.rutCliente = rutCliente;
@@ -83,7 +98,11 @@ public class Capacitacion {// se crea la clase Capacitacion
         this.cantidadDeAsistentes = cantidadDeAsistentes;
     }
 
-    // metodo toString
+    /**
+     * Devuelve una representación en forma de cadena de la capacitación.
+     *
+     * @return Una cadena que representa la capacitación.
+     */
     @Override
     public String toString() {
         return "Capacitacion [identificador=" + identificador + ", rutCliente=" + rutCliente + ", dia=" + dia + ", hora=" + hora
@@ -91,7 +110,11 @@ public class Capacitacion {// se crea la clase Capacitacion
                 + "]";
     }
 
-    //Metodo mostrarDetalle
+    /**
+     * Devuelve un detalle de la capacitación en forma de cadena.
+     *
+     * @return Un detalle de la capacitación.
+     */
     public String mostrarDetalle() {
         return "“La capacitación será en " + getLugar() + " las " + getHora() + " del día " + getDia() + " durará " + getDuracion() + " minutos";
     }
