@@ -5,6 +5,7 @@ import evaluacionFinalModuloJava.entity.Capacitacion;
 import evaluacionFinalModuloJava.entity.Cliente;
 import evaluacionFinalModuloJava.entity.Profesional;
 import evaluacionFinalModuloJava.servicios.Contenedor;
+import evaluacionFinalModuloJava.validacion.Validacion;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -164,34 +165,27 @@ public class App {
             case 4 -> {
                 Capacitacion nuevaCapacitacion = new Capacitacion();
 
-                int rut = 0;
-                String diaCap ="";
                 String lugar ="";
                 int canAsis = 0;
 
 
-
-              // System.out.println("Ingrese Numero interno de capacitacion");
-              // nuevaCapacitacion.setIdentificador(Integer.parseInt(scan.next()));
+               System.out.println("Ingrese Numero interno de capacitacion");
+               nuevaCapacitacion.setIdentificador(Integer.parseInt(scan.nextLine()));
                 //buenas
 
-                while( rut == 0 ){
-                    System.out.println("Ingrese rut de la empresa");
-                    rut = Integer.parseInt(scan.nextLine());
-                    nuevaCapacitacion.setRut(rut);
-                    //todo: reemplazo tipo de dato en capacitacion
 
-                }
-                while (!(diaCap.equalsIgnoreCase("lunes") || diaCap.equalsIgnoreCase("martes") || diaCap.equalsIgnoreCase("miercoles") || diaCap.equalsIgnoreCase("jueves") || diaCap.equalsIgnoreCase("viernes") || diaCap.equalsIgnoreCase("sabado") || diaCap.equalsIgnoreCase("domingo"))) {
+                    System.out.println("Ingrese rut de la empresa");
+                    nuevaCapacitacion.setRut(Integer.parseInt(Validacion.validarLargoRut(scan.nextLine())));
+
+
                     System.out.println("Ingrese dia de la capacitacion \n Formato: (Lunes - Domingo) escrito en palabras");
-                    diaCap = scan.nextLine();
-                    nuevaCapacitacion.setDia(diaCap);
-                }
+
+                    nuevaCapacitacion.setDia(Validacion.validarDiaSemana(scan.nextLine()));
 
                 System.out.println("Ingrese hora de la capacitacion \n Formato: (00:00) hora:minuto");
                 nuevaCapacitacion.setHora(LocalTime.parse(scan.nextLine()));
 
-                while( lugar.length() < 10 || lugar.length() < 51){
+                while( lugar.length() < 10 || lugar.length() > 51){
                     System.out.println("Ingrese lugar de la capacitacion");
                     lugar = scan.nextLine();
                     nuevaCapacitacion.setLugar(lugar);
@@ -201,11 +195,14 @@ public class App {
                     System.out.println("Ingrese la duracion de la capacitacion \n Formato:(00:00) hora:minuto");
                     nuevaCapacitacion.setDuracion(LocalTime.parse(scan.nextLine()));
 
-                while( canAsis > 1000){
-                    System.out.println("Ingrese la cantidad de asistentes");
-                    canAsis = Integer.parseInt(scan.nextLine());
+                    do {
+                        System.out.println("Ingrese la cantidad de asistentes");
+                        canAsis = Integer.parseInt(scan.nextLine());
+                    }
+
+                while( canAsis > 1000);
                     nuevaCapacitacion.setCantidadAsistentes(canAsis);
-                }
+
                 contenedor.almacenarCapacitacion(nuevaCapacitacion);
                 System.out.println("Capacitacion añadido");
 
