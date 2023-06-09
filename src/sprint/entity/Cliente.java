@@ -8,9 +8,21 @@ public class Cliente extends Usuario{
     private String DireccionEmpresa;
     private String Comuna;
 
+    /**
+     * se crea el constructor vacio.
+     */
     public Cliente() {
     }
 
+    /**
+     * se crean los constructores con los parametros.
+     * @param nombreEmpresa
+     * @param giroEmpresa
+     * @param rut
+     * @param tlfRepresentante
+     * @param direccionEmpresa
+     * @param comuna
+     */
     public Cliente(String nombreEmpresa, String giroEmpresa, int rut, String tlfRepresentante, String direccionEmpresa, String comuna) {
         NombreEmpresa = nombreEmpresa;
         GiroEmpresa = giroEmpresa;
@@ -20,6 +32,20 @@ public class Cliente extends Usuario{
         Comuna = comuna;
     }
 
+    /**
+     * se crean los constructores con los parametros.
+     * @param nombre
+     * @param apellido1
+     * @param apellido2
+     * @param fechaNacimiento
+     * @param run
+     * @param nombreEmpresa
+     * @param giroEmpresa
+     * @param rut
+     * @param tlfRepresentante
+     * @param direccionEmpresa
+     * @param comuna
+     */
     public Cliente(String nombre, String apellido1, String apellido2, String fechaNacimiento, int run, String nombreEmpresa, String giroEmpresa, int rut, String tlfRepresentante, String direccionEmpresa, String comuna) {
         super(nombre, apellido1, apellido2, fechaNacimiento, run);
         NombreEmpresa = nombreEmpresa;
