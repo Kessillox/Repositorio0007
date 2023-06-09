@@ -6,6 +6,8 @@
 - Oscar Fernández
 - Hans Schiess
 
+- Link del repositorio: https://github.com/Kessillox/Repositorio0007/tree/sprintTechtitans/src/empresa
+
 ### Contexto 
 Los índices de accidentabilidad han aumentado en los sectores 
 industrial, minero y construcción a pesar de las normativas de 
