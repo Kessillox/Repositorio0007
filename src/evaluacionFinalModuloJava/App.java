@@ -175,7 +175,7 @@ public class App {
                 idCap = scan.nextInt();
                 nuevaCapacitacion.setIdentificador(idCap);
 
-                while( !(rut == 0) ){
+                while( rut == 0 ){
                     System.out.println("Ingrese rut de la empresa");
                     rut = Integer.parseInt(scan.nextLine());
                     nuevaCapacitacion.setRut(rut);
