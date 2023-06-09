@@ -1,6 +1,5 @@
 package sprint;
 
-//agregar el JavaDoc
 
 
 import sprint.entity.Usuario;
@@ -83,11 +82,19 @@ public class Principal {
                             nombreUser = sc.nextLine();
                         }
 
-                        System.out.println("Ingrese su Apellido 1");
+                        System.out.println("Ingrese su primer apellido");
                         apellido1User = sc.nextLine();
+                        while (apellido1User.length() < 3 || apellido1User.length() > 20) {
+                            System.out.println("debe ser mayor a 3 y menor a 20");
+                            apellido1User = sc.nextLine();
+                        }
 
-                        System.out.println("Ingrese su Apellido 2");
+                        System.out.println("Ingrese su segundo apellido");
                         apellido2User = sc.nextLine();
+                        while (apellido2User.length() < 3 || apellido2User.length() > 20) {
+                            System.out.println("debe ser mayor a 3 y menor a 20");
+                            apellido2User = sc.nextLine();
+                        }
 
                         System.out.println("Favor ingrese su fecha de nacimiento en el sig formato DD/MM/AAAA");
                         fechaNacimientoUser = sc.nextLine();
@@ -104,16 +111,16 @@ public class Principal {
                         }
 
                         System.out.println("Favor ingrese el nombre de la empresa");
-                        nombreEmpresa = sc.nextLine();
+                        nombreEmpresa = sc.next();
                         while (nombreEmpresa.length() < 5 || nombreEmpresa.length() > 30) {
                             System.out.println("favor ingrese un un nombre valido de mas de 5 caracteres y menos de 20.");
                             nombreEmpresa = sc.nextLine();
                         }
                         System.out.println("Favor ingrese el giro de la empresa");
-                        giroEmpresa = sc.nextLine();
+                        giroEmpresa = sc.next();
                         while (giroEmpresa.length() < 5 || giroEmpresa.length() > 30) {
                             System.out.println("favor ingrese un giro valido de entre 5 y 30 caracteres.");
-                            giroEmpresa = sc.nextLine();
+                            giroEmpresa = sc.next();
                         }
                         System.out.println("Favor ingrese el RUT de la empresa, sin puntos, sin guion y sin digito verificador.");
                         rut = sc.nextInt();
@@ -122,24 +129,24 @@ public class Principal {
                             rut = sc.nextInt();
                         }
                         System.out.println("Favor ingrese un numero de tlf del representante de la empresa");
-                        tlfRepresentante = sc.nextLine();
-                        while (tlfRepresentante.isEmpty() || tlfRepresentante != null) {
+                        tlfRepresentante = sc.next();
+                        while (tlfRepresentante.isEmpty() && tlfRepresentante != null) {
                             System.out.println("Favor ingrese un telefono valido");
                             tlfRepresentante = sc.nextLine();
                         }
 
                         System.out.println("Favor ingrese la direccion de la empresa");
-                        direccionEmpresa = sc.nextLine();
+                        direccionEmpresa = sc.next();
                         while (direccionEmpresa.length() < 5 || direccionEmpresa.length() > 70) {
                             System.out.println("favor ingrese un un nombre valido de mas de 5 caracteres y menos de 70.");
                             direccionEmpresa = sc.nextLine();
                         }
 
                         System.out.println("Favor ingrese la comuna en la que se encuentra la empresa");
-                        comunaEmpresa = sc.nextLine();
+                        comunaEmpresa = sc.next();
                         while (comunaEmpresa.length() < 5 || comunaEmpresa.length() > 50) {
                             System.out.println("favor ingrese un un nombre valido de mas de 5 caracteres y menos de 50.");
-                            comunaEmpresa = sc.nextLine();
+                            comunaEmpresa = sc.next();
                         }
 
                         contenedor.almacenarUsuarios(cliente);

@@ -2,6 +2,7 @@ package sprint.entity;
 
 import sprint.IAsesoria;
 
+
 public class Usuario implements IAsesoria {
     private String Nombre;
     private String Apellido1;
@@ -9,8 +10,10 @@ public class Usuario implements IAsesoria {
     private String FechaNacimiento;
     private int run;
 
+
     public Usuario() {
     }
+
 
     public Usuario(String nombre, String apellido1, String apellido2, String fechaNacimiento, int run) {
         Nombre = nombre;
@@ -59,6 +62,7 @@ public class Usuario implements IAsesoria {
     public void setRun(int run) {
         this.run = run;
     }
+
 
     @Override
     public String toString() {

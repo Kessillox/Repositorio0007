@@ -8,8 +8,10 @@ public class Cliente extends Usuario{
     private String DireccionEmpresa;
     private String Comuna;
 
+
     public Cliente() {
     }
+
 
     public Cliente(String nombreEmpresa, String giroEmpresa, int rut, String tlfRepresentante, String direccionEmpresa, String comuna) {
         NombreEmpresa = nombreEmpresa;
@@ -89,6 +91,7 @@ public class Cliente extends Usuario{
                 ", Comuna='" + Comuna + '\'' +
                 '}';
     }
+
 
     public String ObtenerNombre(){
         return "El nombre es" + this.getNombre();
