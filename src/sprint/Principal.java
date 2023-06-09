@@ -71,7 +71,7 @@ public class Principal {
 
 
             do {
-                if (op > 3) {
+                if (op > 8) {
                     System.out.println();
                     System.out.println("Opcion ingresada incorrecta, por favor ingrese una opcion valida");
                     op = sc.nextInt();
@@ -159,7 +159,7 @@ public class Principal {
                         }
                         break;
                     case 3:
-                        Profesional profesional = new Profesional(nombreUser, apellido1User, apellido2User, fechaNacimientoUser, runUser, titulo, fechaIngreso);
+
                         Contenedor contenedorP = new Contenedor();
                         do {
 
@@ -184,6 +184,10 @@ public class Principal {
 
                             System.out.println("Ingrese su Run");
                             runUser = scP.nextInt();
+                            while (runUser > 99999999 || runUser < 1111111) {
+                                System.out.println("Favor ingrese un run valido, sin puntos ni guion ni digito verificador");
+                                runUser = sc.nextInt();
+                            }
 
                             System.out.println("Ingrese su Titulo");
                             titulo = scP.next();
@@ -193,8 +197,10 @@ public class Principal {
                             }
                             System.out.println("Ingrese su Fecha de Ingreso");//Falta la validacion y que lo entrege en formato DD/MM/AAAA
                             fechaIngreso = scP.next();
+                            //Instanciando una clase y pasando parametros
+                            Profesional profesional = new Profesional(nombreUser, apellido1User, apellido2User, fechaNacimientoUser, runUser, titulo, fechaIngreso);
+                            //almacenando profecional
                             contenedorP.almacenarProfesional(profesional);
-
 
                             System.out.println("¿Desea Registrar otro Profesional?");
                             System.out.println("1. Si");
@@ -207,45 +213,70 @@ public class Principal {
                             }
 
                         }while (res==1);
-
+                        //Mostando la lista del profrecional
                         contenedorP.mostrarProfesional();
+
 
                         break;
                     case 4:
-
-                        Scanner scA = new Scanner(System.in);
-                        System.out.println("------Perfil Administrativo------");
-                        System.out.println("Ingrese su nombre");
-                        nombreUser = scA.nextLine();
-                        while (nombreUser.length() < 3 || nombreUser.length() > 20) {
-                            System.out.println("debe ser mayor a 3 y menor a 20");
-                            nombreUser = sc.nextLine();
-                        }
-
-                        System.out.println("Ingrese su Apellido 1");
-                        apellido1User = scA.nextLine();
-
-                        System.out.println("Ingrese su Apellido 2");
-                        apellido2User = scA.nextLine();
-
-                        System.out.println("Ingrese su Fecha de nacimiento");
-                        fechaNacimientoUser = scA.nextLine();
-
-                        System.out.println("Ingrese su Run");
-                        runUser = scA.nextInt();
-
-                        System.out.println("Ingrese su area");
-                        area = scA.nextLine();
-
-                        System.out.println("Ingrese su Experiencia Previa");
-                        experienciaPrevia=scA.nextLine();
-
-                        //Instansanciando clases y añadiendo y mostrando datos de la clase Administrativo
-                        Administrativo administrativo = new Administrativo(nombreUser,apellido1User,apellido2User,fechaNacimientoUser,runUser,area,experienciaPrevia);
                         Contenedor contenedorA = new Contenedor();
-                        contenedorA.almacenarAdministrativo(administrativo);
-                        contenedorA.mostrarAdministrativo();
+                        do {
+                            Scanner scA = new Scanner(System.in);
+                            System.out.println("------Perfil Administrativo------");
 
+                            System.out.println("Ingrese su nombre");
+                            nombreUser = scA.nextLine();
+                            while (nombreUser.length() < 3 || nombreUser.length() > 20) {
+                                System.out.println("debe ser mayor a 3 y menor a 20");
+                                nombreUser = sc.nextLine();
+                            }
+
+                            System.out.println("Ingrese su Apellido 1");
+                            apellido1User = scA.nextLine();
+
+                            System.out.println("Ingrese su Apellido 2");
+                            apellido2User = scA.nextLine();
+
+                            System.out.println("Ingrese su Fecha de nacimiento");
+                            fechaNacimientoUser = scA.nextLine();
+
+                            System.out.println("Ingrese su Run");
+                            runUser = scA.nextInt();
+                            while (runUser > 99999999 || runUser < 1111111) {
+                                System.out.println("Favor ingrese un run valido, sin puntos ni guion ni digito verificador");
+                                runUser = sc.nextInt();
+                            }
+
+                            System.out.println("Ingrese su area");
+                            area = scA.next();
+                            while (area.length() < 3 || area.length() > 20) {
+                                System.out.println("debe ser mayor a 3 y menor a 20");
+                                area = sc.nextLine();
+                            }
+
+                            System.out.println("Ingrese su Experiencia Previa");
+                            experienciaPrevia=scA.next();
+                            while (experienciaPrevia.length() > 100) {
+                                System.out.println("Por favor, ingrese menos de 100 caracteres");
+                                experienciaPrevia = sc.nextLine();
+                            }
+
+                            //Instansanciando clases y añadiendo y mostrando datos de la clase Administrativo
+                            Administrativo administrativo = new Administrativo(nombreUser,apellido1User,apellido2User,fechaNacimientoUser,runUser,area,experienciaPrevia);
+                            contenedorA.almacenarAdministrativo(administrativo);
+
+                            System.out.println("¿Desea Registrar otro Profesional?");
+                            System.out.println("1. Si");
+                            System.out.println("2. No");
+                            res=sc.nextInt();
+
+                            while (res>2){
+                                System.out.println("Por favor ingresar una opcion valida");
+                                res=sc.nextInt();
+                            }
+
+                        }while (res==1);
+                        contenedorA.mostrarAdministrativo();
 
                         break;
                     case 5:
@@ -299,7 +330,7 @@ public class Principal {
                         break;
                 }
 
-            } while (op > 3);
+            } while (op > 8);
 
 
             //Validaciones sergio
