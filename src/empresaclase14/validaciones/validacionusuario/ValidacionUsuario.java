@@ -14,10 +14,19 @@ public class ValidacionUsuario {
     }
 
     public static boolean validarNombre(String str) {
-        if(str != null && str.length() >= 10 && str.length() <= 50){
+        if(str != null && str.length() >= 3 && str.length() <= 50){
             return true;
         }else{
-            System.out.println("Nombre no cumple el largo.");
+            System.out.println("Inserte entre 3 y 50 carácteres");
+            return false;
+        }
+    }
+
+    public static boolean validarApellido(String str) {
+        if(str != null && str.length() >= 3 && str.length() <= 30){
+            return true;
+        }else{
+            System.out.println("Inserte entre 3 y 30 carácteres");
             return false;
         }
     }
