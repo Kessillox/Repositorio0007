@@ -144,7 +144,7 @@ public class Principal {
         adm.setApellido2(cadenaMinimoMaximoLenght(sc.nextLine(),5,30,
                 "Ingrese Apellido Materno válido: ",true));
         System.out.println("Ingrese fecha de nacimiento: ");
-        adm.setFechaDeNacimientoUsuario(sc.nextLine());
+        adm.setFechaDeNacimientoUsuario(validacionFecha(sc.nextLine(), true));
         System.out.println("Ingrese RUN: ");
         adm.setRunUsuario(validarRun(sc.nextLine(),"RUN"));
         System.out.println("Ingrese Área: ");
