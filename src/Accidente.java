@@ -19,7 +19,7 @@ public class Accidente {
                 '}';
     }
 
-    public Accidente(int idAccidente, String diaAccidente, String horaAccidente, String lugar, String origen, String consecuencia) {
+    public Accidente() {
         this.idAccidente = idAccidente;
         this.diaAccidente = diaAccidente;
         this.horaAccidente = horaAccidente;
@@ -75,6 +75,9 @@ public class Accidente {
     public void setConsecuencia(String consecuencia) {
         this.consecuencia = consecuencia;
     }
+    public void mostrarDetalle(){
+        System.out.println("El accidente ocurrío en "+this.getLugar()
+                +" a las "+this.getHoraAccidente()+ " del día "+this.getDiaAccidente()
+                + " su origen fue "+ this.getOrigen()+" y sus consecuencias fueron "+ this.getConsecuencia());
+    }
 }
-
-

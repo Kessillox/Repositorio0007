@@ -347,33 +347,41 @@ public class Principal {
     public boolean validacionComentariosVisitaTerreno(String comentarios) {
         return comentarios.length() <= 100;
     }
+
     //Validacion de las variables de la clase Accidente
-    public boolean validarCamposAccidente(Integer idAccidente, String diaAccidente, String horaAccidente, String lugar, String origen, String consecuencia) {
-        if (idAccidente <= 0) {
-            return false;
-        }
+    public boolean validarIdAccidente(Integer idAccidente) {
+        return idAccidente > 0;
+    }
 
-        if (diaAccidente == null || diaAccidente.length() == 10) {
-            return false;
-        }
+    public boolean validarDiaAccidente(String diaAccidente) {
+        return diaAccidente != null && diaAccidente.length() == 10;
+    }
 
-        if (horaAccidente == null || horaAccidente.length() == 5) {
-            return false;
-        }
+    public boolean validarHoraAccidente(String horaAccidente) {
+        return horaAccidente != null && horaAccidente.length() == 5;
+    }
 
-        if (lugar == null || lugar.length() < 10 || lugar.length() > 50) {
-            return false;
-        }
+    public boolean validarLugar(String lugar) {
+        return lugar != null && lugar.length() >= 10 && lugar.length() <= 50;
+    }
 
-        if (origen != null && origen.length() > 100) {
-            return false;
-        }
+    public boolean validarOrigen(String origen) {
+        return origen == null || origen.length() <= 100;
+    }
 
-        if (consecuencia != null && consecuencia.length() > 100) {
-            return false;
-        }
+    public boolean validarConsecuencia(String consecuencia) {
+        return consecuencia == null || consecuencia.length() <= 100;
+    }
 
-        return true;
+    public boolean validarIngresoAccidente(Integer idAccidente, String diaAccidente, String horaAccidente, String lugar, String origen, String consecuencia) {
+        boolean isIdValid = validarIdAccidente(idAccidente);
+        boolean isDiaValid = validarDiaAccidente(diaAccidente);
+        boolean isHoraValid = validarHoraAccidente(horaAccidente);
+        boolean isLugarValid = validarLugar(lugar);
+        boolean isOrigenValid = validarOrigen(origen);
+        boolean isConsecuenciaValid = validarConsecuencia(consecuencia);
+
+        return isIdValid && isDiaValid && isHoraValid && isLugarValid && isOrigenValid && isConsecuenciaValid;
     }
 }
 
