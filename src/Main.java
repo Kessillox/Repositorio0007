@@ -111,6 +111,24 @@ public class Main {
         // CONTENEDOR
         Contenedor contenedor = new Contenedor();
 
+        // USUARIOS DE PRUEBA
+        Cliente cliente1 = new Cliente("Pelayo", "Fernandez", "Torrealba", "12/12/1990", 111111111, "Fundimax", "Fundidora", 99999999, "9845615498", "Lejos 124", "Los Alpes");
+        Cliente cliente2 = new Cliente("Cristian", "Trureo", "Trureo", "11/11/1991", 222222221, "Awakelab", "Capacitaciones IT", 55555555, "123123123123", "Lejos 777", "Los Alpes");
+        Administrativo administrativo1 = new Administrativo("Ana","Pavés","Gonzalez","25-10-1985",13562485,"RRHH", "2");
+        Administrativo administrativo2 = new Administrativo("Marie","SAnchez","Villaba","05-12-1987", 87562451, "Marketing","5");
+        Administrativo administrativo3 = new Administrativo("Santiago","Carter","Monroy","24-01-2985", 99856241,"Finanzas","3");
+        Profesional profesional1 = new Profesional("Luis", "Zambrano", "Zambrano", "06-06-2023", 186850149, "Analista Programador", "06-06-2023");
+        Profesional profesional2 = new Profesional("Livio", "Gut", "Guti", "10-10-2023", 333333333, "Ingeniero Físico Termonuclear", "10-12-2023");
+        Profesional profesional3 = new Profesional("Brocacochi", "Chespi", "Rito", "10-10-1990", 33333333, "Informatico", "10-12-2023");
+        contenedor.almacenarCliente(cliente1);
+        contenedor.almacenarCliente(cliente2);
+        contenedor.almacenarCliente(administrativo1);
+        contenedor.almacenarCliente(administrativo2);
+        contenedor.almacenarCliente(administrativo3);
+        contenedor.almacenarCliente(profesional1);
+        contenedor.almacenarCliente(profesional2);
+        contenedor.almacenarCliente(profesional3);
+
         while (opcion != 9) {
             System.out.println("\n Bienvenido a Sprint Modulo 4 Programación en Java!");
             System.out.println("--------------------------------------");
@@ -132,7 +150,7 @@ public class Main {
 
 
                 switch (opcion) {
-                    case 1:
+                    case 1:   // Cliente
                         System.out.println("Bienvenido al registro de Clientes");
                         Usuario usuarioCliente = almacenarUsuario(entrada);
 
@@ -190,7 +208,7 @@ public class Main {
                         break;
 
 
-                    case 3: // Administrativo
+                    case 3:   // Administrativo
                         System.out.println("Bienvenido al registro de Administrativo");
                         Usuario usuarioAdministrativo = almacenarUsuario(entrada);
 
@@ -208,6 +226,7 @@ public class Main {
                         contenedor.almacenarAdministrativo(administrativoEjemplo);
 
                         break;
+
                     case 4: // Capacitacion
                         System.out.println("Bienvenido a el Registro de Capacitación");
                         System.out.println("Ingrese el ID de Capacitación");
@@ -242,38 +261,21 @@ public class Main {
                         contenedor.listarCapacitaciones();
 
                         break;
-                    case 5: //
+
+                    case 5:   // Eliminar usuario
+                        System.out.println("Ingrese el RUN del usuario que desea eliminar:");
+                        int run = entrada.nextInt();
+                        contenedor.eliminarUsuario(run);
+                        break;
+
+                    case 6: // Listar Usuarios: se llama al método listarUsuarios() de la Clase Contenedor
+                        System.out.println("Los usuarios ingresados son:\n");
+                       contenedor.listarUsuarios();
+                       break;
 
 
-                    case 6: // Accidente
-                        System.out.println("Se encuentra en el Registro de Accidentes");
-                        do {
-                            System.out.println("Ingrese el ID Accidente");
-                            idAccidente = entrada.nextInt();
-                        } while (!validarId(idAccidente));
-                        System.out.println("Ingrese el día  del accidente");
-                        dia = entrada.next();
-                        do {
-                            System.out.println("Ingrese la hora del accidente");
-                            hora = entrada.next();
-                        } while (!validarHora(hora));
-                        System.out.println("Ingrese el lugar del accidente");
-                        lugar = entrada.next();
-                        do {
-                            System.out.println("Ingrese el origen del accidente");
-                            origen = entrada.next();
-                        } while (!validarOrigenConsecuencias(origen));
-                        do {
-                            System.out.println("Ingrese las concecuencias del accidente");
-                            consecuencias = entrada.next();
-                        } while (!validarOrigenConsecuencias(consecuencias));
 
-                        Accidente accidente1 = new Accidente(idAccidente, dia, hora, lugar, origen, consecuencias);
-
-                        System.out.println(accidente1.toString());
-
-
-                    case 7: // Lógica para listar usuarios por tipo
+                    case 7:   // Listar usuarios por Tipo
                         System.out.println("Ingrese el tipo de usuario que desea listar (Cliente, Administrativo o Profesional):");
                         String tipoUsuario = entrada.nextLine();
 
@@ -296,11 +298,15 @@ public class Main {
                         contenedor.listarUsuariosPorTipo(tipo);
                         break;
 
-                    case 8: // Revision
+                    case 8: // Listar capacitaciones
+                        System.out.println("Las capacitaciones ingresadas son:\n");
+                        contenedor.listarCapacitaciones();
+                        break;
 
 
-                    case 9:
-                        // Salir del programa
+
+
+                    case 9: // Salir del programa
                         System.out.println("¡Gracias por usar nuestra aplicación, queremos un 7!");
                         break;
                     default:
