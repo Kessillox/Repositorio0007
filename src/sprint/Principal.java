@@ -14,6 +14,7 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        VisitaEnTerreno visitaTe = new VisitaEnTerreno();
 
 
         //VARIABLES Usuarios
@@ -282,18 +283,12 @@ public class Principal {
                     case 5:
                         System.out.println("------Perfil Capacitaciones------");
 
-                        VisitaEnTerreno visita = new VisitaEnTerreno();
 
-
-                        //llamar rut otra clase?
-
-                        //Objeto Capacitacion
                         Capacitacion capaci = new Capacitacion();
 
                         sc.nextLine();
-                        System.out.println("Ingrese rut empresa");
-                        capaci.setRutEmpresa(sc.nextLine());
-                        System.out.println(capaci.getRutEmpresa());
+
+                        System.out.println("Su rut de empresa: " + cliente1.getRut());
 
                         System.out.println("Ingrese ID capacitacion (solo numeros enteros)");
                         capaci.setId(sc.nextInt());
@@ -317,13 +312,23 @@ public class Principal {
 
                         System.out.println("Ingrese cantidad de asistente a la capacitacion");
                         capaci.setCantidadAsistente(sc.nextInt());
+
+
+
+
                         System.out.println(capaci.getCantidadAsistente() + "Asistentes");
                         break;
                     case 6:
                         System.out.println("------Perfil Accidente------");
+
+
+
                         break;
                     case 7:
                         System.out.println("------Perfil Visita en Terreno------");
+
+
+
                         break;
                     case 8:
                         System.out.println("------Perfil Revision------");
@@ -333,16 +338,7 @@ public class Principal {
             } while (op > 8);
 
 
-            //Validaciones sergio
-            //Objeto VisitaTerreno
 
-            VisitaEnTerreno visita = new VisitaEnTerreno();
-
-
-            //llamar rut otra clase?
-
-            //Objeto Capacitacion
-            //Capacitacion capaci = new Capacitacion();
 
             System.out.println("¿Desea Registrar un perfiles?");
             System.out.println("1. Si");
