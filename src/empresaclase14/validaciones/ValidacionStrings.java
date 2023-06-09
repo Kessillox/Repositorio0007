@@ -12,4 +12,25 @@ public class ValidacionStrings {
             return true;
         }
     }
+
+    public static boolean validarDia(String dia){
+        switch (dia.toLowerCase()) {
+            case "lunes":
+            case "martes":
+            case "miércoles":
+            case "miercoles":
+            case "jueves":
+            case "viernes":
+            case "sábado":
+            case "sabado":
+            case "domingo":
+                System.out.println("Día válido");
+                return true;
+            default:
+                System.out.println("Ingrese un día válidao (lunes - Domingo)");
+                return false;
+
+        }
+    }
+
 }
