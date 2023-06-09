@@ -30,6 +30,12 @@ public class Contenedor {
         asesorias.add(a);
     }
 
+    public void almacenarCliente(Cliente c) {cliente.add(c);}
+
+    public void almacenarProfesiona(Profesional p) {profesional.add(p);}
+
+    public void almacenarAdministrativo(Administrativo a){administrativo.add(a);}
+
     //almacena los datos de capacitacion
     public void almacenarCapacitacion(Capacitacion c) {
         capacitaciones.add(c);
@@ -54,12 +60,18 @@ public class Contenedor {
         }
     }
 
-    public void listarUsuariosPorTipo(String tipo) {
-        for (IAsesoria asesorias : asesorias) {
-            if (asesorias.getClass().getSimpleName().equals(tipo)) {
-                asesorias.listaUsuario();
-            }
-
+    public void listarUsuariosPorTipo() {
+        System.out.println("Lista de clientes");
+        for(Cliente c : cliente) {
+            System.out.println(c);
+        }
+        System.out.println("Lista de profesionales");
+        for(Profesional p : profesional){
+            System.out.println(p);
+        }
+        System.out.println("Lista de administrativo");
+        for(Administrativo a : administrativo){
+            System.out.println(a);
         }
     }
 
