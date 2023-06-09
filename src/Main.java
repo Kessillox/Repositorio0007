@@ -3,6 +3,8 @@ import empresaclase14.*;
 import java.util.Scanner;
 
 import static empresaclase14.validaciones.ValidacionStrings.validarLargoString;
+import static empresaclase14.validaciones.validacionadministrativo.ValidacionAdministrativo.validarArea;
+import static empresaclase14.validaciones.validacionadministrativo.ValidacionAdministrativo.validarExperienciaPrevia;
 import static empresaclase14.validaciones.validacionusuario.ValidacionUsuario.*;
 import static empresaclase14.validaciones.validacioncliente.ValidacionCliente.*;
 import static empresaclase14.validaciones.validacionaccidente.ValidacionAccidente.*;
@@ -186,11 +188,11 @@ public class Main {
                         do {
                             System.out.println("Ingrese area de administración");
                             area = entrada.next();
-                        } while (!validarNombreEmpresa(area));
+                        } while (!validarArea(area));
                         do {
                             System.out.println("Ingrese experiencia previa");
                             experienciaPrevia = entrada.next();
-                        } while (!validarFecha(experienciaPrevia));
+                        } while (!validarExperienciaPrevia(experienciaPrevia));
 
                         Administrativo administrativoEjemplo = new Administrativo(usuarioAdministrativo.getNombre(), usuarioAdministrativo.getApellido1(), usuarioAdministrativo.getApellido2(), usuarioAdministrativo.getFechaDeNacimiento(), usuarioAdministrativo.getRun(), area, experienciaPrevia);
                         //administrativoEjemplo.analizarUsuario();
