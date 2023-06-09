@@ -1,14 +1,21 @@
 package sprint;
 
 import sprint.entity.Administrativo;
+import sprint.entity.Cliente;
 import sprint.entity.Profesional;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Contenedor {
-   //Lista PROFESIONAL
+
+    List<IAsesoria> almacenarUsuarios =new ArrayList<>();
+
     List<Profesional> almacenarProfesional = new ArrayList<>();
+    List<Administrativo> almacenarAdministrativo = new ArrayList<>();
+    List<Cliente> almacenarClientes = new ArrayList<>();
+
+
     public void almacenarProfesional(Profesional p){
         almacenarProfesional.add(p);
     }
@@ -18,8 +25,6 @@ public class Contenedor {
         }
     }
 
-    //Lista Administrativa
-    List<Administrativo> almacenarAdministrativo = new ArrayList<>();
     public void  almacenarAdministrativo (Administrativo a){
         almacenarAdministrativo.add(a);
     }
@@ -29,4 +34,17 @@ public class Contenedor {
         }
     }
 
+    public void almacenarUsuarios (IAsesoria U){
+        almacenarUsuarios.add(U);
+    }
+
+
+    public void alamacenaCliente(Cliente c){
+        almacenarClientes.add(c);
+    }
+    public void mostrarUsuarios(Cliente cliente){
+        for (IAsesoria Us : almacenarUsuarios) {
+            System.out.println(Us);
+        }
+    }
 }
