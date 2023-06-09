@@ -84,14 +84,14 @@ public class Principal {
         System.out.println("Ingrese fecha de nacimiento: ");
         cli.setFechaDeNacimientoUsuario(sc.nextLine());
         System.out.println("Ingrese RUN: ");
-        cli.setRunUsuario(sc.nextLine());
+        cli.setRunUsuario(validarRun(sc.nextLine(),"RUN"));
         System.out.println("Ingrese Nombre Empresa: ");
         cli.setNombreEmpresa(cadenaMinimoMaximoLenght(sc.nextLine(),5,30,
                 "Ingrese Nombre Empresa válido: ",true));
         System.out.println("Ingrese Giro Empresa: ");
         cli.setGiroEmpresa(sc.nextLine());
         System.out.println("Ingrese RUT: ");
-        cli.setRutEmpresa(sc.nextLine());
+        cli.setRutEmpresa(validarRun(sc.nextLine(),"RUT"));
         System.out.println("Ingrese Telefono: ");
         cli.setTelefonoRepresentanteLegal(sc.nextLine());
         System.out.println("Direccion Empresa: ");
@@ -120,7 +120,7 @@ public class Principal {
         System.out.println("Ingrese fecha de nacimiento: ");
         pro.setFechaDeNacimientoUsuario(sc.nextLine());
         System.out.println("Ingrese RUN: ");
-        pro.setRunUsuario(sc.nextLine());
+        pro.setRunUsuario(validarRun(sc.nextLine(),"RUN"));
         System.out.println("Ingrese Titulo: ");
         pro.setTitulo(cadenaMinimoMaximoLenght(sc.nextLine(),5,20,
                 "Ingrese Titulo válido: ",true));
@@ -146,7 +146,7 @@ public class Principal {
         System.out.println("Ingrese fecha de nacimiento: ");
         adm.setFechaDeNacimientoUsuario(sc.nextLine());
         System.out.println("Ingrese RUN: ");
-        adm.setRunUsuario(sc.nextLine());
+        adm.setRunUsuario(validarRun(sc.nextLine(),"RUN"));
         System.out.println("Ingrese Área: ");
         adm.setArea(cadenaMinimoMaximoLenght(sc.nextLine(),5,20,
                 "Ingrese Área válida: ",true));
@@ -164,7 +164,7 @@ public class Principal {
         System.out.println("Ingrese ID: ");
         cap.setIdCapacitacion(sc.nextLine());
         System.out.println("Ingrese Rut Empresa: ");
-        cap.setRutEmpresa(sc.nextLine());
+        cap.setRutEmpresa(validarRun(sc.nextLine(),"RUT"));
         System.out.println("Ingrese fecha: ");
         cap.setDiaCapacitacion(sc.nextLine());
         System.out.println("Ingrese Hora: ");
@@ -257,6 +257,46 @@ public class Principal {
                 System.out.println("Como máximo " + max + " caracteres.");
                 System.out.println(mensajeError+" <(¬_¬)>");
                 cadena = sc.nextLine();
+            }
+        }
+        return cadena;
+    }
+
+    public static String validarRun(String cadena,String tipoIdentidad){
+        boolean valido = false;
+        while (!valido){
+            int posicionGuion=-1, intNumerosRun=0;
+            String strNumerosRun ="";
+
+            for (int i = 0; i < cadena.length() ; i++) {
+                char caracter = cadena.charAt(i);
+                if(caracter=='-'){
+                    posicionGuion = i;
+                }
+            }
+            if(posicionGuion!=-1){
+                for (int x=0; x <= posicionGuion; x++){
+                    char caracter = cadena.charAt(x);
+                    if(Character.isDigit(caracter)){
+                        strNumerosRun +=String.valueOf(caracter);
+                    }
+                }
+            }else{
+                for (int x=0; x < cadena.length(); x++){
+                    char caracter = cadena.charAt(x);
+                    if(Character.isDigit(caracter)){
+                        strNumerosRun +=String.valueOf(caracter);
+                    }
+                }
+            }  if(!strNumerosRun.isEmpty()){intNumerosRun = Integer.parseInt(strNumerosRun);}
+
+            if (intNumerosRun > 99999999 || intNumerosRun==0){
+                System.out.println("El "+tipoIdentidad+" "+ intNumerosRun +" no es valido <(u_u)>");
+                System.out.println("99.999.999-k");
+                System.out.println("Ingrese un "+tipoIdentidad+" valido: <(¬_¬)>");
+                cadena=sc.nextLine();
+            }else{
+                valido=true;
             }
         }
         return cadena;
