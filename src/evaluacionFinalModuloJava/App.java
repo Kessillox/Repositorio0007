@@ -173,7 +173,7 @@ public class App {
 
               // System.out.println("Ingrese Numero interno de capacitacion");
               // nuevaCapacitacion.setIdentificador(Integer.parseInt(scan.next()));
-
+                //buenas
 
                 while( rut == 0 ){
                     System.out.println("Ingrese rut de la empresa");
