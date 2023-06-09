@@ -9,7 +9,7 @@ public class Principal {
 
         Scanner sc = new Scanner(System.in);
         Contenedor cont = new Contenedor();
-       // Administrativo user1 = new Administrativo("Cintia", "Muñoz", "Valdés", "19/09/1957", 22000000, "sidu", "5 años");
+        Administrativo user1 = new Administrativo("Cintia", "Muñoz", "Valdés", "19/09/1957", "22000000", "sidu", "5 años");
 
         //cont.almacenarAdministrativo(new Administrativo("Cintiaaaaaaa", "Muñoz", "Valdés", LocalDate.of(2000, 05, 19), 22000000, "sidu", "5 años") );
 
@@ -343,21 +343,29 @@ public class Principal {
                     cont.listarUsuarios();
                     break;
                 case 7:
-                    System.out.println("Ingrese el tipo de usuario a listar (cliente, profesional o administrativo):");
+                    System.out.println("Ingrese un número para el tipo de usuario a listar (1.- cliente, 2.- profesional o 3.- administrativo):");
                     String tipoUsuario = sc.nextLine();
-                    /*    IAsesoria usuarioTipo;
-                    if (tipoUsuario.equals("cliente")) {
-                        usuarioTipo = new Cliente();
-                    } else if (tipoUsuario.equals("profesional")) {
-                        usuarioTipo = new Profesional();
-                    } else if (tipoUsuario.equals("administrativo")) {
-                        usuarioTipo = new Administrativo();
-                    } else {
-                        System.out.println("Tipo de usuario inválido.");
-                        return;
+                    while (!tipoUsuario.matches("[1-3]")) {
+                        System.out.println("Ingrese un número correspondiente al tipo de usuario. El dato ingresado no es correcto.");
+                        tipoUsuario = sc.nextLine();
+                    }
+                    Usuario usuarioTipo;
+                    switch (tipoUsuario) {
+                        case "1":
+                            usuarioTipo = new Cliente();
+                            break;
+                        case "2":
+                            usuarioTipo = new Profesional();
+                            break;
+                        case "3":
+                            usuarioTipo = new Administrativo();
+                            break;
+                        default:
+                            System.out.println("Ingrese un número correspondiente al tipo de usuario. El dato ingresado no es correcto.");
+                            return;
                     }
 
-                    cont.listarUsuariosPorTipo(usuarioTipo); */
+                    cont.listarUsuariosPorTipo(usuarioTipo);
                     break;
                 case 8:
                     cont.listarCapacitaciones();
