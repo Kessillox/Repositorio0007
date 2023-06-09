@@ -37,8 +37,6 @@ public class AlmacenarProfesionalController {
             }
         }
 
-        System.out.println(profesional);
-
         return profesional;
     }
 }

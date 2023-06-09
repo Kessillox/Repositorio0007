@@ -34,8 +34,6 @@ public class AlmacenarAdministrativoController {
             }
         }
 
-        System.out.println(administrativo);
-
         return administrativo;
     }
 }
