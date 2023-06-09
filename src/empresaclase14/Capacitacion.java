@@ -18,8 +18,8 @@ public class Capacitacion {
     public Capacitacion() {
     }
 
-    public Capacitacion(int identificador, String rutCliente, String dia, String hora, String lugar, int duracion, int cantidadDeAsistentes) {
-        this.idCapacitacion = identificador;
+    public Capacitacion(int idCapacitacion, String rutCliente, String dia, String hora, String lugar, int duracion, int cantidadDeAsistentes) {
+        this.idCapacitacion = idCapacitacion;
         this.rutCliente = rutCliente;
         this.dia = dia;
         this.hora = hora;
@@ -28,11 +28,11 @@ public class Capacitacion {
         this.cantidadDeAsistentes = cantidadDeAsistentes;
     }
 
-    public int getIdentificador() {
+    public int getIdCapacitacion() {
         return idCapacitacion;
     }
 
-    public void setIdentificador(int idCapacitacion) {
+    public void setIdCapacitacion(int idCapacitacion) {
         this.idCapacitacion = idCapacitacion;
     }
 
@@ -84,18 +84,27 @@ public class Capacitacion {
         this.cantidadDeAsistentes = cantidadDeAsistentes;
     }
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
     @Override
     public String toString() {
         return "Capacitacion{" +
-                "\n identificador=" + idCapacitacion + "'," +
-                "\n rutCliente='" + rutCliente + "'," +
-                "\n dia='" + dia + "'," +
-                "\n hora='" + hora + "'," +
-                "\n lugar='" + lugar + "'," +
-                "\n duracion=" + duracion + "," +
-                "\n cantidadDeAsistentes=" + cantidadDeAsistentes +
-                "\n}";
+                "idCapacitacion=" + idCapacitacion +
+                ", rutCliente='" + rutCliente + '\'' +
+                ", dia='" + dia + '\'' +
+                ", hora='" + hora + '\'' +
+                ", lugar='" + lugar + '\'' +
+                ", duracion=" + duracion +
+                ", cantidadDeAsistentes=" + cantidadDeAsistentes +
+                '}';
     }
+
     // Se considera que el atributo duración es ingresado en formato HORA
     public String mostrarDetalle(){
         return "La capacitación será en " + lugar + " a las " + hora + "hrs. del día " + dia +

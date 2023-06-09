@@ -94,7 +94,7 @@ public class Cliente extends Usuario {
         return "Cliente{" +
                 "nombreEmpresa='" + nombreEmpresa + '\'' +
                 ", giroEmpresa='" + giroEmpresa + '\'' +
-                ", rut='" + rut + '\'' +
+                ", rut=" + rut +
                 ", telefonoRepresentante='" + telefonoRepresentante + '\'' +
                 ", direccionEmpresa='" + direccionEmpresa + '\'' +
                 ", comunaEmpresa='" + comunaEmpresa + '\'' +
@@ -112,4 +112,15 @@ public class Cliente extends Usuario {
         //System.out.println("El nombre del usuario es: " + super.getNombre());
         //System.out.println("La información del Cliente es: " + this.toString());
     }
+
+    public void agregarCapacitacion(Capacitacion capacitacion) {
+        this.capacitacionList.add(capacitacion);
+    }
+    public void agregarAccidente(Accidente accidente) {
+        this.accidenteList.add(accidente);
+    }
+    public void agregarVisitaTerreno(VisitaEnTerreno visitaEnTerreno) {
+        this.visitaEnTerrenoList.add(visitaEnTerreno);
+    }
+
 }

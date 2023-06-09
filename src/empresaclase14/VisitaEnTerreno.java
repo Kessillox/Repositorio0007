@@ -73,4 +73,9 @@ public class VisitaEnTerreno {
                 ", comentarios='" + comentarios + '\'' +
                 '}';
     }
+
+    public void agregarRevision(Revision revision) {
+        this.revisionList.add(revision);
+    }
+
 }
