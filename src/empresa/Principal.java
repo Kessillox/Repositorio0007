@@ -57,27 +57,93 @@ public class Principal {
 
             switch (opcion) {
                 case 1:
-                    System.out.println("Ingrese el RUN del cliente:");
-                    int run = sc.nextInt();
-                    System.out.println("Ingrese el nombre del cliente:");
-                    String nombreUsuario = sc.next();
 
-                    System.out.println("Ingrese el fecha de Nacimiento:");
-                    String fechaDeNacimiento = sc.next();
-                    System.out.println("ingrese el Apellido1 del cliente:");
-                    String apellido1 = sc.next();
-                    System.out.println("Ingrese el Apellido2 del cliente:");
-                    String apellido2 = sc.next();
-                    System.out.println("ingrese razon social del cliente:");
-                    String razon = sc.next();
-                    System.out.println("ingrese giro del cliente:");
-                    String giroEmpresa = sc.next();
-                    System.out.println("ingrese telefono del cliente:");
-                    String telefonoRepresentante = sc.next();
-                    System.out.println("ingrese direccion del cliente:");
-                    String direccion = sc.next();
-                    System.out.println("ingrese comuna del cliente:");
-                    String comuna = sc.next();
+                    System.out.println("Ingrese el RUN del representante de la empresa (Ejemplo: 12345678-9):");
+                    System.out.println("*Este campo es obligatorio");
+                    String runCliente = sc.nextLine();
+                    while ( !runCliente.matches("[0-9]{7,8}-[0-9kK]")) {
+                        System.out.println("RUN incorrecto. Por favor, ingrese un RUN válido (Ejemplo:12345678-9), sin espacios y que no sea mayor a 99999999");
+                        runCliente = sc.nextLine();
+                    }
+
+                    System.out.println("Ingrese el nombre del representante de la empresa:");
+                    System.out.println("*Este campo es obligatorio");
+                    String nombreCliente = sc.nextLine();
+                    while (nombreCliente.isEmpty() || !nombreCliente.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ]{3,20}")) {
+                        System.out.println("Nombre incorrecto. Por favor, ingrese un nombre con mínimo 3 y máximo 20 caracteres. Este campo no puede quedar vacío");
+                        nombreCliente= sc.nextLine();
+                    }
+
+                    System.out.print("Ingrese el primer apellido del representante de la empresa: ");
+                    System.out.println("*Este campo es obligatorio");
+                    String apellido1 = sc.nextLine();
+                    while (apellido1.isEmpty() || !apellido1.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ]{3,20}")) {
+                        System.out.println("Apellido ingresado de forma incorrecta. Por favor, ingrese un apellido válido y no deje este campo vacío");
+                        apellido1 = sc.nextLine();
+                    }
+
+                    System.out.print("Ingrese el segundo apellido del representante de la empresa: ");
+                    System.out.println("*Este campo es obligatorio");
+                    String apellido2 = sc.nextLine();
+                    while (apellido2.isEmpty() || !apellido2.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ]{3,20}")) {
+                        System.out.println("Apellido ingresado de forma incorrecta. Por favor, ingrese un apellido válido y no deje este campo vacío");
+                        apellido2 = sc.nextLine();
+                    }
+
+
+                    System.out.println("Ingrese fecha de nacimiento considerando el siguiente formato -> dd/mm/aaaa:");
+                    System.out.println("*Este campo es obligatorio");
+                    String fechaDeNacimientoCliente = sc.nextLine();
+                    while (!fechaDeNacimientoCliente.matches("^(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4}$")) {
+                        System.out.println("Fecha de nacimiento inválida. Por favor, ingrese una fecha válida con el formato dd/mm/aaaa y no deje este campo vacío");
+                        fechaDeNacimientoCliente = sc.nextLine();
+                    }
+
+
+                    System.out.print("Ingrese la Razón Social (nombre) de la empresa: ");
+                    System.out.println("*Este campo es obligatorio");
+                    String razonSocial = sc.nextLine();
+                    while (razonSocial.isEmpty() || !razonSocial.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ]{3,20}")) {
+                        System.out.println("Razón social. Por favor, ingrese un apellido válido:");
+                        razonSocial = sc.nextLine();
+                    }
+
+                    System.out.print("Ingrese el giro de la empresa: ");
+                    System.out.println("*Este campo es obligatorio");
+                    String giroEmpresa = sc.nextLine();
+                    while (giroEmpresa.isEmpty() || !giroEmpresa.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ]{3,20}")) {
+                        System.out.println("Por favor, ingrese giro válido, máximo 20 caracteres y no deje este campo vacío:");
+                        giroEmpresa = sc.nextLine();
+                    }
+
+                    while (true) {
+                        System.out.print("Ingrese el número de teléfono del representante (formato +569XXXXXXXX): ");
+                        System.out.println("*Este campo es obligatorio");
+                        String telefonoRepresentante = sc.nextLine();
+
+                        // Validar el número de teléfono con una expresión regular
+                        if (telefonoRepresentante.matches("\\+56\\d{9}")) {
+                            break;  // Salir del bucle si es válido
+                        } else {
+                            System.out.println("Número de teléfono ingresado de forma incorrecta. Por favor, ingrese un número de teléfono válido en el formato +569XXXXXXXX.");
+                        }
+                    }
+
+                    System.out.print("Dirección  de la empresa: ");
+                    System.out.println("*Este campo es obligatorio");
+                    String direccion = sc.nextLine();
+                    while (direccion.isEmpty() || !direccion.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ]{3,20}")) {
+                        System.out.println("Por favor, ingrese una dirección válida y no deje este campo vacío:");
+                        direccion = sc.nextLine();
+                    }
+
+                    System.out.print("Comuna  de la empresa: ");
+                    System.out.println("*Este campo es obligatorio");
+                    String comuna = sc.nextLine();
+                    while (comuna.isEmpty() || !comuna.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ]{3,20}")) {
+                        System.out.println("Por favor, ingrese una comuna válida y no deje este campo vacío:");
+                        comuna = sc.nextLine();
+                    }
 
 
                     cont.almacenarCliente(new Cliente());
