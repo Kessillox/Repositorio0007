@@ -101,10 +101,18 @@ public class Cliente extends Usuario {
                 '}';
     }
 
+    /**
+     * Método que retorna el nombre de la empresa del cliente en un mensaje tipo String.
+     *@return String con el nombre de la empresa.
+     */
     public String obtenerNombre(){
         return "El nombre de la empresa es: " + getNombreEmpresa();
     }
 
+    /**
+     * Método que sobrescribe el método analizarUsuario para imprimir información
+     * adicional sobre el Cliente, como su dirección y comuna.
+     */
     @Override
     public void analizarUsuario() {
         super.analizarUsuario();
@@ -113,8 +121,3 @@ public class Cliente extends Usuario {
     }
 
 }
-
-/*14.- Cliente: el método obtenerNombre(), que retorna un String con el nombre completo del cliente
-(nombres + apellidos), el método obtenerSistemaSalud() que de acuerdo al valor registrado en el objeto
-despliega el tipo de sistema de salud, y el método analizarUsuario() que debe desplegar los datos del
-método del mismo nombre correspondiente a la clase padre y la dirección del cliente junto con la comuna.*/
