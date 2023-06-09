@@ -11,22 +11,86 @@ public class Principal {
         contenedor = new Contenedor();
         sc = new Scanner(System.in);
 
-        // Crear una instancia de Usuario
-        Usuario usuario = new Usuario();
+        // Instancias de la clase Usuario
+        Usuario usuario1 = new Usuario();
 
-        usuario.setNombreUsuario("John");
-        usuario.setApellido1("Doe");
-        usuario.setApellido2("Smith");
-        usuario.setFechaDeNacimientoUsuario("30/12/2020");
-        usuario.setRunUsuario("12345678-9");
-        usuario.setRutEmpresa("12345678-9");
+        usuario1.setNombreUsuario("John");
+        usuario1.setApellido1("Doe");
+        usuario1.setApellido2("Smith");
+        usuario1.setFechaDeNacimientoUsuario("30/12/2020");
+        usuario1.setRunUsuario("12345678-9");
+        usuario1.setRutEmpresa("12345678-9");
 
-        System.out.println("Ingrese Nombre: " + usuario.getNombreUsuario());
-        System.out.println("Ingrese Apellido Paterno: " + usuario.getApellido1());
-        System.out.println("Ingrese Apellido Materno: " + usuario.getApellido2());
-        System.out.println("Ingrese Fecha de Nacimiento: " + usuario.getFechaDeNacimientoUsuario());
-        System.out.println("Ingrese RUN: " + usuario.getRunUsuario());
-        System.out.println("Ingrese RUT Empresa: " + usuario.getRutEmpresa());
+        System.out.println("Ingrese Nombre: " + usuario1.getNombreUsuario());
+        System.out.println("Ingrese Apellido Paterno: " + usuario1.getApellido1());
+        System.out.println("Ingrese Apellido Materno: " + usuario1.getApellido2());
+        System.out.println("Ingrese Fecha de Nacimiento: " + usuario1.getFechaDeNacimientoUsuario());
+        System.out.println("Ingrese RUN: " + usuario1.getRunUsuario());
+        System.out.println("Ingrese RUT Empresa: " + usuario1.getRutEmpresa());
+
+        Usuario usuario2 = new Usuario();
+
+        usuario2.setNombreUsuario("Pedro");
+        usuario2.setApellido1("Ortega");
+        usuario2.setApellido2("Rocha");
+        usuario2.setFechaDeNacimientoUsuario("01/03/1996");
+        usuario2.setRunUsuario("19077957-8");
+        usuario2.setRutEmpresa("12345678-9");
+
+        System.out.println("Ingrese Nombre: " + usuario2.getNombreUsuario());
+        System.out.println("Ingrese Apellido Paterno: " + usuario2.getApellido1());
+        System.out.println("Ingrese Apellido Materno: " + usuario2.getApellido2());
+        System.out.println("Ingrese Fecha de Nacimiento: " + usuario2.getFechaDeNacimientoUsuario());
+        System.out.println("Ingrese RUN: " + usuario2.getRunUsuario());
+        System.out.println("Ingrese RUT Empresa: " + usuario2.getRutEmpresa());
+
+        Usuario usuario3 = new Usuario();
+
+        usuario3.setNombreUsuario("Emilia");
+        usuario3.setApellido1("Cortez");
+        usuario3.setApellido2("Garrido");
+        usuario3.setFechaDeNacimientoUsuario("19/07/1982");
+        usuario3.setRunUsuario("16743158-9");
+        usuario3.setRutEmpresa("12345678-9");
+
+        System.out.println("Ingrese Nombre: " + usuario3.getNombreUsuario());
+        System.out.println("Ingrese Apellido Paterno: " + usuario3.getApellido1());
+        System.out.println("Ingrese Apellido Materno: " + usuario3.getApellido2());
+        System.out.println("Ingrese Fecha de Nacimiento: " + usuario3.getFechaDeNacimientoUsuario());
+        System.out.println("Ingrese RUN: " + usuario3.getRunUsuario());
+        System.out.println("Ingrese RUT Empresa: " + usuario3.getRutEmpresa());
+
+        Usuario usuario4 = new Usuario();
+
+        usuario4.setNombreUsuario("Sebastián");
+        usuario4.setApellido1("Zapata");
+        usuario4.setApellido2("Cruz");
+        usuario4.setFechaDeNacimientoUsuario("12/08/1990");
+        usuario4.setRunUsuario("18898635-1");
+        usuario4.setRutEmpresa("12345678-9");
+
+        System.out.println("Ingrese Nombre: " + usuario4.getNombreUsuario());
+        System.out.println("Ingrese Apellido Paterno: " + usuario4.getApellido1());
+        System.out.println("Ingrese Apellido Materno: " + usuario4.getApellido2());
+        System.out.println("Ingrese Fecha de Nacimiento: " + usuario4.getFechaDeNacimientoUsuario());
+        System.out.println("Ingrese RUN: " + usuario4.getRunUsuario());
+        System.out.println("Ingrese RUT Empresa: " + usuario4.getRutEmpresa());
+
+        Usuario usuario5 = new Usuario();
+
+        usuario5.setNombreUsuario("Jose");
+        usuario5.setApellido1("Dominguez");
+        usuario5.setApellido2("Aguayo");
+        usuario5.setFechaDeNacimientoUsuario("11/09/1995");
+        usuario5.setRunUsuario("19754610-5");
+        usuario5.setRutEmpresa("12345678-9");
+
+        System.out.println("Ingrese Nombre: " + usuario5.getNombreUsuario());
+        System.out.println("Ingrese Apellido Paterno: " + usuario5.getApellido1());
+        System.out.println("Ingrese Apellido Materno: " + usuario5.getApellido2());
+        System.out.println("Ingrese Fecha de Nacimiento: " + usuario5.getFechaDeNacimientoUsuario());
+        System.out.println("Ingrese RUN: " + usuario5.getRunUsuario());
+        System.out.println("Ingrese RUT Empresa: " + usuario5.getRutEmpresa());
 
         boolean salir = false;
         int opcion;
@@ -180,12 +244,13 @@ public class Principal {
         Capacitacion cap = new Capacitacion();
         //System.out.println("Ingrese ID: ");
         cap.setIdCapacitacion(validarInt("Ingrese ID: "));
+        sc.nextLine();
         System.out.println("Ingrese Rut Empresa: ");
         cap.setRutEmpresa(validarRun(sc.nextLine(),"RUT"));
         System.out.println("Ingrese fecha: ");
         cap.setDiaCapacitacion(validacionFecha(sc.nextLine(), true));
         System.out.println("Ingrese Hora: ");
-        cap.setHoraCapacitacion(sc.nextLine());
+        cap.setHoraCapacitacion(validarHora(sc.nextLine()));
         System.out.println("Ingrese Lugar: ");
         cap.setLugarCapacitacion(cadenaMinimoMaximoLenght(sc.nextLine(),10,50,
                 "Ingrese Lugar válido: ",true));
@@ -317,6 +382,27 @@ public class Principal {
             }
         }
         return cadena;
+    }
+
+    public static String validarHora(String horaCadena){
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("HH:mm");
+        LocalTime hora= null;
+        boolean validar = false;
+        while (!validar) {
+            try {
+                hora = LocalTime.parse(horaCadena, formato);
+                horaCadena = String.valueOf(hora);
+                validar = true;
+            } catch (DateTimeParseException e) {
+                System.out.println("<(¬_¬)> Formato correcto HH:mm, ejemplo: 23:59");
+                System.out.println("Ingrese una hora correcta: ");
+                horaCadena = sc.nextLine();
+                validar = false;
+            }
+        }
+        System.out.println(hora);
+        System.out.println(horaCadena);
+        return  horaCadena;
     }
 
     public boolean validacionIdRevision (String idRevision){
