@@ -8,6 +8,17 @@ public class Profesional extends Usuario{
     private String titulo;
     private String fechaDeIngreso;
 
+
+    /**
+     * estos son los parametros para el consturctor que herencia de la clase Usuario
+     * @param nombre
+     * @param apellido1
+     * @param apellido2
+     * @param fechaNacimiento
+     * @param run
+     * @param titulo
+     * @param fechaDeIngreso
+     */
     public Profesional(String nombre, String apellido1, String apellido2, String fechaNacimiento, int run, String titulo, String fechaDeIngreso) {
         super(nombre, apellido1, apellido2, fechaNacimiento, run);
         this.titulo = titulo;

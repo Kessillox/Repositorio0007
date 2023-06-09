@@ -1,5 +1,10 @@
 package sprint;
 
+/**
+ * @autor Los Computines, Genesis Peña, Nazly Soto, Sergio Plaza, Livio Gutierrez
+ * @version 1
+ * var sc, nombreUser, apellido1User, apellido2User, fechaNacimientoUser, runUser, nombreEmpresa, giroEmpresa, rut, tlfRepresentante, direccionEmpresa, comunaEmpresa, res, op, eliminar, titulo, fechaIngreso, area, experienciaPrevia
+ */
 
 
 import sprint.entity.Usuario;
@@ -37,6 +42,7 @@ public class Principal {
         //VARIABLES
         int res=0;
         int op = 0;
+        int eliminar = 0;
 
         //VARIABLES PROFESIONAL
         String titulo = "";
@@ -66,7 +72,7 @@ public class Principal {
             sc.nextLine(); //nextLine lo agregue para que no salte siguiente linea
 
             do {
-                if (op > 8) {
+                if (op > 7) {
                     System.out.println();
                     System.out.println("Opcion ingresada incorrecta, por favor ingrese una opcion valida");
                     op = sc.nextInt();
@@ -202,6 +208,7 @@ public class Principal {
                             Profesional profesional = new Profesional(nombreUser, apellido1User, apellido2User, fechaNacimientoUser, runUser, titulo, fechaIngreso);
                             //almacenando profecional
                             contenedor.almacenarProfesional(profesional);
+                            contenedor.almacenarUsuarios(profesional);
 
                             System.out.println("¿Desea Registrar otro Profesional?");
                             System.out.println("1. Si");
@@ -319,28 +326,23 @@ public class Principal {
                         break;
                     case 7:
                         System.out.println("------Eliminar Usuario------");
-
-                        break;
-                    case 8:
-                        System.out.println("------Salir------");
+                        System.out.println("Digite el rut del usuario que quiera eliminar");
+                        eliminar=sc.nextInt();
+                        contenedor.eliminarUsuario(eliminar);
 
                         break;
                 }
+            } while (op > 7);
 
-            } while (op > 8);
-
-
-
-
-            System.out.println("¿Desea Registrar un perfiles?");
-            System.out.println("1. Si");
+            System.out.println("¿Desea Salir?");
+            System.out.println("1. si");
             System.out.println("2. No");
             res=sc.nextInt();
             while (res>2){
-                System.out.println("Por favor ingresar una opcion valida");
+                System.out.println("Por favor ingresar una opción valida");
                 res=sc.nextInt();
             }
-        }while (res==1);
+        }while (res==2);
 
     }
 }
