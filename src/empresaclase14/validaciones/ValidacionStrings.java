@@ -14,7 +14,6 @@ public class ValidacionStrings {
         }
     }
 
-<<<<<<< HEAD
     // USO SOLO LETRAS
     public static boolean esSoloLetras(String str) {
         for (int i = 0; i < str.length(); i++) {
@@ -23,7 +22,6 @@ public class ValidacionStrings {
                 return true;
             }
         }
-
         return false;
     }
 
@@ -85,7 +83,6 @@ public class ValidacionStrings {
             return false;
         }
     }
-=======
     public static boolean validarDia(String dia){
         switch (dia.toLowerCase()) {
             case "lunes":
@@ -105,6 +102,4 @@ public class ValidacionStrings {
 
         }
     }
-
->>>>>>> 7fae7626fa35a1b5ffa6b14cca050fcf39b2cc9a
 }
