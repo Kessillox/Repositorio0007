@@ -77,35 +77,51 @@ public class Principal {
                     op = sc.nextInt();
                 }
                 switch (op) {
+
                     case 1:
-                        System.out.println("------Usuario------");
+                        do{
+                            System.out.println("------Usuario------");
 
-                        System.out.println("favor ingrese un nombre entre 3 y 20 caracteres.");
-                        nombreUser = sc.nextLine();
-
-                        while (nombreUser.length() < 3 || nombreUser.length() > 20) {
-                            System.out.println("debe ser mayor a 3 y menor a 20");
+                            // validaciones usuario
+                            System.out.println("favor ingrese un nombre entre 3 y 20 caracteres.");
                             nombreUser = sc.nextLine();
-                        }
 
-                        System.out.println("Favor ingrese su fecha de nacimiento en el sig formato DD/MM/AAAA");
-                        fechaNacimientoUser = sc.nextLine();
-                        while (fechaNacimientoUser.isEmpty() || fechaNacimientoUser == null) {
-                            System.out.println("Favor ingrese una fecha valida con el siguiente formato DD/MM/AAAA");
+                            while (nombreUser.length() < 3 || nombreUser.length() > 20) {
+                                System.out.println("debe ser mayor a 3 y menor a 20");
+                                nombreUser = sc.nextLine();
+                            }
+
+                            System.out.println("Favor ingrese su fecha de nacimiento en el sig formato DD/MM/AAAA");
                             fechaNacimientoUser = sc.nextLine();
-                        }
+                            while (fechaNacimientoUser.isEmpty() || fechaNacimientoUser == null) {
+                                System.out.println("Favor ingrese una fecha valida con el siguiente formato DD/MM/AAAA");
+                                fechaNacimientoUser = sc.nextLine();
+                            }
 
-                        System.out.println("Favor ingrese su RUN, el cual debe ir sin punto, ni guion, ni digito verificador");
-                        runUser = sc.nextInt();
-                        while (runUser > 99999999) {
-                            System.out.println("Favor ingrese un run valido, sin puntos ni guion ni digito verificador");
+                            System.out.println("Favor ingrese su RUN, el cual debe ir sin punto, ni guion, ni digito verificador");
                             runUser = sc.nextInt();
-                        }
+                            while (runUser > 99999999) {
+                                System.out.println("Favor ingrese un run valido, sin puntos ni guion ni digito verificador");
+                                runUser = sc.nextInt();
+                            }
 
+                            System.out.println("¿Desea Registrar otro usuario?");
+                            System.out.println("1. Si");
+                            System.out.println("2. No");
+                            res=sc.nextInt();
+
+                            while (res > 2){
+                                System.out.println("Por favor ingresar una opcion valida");
+                                res=sc.nextInt();
+                            }
+
+                        } while (res == 1);
 
                         break;
                     case 2:
+
                         System.out.println("------Perfil Cliente------");
+                        //validaciones cliente
                         System.out.println("favor ingrese un nombre entre 3 y 20 caracteres.");
                         nombreUser = sc.nextLine();
 
@@ -126,13 +142,7 @@ public class Principal {
                             System.out.println("Favor ingrese un run valido, sin puntos ni guion ni digito verificador");
                             runUser = sc.nextInt();
                         }
-                    /*String nombreEmpresa = "";
-                    String giroEmpresa = "";
-                    int rut = 0 ;
-                    String tlfRepresentante = "";
-                    String direccionEmpresa = "";
-                    String comunaEmpresa = "";*/
-
+                        //validaciones empresa
                         System.out.println("Favor ingrese el nombre de la empresa");
                         nombreEmpresa = sc.nextLine();
                         while (nombreEmpresa.length() < 5 || nombreEmpresa.length() > 30) {
@@ -157,6 +167,21 @@ public class Principal {
                             System.out.println("Favor ingrese un telefono valido");
                             tlfRepresentante = sc.nextLine();
                         }
+
+                        System.out.println("Favor ingrese la direccion de la empresa");
+                        direccionEmpresa = sc.nextLine();
+                        while (direccionEmpresa.length() < 5 || direccionEmpresa.length() > 70) {
+                            System.out.println("favor ingrese un un nombre valido de mas de 5 caracteres y menos de 70.");
+                            direccionEmpresa = sc.nextLine();
+                        }
+                        System.out.println("Favor ingrese la comuna en la que se encuentra la empresa");
+                        comunaEmpresa = sc.nextLine();
+                        while (comunaEmpresa.length() < 5 || comunaEmpresa.length() > 50) {
+                            System.out.println("favor ingrese un un nombre valido de mas de 5 caracteres y menos de 50.");
+                            comunaEmpresa = sc.nextLine();
+                        }
+                        // apellido 1 y 2 faltan
+
                         break;
                     case 3:
 
