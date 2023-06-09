@@ -169,7 +169,7 @@ public class Principal {
                             System.out.println("Ingrese su nombre");
                             nombreUser = scP.nextLine();
                             while (nombreUser.length() < 3 || nombreUser.length() > 20) {
-                                System.out.println("debe ser mayor a 3 y menor a 20");
+                                System.out.println("debe ser mayor a 3 caracteres y menor a 20 caracteres");
                                 nombreUser = sc.nextLine();
                             }
 
@@ -192,7 +192,7 @@ public class Principal {
                             System.out.println("Ingrese su Titulo");
                             titulo = scP.next();
                             while (titulo.length() < 3 || titulo.length() > 50) {
-                                System.out.println("debe ser mayor a 3 y menor a 20");
+                                System.out.println("debe ser mayor a 3 caracteres y menor a 20 caracteres");
                                 titulo = sc.nextLine();
                             }
                             System.out.println("Ingrese su Fecha de Ingreso");//Falta la validacion y que lo entrege en formato DD/MM/AAAA
@@ -227,7 +227,7 @@ public class Principal {
                             System.out.println("Ingrese su nombre");
                             nombreUser = scA.nextLine();
                             while (nombreUser.length() < 3 || nombreUser.length() > 20) {
-                                System.out.println("debe ser mayor a 3 y menor a 20");
+                                System.out.println("debe ser mayor a 3 caracteres y menor a 20 caracteres");
                                 nombreUser = sc.nextLine();
                             }
 
@@ -250,7 +250,7 @@ public class Principal {
                             System.out.println("Ingrese su area");
                             area = scA.next();
                             while (area.length() < 3 || area.length() > 20) {
-                                System.out.println("debe ser mayor a 3 y menor a 20");
+                                System.out.println("debe ser mayor a 3 caracteres y menor a 20 caracteres");
                                 area = sc.nextLine();
                             }
 
