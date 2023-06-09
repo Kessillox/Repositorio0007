@@ -73,7 +73,8 @@ public class Principal {
         System.out.println("---- Agregar Cliente ----");
         Cliente cli = new Cliente();
         System.out.println("Nombre Usuario: ");
-        cli.setNombreUsuario(sc.nextLine());
+        cli.setNombreUsuario(cadenaMinimoMaximoLenght(sc.nextLine(),10,50,
+                "Ingrese un nombre valido: "));
         System.out.println("Apellido Paterno: ");
         cli.setApellido1(sc.nextLine());
         System.out.println("Apellido Materno: ");
@@ -216,6 +217,20 @@ public class Principal {
         return sc.nextLine();
     }
 
+    /**********Validaciones***********/
+    private static String cadenaMinimoMaximoLenght (String cadena, int min, int max,String mensajeError) {
+        while (cadena.length() < min || cadena.length() > max) {
+            if (cadena.length() < min) {
+                System.out.println("Como mínimo " + min + " caracteres.");
+            } else {
+                System.out.println("Como máximo " + max + " caracteres.");
+            }
+            System.out.println(mensajeError);
+
+            cadena = sc.nextLine();
+        }
+        return cadena;
+    }
 
     /*
     VALIDACIONES REVISION Y VISITA TERRENO (En progreso aún)
@@ -223,14 +238,17 @@ public class Principal {
      */
 
 
-    public boolean validacionIdRevision(String idRevision) {
-        try {
-            Integer.parseInt(idRevision);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
+        public boolean validacionIdRevision (String idRevision){
+            try {
+                Integer.parseInt(idRevision);
+                return true;
+            } catch (NumberFormatException e) {
+                return false;
+            }
         }
-    }
+
+
+
 
     public boolean validacionIdVisita(String idVisitaTerreno) {
         try {
@@ -334,3 +352,4 @@ public class Principal {
         return true;
     }
 }
+
