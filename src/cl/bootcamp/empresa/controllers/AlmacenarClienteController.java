@@ -47,7 +47,6 @@ public class AlmacenarClienteController {
         }
 
         System.out.println("(obligatorio) Ingresar fecha de nacimiento con formato dd/MM/yyyy: ");
-
         while (true) {
             SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
             try {

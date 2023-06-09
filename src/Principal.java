@@ -1,3 +1,4 @@
+import cl.bootcamp.empresa.controllers.AlmacenarAdministrativoController;
 import cl.bootcamp.empresa.controllers.AlmacenarClienteController;
 import cl.bootcamp.empresa.controllers.AlmacenarProfesionalController;
 import cl.bootcamp.empresa.models.Contenedor;
@@ -24,6 +25,8 @@ public class Principal {
             System.out.println("opción 7: Listar por tipo de usuario");
             System.out.println("opción 8: Listar Capacitaciones");
             System.out.println("opción 9: Salir");
+            System.out.println("============================================================");
+            System.out.println("opción: ");
 
             opcionMenu = sc.nextInt();
             switch (opcionMenu) {
@@ -39,6 +42,8 @@ public class Principal {
                     break;
                 case 3:
                     System.out.println("=== Almacenar Administrativo ===");
+                    AlmacenarAdministrativoController almacenarAdministrativoController = new AlmacenarAdministrativoController();
+                    contenedor.almacenarUsuario(almacenarAdministrativoController.almacenarAdministrativoController());
                     break;
                 case 4:
                     System.out.println("=== Almacenar Capacitación ===");
