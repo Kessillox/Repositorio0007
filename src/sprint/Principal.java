@@ -157,8 +157,6 @@ public class Principal {
 
                         contenedor.almacenarUsuarios(cliente);
                         contenedor.alamacenaCliente(cliente);
-
-
                         break;
                     case 2:
                         do {
