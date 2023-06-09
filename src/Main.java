@@ -180,15 +180,15 @@ public class Main {
 
 
                     case 3: // Administrativo
-                        System.out.println("Bienvenido al registro de Profesionales");
+                        System.out.println("Bienvenido al registro de Administrativo");
                         Usuario usuarioAdministrativo = almacenarUsuario(entrada);
 
                         do {
-                            System.out.println("Ingrese título del profesional");
+                            System.out.println("Ingrese area de administración");
                             area = entrada.next();
                         } while (!validarNombreEmpresa(area));
                         do {
-                            System.out.println("Ingresa la fecha de ingreso:");
+                            System.out.println("Ingrese experiencia previa");
                             experienciaPrevia = entrada.next();
                         } while (!validarFecha(experienciaPrevia));
 
