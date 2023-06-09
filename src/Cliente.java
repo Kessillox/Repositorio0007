@@ -1,8 +1,7 @@
-public class Cliente {
+public class Cliente extends Usuario{
     private String rutEmpresa;
+    private String giroEmpresa;
     private String nombreEmpresa;
-    private String runRepresentanteLegal;
-    private String nombreRepresentanteLegal;
     private String telefonoRepresentanteLegal;
     private String direccion;
     private String comuna;
@@ -11,9 +10,8 @@ public class Cliente {
     public String toString() {
         return "Cliente{" +
                 "rutEmpresa='" + rutEmpresa + '\'' +
+                ", giroEmpresa='" + giroEmpresa + '\'' +
                 ", nombreEmpresa='" + nombreEmpresa + '\'' +
-                ", runRepresentanteLegal='" + runRepresentanteLegal + '\'' +
-                ", nombreRepresentanteLegal='" + nombreRepresentanteLegal + '\'' +
                 ", telefonoRepresentanteLegal='" + telefonoRepresentanteLegal + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", comuna='" + comuna + '\'' +
@@ -24,15 +22,33 @@ public class Cliente {
     }
 
     public Cliente(String rutEmpresa, String nombreEmpresa,
-                   String runRepresentanteLegal, String nombreRepresentanteLegal,
-                   String telefonoRepresentanteLegal, String direccion, String comuna) {
+                   String telefonoRepresentanteLegal, String direccion, String comuna,String giroEmpresa) {
         this.rutEmpresa = rutEmpresa;
         this.nombreEmpresa = nombreEmpresa;
-        this.runRepresentanteLegal = runRepresentanteLegal;
-        this.nombreRepresentanteLegal = nombreRepresentanteLegal;
         this.telefonoRepresentanteLegal = telefonoRepresentanteLegal;
         this.direccion = direccion;
         this.comuna = comuna;
+        this.giroEmpresa= giroEmpresa;
+    }
+
+    public Cliente(String nombreUsuario, String fechaDeNacimientoUsuario, String runUsuario,
+                   String rutEmpresa, String nombreEmpresa, String telefonoRepresentanteLegal,
+                   String direccion, String comuna,String giroEmpresa) {
+        super(nombreUsuario, fechaDeNacimientoUsuario, runUsuario);
+        this.rutEmpresa = rutEmpresa;
+        this.nombreEmpresa = nombreEmpresa;
+        this.telefonoRepresentanteLegal = telefonoRepresentanteLegal;
+        this.direccion = direccion;
+        this.comuna = comuna;
+        this.giroEmpresa= giroEmpresa;
+    }
+
+    public String getGiroEmpresa() {
+        return giroEmpresa;
+    }
+
+    public void setGiroEmpresa(String giroEmpresa) {
+        this.giroEmpresa = giroEmpresa;
     }
 
     public String getRutEmpresa() {
@@ -51,21 +67,6 @@ public class Cliente {
         this.nombreEmpresa = nombreEmpresa;
     }
 
-    public String getRunRepresentanteLegal() {
-        return runRepresentanteLegal;
-    }
-
-    public void setRunRepresentanteLegal(String runRepresentanteLegal) {
-        this.runRepresentanteLegal = runRepresentanteLegal;
-    }
-
-    public String getNombreRepresentanteLegal() {
-        return nombreRepresentanteLegal;
-    }
-
-    public void setNombreRepresentanteLegal(String nombreRepresentanteLegal) {
-        this.nombreRepresentanteLegal = nombreRepresentanteLegal;
-    }
 
     public String getTelefonoRepresentanteLegal() {
         return telefonoRepresentanteLegal;
@@ -91,9 +92,9 @@ public class Cliente {
         this.comuna = comuna;
     }
 
-    public String obtenerNombre(){
-        String cadena = "El nombre es: "+getNombreEmpresa()+
-                "\nEl nombre del representante legal es: "+getNombreRepresentanteLegal();
-        return cadena;
+    @Override
+    public void analizarUsuario() {
+        super.analizarUsuario();
+        System.out.println(this.getDireccion()+" "+this.getComuna());
     }
 }

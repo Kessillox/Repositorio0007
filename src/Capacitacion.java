@@ -1,7 +1,7 @@
 
 public class Capacitacion {
     private String idCapacitacion;
-    private String rutCliente;
+    private String rutEmpresa;
     private String diaCapacitacion;
     private String horaCapacitacion;
     private String lugarCapacitacion;
@@ -12,7 +12,7 @@ public class Capacitacion {
     public String toString() {
         return "Capacitacion{" +
                 "idCapacitacion='" + idCapacitacion + '\'' +
-                ", rutCliente='" + rutCliente + '\'' +
+                ", rutCliente='" + rutEmpresa + '\'' +
                 ", diaCapacitacion='" + diaCapacitacion + '\'' +
                 ", horaCapacitacion='" + horaCapacitacion + '\'' +
                 ", lugarCapacitacion='" + lugarCapacitacion + '\'' +
@@ -24,12 +24,12 @@ public class Capacitacion {
     public Capacitacion() {
     }
 
-    public Capacitacion(String idCapacitacion, String rutCliente,
+    public Capacitacion(String idCapacitacion, String rutEmpresa,
                         String diaCapacitacion, String horaCapacitacion,
                         String lugarCapacitacion, int duracionCapacitacion,
                         int cantidadDeAsistentes) {
         this.idCapacitacion = idCapacitacion;
-        this.rutCliente = rutCliente;
+        this.rutEmpresa = rutEmpresa;
         this.diaCapacitacion = diaCapacitacion;
         this.horaCapacitacion = horaCapacitacion;
         this.lugarCapacitacion = lugarCapacitacion;
@@ -46,11 +46,19 @@ public class Capacitacion {
     }
 
     public String getRutCliente() {
-        return rutCliente;
+        return rutEmpresa;
     }
 
     public void setRutCliente(String rutCliente) {
-        this.rutCliente = rutCliente;
+        this.rutEmpresa = rutCliente;
+    }
+
+    public String getRutEmpresa() {
+        return rutEmpresa;
+    }
+
+    public void setRutEmpresa(String rutEmpresa) {
+        this.rutEmpresa = rutEmpresa;
     }
 
     public String getDiaCapacitacion() {
@@ -92,4 +100,10 @@ public class Capacitacion {
     public void setCantidadDeAsistentes(int cantidadDeAsistentes) {
         this.cantidadDeAsistentes = cantidadDeAsistentes;
     }
+    public void mostrarDetalle(){
+        System.out.println("La capacitación sera en "+this.getLugarCapacitacion()
+                +" a las "+this.getHoraCapacitacion()+ " del día "+this.getDiaCapacitacion()
+                + " y durará "+ this.getDuracionCapacitacion()+" minutos" );
+    }
+
 }
