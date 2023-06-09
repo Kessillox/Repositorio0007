@@ -163,7 +163,7 @@ public class App {
             }
             case 4 -> {
                 Capacitacion nuevaCapacitacion = new Capacitacion();
-                int idCap=0;
+
                 int rut = 0;
                 String diaCap ="";
                 String lugar ="";
@@ -171,9 +171,9 @@ public class App {
 
 
 
-                System.out.println("Ingrese Numero interno de capacitacion");
-                idCap = scan.nextInt();
-                nuevaCapacitacion.setIdentificador(idCap);
+              // System.out.println("Ingrese Numero interno de capacitacion");
+              // nuevaCapacitacion.setIdentificador(Integer.parseInt(scan.next()));
+
 
                 while( rut == 0 ){
                     System.out.println("Ingrese rut de la empresa");
