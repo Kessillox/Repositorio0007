@@ -46,7 +46,7 @@ public class Contenedor {
     public void eliminarUsuario(String run) {
         for (int i = 0; i < asesorias.size(); i++) {
             Usuario u = (Usuario) asesorias.get(i);
-            if (u.getRun() == run) {
+            if (u.getRun().equals(run)) {
                 asesorias.remove(u);
                 System.out.println("Usuario eliminado");
                 break;

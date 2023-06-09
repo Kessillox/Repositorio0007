@@ -53,9 +53,13 @@ public class Principal {
                     break;
                 case 5:
                     System.out.println("=== Eliminar Usuario ===");
+                    String run = sc.nextLine(); // consumir el salto de línea
+                    run = sc.nextLine();
+                    contenedor.eliminarUsuario(run);
                     break;
                 case 6:
                     System.out.println("=== Listar Usuarios ===");
+                    contenedor.listaUsuario();
                     break;
                 case 7:
                     System.out.println("=== Listar por tipo de usuario ===");
