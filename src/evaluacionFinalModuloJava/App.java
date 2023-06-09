@@ -50,36 +50,65 @@ public class App {
             case 1 -> {
                 Cliente nuevoCliente = new Cliente();
                 String nombre="";
-                while(nombre.length() < 10  || nombre.length() >= 50){
+                String apellido1="";
+                String apellido2="";
+                int rut = 100000000;
+                String telefono ="";
+                String direccion="";
+                String comuna ="";
+                while(nombre.length() < 5  || nombre.length() >= 30){
 
                     System.out.println("Ingrese el nombre del cliente");
                     nombre = (scan.nextLine());
                     nuevoCliente.setNombre(nombre);
                 }
-                System.out.println("Ingrese el primer apellido");
-                nuevoCliente.setApellido1(scan.nextLine());
-                System.out.println("Ingrese el segundo apellido");
-                nuevoCliente.setApellido2(scan.nextLine());
+                while( apellido1.length() < 5 || apellido1.length() >=30){
+                    System.out.println("Ingrese el primer apellido");
+                    apellido1 = scan.nextLine();
+                    nuevoCliente.setApellido1(apellido1);
+                }
+                while( apellido2.length() < 5 || apellido2.length() >=30){
+                    System.out.println("Ingrese el segundo apellido");
+                    apellido2 = scan.nextLine();
+                    nuevoCliente.setApellido1(apellido2);
+                }
                 System.out.println("Ingrese la fecha de nacimiento del cliente \n Formato: año-mes-dia");
                 nuevoCliente.setFechaNacimiento(LocalDate.parse(scan.nextLine()));
-                System.out.println("Ingrese el run del cliente");
-                nuevoCliente.setRun(scan.nextLine());
+                while( rut > 99999999){
+                    System.out.println("Ingrese el run del cliente");
+                    rut = (scan.nextInt());
+                    nuevoCliente.setRun(String.valueOf(rut));
+                }
+                scan.nextLine();
                 System.out.println("Ingrese el nombre de la empresa");
                 nuevoCliente.setNombreEmpresa(scan.nextLine());
                 System.out.println("Ingrese el giro de la empresa");
                 nuevoCliente.setGiroEmpresa(scan.nextLine());
                 System.out.println("Ingrese el rut de la empresa");
                 nuevoCliente.setRutEmpresa(scan.nextLine());
-                System.out.println("Ingrese el telefono del representante de la empresa");
-                nuevoCliente.setTelefonoRepresentante(scan.nextLine());
-                System.out.println("Ingrese la direccion de la empresa");
-                nuevoCliente.setDireccionEmpresa(scan.nextLine());
-                System.out.println("Ingrese la comuna de la empresa");
-                nuevoCliente.setComunaEmpresa(scan.nextLine());
+                while( telefono.isEmpty()){
+                    System.out.println("Ingrese el telefono del representante de la empresa");
+                    telefono = scan.nextLine();
+                    nuevoCliente.setTelefonoRepresentante(telefono);
+                }
+                while(direccion.length() > 70 ){
+                    System.out.println("Ingrese la direccion de la empresa");
+                    direccion = scan.nextLine();
+                    nuevoCliente.setDireccionEmpresa(direccion);
+                }
+
+                while(comuna.length() > 50){
+                    System.out.println("Ingrese la comuna de la empresa");
+                    comuna = scan.nextLine();
+                    nuevoCliente.setComunaEmpresa(comuna);
+                }
+
                 contenedor.almacenarCliente(nuevoCliente);
                 System.out.println("Cliente añadido");
             }
             case 2 -> {
+                String titulo="";
+
 //                Profesional nuevoProfesional = new Profesional("lala","mimi","momo",LocalDate.parse("2000-09-09"),"28374982","prog",LocalDate.parse("1990-09-12"));
                 Profesional nuevoProfesional = new Profesional();
                 System.out.println("Ingrese el nombre del profesional");
@@ -92,8 +121,12 @@ public class App {
                 nuevoProfesional.setFechaNacimiento(LocalDate.parse(scan.nextLine()));
                 System.out.println("Ingrese el run del profesional");
                 nuevoProfesional.setRun(scan.nextLine());
-                System.out.println("Ingrese el titulo del profesional");
-                nuevoProfesional.setTitulo(scan.nextLine());
+                while(titulo.length() < 10 || titulo.length() > 50){
+                    System.out.println("Ingrese el titulo del profesional");
+                    titulo = scan.nextLine();
+                    nuevoProfesional.setTitulo(titulo);
+                }
+
                 System.out.println("Ingrese la fecha de ingreso del profesional \n Formato: año-mes-dia");
                 nuevoProfesional.setFechaIngreso(LocalDate.parse(scan.nextLine()));
                 contenedor.almacenarProfesional(nuevoProfesional);
@@ -101,6 +134,8 @@ public class App {
             }
             case 3 -> {
 //                Administrativo nuevoAdministrativo = new Administrativo("nehemias","mimi","momo",LocalDate.parse("2000-09-09"),"1234","prog","ahdkjhakjsd");
+               String area ="";
+               String exp = "";
                 Administrativo nuevoAdministrativo = new Administrativo();
                 System.out.println("Ingrese el nombre del administrativo");
                 nuevoAdministrativo.setNombre(scan.nextLine());
@@ -112,20 +147,41 @@ public class App {
                 nuevoAdministrativo.setFechaNacimiento(LocalDate.parse(scan.nextLine()));
                 System.out.println("Ingrese el run del administrativo");
                 nuevoAdministrativo.setRun(scan.nextLine());
-                System.out.println("Ingrese el area del administrativo");
-                nuevoAdministrativo.setArea(scan.nextLine());
-                System.out.println("Ingrese la experiencia del administrativo");
-                nuevoAdministrativo.setExperiencia(scan.nextLine());
+                while(area.length() < 5 || area.length() > 20 ) {
+                    System.out.println("Ingrese el area del administrativo");
+                    area = scan.nextLine();
+                    nuevoAdministrativo.setArea(area);
+                }
+                while( exp.isEmpty() || exp.length() > 100){
+                    System.out.println("Ingrese la experiencia del administrativo");
+                    exp=scan.nextLine();
+                    nuevoAdministrativo.setExperiencia(exp);
+                }
+
                 contenedor.almacenarAdministrativo(nuevoAdministrativo);
                 System.out.println("Administrativo añadido");
             }
             case 4 -> {
                 Capacitacion nuevaCapacitacion = new Capacitacion();
-                nuevaCapacitacion.setIdentificador(1);
-                System.out.println("Ingrese rut de la empresa");
-                nuevaCapacitacion.setRut(Integer.parseInt(scan.nextLine())); //todo: reemplazo tipo de dato en capacitacion
-                System.out.println("Ingrese dia de la capacitacion \n Formato: (Lunes - Domingo) escrito en palabras");
-                nuevaCapacitacion.setDia(scan.nextLine());
+                int idCap=0;
+                int rut = 0;
+                String diaCap =""
+                System.out.println("Ingrese Numero interno de capacitacion");
+                idCap = scan.nextInt();
+                nuevaCapacitacion.setIdentificador(idCap);
+                while( rut == 0){
+                    System.out.println("Ingrese rut de la empresa");
+                    rut = Integer.parseInt(scan.nextLine());
+                    nuevaCapacitacion.setRut(rut);
+                    //todo: reemplazo tipo de dato en capacitacion
+
+                }
+                while (!(diaCap.equalsIgnoreCase("lunes") || diaCap.equalsIgnoreCase("martes") || diaCap.equalsIgnoreCase("miercoles") || diaCap.equalsIgnoreCase("jueves") || diaCap.equalsIgnoreCase("viernes") || diaCap.equalsIgnoreCase("sabado") || diaCap.equalsIgnoreCase("domingo"))) {
+                    System.out.println("Ingrese dia de la capacitacion \n Formato: (Lunes - Domingo) escrito en palabras");
+                    diaCap = scan.nextLine();
+                    nuevaCapacitacion.setDia(diaCap);
+                }
+
                 System.out.println("Ingrese hora de la capacitacion \n Formato: (00:00) hora:minuto");
                 nuevaCapacitacion.setHora(LocalTime.parse(scan.nextLine()));
                 System.out.println("Ingrese lugar de la capacitacion");
