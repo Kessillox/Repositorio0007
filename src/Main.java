@@ -269,22 +269,31 @@ public class Main {
                             System.out.println("Ingrese el ID de Capacitación");
                             idCapacitacion = entrada.nextInt();
                         }while(validarId(idCapacitacion));
+
+
                         do {
-                            System.out.println("Ingresa el rut de la empresa");
+                            System.out.println("Ingrese el RUT de la empresa");
+
+                            while (!entrada.hasNextInt()) {
+                                System.out.println("RUT de la empresa ingresado incorrectamente. Por favor, ingrese solo números.");
+                                entrada.next(); // Leer y descartar el token no válido
+                            }
                             rutEmpresaCapacitacion = entrada.nextInt();
-                        }while(!validarRut(rutEmpresaCapacitacion));
+                        } while (!validarRut(rutEmpresaCapacitacion));
+
                         do{
                             System.out.println("Ingrese el día en el que se va a realizar la capacitación");
                             diaCapacitacion = entrada.next();
-                        }while(validarDia(diaCapacitacion));
+                        }while(!validarDia(diaCapacitacion));
                         do {
                             System.out.println("Ingrese la hora en la que se va a realizar la capacitación");
                             horaCapacitacion = entrada.next();
-                        }while(validarHora(horaCapacitacion));
+                        }while(!validarHora(horaCapacitacion));
                         do {
                             System.out.println("Ingresa el lugar donde se va a realizar al capacitación");
                             lugarCapacitacion = entrada.next();
-                        }while(validarLugar(lugarCapacitacion));
+                        }while(!validarLugar(lugarCapacitacion));
+
                         do {
                             System.out.println("Ingresa la duración de la capacitación:");
                             while (!entrada.hasNextInt()) {
@@ -296,7 +305,7 @@ public class Main {
                         do {
                             System.out.println("Ingresa la cantidad de asistentes");
                             cantidadAsistentesCapacitacion = entrada.nextInt();
-                        }while(validarCantidadAsistentes(cantidadAsistentesCapacitacion));
+                        }while(!validarCantidadAsistentes(cantidadAsistentesCapacitacion));
 
                         Capacitacion capacitacion = new Capacitacion(idCapacitacion, rutEmpresaCapacitacion, diaCapacitacion, horaCapacitacion, lugarCapacitacion, duracionCapacitacion, cantidadAsistentesCapacitacion);
                         contenedor.almacenarCapacitacion(capacitacion);
