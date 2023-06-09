@@ -119,7 +119,7 @@ public class Usuario implements IAsesoria {
         System.out.println("Datos \nnombre=" + nombre  +
                 ", apellido1=" + apellido1 +
                 ", apellido2=" + apellido2 +
-                ", fechaNacimiento=" + fechaNacimiento +
+                ", fechaNacimiento=" + getFechaNacimiento() +
                 ", run=" + run);
     }
 }

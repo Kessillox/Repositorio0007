@@ -49,8 +49,13 @@ public class App {
         switch (opcion) {
             case 1 -> {
                 Cliente nuevoCliente = new Cliente();
-                System.out.println("Ingrese el nombre del cliente");
-                nuevoCliente.setNombre(scan.nextLine());
+                String nombre="";
+                while(nombre.length() < 10  || nombre.length() >= 50){
+
+                    System.out.println("Ingrese el nombre del cliente");
+                    nombre = (scan.nextLine());
+                    nuevoCliente.setNombre(nombre);
+                }
                 System.out.println("Ingrese el primer apellido");
                 nuevoCliente.setApellido1(scan.nextLine());
                 System.out.println("Ingrese el segundo apellido");
