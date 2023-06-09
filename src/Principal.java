@@ -173,8 +173,7 @@ public class Principal {
         cli.setGiroEmpresa(sc.nextLine());
         System.out.println("Ingrese RUT: ");
         cli.setRutEmpresa(validarRun(sc.nextLine(),"RUT"));
-        System.out.println("Ingrese Telefono: ");
-        cli.setTelefonoRepresentanteLegal(sc.nextLine());
+        cli.setTelefonoRepresentanteLegal(validarCadenaVacia("Ingrese Teléfono: "));
         System.out.println("Direccion Empresa: ");
         cli.setDireccion(cadenaMinimoMaximoLenght(sc.nextLine(),0,70,
                 "Ingrese Direccion válida: ",false));
@@ -242,20 +241,20 @@ public class Principal {
         sc.nextLine();
         System.out.println("---- Agregar Capacitación ----");
         Capacitacion cap = new Capacitacion();
-        //System.out.println("Ingrese ID: ");
         cap.setIdCapacitacion(validarInt("Ingrese ID: "));
         sc.nextLine();
         System.out.println("Ingrese Rut Empresa: ");
         cap.setRutEmpresa(validarRun(sc.nextLine(),"RUT"));
-        System.out.println("Ingrese fecha: ");
-        cap.setDiaCapacitacion(validacionFecha(sc.nextLine(), true));
+        System.out.println("Ingrese dia (entre Lunes y Domingo): ");
+        cap.setDiaCapacitacion(validaDiaSemana(sc.nextLine()));
         System.out.println("Ingrese Hora: ");
         cap.setHoraCapacitacion(validarHora(sc.nextLine()));
         System.out.println("Ingrese Lugar: ");
         cap.setLugarCapacitacion(cadenaMinimoMaximoLenght(sc.nextLine(),10,50,
                 "Ingrese Lugar válido: ",true));
-        System.out.println("Ingrese Duracion: ");
-        cap.setDuracionCapacitacion(sc.nextInt());
+        cap.setDuracionCapacitacion(validarInt("Ingrese Duracion: "));
+        sc.nextLine();
+        cap.setCantidadDeAsistentes(validaCantAsis());
         contenedor.almacenarCapacitacion(cap);
         System.out.println("Registros agregados correctamente ~(^.^)~");
     }
@@ -268,6 +267,29 @@ public class Principal {
         runn = sc.nextLine();
         contenedor.eliminarUsuario(runn);
         System.out.println("Registros agregados correctamente ┌(u.u)┐ ");
+    }
+
+    private static String validaDiaSemana(String diaSemana){
+        boolean validar = false;
+        while (!validar){
+            switch (diaSemana.toLowerCase()){
+                case "lunes":
+                case "martes":
+                case "miercoles":
+                case "jueves":
+                case "viernes":
+                case "sabado":
+                case "domingo":
+                case "":
+                    validar=true;
+                    break;
+                default:
+                    System.out.println("Por favor ingrese el dia correctamente <(¬_¬)>");
+                    System.out.println("Lunes,Martes,Miercoles....");
+                    diaSemana = sc.nextLine();
+            }
+        }
+        return diaSemana;
     }
 
     private static void listarUsuarios() {
@@ -322,6 +344,21 @@ public class Principal {
     }
 
     /**********Validaciones***********/
+    private static String validarCadenaVacia(String mensaje){
+        String cadena="";
+        while (cadena.isEmpty()){
+            System.out.println(mensaje);
+            cadena=sc.nextLine();
+        }
+        return cadena;
+    }
+    private static int validaCantAsis(){
+        int cantidadAsis = 0;
+        while (!(cantidadAsis >= 1 && cantidadAsis < 1000)){
+            cantidadAsis = validarInt("Ingrese cantidad de asistentes: ");
+        }
+        return cantidadAsis;
+    }
     private static String cadenaMinimoMaximoLenght (String cadena, int min, int max,String mensajeError,boolean obligatorio) {
         if (obligatorio){
             while (cadena.length() < min || cadena.length() > max) {
@@ -400,8 +437,6 @@ public class Principal {
                 validar = false;
             }
         }
-        System.out.println(hora);
-        System.out.println(horaCadena);
         return  horaCadena;
     }
 
@@ -430,6 +465,7 @@ public class Principal {
             return true;
         }
     }
+
 
     public boolean validacionDetalleRevision(String detalle) {
         if (detalle.length() <= 100) {
