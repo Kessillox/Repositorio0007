@@ -1,3 +1,8 @@
+/**
+ * Esta clase actualmente no tiene uso
+ * @author Jonathan Gajardo
+ */
+
 public class Accidente {
     private int id;
     private int rutCliente;

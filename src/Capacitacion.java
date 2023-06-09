@@ -1,6 +1,10 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * @author Jonathan Gajardo
+ */
+
 public class Capacitacion {
     private int identificador;
     private int rutCliente;
@@ -91,6 +95,9 @@ public class Capacitacion {
         this.cantidadAsistentes = cantidadAsistentes;
     }
 
+    /**
+     * Muestra en consola información básica sobre la capacitación.
+     */
     public void mostrarDetalle() {
         System.out.println(String.format("La capacitación será en %s a las %s del día %s, y durará %.1f minutos", this.lugar, this.hora, this.dia, this.duracion));
     }

@@ -1,6 +1,9 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * @author Natalia Perez
+ */
 public class Profesional extends Usuario{
     private String titulo;
     private String fechaIngreso;
@@ -38,6 +41,9 @@ public class Profesional extends Usuario{
         this.fechaIngreso = fechaIngreso;
     }
 
+    /**
+     * Muestra en consola datos básicos del usuario.
+     */
     @Override
     public void analizarUsuario() {
         super.analizarUsuario();

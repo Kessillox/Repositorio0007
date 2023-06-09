@@ -1,6 +1,10 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * @author Natalia Perez
+ */
+
 public class Usuario implements IAsesoria {
     private String nombre;
     private String apellido1;
@@ -69,12 +73,17 @@ public class Usuario implements IAsesoria {
         this.run = run;
     }
 
+    /**
+     * Calcula la edad del usuario tomando el tiempo entre la fecha actual y el atributo "fechaNac", para luego convertirlos a años, finalmente muestra en consola un mensaje con la edad.
+     */
     public void mostrarEdad() {
-        // Se obtiene la edad calculando la diferencia de años entre la fecha actual y la fecha de nacimiento.
         int edad = fechaNac.until(LocalDate.now()).getYears();
         System.out.println("El usuario tiene " + edad + " años");
     }
 
+    /**
+     * Muestra en consola datos básicos del usuario.
+     */
     public void analizarUsuario() {
         System.out.println("Nombre: " + this.getNombre() );
         System.out.println("RUT o RUN: " + this.getRun());

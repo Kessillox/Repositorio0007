@@ -1,3 +1,6 @@
+/**
+ * @author Jonathan Gajardo
+ */
 public class Cliente extends Usuario{
     private String nombreEmpresa;
     private String giroEmpresa;
@@ -78,10 +81,17 @@ public class Cliente extends Usuario{
         this.edad = edad;
     }
 
+    /**
+     * Retorna un String con el nombre completo del cliente.
+     * @return String conformado por el nombre, primer y segundo apellido del cliente.
+     */
     public String obtenerNombre() {
         return String.format("%s %s %s", this.getNombre(), this.getApellido1(), this.getApellido2());
     }
 
+    /**
+     * Muestra en consola datos básicos de la empresa cliente.
+     */
     @Override
     public void analizarUsuario() {
         super.analizarUsuario();

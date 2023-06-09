@@ -1,3 +1,8 @@
+/**
+ * Esta clase actualmente no tiene uso
+ * @author Natalia Perez
+ */
+
 public class Revision {
     private int id;
     private int idVisita;

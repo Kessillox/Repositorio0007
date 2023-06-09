@@ -1,3 +1,8 @@
+
+/**
+ * @author Natalia Perez
+ */
+
 public class Administrativo extends Usuario {
     private String area;
     private String experienciaPrevia;
@@ -35,6 +40,9 @@ public class Administrativo extends Usuario {
         this.experienciaPrevia = experienciaPrevia;
     }
 
+    /**
+     * Muestra en consola datos básicos del usuario.
+     */
     @Override
     public void analizarUsuario() {
         super.analizarUsuario();

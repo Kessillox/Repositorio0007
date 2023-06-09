@@ -1,10 +1,14 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Clase Main donde se crean multiples instancias de Usuario y Capacitacion y se almacenan en dos listas con el propósito de ser usados como datos de prueba.
+ * Se instancia un objeto de la clase Contenedor utilizando como parametros dos listas compuestas por las capacitaciones y usuarios creados anteriormente.
+ * @author Jonathan Gajardo
+ */
 public class Main {
     public static void main(String[] args) {
-        // CLASE MAIN CON DATOS DE PRUEBA
-
+        // DATOS DE PRUEBA
         Usuario usuario1 = new Cliente("Joan", "Perez", "Lopez", "02/01/1995", 17237181, "Juan Enterprise", "Fabricación de lápices", "+569283192", "Calle 1", "Marte City", 28);
         Usuario usuario2 = new Cliente("Joe", "Perez", "Lopez", "02/01/1995", 17237182, "Joan Enterprise", "Fabricación de plumones", "+569283192", "Calle 2", "Moon City", 28);
         Usuario usuario3 = new Cliente("Julian", "Perez", "Lopez", "02/01/1995", 17237183, "Joe Enterprise", "Fabricación de borradores", "+569283192", "Calle 3", "Hell City", 28);

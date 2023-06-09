@@ -1,3 +1,8 @@
+/**
+ * Esta clase actualmente no tiene uso
+ * @author Natalia Perez
+ */
+
 public class VisitaTerreno {
     private int id;
     private int rutCliente;

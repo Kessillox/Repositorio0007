@@ -1,10 +1,15 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+/**
+ * Esta clase almacena una lista con objetos de tipo Usuario y una lista con objetos de tipo Capacitacion.
+ * Posee los métodos para gestionar ambas listas.
+ * @author Jonathan Gajardo
+ */
 
 public class Contenedor {
     private List<Usuario> listaUsuarios;
@@ -39,12 +44,20 @@ public class Contenedor {
         this.listaCapacitaciones = listaCapacitaciones;
     }
 
+    /**
+     * Convierte una fecha LocalDate a un String con formato dd/MM/YYYY
+     * @param fecha
+     * @return String de una fecha en formato dd/MM/YYYY
+     */
     public String convertirFechaAString(LocalDate fecha) {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String fechaString = fecha.format(formato);
         return fechaString;
     }
 
+    /**
+     * Pide datos por consola al usuario, validando que tengan el formato correcto, finalmente crea un objeto de tipo Cliente y lo agrega a su lista "listaUsuarios"
+     */
     public void almacenarCliente() {
         Scanner sc = new Scanner(System.in);
         System.out.println("= = = REGISTRAR CLIENTE = = =");
@@ -145,6 +158,9 @@ public class Contenedor {
         sc.nextLine();
     }
 
+    /**
+     * Pide datos por consola al usuario, validando que tengan el formato correcto, finalmente crea un objeto de tipo Profesional y lo agrega a su lista "listaUsuarios"
+     */
     public void almacenarProfesional() {
         Scanner sc = new Scanner(System.in);
         System.out.println("= = = REGISTRAR PROFESIONAL = = =");
@@ -208,6 +224,9 @@ public class Contenedor {
         sc.nextLine();
     }
 
+    /**
+     * Pide datos por consola al usuario, validando que tengan el formato correcto, finalmente crea un objeto de tipo Administrativo y lo agrega a su lista "listaUsuarios"
+     */
     public void almacenarAdministrativo() {
         Scanner sc = new Scanner(System.in);
         System.out.println("= = = REGISTRAR ADMINISTRATIVO = = =");
@@ -269,6 +288,9 @@ public class Contenedor {
         sc.nextLine();
     }
 
+    /**
+     * Pide datos por consola al usuario, validando que tengan el formato correcto, finalmente crea un objeto de tipo Capacitacion y lo agrega a su lista "listaCapacitaciones"
+     */
     public void almacenarCapacitacion() {
         Scanner sc = new Scanner(System.in);
         System.out.println("= = = REGISTRAR CAPACITACIÓN = = =");
@@ -349,6 +371,10 @@ public class Contenedor {
         sc.nextLine();
     }
 
+    /**
+     * Solicita un texto al usuario, si es equivalente a "salir" termina el bucle sino, convierte el texto a int y verifica si el mismo corresponde a uno los run registrados en clientes
+     * si hay una coincidencia elimina dicho cliente de la lista "listaUsuarios"
+     */
     public void eliminarUsuario() {
         Scanner sc = new Scanner(System.in);
         System.out.println("= = = ELIMINAR USUARIO = = =");
@@ -375,6 +401,9 @@ public class Contenedor {
         }
     }
 
+    /**
+     * Recorre cada elemento de la lista "listaUsuarios" y muestra los datos correspondientes por consola
+     */
     public void listarUsuarios() {
         Scanner sc = new Scanner(System.in);
         System.out.println("= = = LISTA DE USUARIOS = = =");
@@ -390,6 +419,10 @@ public class Contenedor {
         sc.nextLine();
     }
 
+    /**
+     * Filtra según el tipo de usuario recibido por parámetro y muestra los datos correspondientes
+     * @param tipoDeUsuario Tipo de usuario con el que se debe filtrar el listado de usuarios
+     */
     public void listarUsuariosPorTipo(String tipoDeUsuario) {
         Scanner sc = new Scanner(System.in);
         System.out.println("= = = LISTA DE USUARIOS DE TIPO " + tipoDeUsuario + " = = =");
@@ -416,6 +449,10 @@ public class Contenedor {
         sc.nextLine();
     }
 
+    /**
+     * Recorre con un forEach la lista "ListaCapacitaciones", muestra los datos de la capacitación, y en cada ciclo recorre la lista "listaUsuarios" filtrando por Cliente,
+     * busca una coincidencia entre el atributo "rutCliente" de la capacitación y "run" del cliente, si la encuentra también muestra los datos del Cliente
+     */
     public void listarCapacitaciones() {
         Scanner sc = new Scanner(System.in);
         System.out.println("= = = LISTA DE CAPACITACIONES = = =");
