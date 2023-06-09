@@ -43,7 +43,7 @@ public class Contenedor {
             System.out.println(usuario.toString());
         }
     }
-    public void eliminarUsuario(int runUsuario){
+    public void eliminarUsuario(String runUsuario){
         boolean encontrado = false;
         for (int i = 0; i < listaDeUsuarios.size(); i++) {
             Usuario u = (Usuario) listaDeUsuarios.get(i);

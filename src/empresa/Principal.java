@@ -280,15 +280,63 @@ public class Principal {
 
                     break;
                 case 4:
-                    System.out.println("Ingrese el nombre de la capacitación:");
-                    String nombreCapacitacion = sc.next();
-                    System.out.println("Ingrese el RUN del cliente asociado:");
-                    String clienteAsociado = sc.next();
+                    System.out.println("Ingrese ID de la capacitación:");
+                    String idCapacitacion;
+                    do {
+                        idCapacitacion = sc.nextLine().trim();
+                    } while (idCapacitacion.isEmpty());
+
+                    int idCapacitacionInt = Integer.parseInt(idCapacitacion);
+
+                    System.out.println("Ingrese el RUT del cliente (Ejemplo: 72345678-9):");
+                    System.out.println("*Este campo es obligatorio");
+                    String rutClienteCap = sc.nextLine();
+                    while ( !rutClienteCap.matches("[0-9]{7,8}-[0-9kK]")) {
+                        System.out.println("RUT incorrecto. Por favor, ingrese un RUN válido (Ejemplo:72345678-9), sin espacios y que no sea mayor a 99999999");
+                        rutClienteCap = sc.nextLine();
+                    }
+
+
+                    //Agregar validacion dias
+                    // Agregar validacion hora
+
+                    System.out.print("Ingrese el lugar dónde se realizará la capacitación (min 10 y max 70 caracteres): ");
+                    System.out.println("*Este campo es obligatorio");
+                    String lugar = sc.nextLine();
+                    while(lugar.isEmpty() || !lugar.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ\\d\\s]{10,50}")) {
+                        System.out.println("Lugar ingresado de forma incorrecta. Por favor, ingrese un lugar válido y no deje este campo vacío");
+                        lugar = sc.nextLine();
+                    }
+
+                    System.out.print("Ingrese la duración de la capacitación: ");
+                    System.out.println("*Este campo es obligatorio");
+                    String duracion = sc.nextLine();
+                    while(duracion.isEmpty() || !duracion.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ\\d\\s]{1,70}")) {
+                        System.out.println("La duración fue ingresada de forma incorrecta. Por favor, reintentelo y no deje este campo vacío");
+                        duracion = sc.nextLine();
+                    }
+
+                    System.out.print("Ingrese la cantidad de asistentes: ");
+                    int cantidadAsistentes;
+                    while (true) {
+                        String input = sc.nextLine();
+                        try {
+                            cantidadAsistentes = Integer.parseInt(input);
+                            if (cantidadAsistentes >= 1 && cantidadAsistentes < 1000) {
+                                break;
+                            } else {
+                                System.out.println("Cantidad de asistentes no válida. Ingrese un número entero menor que 1000:");
+                            }
+                        } catch (NumberFormatException e) {
+                            System.out.println("Cantidad de asistentes no válida. Ingrese un número entero menor que 1000:");
+                        }
+                    }
+
                     //cont.almacenarCapacitacion(new Capacitacion(nombreCapacitacion, clienteAsociado));
                     break;
                 case 5:
                     System.out.println("Ingrese el RUN del usuario a eliminar:");
-                    int runEliminar = sc.nextInt();
+                    String runEliminar = sc.nextLine();
                     cont.eliminarUsuario(runEliminar);
                     break;
                 case 6:
