@@ -86,6 +86,12 @@ public class Main {
         //Variables de Profesional
         String titulo;
         String fechaDeIngreso;
+
+        //Variables de Administrtivo
+        String area;
+        String experienciaPrevia;
+
+
         // Variables de Accidente
         int idAccidente = 0;
         String dia, hora, lugar, origen, consecuencias;
@@ -158,7 +164,7 @@ public class Main {
                         do {
                             System.out.println("Ingrese título del profesional");
                             titulo = entrada.next();
-                        } while (!validarNombreEmpresa(titulo));
+                        } while (!validarTitulo(titulo));
                         do {
                             System.out.println("Ingresa la fecha de ingreso:");
                             fechaDeIngreso = entrada.next();
@@ -168,18 +174,33 @@ public class Main {
 
 
                         //System.out.println(profesionalEjemplo.toString());
-                        profesionalEjemplo.analizarUsuario();
-
+                        //profesionalEjemplo.analizarUsuario();
+                        contenedor.almacenarProfesional(profesionalEjemplo);
                         break;
 
 
-                    case 3: // Profesional
+                    case 3: // Administrativo
+                        System.out.println("Bienvenido al registro de Profesionales");
+                        Usuario usuarioAdministrativo = almacenarUsuario(entrada);
+
+                        do {
+                            System.out.println("Ingrese título del profesional");
+                            area = entrada.next();
+                        } while (!validarNombreEmpresa(area));
+                        do {
+                            System.out.println("Ingresa la fecha de ingreso:");
+                            experienciaPrevia = entrada.next();
+                        } while (!validarFecha(experienciaPrevia));
+
+                        Administrativo administrativoEjemplo = new Administrativo(usuarioAdministrativo.getNombre(), usuarioAdministrativo.getApellido1(), usuarioAdministrativo.getApellido2(), usuarioAdministrativo.getFechaDeNacimiento(), usuarioAdministrativo.getRun(), area, experienciaPrevia);
+                        //administrativoEjemplo.analizarUsuario();
+                        contenedor.almacenarAdministrativo(administrativoEjemplo);
+
+                        break;
+                    case 4: // Capacitacion
 
 
-                    case 4: // Administrativo
-
-
-                    case 5: // Capacitacion
+                    case 5: //
 
 
                     case 6: // Accidente

@@ -2,7 +2,7 @@ package empresaclase14.validaciones.validacionprofesional;
 
 public class ValidacionProfesional {
     public static boolean validarTitulo(String str) {
-        if(str != null && str.length() >= 10 && str.length() <= 50){
+        if(str != null && str.length() >= 5 && str.length() <= 50){
             System.out.println("Título ingresado correctamente");
             return true;
         }else{
