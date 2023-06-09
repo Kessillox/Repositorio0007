@@ -258,36 +258,48 @@ public class Main {
                             System.out.println("Ingrese el ID de Capacitación");
                             idCapacitacion = entrada.nextInt();
                         }while(validarId(idCapacitacion));
+
+
                         do {
-                            System.out.println("Ingresa el rut de la empresa");
+                            System.out.println("Ingrese el RUT de la empresa");
+
+                            while (!entrada.hasNextInt()) {
+                                System.out.println("RUT de la empresa ingresado incorrectamente. Por favor, ingrese solo números.");
+                                entrada.next(); // Leer y descartar el token no válido
+                            }
                             rutEmpresaCapacitacion = entrada.nextInt();
-                        }while(!validarRut(rutEmpresaCapacitacion));
+                        } while (!validarRut(rutEmpresaCapacitacion));
+
                         do{
                             System.out.println("Ingrese el día en el que se va a realizar la capacitación");
                             diaCapacitacion = entrada.next();
-                        }while(validarDia(diaCapacitacion));
+                        }while(!validarDia(diaCapacitacion));
                         do {
                             System.out.println("Ingrese la hora en la que se va a realizar la capacitación");
                             horaCapacitacion = entrada.next();
-                        }while(validarHora(horaCapacitacion));
+                        }while(!validarHora(horaCapacitacion));
                         do {
                             System.out.println("Ingresa el lugar donde se va a realizar al capacitación");
                             lugarCapacitacion = entrada.next();
-                        }while(validarLugar(lugarCapacitacion));
+                        }while(!validarLugar(lugarCapacitacion));
+
                         do {
                             System.out.println("Ingresa la duración de la capacitación");
-                            duracionCapacitacion = entrada.nextInt();
-                        }while(validarDuracion(duracionCapacitacion));
+                          if(entrada.hasNextInt()){
+                              duracionCapacitacion = entrada.nextInt();
+                          }
+                        }while(!validarDuracion(duracionCapacitacion));
+
                         do {
                             System.out.println("Ingresa la cantidad de asistentes");
                             cantidadAsistentesCapacitacion = entrada.nextInt();
-                        }while(validarCantidadAsistentes(cantidadAsistentesCapacitacion));
+                        }while(!validarCantidadAsistentes(cantidadAsistentesCapacitacion));
 
                         Capacitacion capacitacion = new Capacitacion(idCapacitacion, rutEmpresaCapacitacion, diaCapacitacion, horaCapacitacion, lugarCapacitacion, duracionCapacitacion, cantidadAsistentesCapacitacion);
-                        Capacitacion capacitacion2 = new Capacitacion(2, 186894939, "27", "13:00", "ConCon", 4, 16);
-                        Capacitacion capacitacion3 = new Capacitacion(3, 168452189, "15", "12:00", "Concepción", 5, 14);
-                        Capacitacion capacitacion4 = new Capacitacion(4, 648541238, "12", "14:00", "Cohigueco", 7, 15);
-                        Capacitacion capacitacion5 = new Capacitacion(5, 789451236, "5", "15:00", "Berlin", 8, 12);
+                        Capacitacion capacitacion2 = new Capacitacion(2, 18689493, "27", "13:00", "ConCon", 4, 16);
+                        Capacitacion capacitacion3 = new Capacitacion(3, 16845218, "15", "12:00", "Concepción", 5, 14);
+                        Capacitacion capacitacion4 = new Capacitacion(4, 64854123, "12", "14:00", "Cohigueco", 7, 15);
+                        Capacitacion capacitacion5 = new Capacitacion(5, 78945123, "5", "15:00", "Berlin", 8, 12);
 
                         contenedor.almacenarCapacitacion(capacitacion);
                         contenedor.almacenarCapacitacion(capacitacion2);

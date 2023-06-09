@@ -13,7 +13,7 @@ public class Capacitacion {
     private String lugar;
     private Integer duracion;
     private int cantidadDeAsistentes;
-    public Cliente cliente;
+    //public Cliente cliente;
 
     public Capacitacion() {
     }
@@ -83,7 +83,7 @@ public class Capacitacion {
     public void setCantidadDeAsistentes(int cantidadDeAsistentes) {
         this.cantidadDeAsistentes = cantidadDeAsistentes;
     }
-
+/*
     public Cliente getCliente() {
         return cliente;
     }
@@ -91,7 +91,7 @@ public class Capacitacion {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-
+*/
     @Override
     public String toString() {
         return "Capacitacion{" +

@@ -82,7 +82,7 @@ public class Contenedor {
     public void listarCapacitaciones() {
         for (Capacitacion capacitacion : listaCapacitaciones) {
             System.out.println("Capacitación: " + capacitacion.toString());
-            System.out.println("Cliente: " + capacitacion.getCliente().toString());
+        //    System.out.println("Cliente: " + capacitacion.getCliente().toString());
         }
     }
 }
