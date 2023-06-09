@@ -23,12 +23,12 @@ public class ValidacionCapacitacion {
         }
     }
 
-    public static boolean validarDuracion(String str) {
-        if(str != null && str.length() >= 5 && str.length() <= 70){
+    public static boolean validarDuracion(int duracion) {
+        if(duracion > 0){
             System.out.println("Duración ingresada correctamente!");
             return true;
         }else{
-            System.out.println("Duración no válida inserte entre 5 y 70 carácteres");
+            System.out.println("Duración no válida");
             return false;
         }
     }

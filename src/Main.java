@@ -106,7 +106,7 @@ public class Main {
         String diaCapacitacion = "";
         String horaCapacitacion = "";
         String lugarCapacitacion = "";
-        String duracionCapacitacion = "";
+        Integer duracionCapacitacion = 0;
         Integer cantidadAsistentesCapacitacion = 0;
 
         //Cliente clienteEjemplo = new Cliente();
@@ -253,7 +253,7 @@ public class Main {
                         }while(validarLugar(lugarCapacitacion));
                         do {
                             System.out.println("Ingresa la duración de la capacitación");
-                            duracionCapacitacion = entrada.next();
+                            duracionCapacitacion = entrada.nextInt();
                         }while(validarDuracion(duracionCapacitacion));
                             System.out.println("Ingresa la cantidad de asistentes");
                             cantidadAsistentesCapacitacion = entrada.nextInt();

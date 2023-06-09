@@ -11,7 +11,7 @@ public class Capacitacion {
     private String dia;
     private String hora;
     private String lugar;
-    private int duracion;
+    private Integer duracion;
     private int cantidadDeAsistentes;
     public Cliente cliente;
 
@@ -68,11 +68,11 @@ public class Capacitacion {
         this.lugar = lugar;
     }
 
-    public int getDuracion() {
+    public Integer getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(int duracion) {
+    public void setDuracion(Integer duracion) {
         this.duracion = duracion;
     }
 
