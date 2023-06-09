@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        Contenedor contenedorP = new Contenedor();
 
         //VARIABLES Usuarios
         String nombreUser = "";
@@ -53,22 +53,21 @@ public class Principal {
         System.out.println("Bienvenido, ¿en que perfil desea trabajar?");
 
         do {
-
             System.out.println("------Perfiles------");
-            System.out.println("1 > Usuario");
-            System.out.println("2 > Cliente");
-            System.out.println("3 > Profesional");
-            System.out.println("4 > Administrativo");
-            System.out.println("5 > Capacitaciones");
-            System.out.println("6 > Accidente");
-            System.out.println("7 > Visita en Terreno");
-            System.out.println("8 > Revision");
+            System.out.println("1 > Cliente");
+            System.out.println("2 > Profesional");
+            System.out.println("3 > Administrativo");
+            System.out.println("4 > Capasitacion");
+            System.out.println("5 > Listar Usuarios");
+            System.out.println("6 > Listar Usuario por tipo");
+            System.out.println("7 > Eliminar Usuario");
+            System.out.println("8 > Salir");
+
 
             System.out.println();
             op = sc.nextInt();
 
             sc.nextLine(); //nextLine lo agregue para que no salte siguiente linea
-
 
             do {
                 if (op > 8) {
@@ -78,33 +77,6 @@ public class Principal {
                 }
                 switch (op) {
                     case 1:
-                        System.out.println("------Usuario------");
-
-                        System.out.println("favor ingrese un nombre entre 3 y 20 caracteres.");
-                        nombreUser = sc.nextLine();
-
-                        while (nombreUser.length() < 3 || nombreUser.length() > 20) {
-                            System.out.println("debe ser mayor a 3 y menor a 20");
-                            nombreUser = sc.nextLine();
-                        }
-
-                        System.out.println("Favor ingrese su fecha de nacimiento en el sig formato DD/MM/AAAA");
-                        fechaNacimientoUser = sc.nextLine();
-                        while (fechaNacimientoUser.isEmpty() || fechaNacimientoUser == null) {
-                            System.out.println("Favor ingrese una fecha valida con el siguiente formato DD/MM/AAAA");
-                            fechaNacimientoUser = sc.nextLine();
-                        }
-
-                        System.out.println("Favor ingrese su RUN, el cual debe ir sin punto, ni guion, ni digito verificador");
-                        runUser = sc.nextInt();
-                        while (runUser > 99999999) {
-                            System.out.println("Favor ingrese un run valido, sin puntos ni guion ni digito verificador");
-                            runUser = sc.nextInt();
-                        }
-
-
-                        break;
-                    case 2:
                         System.out.println("------Perfil Cliente------");
                         System.out.println("favor ingrese un nombre entre 3 y 20 caracteres.");
                         nombreUser = sc.nextLine();
@@ -113,6 +85,13 @@ public class Principal {
                             System.out.println("debe ser mayor a 3 y menor a 20");
                             nombreUser = sc.nextLine();
                         }
+
+                        System.out.println("Ingrese su Apellido 1");
+                        apellido1User = sc.nextLine();
+
+                        System.out.println("Ingrese su Apellido 2");
+                        apellido2User = sc.nextLine();
+
                         System.out.println("Favor ingrese su fecha de nacimiento en el sig formato DD/MM/AAAA");
                         fechaNacimientoUser = sc.nextLine();
 
@@ -126,12 +105,8 @@ public class Principal {
                             System.out.println("Favor ingrese un run valido, sin puntos ni guion ni digito verificador");
                             runUser = sc.nextInt();
                         }
-                    /*String nombreEmpresa = "";
-                    String giroEmpresa = "";
-                    int rut = 0 ;
-                    String tlfRepresentante = "";
-                    String direccionEmpresa = "";
-                    String comunaEmpresa = "";*/
+
+
 
                         System.out.println("Favor ingrese el nombre de la empresa");
                         nombreEmpresa = sc.nextLine();
@@ -157,10 +132,28 @@ public class Principal {
                             System.out.println("Favor ingrese un telefono valido");
                             tlfRepresentante = sc.nextLine();
                         }
+
+                        System.out.println("Favor ingrese la direccion de la empresa");
+                        direccionEmpresa = sc.nextLine();
+                        while (direccionEmpresa.length() < 5 || direccionEmpresa.length() > 70) {
+                            System.out.println("favor ingrese un un nombre valido de mas de 5 caracteres y menos de 70.");
+                            direccionEmpresa = sc.nextLine();
+                        }
+
+                        System.out.println("Favor ingrese la comuna en la que se encuentra la empresa");
+                        comunaEmpresa = sc.nextLine();
+                        while (comunaEmpresa.length() < 5 || comunaEmpresa.length() > 50) {
+                            System.out.println("favor ingrese un un nombre valido de mas de 5 caracteres y menos de 50.");
+                            comunaEmpresa = sc.nextLine();
+                        }
+                        Cliente cliente = new Cliente(nombreUser,apellido1User,apellido2User,fechaNacimientoUser,runUser,nombreEmpresa,giroEmpresa,rut,tlfRepresentante,direccionEmpresa,comunaEmpresa);
+                        contenedorP.almacenarUsuarios(cliente);
+                        contenedorP.alamacenaCliente(cliente);
+
+
                         break;
                     case 3:
 
-                        Contenedor contenedorP = new Contenedor();
                         do {
 
                             Scanner scP = new Scanner(System.in);
@@ -181,6 +174,8 @@ public class Principal {
 
                             System.out.println("Ingrese su Fecha de nacimiento");
                             fechaNacimientoUser = scP.nextLine();
+
+
 
                             System.out.println("Ingrese su Run");
                             runUser = scP.nextInt();
@@ -211,12 +206,9 @@ public class Principal {
                                 System.out.println("Por favor ingresar una opcion valida");
                                 res=sc.nextInt();
                             }
-
                         }while (res==1);
                         //Mostando la lista del profrecional
                         contenedorP.mostrarProfesional();
-
-
                         break;
                     case 4:
                         Contenedor contenedorA = new Contenedor();
@@ -326,7 +318,7 @@ public class Principal {
                         System.out.println("------Perfil Visita en Terreno------");
                         break;
                     case 8:
-                        System.out.println("------Perfil Revision------");
+                        System.out.println("------Salir------");
                         break;
                 }
 
