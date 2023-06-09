@@ -84,7 +84,7 @@ public class AlmacenarProfesionalController {
         System.out.println("(opcional) Ingresar fecha de ingreso con formato dd/MM/yyyy: ");
         while (true) {
             SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-            String input = sc.next();
+            String input = sc.nextLine();
 
             if (input.isBlank()) {
                 break;
