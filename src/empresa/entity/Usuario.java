@@ -10,7 +10,7 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
     private String apellido1;
     private String apellido2;
     private String fechaDeNacimiento;
-    private int run;
+    private String run;
     Scanner sc = new Scanner(System.in);
     
     // constructor vacio
@@ -18,45 +18,13 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
     }
     
     // constructor con parametros, atributos de la clase
-    public Usuario(String nombreUsuario, String apellido1, String apellido2, String fechaDeNacimiento, int run) {
+    public Usuario(String nombreUsuario, String apellido1, String apellido2, String fechaDeNacimiento, String run) {
 
-        //Validar nombre y apellidos con la cantidad de caracteres necesarios
-        if (nombreUsuario.length() < 3 || nombreUsuario.length() > 20) {
-            throw new IllegalArgumentException("El nombre debe tener entre 3 y 20 caracteres.");
-        }
         this.nombreUsuario = nombreUsuario;
-        if (apellido1.length() < 3 || apellido1.length() > 20) {
-            throw new IllegalArgumentException("El nombre debe tener entre 3 y 20 caracteres.");
-        }
         this.apellido1 = apellido1;
-        if (apellido2.length() < 3 || apellido2.length() > 20) {
-            throw new IllegalArgumentException("El nombre debe tener entre 3 y 20 caracteres.");
-        }
         this.apellido2 = apellido2;
-
-
-        //Validar fecha de nacimiento
-        while (fechaDeNacimiento.isEmpty()){ //Si viene en blanco entra al while, de lo contrario pasa de largo.
-            if (fechaDeNacimiento.isEmpty()) {
-                throw new IllegalArgumentException("La fecha de nacimiento no puede quedar vacía");
-            }
-            if (!validarFormatoFecha(fechaDeNacimiento)) {
-                throw new IllegalArgumentException("El formato de la fecha de nacimiento es incorrecto. Debe ser dd/MM/yyyy");
-            }
-        }
         this.fechaDeNacimiento = fechaDeNacimiento;
-
-
-        //Validar run
-        if (run < 999999999) {
-            this.run = run;
-        } else {
-            while (run > 999999999) {
-                System.out.println("El run no debe ser mayor a 99999999, vuelva a ingrear un run correcto.");
-                run = sc.nextInt();
-            }
-            this.run = run;
-        }
+        this.run = run;
     }
 
     // metodos modificadores set y get
@@ -65,9 +33,6 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
     }
 
     public void setNombreUsuario(String nombreUsuario) {
-        if (nombreUsuario.length() < 3 || nombreUsuario.length() > 20) {
-            throw new IllegalArgumentException("El nombre debe tener entre 3 y 20 caracteres.");
-        }
         this.nombreUsuario = nombreUsuario;
     }
 
@@ -76,21 +41,14 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
     }
 
     public void setApellido1(String apellido1) {
-        if (apellido1.length() < 3 || apellido1.length() > 20) {
-            throw new IllegalArgumentException("El nombre debe tener entre 3 y 20 caracteres.");
-        }
         this.apellido1 = apellido1;
     }
 
     public String getApellido2() {
-
         return apellido2;
     }
 
     public void setApellido2(String apellido2) {
-        if (apellido2.length() < 3 || apellido2.length() > 20) {
-            throw new IllegalArgumentException("El nombre debe tener entre 3 y 20 caracteres.");
-        }
         this.apellido2 = apellido2;
     }
 
@@ -99,32 +57,17 @@ public class Usuario implements IAsesoria { // se crea la clase Usuario
     }
 
     public void setFechaDeNacimiento(String fechaDeNacimiento) {
-
-        if (fechaDeNacimiento.isEmpty()) {
-            throw new IllegalArgumentException("La fecha de nacimiento no puede quedar vacía");
-        }
-        if (!validarFormatoFecha(fechaDeNacimiento)) {
-            throw new IllegalArgumentException("El formato de la fecha de nacimiento es incorrecto. Debe ser dd/MM/yyyy");
-        }
         this.fechaDeNacimiento = fechaDeNacimiento;
 
     }
 
 
-    public int getRun() {
+    public String getRun() {
         return run;
     }
 
-    public void setRun(int run) {
-        if (run < 999999999) {
+    public void setRun(String run) {
             this.run = run;
-        } else {
-            while (run > 999999999) {
-                System.out.println("El run no debe ser mayor a 99999999, vuelva a ingrear un run correcto.");
-                run = sc.nextInt();
-            }
-            this.run = run;
-        }
     }
 
     // metodo toString

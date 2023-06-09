@@ -7,7 +7,7 @@ public class Cliente extends Usuario {
     // se crea los atributos de la clase
     private String razonSocial; //es el nombre de la empresa
     private String giroEmpresa;
-    private int rut;
+    private String rut;
     private String telefonoRepresentante;
     private String direccion;
     private String comuna;
@@ -17,7 +17,7 @@ public class Cliente extends Usuario {
     }
 
     //Constructor con atributos de la clase Cliente y atributos heredados de la clase Usuario
-    public Cliente(String nombreUsuario, String apellido1, String apellido2, String fechaDeNacimiento, int run, String razonSocial, String giroEmpresa, int rut, String telefonoRepresentante, String direccion, String comuna) {
+    public Cliente(String nombreUsuario, String apellido1, String apellido2, String fechaDeNacimiento, String run, String razonSocial, String giroEmpresa, String rut, String telefonoRepresentante, String direccion, String comuna) {
         super(nombreUsuario, apellido1, apellido2, fechaDeNacimiento, run);
         this.razonSocial = razonSocial;
         this.giroEmpresa = giroEmpresa;
@@ -54,11 +54,11 @@ public class Cliente extends Usuario {
         this.giroEmpresa = giroEmpresa;
     }
 
-    public int getRut() {
+    public String getRut() {
         return rut;
     }
 
-    public void setRut(int rut) {
+    public void setRut(String rut) {
         this.rut = rut;
     }
 

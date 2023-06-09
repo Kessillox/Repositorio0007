@@ -9,7 +9,7 @@ public class Principal {
 
         Scanner sc = new Scanner(System.in);
         Contenedor cont = new Contenedor();
-        Administrativo user1 = new Administrativo("Cintia", "Muñoz", "Valdés", "19/09/1957", 22000000, "sidu", "5 años");
+       // Administrativo user1 = new Administrativo("Cintia", "Muñoz", "Valdés", "19/09/1957", 22000000, "sidu", "5 años");
 
         //cont.almacenarAdministrativo(new Administrativo("Cintiaaaaaaa", "Muñoz", "Valdés", LocalDate.of(2000, 05, 19), 22000000, "sidu", "5 años") );
 
@@ -17,12 +17,12 @@ public class Principal {
 
 
         //System.out.println(user1.toString());
-        user1.analizarUsuario();
+        //user1.analizarUsuario();
 
-        cont.almacenarAdministrativo(user1);//Agregar a la lista
+        //cont.almacenarAdministrativo(user1);//Agregar a la lista
 
 
-        cont.listarUsuariosPorTipo(user1);
+        //cont.listarUsuariosPorTipo(user1);
 
         Capacitacion capa = new Capacitacion();
 
@@ -116,11 +116,18 @@ public class Principal {
                         giroEmpresa = sc.nextLine();
                     }
 
-                    while (true) {
-                        System.out.print("Ingrese el número de teléfono del representante (formato +569XXXXXXXX): ");
-                        System.out.println("*Este campo es obligatorio");
-                        String telefonoRepresentante = sc.nextLine();
+                    System.out.println("Ingrese el RUT de la empresa (Ejemplo: 72345678-9):");
+                    System.out.println("*Este campo es obligatorio");
+                    String rutEmpresa = sc.nextLine();
+                    while ( !rutEmpresa.matches("[0-9]{7,8}-[0-9kK]")) {
+                        System.out.println("RUN incorrecto. Por favor, ingrese un RUN válido (Ejemplo:12345678-9), sin espacios y que no sea mayor a 99999999");
+                        rutEmpresa = sc.nextLine();
+                    }
 
+                    System.out.print("Ingrese el número de teléfono del representante (formato +569XXXXXXXX): ");
+                    System.out.println("*Este campo es obligatorio");
+                    String telefonoRepresentante = sc.nextLine();
+                    while (true) {
                         // Validar el número de teléfono con una expresión regular
                         if (telefonoRepresentante.matches("\\+56\\d{9}")) {
                             break;  // Salir del bucle si es válido
@@ -145,27 +152,67 @@ public class Principal {
                         comuna = sc.nextLine();
                     }
 
-
-                    cont.almacenarCliente(new Cliente());
+                    cont.almacenarCliente(new Cliente(nombreCliente, apellido1, apellido2, fechaDeNacimientoCliente, runCliente, razonSocial, giroEmpresa, rutEmpresa , telefonoRepresentante, direccion, comuna));
                     break;
                 case 2:
-                    System.out.println("Ingrese el RUN del profesional:");
-                    int runProfesional = sc.nextInt();
+                    System.out.println("Ingrese el RUN del profesional (Ejemplo: 12345678-9):");
+                    System.out.println("*Este campo es obligatorio");
+                    String runProfesional = sc.nextLine();
+                    while ( !runProfesional.matches("[0-9]{7,8}-[0-9kK]")) {
+                        System.out.println("RUN incorrecto. Por favor, ingrese un RUN válido (Ejemplo:12345678-9), sin espacios y que no sea mayor a 99999999");
+                        runProfesional = sc.nextLine();
+                    }
+
                     System.out.println("Ingrese el nombre del profesional:");
-                    String nombreProfesional = sc.next();
-                    System.out.println("Ingrese el fecha de Nacimiento:");
-                    String fechaDeNacimientoProfesional = sc.next();
-                    System.out.println("Ingrese apellido1 del profesional:");
-                    String apellido1Profesional = sc.next();
-                    System.out.println("Ingrese apellido2 del profesional:");
-                    String apellido2Profesional = sc.next();
-                    System.out.println("Ingrese titulo del Profesional:");
-                    String tituloProfesional = sc.next();
-                    System.out.println("Ingrese fecha de ingreso:");
-                    String fechaIngreso = sc.next();
+                    System.out.println("*Este campo es obligatorio");
+                    String nombreProfesional = sc.nextLine();
+                    while (nombreProfesional.isEmpty() || !nombreProfesional.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ]{3,20}")) {
+                        System.out.println("Nombre incorrecto. Por favor, ingrese un nombre con mínimo 3 y máximo 20 caracteres. Este campo no puede quedar vacío");
+                        nombreProfesional = sc.nextLine();
+                    }
+
+                    System.out.print("Ingrese el primer apellido del profesional: ");
+                    System.out.println("*Este campo es obligatorio");
+                    String apellido1Prof = sc.nextLine();
+                    while (apellido1Prof.isEmpty() || !apellido1Prof.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ]{3,20}")) {
+                        System.out.println("Apellido ingresado de forma incorrecta. Por favor, ingrese un apellido válido y no deje este campo vacío");
+                        apellido1Prof = sc.nextLine();
+                    }
+
+                    System.out.print("Ingrese el segundo apellido del profesional: ");
+                    System.out.println("*Este campo es obligatorio");
+                    String apellido2Prof = sc.nextLine();
+                    while (apellido2Prof.isEmpty() || !apellido2Prof.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ]{3,20}")) {
+                        System.out.println("Apellido ingresado de forma incorrecta. Por favor, ingrese un apellido válido y no deje este campo vacío");
+                        apellido2Prof = sc.nextLine();
+                    }
+
+                    System.out.println("Ingrese fecha de nacimiento considerando el siguiente formato -> dd/mm/aaaa:");
+                    System.out.println("*Este campo es obligatorio");
+                    String fechaDeNacimientoProfesional = sc.nextLine();
+                    while (!fechaDeNacimientoProfesional.matches("^(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4}$")) {
+                        System.out.println("Fecha de nacimiento inválida. Por favor, ingrese una fecha válida con el formato dd/mm/aaaa y no deje este campo vacío");
+                        fechaDeNacimientoProfesional = sc.nextLine();
+                    }
+
+                    System.out.print("Ingrese el título del profesional (min 10 y max 50 caracteres): ");
+                    System.out.println("*Este campo es obligatorio");
+                    String titulo = sc.nextLine();
+                    while (titulo.isEmpty() || !titulo.matches("[\\p{L}ñÑáéíóúÁÉÍÓÚ]{10,50}")) {
+                        System.out.println("Título ingresado de forma incorrecta. Por favor, ingrese un título válido y no deje este campo vacío");
+                        titulo = sc.nextLine();
+                    }
+
+                    System.out.println("Ingrese fecha de ingreso a la institución considerando el siguiente formato -> dd/mm/aaaa:");
+                    System.out.println("*Este campo es obligatorio");
+                    String fechaIngreso = sc.nextLine();
+                    while (!fechaIngreso.matches("^(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4}$")) {
+                        System.out.println("Fecha de nacimiento inválida. Por favor, ingrese una fecha válida con el formato dd/mm/aaaa y no deje este campo vacío");
+                        fechaIngreso = sc.nextLine();
+                    }
 
 
-                    cont.almacenarProfesional(new Profesional(nombreProfesional, apellido1Profesional, apellido2Profesional, tituloProfesional,runProfesional,fechaIngreso,fechaDeNacimientoProfesional));
+                    cont.almacenarProfesional(new Profesional(nombreProfesional, apellido1Prof, apellido2Prof, fechaDeNacimientoProfesional, runProfesional, titulo, fechaIngreso));
                     break;
                 case 3:
                     System.out.println("Ingrese el RUN del administrativo (Ejemplo: 12345678-9):");
@@ -227,10 +274,7 @@ public class Principal {
                         System.out.println("Datos agregados de forma incorrecta. Por favor ingrese el área nuevamente");
                         areaAdministrativo = sc.nextLine();
                     }
-
-
-
-                    //cont.almacenarAdministrativo(new Administrativo());
+                    cont.almacenarAdministrativo(new Administrativo(nombreAdministrativo, apellido1Administrativo, apellido2Administrativo, fechaDeNacimientoAdministrativo, runAdministrativo, areaAdministrativo, experienciaAdministrativo));
 
 
                     break;

@@ -47,7 +47,7 @@ public class Contenedor {
         boolean encontrado = false;
         for (int i = 0; i < listaDeUsuarios.size(); i++) {
             Usuario u = (Usuario) listaDeUsuarios.get(i);
-            if(u.getRun() == runUsuario){
+            if(u.getRun().equals(runUsuario) ){ //Revisar si funciona, cambié el == por equals
                 encontrado = true;
                 System.out.println(encontrado);
                 listaDeUsuarios.remove(u);

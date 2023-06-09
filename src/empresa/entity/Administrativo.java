@@ -8,7 +8,7 @@ public class Administrativo extends Usuario {
     private String experiencia;
 
     //Constructor vacío
-    public Administrativo(int runAdministrativo, String nombreAdministrativo, String apellido1Administrativo, String apellido2Administrativo, int fechaDeNacimientoAdministrativo, String experienciaAdministrativo, String areaAdministrativo) {
+    public Administrativo() {
     }
 
     //Constructor con atributos de la clase Administrativo
@@ -18,7 +18,7 @@ public class Administrativo extends Usuario {
     }
 
     //Constructor con atributos de la clase Administrativos y atributos heredados de la clase Usuario
-    public Administrativo(String nombreUsuario, String apellido1, String apellido2, String fechaDeNacimiento, int run, String area, String experiencia) {
+    public Administrativo(String nombreUsuario, String apellido1, String apellido2, String fechaDeNacimiento, String run, String area, String experiencia) {
         super(nombreUsuario, apellido1, apellido2, fechaDeNacimiento, run);
         this.area = area;
         this.experiencia = experiencia;
