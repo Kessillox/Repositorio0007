@@ -88,6 +88,8 @@ public class Main {
         int idAccidente = 0;
         String dia, hora, lugar, origen, consecuencias;
 
+        //Cliente clienteEjemplo = new Cliente();
+
         do {
 
             System.out.println("\n Bienvenido a Sprint Modulo 4 Programación en Java!");
@@ -136,7 +138,8 @@ public class Main {
                     clienteEjemplo.analizarUsuario();
 
                     break;
-                case 2:
+                case 2:  // Profesional
+
 
                     System.out.println("Bienvenido al registro de Profesionales");
                     Usuario usuarioProfesional = almacenarUsuario(entrada);
@@ -209,9 +212,21 @@ public class Main {
                 case 9: break;
             }
 
+
+
         } while (nombreUsuario.isEmpty());
+/**
+        // Creo Instancia Contenedor
+        Contenedor prueba = new Contenedor();
+        // Agrego Cliente a ListaDeUsuarios
+        prueba.almacenarCliente(clienteEjemplo);
 
+        //Muestro Lista
 
+        prueba.listarUsuarios();
 
+        //prueba.listarUsuariosPorTipo(clienteEjemplo);
+        System.out.println(clienteEjemplo.getClass());
+*/
     }
 }
