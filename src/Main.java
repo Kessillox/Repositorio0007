@@ -121,14 +121,14 @@ public class Main {
         Contenedor contenedor = new Contenedor();
 
         // USUARIOS DE PRUEBA
-        Cliente cliente1 = new Cliente("Pelayo", "Fernandez", "Torrealba", "12/12/1990", 111111111, "Fundimax", "Fundidora", 99999999, "9845615498", "Lejos 124", "Los Alpes");
-        Cliente cliente2 = new Cliente("Cristian", "Trureo", "Trureo", "11/11/1991", 222222221, "Awakelab", "Capacitaciones IT", 55555555, "123123123123", "Lejos 777", "Los Alpes");
+        Cliente cliente1 = new Cliente("Pelayo", "Fernandez", "Torrealba", "12/12/1990", 11111111, "Fundimax", "Fundidora", 99999999, "9845615498", "Lejos 124", "Los Alpes");
+        Cliente cliente2 = new Cliente("Cristian", "Trureo", "Trureo", "11/11/1991", 22222221, "Awakelab", "Capacitaciones IT", 55555555, "123123123123", "Lejos 777", "Los Alpes");
         Administrativo administrativo1 = new Administrativo("Ana","Pavés","Gonzalez","25-10-1985",13562485,"RRHH", "2");
         Administrativo administrativo2 = new Administrativo("Marie","SAnchez","Villaba","05-12-1987", 87562451, "Marketing","5");
         Administrativo administrativo3 = new Administrativo("Santiago","Carter","Monroy","24-01-2985", 99856241,"Finanzas","3");
-        Profesional profesional1 = new Profesional("Luis", "Zambrano", "Zambrano", "06-06-2023", 186850149, "Analista Programador", "06-06-2023");
-        Profesional profesional2 = new Profesional("Livio", "Gut", "Guti", "10-10-2023", 333333333, "Ingeniero Físico Termonuclear", "10-12-2023");
-        Profesional profesional3 = new Profesional("Brocacochi", "Chespi", "Rito", "10-10-1990", 33333333, "Informatico", "10-12-2023");
+        Profesional profesional1 = new Profesional("Luis", "Zambrano", "Zambrano", "06-06-2023", 18685019, "Analista Programador", "06-06-2023");
+        Profesional profesional2 = new Profesional("Livio", "Gut", "Guti", "10-10-2023", 33333333, "Ingeniero Físico Termonuclear", "10-12-2023");
+        Profesional profesional3 = new Profesional("Brocacochi", "Chespi", "Rito", "10-10-1990", 45263525, "Informatico", "10-12-2023");
         contenedor.almacenarCliente(cliente1);
         contenedor.almacenarCliente(cliente2);
         contenedor.almacenarCliente(administrativo1);
@@ -137,6 +137,17 @@ public class Main {
         contenedor.almacenarCliente(profesional1);
         contenedor.almacenarCliente(profesional2);
         contenedor.almacenarCliente(profesional3);
+
+        //CAPACITACIONES DE PRUEBA
+        Capacitacion capacitacion2 = new Capacitacion(2, 18689499, "27", "13:00", "ConCon", 4, 16);
+        Capacitacion capacitacion3 = new Capacitacion(3, 16845289, "15", "12:00", "Concepción", 5, 14);
+        Capacitacion capacitacion4 = new Capacitacion(4, 64854238, "12", "14:00", "Cohigueco", 7, 15);
+        Capacitacion capacitacion5 = new Capacitacion(5, 78941236, "5", "15:00", "Berlin", 8, 12);
+        contenedor.almacenarCapacitacion(capacitacion2);
+        contenedor.almacenarCapacitacion(capacitacion3);
+        contenedor.almacenarCapacitacion(capacitacion4);
+        contenedor.almacenarCapacitacion(capacitacion5);
+
 
         while (opcion != 9) {
             System.out.println("\n Bienvenido a Sprint Modulo 4 Programación en Java!");
@@ -291,6 +302,7 @@ public class Main {
                         }while(!validarLugar(lugarCapacitacion));
 
                         do {
+
                             System.out.println("Ingresa la duración de la capacitación");
                             if (entrada.hasNextInt()) {
                                 duracionCapacitacion = entrada.nextInt();
@@ -301,6 +313,7 @@ public class Main {
                                 continue; // Volver al inicio del bucle
                             }
                         } while (!validarDuracion(duracionCapacitacion));
+
 
                         do {
                             System.out.println("Ingresa la cantidad de asistentes");
@@ -315,16 +328,7 @@ public class Main {
                         } while (!validarCantidadAsistentes(cantidadAsistentesCapacitacion));
 
                         Capacitacion capacitacion = new Capacitacion(idCapacitacion, rutEmpresaCapacitacion, diaCapacitacion, horaCapacitacion, lugarCapacitacion, duracionCapacitacion, cantidadAsistentesCapacitacion);
-                        Capacitacion capacitacion2 = new Capacitacion(2, 18689493, "27", "13:00", "ConCon", 4, 16);
-                        Capacitacion capacitacion3 = new Capacitacion(3, 16845218, "15", "12:00", "Concepción", 5, 14);
-                        Capacitacion capacitacion4 = new Capacitacion(4, 64854123, "12", "14:00", "Cohigueco", 7, 15);
-                        Capacitacion capacitacion5 = new Capacitacion(5, 78945123, "5", "15:00", "Berlin", 8, 12);
-
                         contenedor.almacenarCapacitacion(capacitacion);
-                        contenedor.almacenarCapacitacion(capacitacion2);
-                        contenedor.almacenarCapacitacion(capacitacion3);
-                        contenedor.almacenarCapacitacion(capacitacion4);
-                        contenedor.almacenarCapacitacion(capacitacion5);
 
                         break;
 
@@ -350,19 +354,19 @@ public class Main {
 
 
                     case 7:   // Listar usuarios por Tipo
-                        System.out.println("Ingrese el tipo de usuario que desea listar (Cliente, Administrativo o Profesional):");
+                        System.out.println("Ingrese el tipo de usuario que desea listar (1: Cliente, 2: Administrativo, 3: Profesional):");
                         String tipoUsuario = entrada.nextLine();
 
                         // Convertir el tipo de usuario ingresado a un objeto Class
                         Class<? extends IAsesoria> tipo = null;
-                        switch (tipoUsuario.toLowerCase()) {
-                            case "cliente":
+                        switch (tipoUsuario) {
+                            case "1":
                                 tipo = Cliente.class;
                                 break;
-                            case "administrativo":
+                            case "2":
                                 tipo = Administrativo.class;
                                 break;
-                            case "profesional":
+                            case "3":
                                 tipo = Profesional.class;
                                 break;
                             default:
