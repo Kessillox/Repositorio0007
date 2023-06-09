@@ -163,7 +163,7 @@ public class Principal {
         cli.setApellido2(cadenaMinimoMaximoLenght(sc.nextLine(),5,30,
                 "Ingrese Apellido Materno válido: ",true));
         System.out.println("Ingrese fecha de nacimiento: ");
-        cli.setFechaDeNacimientoUsuario(sc.nextLine());
+        cli.setFechaDeNacimientoUsuario(validacionFecha(sc.nextLine()));
         System.out.println("Ingrese RUN: ");
         cli.setRunUsuario(validarRun(sc.nextLine(),"RUN"));
         System.out.println("Ingrese Nombre Empresa: ");
@@ -198,14 +198,14 @@ public class Principal {
         pro.setApellido2(cadenaMinimoMaximoLenght(sc.nextLine(),5,30,
                 "Ingrese Apellido Materno válido: ",true));
         System.out.println("Ingrese fecha de nacimiento: ");
-        pro.setFechaDeNacimientoUsuario(validacionFecha(sc.nextLine(), true));
+        pro.setFechaDeNacimientoUsuario(validacionFecha(sc.nextLine()));
         System.out.println("Ingrese RUN: ");
         pro.setRunUsuario(validarRun(sc.nextLine(),"RUN"));
         System.out.println("Ingrese Titulo: ");
         pro.setTitulo(cadenaMinimoMaximoLenght(sc.nextLine(),5,20,
                 "Ingrese Titulo válido: ",true));
         System.out.println("Ingrese la fecha de ingreso: ");
-        pro.setFechaDeIngreso(validacionFecha(sc.nextLine(), true));
+        pro.setFechaDeIngreso(validacionFecha(sc.nextLine()));
         contenedor.almacenarProfesional(pro);
         System.out.println("Registros agregados correctamente ~(^.^)~");
     }
@@ -224,7 +224,7 @@ public class Principal {
         adm.setApellido2(cadenaMinimoMaximoLenght(sc.nextLine(),5,30,
                 "Ingrese Apellido Materno válido: ",true));
         System.out.println("Ingrese fecha de nacimiento: ");
-        adm.setFechaDeNacimientoUsuario(validacionFecha(sc.nextLine(), true));
+        adm.setFechaDeNacimientoUsuario(validacionFecha(sc.nextLine()));
         System.out.println("Ingrese RUN: ");
         adm.setRunUsuario(validarRun(sc.nextLine(),"RUN"));
         System.out.println("Ingrese Área: ");
@@ -480,11 +480,12 @@ public class Principal {
         return estado <= 3 && estado >= 1;
     }
 
-    private static String validacionFecha(String fecha, boolean obligatorio) {
+    private static String validacionFecha(String fecha) {
+        boolean bucle = true;
         LocalDate fechaFormateada;
         DateTimeFormatter formateadorFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        while (obligatorio) {
+        while (bucle) {
 
             if (fecha.isEmpty()) {
                 return "Sin Fecha";
@@ -492,7 +493,7 @@ public class Principal {
 
             try {
                 fechaFormateada = LocalDate.parse(fecha, formateadorFecha);
-                obligatorio = false;
+                bucle = false;
                 return fechaFormateada.toString();
             } catch (DateTimeParseException error) {
                 System.out.println("Fecha Ingresada no cumple el formato. Intente nuevamente (dd/MM/yyyy).");
