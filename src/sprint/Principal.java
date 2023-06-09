@@ -281,6 +281,99 @@ public class Principal {
                     case 4:
                         System.out.println("------Capacitación------");
 
+                        Capacitacion capaci = new Capacitacion();
+                        //------------------------------------------------------------------ LISTO
+
+                        System.out.println("Su rut de empresa: " + cliente.getRut());
+                        //------------------------------------------------------------------ LISTO
+
+                        System.out.println("Ingrese ID capacitacion (solo numeros enteros de 0 a 9999 ): ");
+                        capaci.setId(sc.nextInt());
+
+                        //------------------------------------------------------------------
+
+
+                        while (capaci.getId() < 0) {
+                            System.out.println("Ingrese un numero entero igual o mayor a 0");
+
+                            capaci.setId(sc.nextInt());
+                            System.out.println("Su cantidad es: " + capaci.getId()); //cambiar de posicion
+
+                        }
+                        System.out.println(capaci.getId()); sc.nextLine();
+
+
+                        //------------------------------------------------------------------ LISTO--
+                        boolean diaValido = false;
+                        while (!diaValido) {
+                            System.out.println("Ingrese día de capacitación");
+                            capaci.setDia(sc.nextLine());
+
+                            //if (capaci.getDia().equalsIgnoreCase("lunes") || capaci.getDia().equalsIgnoreCase("martes"))
+                            if (capaci.getDia().equalsIgnoreCase("lunes") || capaci.getDia().equalsIgnoreCase("martes") ||
+                                    capaci.getDia().equalsIgnoreCase("miercoles") ||capaci.getDia().equalsIgnoreCase("jueves") ||
+                                    capaci.getDia().equalsIgnoreCase("viernes") ||capaci.getDia().equalsIgnoreCase("sabado") ||
+                                    capaci.getDia().equalsIgnoreCase("domingo")) {
+                                //capaci.setDia(sc.nextLine());
+                                //sc.nextLine();
+                                diaValido = true;
+                                System.out.println("Su dia de capacitacion es: " + capaci.getDia());
+
+
+                            } else {
+                                System.out.println("Ingrese un dia de lunes a domingo");
+                            }
+                        }
+
+                       //------------------------------------------------------------------ LISTO
+                        System.out.println("Ingrese hora de capacitacion (ej: 20:00 | HH:MM)");
+                        String horaMinutos = sc.next();
+                        capaci.setHora(horaMinutos);
+
+                        String[] HoraMinArray = horaMinutos.split(":");
+
+                        //parseInt == chequea el primer argumento str y devuelve int en la ubicacion pedida
+                        int valorHora = Integer.parseInt(HoraMinArray[0]); //Es la hora
+                        int valorMinuto = Integer.parseInt(HoraMinArray[1]); // Son los minutos
+
+
+                        System.out.println("Su hora de capactitacion es: " + capaci.getHora());
+                        System.out.println("Aca arriba debe salir el llmado");
+
+                        //------------------------------------------------------------------LISTO
+                        System.out.println("Ingrese lugar de capacitacion");
+                        capaci.setLugar(sc.nextLine());
+                        //Lugar: obligatorio, mínimo 10 caracteres, máximo 50
+
+                        while (capaci.getLugar().length() < 10 || capaci.getLugar().length() > 50) {
+                            System.out.println("Ingrese minimo 10 y maximo 10 caracteres ");
+                            capaci.setLugar(sc.nextLine());
+                        }
+
+                        System.out.println("Su lugar es: " + capaci.getLugar());
+
+                        //------------------------------------------------------------------ LISTO
+                        System.out.println("Ingrese duracion en horas(numero entero)de capacitacion");
+                        capaci.setHora(sc.nextLine());
+
+                        while (capaci.getLugar().length() < 1 || capaci.getLugar().length() > 70) {
+                            System.out.println("Ingrese minimo 10 y maximo 10 caracteres ");
+                            capaci.setHora(sc.nextLine());
+                        }
+                        System.out.println(capaci.getHora() + "horas");
+
+                        //------------------------------------------------------------------ LISTO
+                        System.out.println("Ingrese cantidad de asistente a la capacitacion");
+                        capaci.setCantidadAsistente(sc.nextInt());
+
+                        while (capaci.getCantidadAsistente() < 0 || capaci.getCantidadAsistente() > 70) {
+                            System.out.println("Ingrese una cantidad entre 0 y 100 asistenes ");
+                            capaci.getCantidadAsistente();
+                        }
+                        System.out.println("La cantidad de asistentes es: " + capaci.getCantidadAsistente());
+                        //------------------------------------------------------------------
+
+
                         break;
                     case 5:
                         System.out.println("------Listar Usuarios------");
@@ -322,8 +415,6 @@ public class Principal {
                 }
 
             } while (op > 8);
-
-
 
 
             System.out.println("¿Desea Registrar un perfiles?");
