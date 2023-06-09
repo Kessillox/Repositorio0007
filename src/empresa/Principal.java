@@ -3,7 +3,12 @@ package empresa;
 import empresa.entity.*;
 import empresa.services.Contenedor;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
+import java.util.regex.Pattern;
+
 public class Principal {
     public static void main(String[] args) throws Exception {
 
@@ -298,7 +303,29 @@ public class Principal {
 
 
                     //Agregar validacion dias
+                    System.out.println("Ingrese el dia:");
+                    String fechaStr = sc.nextLine();
+                    Date fecha = null;
+
+                    try {
+                        fecha = parseFecha(fechaStr);
+                    } catch (ParseException e) {
+                        System.out.println("La fecha no es válida.");
+                    }
+
+                    if (fecha != null) {
+                        // Formatear la fecha como "DD/MM/AAAA"
+                        String fechaFormateada = formatFecha(fecha);
+                        System.out.println("Fecha formateada: " + fechaFormateada);
+                    }
+
                     // Agregar validacion hora
+                    System.out.println("Ingrese la hora:");
+                    String hora = sc.nextLine();
+                    while (!validarHora(hora)) {
+                        System.out.println("Hora inválida ingresela nuevamente: ");
+                        hora = sc.nextLine();
+                    }
 
                     System.out.print("Ingrese el lugar dónde se realizará la capacitación (min 10 y max 70 caracteres): ");
                     System.out.println("*Este campo es obligatorio");
@@ -388,6 +415,36 @@ public class Principal {
         System.out.println("8. Listar capacitaciones");
         System.out.println("9. Salir");
         System.out.println("Ingrese una opción: ");
+    }
+
+    public static boolean validarHora(String hora) {
+        // Expresión regular para validar el formato HH:MM
+        String patron = "^([01]\\d|2[0-3]):([0-5]\\d)$";
+        if (!Pattern.matches(patron, hora)) {
+            return false; // El formato no es válido
+        }
+
+        // Obtener las partes de la hora (horas y minutos)
+        String[] partes = hora.split(":");
+        int horas = Integer.parseInt(partes[0]);
+        int minutos = Integer.parseInt(partes[1]);
+
+        // Validar los rangos de las horas y minutos
+        if (horas < 0 || horas > 23 || minutos < 0 || minutos > 59) {
+            return false; // Los rangos no son válidos
+        }
+
+        return true; // La hora es válida
+    }
+
+    public static Date parseFecha(String fechaString) throws ParseException {
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        return formato.parse(fechaString);
+    }
+
+    public static String formatFecha(Date fecha) {
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        return formato.format(fecha);
     }
 }
 

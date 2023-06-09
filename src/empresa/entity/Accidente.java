@@ -225,9 +225,6 @@ public class Accidente {
         return true; // La hora es válida
     }
 
-
-
-
     public static Date parseFecha(String fechaString) throws ParseException {
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         return formato.parse(fechaString);
