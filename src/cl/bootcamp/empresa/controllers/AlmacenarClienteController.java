@@ -17,7 +17,7 @@ public class AlmacenarClienteController {
         while (true) {
             cliente.setNombre(sc.nextLine().trim());
             if (cliente.getNombre().length() < 10 || cliente.getNombre().length() > 50) {
-                System.out.println("Error, ingresar nombre de 10 a 50 caracteres");
+                System.err.println("Error, ingresar nombre de 10 a 50 caracteres");
             } else {
                 break;
             }
@@ -27,7 +27,7 @@ public class AlmacenarClienteController {
         while (true) {
             cliente.setApellido1(sc.nextLine().trim());
             if (cliente.getApellido1().length() < 5 || cliente.getApellido1().length() > 30) {
-                System.out.println("Error, ingresar apellido de 5 a 30 caracteres");
+                System.err.println("Error, ingresar apellido de 5 a 30 caracteres");
             } else {
                 break;
             }
@@ -37,7 +37,7 @@ public class AlmacenarClienteController {
         while (true) {
             cliente.setApellido2(sc.nextLine().trim());
             if (cliente.getApellido2().length() < 5 || cliente.getApellido2().length() > 30) {
-                System.out.println("Error, ingresar apellido de 5 a 30 caracteres");
+                System.err.println("Error, ingresar apellido de 5 a 30 caracteres");
             } else {
                 break;
             }
@@ -73,7 +73,7 @@ public class AlmacenarClienteController {
         while (true) {
             cliente.setNombreEmpresa(sc.nextLine().trim());
             if (cliente.getNombreEmpresa().length() < 5 || cliente.getNombreEmpresa().length() > 30) {
-                System.out.println("Error, ingresar nombre Empresa entre 5 y 30 caracteres");
+                System.err.println("Error, ingresar nombre Empresa entre 5 y 30 caracteres");
             } else {
                 break;
             }
@@ -83,7 +83,7 @@ public class AlmacenarClienteController {
         while (true) {
             cliente.setGiroEmpresa(sc.nextLine().trim());
             if (cliente.getGiroEmpresa().length() < 5 || cliente.getGiroEmpresa().length() > 30) {
-                System.out.println("Error, ingresar giro de la empresa entre 5 y 30 caracteres");
+                System.err.println("Error, ingresar giro de la empresa entre 5 y 30 caracteres");
             } else {
                 break;
             }
@@ -106,7 +106,7 @@ public class AlmacenarClienteController {
         while (true) {
             cliente.setTelefonoRepresentante(sc.nextLine().trim());
             if (cliente.getTelefonoRepresentante().isBlank()) {
-                System.out.println("Error, el teléfono es obligatorio");
+                System.err.println("Error, el teléfono es obligatorio");
             } else {
                 break;
             }
@@ -116,19 +116,17 @@ public class AlmacenarClienteController {
         while (true) {
             cliente.setDireccionEmpresa(sc.nextLine());
             if (cliente.getDireccionEmpresa().length() > 70) {
-                System.out.println("Error, la dirección debe ser menor a 70 caracteres");
-                continue;
+                System.err.println("Error, la dirección debe ser menor a 70 caracteres");
             } else {
                 break;
             }
         }
 
-        System.out.println("Ingresar comuna de la empresa: ");
+        System.out.println("(opcional) Ingresar comuna de la empresa: ");
         while (true) {
             cliente.setComunaEmpresa(sc.nextLine());
             if (cliente.getComunaEmpresa().length() > 70) {
-                System.out.println("Error, la comuna debe ser menor a 70 caracteres");
-                continue;
+                System.err.println("Error, la comuna debe ser menor a 70 caracteres");
             } else {
                 break;
             }

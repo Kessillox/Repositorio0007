@@ -83,7 +83,7 @@ public class AlmacenarCapacitacionController {
         while (true) {
             capacitacion.setDuracion(sc.nextLine());
             if (capacitacion.getDuracion().length() > 70) {
-                System.out.println("Error, la duración debe ser menor a 70 caracteres");
+                System.err.println("Error, la duración debe ser menor a 70 caracteres");
                 continue;
             } else {
                 break;
@@ -105,8 +105,6 @@ public class AlmacenarCapacitacionController {
             }
         }
 
-
-        System.out.println(capacitacion);
         return capacitacion;
     }
 }
