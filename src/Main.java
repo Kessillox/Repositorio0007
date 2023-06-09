@@ -229,6 +229,7 @@ public class Main {
                     case 6: // Listar Usuarios: se llama al método listarUsuarios() de la Clase Contenedor
                         System.out.println("Los usuarios ingresados son:\n");
                        contenedor.listarUsuarios();
+                       break;
 
 
                     case 7:   // Listar usuarios por Tipo
