@@ -165,7 +165,7 @@ public class App {
                 Capacitacion nuevaCapacitacion = new Capacitacion();
                 int idCap=0;
                 int rut = 0;
-                String diaCap =""
+                String diaCap ="";
                 System.out.println("Ingrese Numero interno de capacitacion");
                 idCap = scan.nextInt();
                 nuevaCapacitacion.setIdentificador(idCap);
