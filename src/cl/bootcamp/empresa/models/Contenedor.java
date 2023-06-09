@@ -67,7 +67,7 @@ public class Contenedor {
     interfaz IAsesoria y llama al método listaUsuario() de cada objeto*/
     public void listaUsuario() {
         for (IAsesoria a : asesorias) {
-            a.listaUsuario();
+            System.out.println(a);
         }
     }
 
