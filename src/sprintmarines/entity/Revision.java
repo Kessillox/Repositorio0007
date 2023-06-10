@@ -1,5 +1,15 @@
 package sprintmarines.entity;
 
+/**
+ * Clase que representa una revisión.
+ * Contiene 4 atributos privados con información sobre el ID, nombre,
+ * detalle y estado de la revisión.
+ * @author Leadro Villalba
+ * @author Luis Zambrano
+ * @author Gustavo Vargas
+ * @author Cristian Trureo
+ * @version 1.2
+ */
 public class Revision {
     private int idRevision;
     private String nombreRevision;

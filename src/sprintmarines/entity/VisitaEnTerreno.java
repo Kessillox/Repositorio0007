@@ -3,6 +3,16 @@ package sprintmarines.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase que representa una visita en terreno.
+ * Contiene información sobre el ID, día, hora, lugar y comentarios de la visita.
+ * También tiene una lista de revisiones asociadas y un cliente asociado.
+ * @author Leadro Villalba
+ * @author Luis Zambrano
+ * @author Gustavo Vargas
+ * @author Cristian Trureo
+ * @version 1.2
+ */
 public class VisitaEnTerreno {
     private int idVisitaTerreno;
     private String dia;
@@ -10,6 +20,10 @@ public class VisitaEnTerreno {
     private String lugar;
     private String comentarios;
     public Cliente cliente;
+
+    /**
+     * Lista de revisiones asociadas a la visita en terreno.
+     */
     public List<Revision> revisionList = new ArrayList<>();
 
     public VisitaEnTerreno() {
@@ -74,6 +88,10 @@ public class VisitaEnTerreno {
                 '}';
     }
 
+    /**
+     * Método que agrega una revisión a la lista de revisiones.
+     * @param revision Revisión a agregar a la lista de revisiones asociadas a la visita en terreno.
+     */
     public void agregarRevision(Revision revision) {
         this.revisionList.add(revision);
     }

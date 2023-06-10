@@ -6,6 +6,16 @@ package sprintmarines.entity;
    En este ejemplo de clase, se aplica el principio de responsabilidad única, ya que la representación ya sea atributos y métodos de esta class
    Tienen que ver solo con su contexto y no modifica al resto de entidades o class.
  */
+
+/**
+ * Clase que representa un accidente.
+ * Contiene información sobre el ID, día, hora, lugar, origen y consecuencias del accidente.
+ * @author Leadro Villalba
+ * @author Luis Zambrano
+ * @author Gustavo Vargas
+ * @author Cristian Trureo
+ * @version 1.2
+ */
 public class Accidente {
     private int idAccidente;
     private String dia;
