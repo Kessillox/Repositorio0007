@@ -123,9 +123,9 @@ public class Main {
         // USUARIOS DE PRUEBA
         Cliente cliente1 = new Cliente("Pelayo", "Fernandez", "Torrealba", "12/12/1990", 11111111, "Fundimax", "Fundidora", 99999999, "9845615498", "Lejos 124", "Los Alpes");
         Cliente cliente2 = new Cliente("Cristian", "Trureo", "Trureo", "11/11/1991", 22222221, "Awakelab", "Capacitaciones IT", 55555555, "123123123123", "Lejos 777", "Los Alpes");
-        Administrativo administrativo1 = new Administrativo("Ana","Pavés","Gonzalez","25-10-1985",13562485,"RRHH", "2");
-        Administrativo administrativo2 = new Administrativo("Marie","SAnchez","Villaba","05-12-1987", 87562451, "Marketing","5");
-        Administrativo administrativo3 = new Administrativo("Santiago","Carter","Monroy","24-01-2985", 99856241,"Finanzas","3");
+        Administrativo administrativo1 = new Administrativo("Ana", "Pavés", "Gonzalez", "25-10-1985", 13562485, "RRHH", "2");
+        Administrativo administrativo2 = new Administrativo("Marie", "SAnchez", "Villaba", "05-12-1987", 87562451, "Marketing", "5");
+        Administrativo administrativo3 = new Administrativo("Santiago", "Carter", "Monroy", "24-01-2985", 99856241, "Finanzas", "3");
         Profesional profesional1 = new Profesional("Luis", "Zambrano", "Zambrano", "06-06-2023", 18685019, "Analista Programador", "06-06-2023");
         Profesional profesional2 = new Profesional("Livio", "Gut", "Guti", "10-10-2023", 33333333, "Ingeniero Físico Termonuclear", "10-12-2023");
         Profesional profesional3 = new Profesional("Brocacochi", "Chespi", "Rito", "10-10-1990", 45263525, "Informatico", "10-12-2023");
@@ -151,7 +151,7 @@ public class Main {
 
         while (opcion != 9) {
             System.out.println("\n Bienvenido a Sprint Modulo 4 Programación en Java!");
-            System.out.println("--------------------------------------");
+            System.out.println("-------------------------------------------------------");
             System.out.println("Que operación deseas realizar? (Debes pulsar un número)");
             System.out.println("(1) Almacenar cliente");
             System.out.println("(2) Almacenar profesional");
@@ -194,7 +194,7 @@ public class Main {
                             rut = entrada.nextInt();
                         } while (!validarRut(rut));
 
-                        do{
+                        do {
                             System.out.println("Ingrese el telefono de la empresa");
                             telefonoRepresentante = entrada.next();
                             entrada.nextLine();
@@ -216,7 +216,7 @@ public class Main {
                         //System.out.println(clienteEjemplo.toString());
                         clienteEjemplo.analizarUsuario();
                         contenedor.almacenarCliente(clienteEjemplo);
-
+                        System.out.println("");
 
                         break;
                     case 2:  // Profesional
@@ -240,6 +240,9 @@ public class Main {
                         //System.out.println(profesionalEjemplo.toString());
                         //profesionalEjemplo.analizarUsuario();
                         contenedor.almacenarProfesional(profesionalEjemplo);
+
+                        System.out.println("");
+
                         break;
 
 
@@ -259,6 +262,9 @@ public class Main {
                         Administrativo administrativoEjemplo = new Administrativo(usuarioAdministrativo.getNombre(), usuarioAdministrativo.getApellido1(), usuarioAdministrativo.getApellido2(), usuarioAdministrativo.getFechaDeNacimiento(), usuarioAdministrativo.getRun(), area, experienciaPrevia);
                         //administrativoEjemplo.analizarUsuario();
                         contenedor.almacenarAdministrativo(administrativoEjemplo);
+
+                        System.out.println("");
+
 
                         break;
 
@@ -285,25 +291,24 @@ public class Main {
                             rutEmpresaCapacitacion = entrada.nextInt();
                         } while (!validarRut(rutEmpresaCapacitacion));
 
-                        do{
-                            System.out.println("Ingrese el día en el que se va a realizar la capacitación");
+                        do {
+                            System.out.println("Ingrese el día de la semana en el que se va a realizar la capacitación");
                             diaCapacitacion = entrada.next();
                             entrada.nextLine();
-                        }while(!validarDia(diaCapacitacion));
+                        } while (!validarDia(diaCapacitacion));
 
                         do {
                             System.out.println("Ingrese la hora en la que se va a realizar la capacitación");
                             horaCapacitacion = entrada.nextLine();
-                        }while(!validarHora(horaCapacitacion));
+                        } while (!validarHora(horaCapacitacion));
 
                         do {
                             System.out.println("Ingresa el lugar donde se va a realizar al capacitación");
                             lugarCapacitacion = entrada.nextLine();
-                        }while(!validarLugar(lugarCapacitacion));
+                        } while (!validarLugar(lugarCapacitacion));
 
                         do {
-
-                            System.out.println("Ingresa la duración de la capacitación");
+                            System.out.println("Ingresa la duración de la capacitación (en minutos)");
                             if (entrada.hasNextInt()) {
                                 duracionCapacitacion = entrada.nextInt();
                                 entrada.nextLine(); // Consumir el salto de línea pendiente
@@ -313,7 +318,6 @@ public class Main {
                                 continue; // Volver al inicio del bucle
                             }
                         } while (!validarDuracion(duracionCapacitacion));
-
 
                         do {
                             System.out.println("Ingresa la cantidad de asistentes");
@@ -330,31 +334,29 @@ public class Main {
                         Capacitacion capacitacion = new Capacitacion(idCapacitacion, rutEmpresaCapacitacion, diaCapacitacion, horaCapacitacion, lugarCapacitacion, duracionCapacitacion, cantidadAsistentesCapacitacion);
                         contenedor.almacenarCapacitacion(capacitacion);
 
+                        System.out.println("*************************************************************************");
+                        System.out.println(capacitacion.mostrarDetalle());
+                        System.out.println("*************************************************************************");
                         break;
 
                     case 5:   // Eliminar usuario
-                        List<IAsesoria> listaDeUsuarios = contenedor.getListaDeUsuarios();
-                        for (int i = 0; i < listaDeUsuarios.size(); i++) {
-                            if (listaDeUsuarios.get(i) instanceof Usuario) {
-                                Usuario usuario = (Usuario) listaDeUsuarios.get(i);
-                                System.out.println("Nombre de usuario: " + usuario.getNombre() + " " + usuario.getApellido1() + " " + usuario.getApellido2() + ", run: " + usuario.getRun());
-                            }
-                        }
+                        System.out.println("Revise los usuarios registrados:\n");
+                        contenedor.listarUsuarios();
+
                         System.out.println("\nIngrese el RUN del usuario que desea eliminar:");
                         int run = entrada.nextInt();
                         contenedor.eliminarUsuario(run);
                         break;
 
-
                     case 6: // Listar Usuarios: se llama al método listarUsuarios() de la Clase Contenedor
                         System.out.println("Los usuarios ingresados son:\n");
                         contenedor.listarUsuarios();
-                        break;
-
-
+                        do {
+                            System.out.println("\nPresione ENTER para continuar...");
+                        } while (!(entrada.nextLine().isEmpty()));                        break;
 
                     case 7:   // Listar usuarios por Tipo
-                        System.out.println("Ingrese el tipo de usuario que desea listar (1: Cliente, 2: Administrativo, 3: Profesional):");
+                        System.out.println("Ingrese el numero del tipo de usuario a listar (1: Cliente, 2: Profesional, 3: Administrativo):");
                         String tipoUsuario = entrada.nextLine();
 
                         // Convertir el tipo de usuario ingresado a un objeto Class
@@ -364,29 +366,31 @@ public class Main {
                                 tipo = Cliente.class;
                                 break;
                             case "2":
-                                tipo = Administrativo.class;
+                                tipo = Profesional.class;
                                 break;
                             case "3":
-                                tipo = Profesional.class;
+                                tipo = Administrativo.class;
                                 break;
                             default:
                                 System.out.println("Tipo de usuario no válido");
                                 break;
                         }
                         contenedor.listarUsuariosPorTipo(tipo);
-                        break;
+                        do {
+                            System.out.println("\nPresione ENTER para continuar...");
+                        } while (!(entrada.nextLine().isEmpty()));                        break;
 
                     case 8: // Listar capacitaciones
                         System.out.println("Las capacitaciones ingresadas son:\n");
                         contenedor.listarCapacitaciones();
-                        break;
-
-
-
+                        do {
+                            System.out.println("\nPresione ENTER para continuar...");
+                        } while (!(entrada.nextLine().isEmpty()));                        break;
 
                     case 9: // Salir del programa
                         System.out.println("¡Gracias por usar nuestra aplicación, queremos un 7!");
                         break;
+
                     default:
                         System.out.println("Opción inválida. Por favor, selecciona una opción válida.");
                         break;

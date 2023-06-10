@@ -1,5 +1,7 @@
 package empresaclase14.validaciones;
 
+import java.text.Normalizer;
+
 public class ValidacionStrings {
     // LARGO DE TEXTOS
     public static boolean validarLargoString(String str, int minCaracter, int maxCaracter, String nombre) {
@@ -83,23 +85,22 @@ public class ValidacionStrings {
             return false;
         }
     }
-    public static boolean validarDia(String dia){
-        switch (dia.toLowerCase()) {
+    public static boolean validarDia(String dia) {
+        String diaNormalizado = Normalizer.normalize(dia, Normalizer.Form.NFD)
+                .replaceAll("[^\\p{ASCII}]", "")
+                .toLowerCase();
+        switch (diaNormalizado) {
             case "lunes":
             case "martes":
-            case "miércoles":
             case "miercoles":
             case "jueves":
             case "viernes":
-            case "sábado":
             case "sabado":
             case "domingo":
-                System.out.println("Día válido");
+                System.out.println("Día registrado correctamente.");
                 return true;
             default:
-                System.out.println("Ingrese un día válidao (lunes - Domingo)");
+                System.out.println("Ingrese un día entre Lunes a Domingo");
                 return false;
-
         }
-    }
-}
+    }}

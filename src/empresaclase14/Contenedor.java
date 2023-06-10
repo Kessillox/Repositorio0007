@@ -66,7 +66,8 @@ public class Contenedor {
     public void listarUsuarios() {
         for (IAsesoria usuario : listaDeUsuarios) {
             if (usuario instanceof Usuario) {
-                System.out.println(usuario.toString() + "\n");
+                Usuario usuarioActual = (Usuario) usuario;
+                System.out.println("Nombre: " + usuarioActual.getNombre() + ", RUN: " + usuarioActual.getRun());
             }
         }
     }

@@ -108,8 +108,7 @@ public class Cliente extends Usuario {
     @Override
     public void analizarUsuario() {
         super.analizarUsuario();
-        System.out.println("La dirección del cliente es: " + this.getDireccionEmpresa() +
-                "\n La comuna del cliente es: " + this.getComunaEmpresa());
+        System.out.println("     Dirección: " + this.getDireccionEmpresa() + ", comuna de " + this.getComunaEmpresa());
     }
 
 }

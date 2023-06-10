@@ -52,6 +52,6 @@ public class Administrativo extends Usuario {
     @Override
     public void analizarUsuario() {
         super.analizarUsuario();
-        System.out.println("Pertenece a área de " + this.getArea() + " y su experiencia previa es " + this.getExperienciaPrevia());
+        System.out.println("     Área: " + this.getArea() + ". Experiencia Previa: " + this.getExperienciaPrevia());
     }
 }

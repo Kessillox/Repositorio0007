@@ -6,19 +6,19 @@ package empresaclase14;
  */
 public class Capacitacion {
 
-    private int idCapacitacion;
+    private Integer idCapacitacion;
     private Integer rutCliente;
     private String dia;
     private String hora;
     private String lugar;
     private Integer duracion;
-    private int cantidadDeAsistentes;
+    private Integer cantidadDeAsistentes;
     //public Cliente cliente;
 
     public Capacitacion() {
     }
 
-    public Capacitacion(int idCapacitacion, Integer rutCliente, String dia, String hora, String lugar, int duracion, int cantidadDeAsistentes) {
+    public Capacitacion(Integer idCapacitacion, Integer rutCliente, String dia, String hora, String lugar, Integer duracion, Integer cantidadDeAsistentes) {
         this.idCapacitacion = idCapacitacion;
         this.rutCliente = rutCliente;
         this.dia = dia;
@@ -107,7 +107,7 @@ public class Capacitacion {
 
     // Se considera que el atributo duración es ingresado en formato HORA
     public String mostrarDetalle(){
-        return "La capacitación será en " + lugar + " a las " + hora + "hrs. del día " + dia +
-                ", y durará " + duracion + " minutos";
+        return "La capacitación será en " + this.getLugar() + " a las " + this.getHora() + "hrs. del día " +
+                this.getDia() + ", y durará " + this.getDuracion() + " minutos";
     }
 }
