@@ -1,18 +1,19 @@
-import empresaclase14.*;
+import sprintmarines.entity.*;
+import sprintmarines.iservices.IAsesoria;
+import sprintmarines.services.Contenedor;
 
-import java.util.List;
 import java.util.Scanner;
 
-import static empresaclase14.validaciones.ValidacionStrings.validarDia;
-import static empresaclase14.validaciones.ValidacionStrings.validarLargoString;
-import static empresaclase14.validaciones.validacionadministrativo.ValidacionAdministrativo.validarArea;
-import static empresaclase14.validaciones.validacionadministrativo.ValidacionAdministrativo.validarExperienciaPrevia;
-import static empresaclase14.validaciones.validacionusuario.ValidacionUsuario.*;
-import static empresaclase14.validaciones.validacioncliente.ValidacionCliente.*;
-import static empresaclase14.validaciones.validacionaccidente.ValidacionAccidente.*;
-import static empresaclase14.validaciones.validacionidentificador.ValidacionIdentificador.*;
-import static empresaclase14.validaciones.validacionprofesional.ValidacionProfesional.*;
-import static empresaclase14.validaciones.validacioncapacitacion.ValidacionCapacitacion.*;
+import static sprintmarines.validaciones.ValidacionStrings.validarDia;
+import static sprintmarines.validaciones.ValidacionStrings.validarLargoString;
+import static sprintmarines.validaciones.validacionadministrativo.ValidacionAdministrativo.validarArea;
+import static sprintmarines.validaciones.validacionadministrativo.ValidacionAdministrativo.validarExperienciaPrevia;
+import static sprintmarines.validaciones.validacionusuario.ValidacionUsuario.*;
+import static sprintmarines.validaciones.validacioncliente.ValidacionCliente.*;
+import static sprintmarines.validaciones.validacionaccidente.ValidacionAccidente.*;
+import static sprintmarines.validaciones.validacionidentificador.ValidacionIdentificador.*;
+import static sprintmarines.validaciones.validacionprofesional.ValidacionProfesional.*;
+import static sprintmarines.validaciones.validacioncapacitacion.ValidacionCapacitacion.*;
 
 
 /**
