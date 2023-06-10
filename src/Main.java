@@ -4,16 +4,7 @@ import sprintmarines.services.Contenedor;
 
 import java.util.Scanner;
 
-import static sprintmarines.validaciones.ValidacionStrings.validarDia;
-import static sprintmarines.validaciones.ValidacionStrings.validarLargoString;
-import static sprintmarines.validaciones.validacionadministrativo.ValidacionAdministrativo.validarArea;
-import static sprintmarines.validaciones.validacionadministrativo.ValidacionAdministrativo.validarExperienciaPrevia;
-import static sprintmarines.validaciones.validacionusuario.ValidacionUsuario.*;
-import static sprintmarines.validaciones.validacioncliente.ValidacionCliente.*;
-import static sprintmarines.validaciones.validacionaccidente.ValidacionAccidente.*;
-import static sprintmarines.validaciones.validacionidentificador.ValidacionIdentificador.*;
-import static sprintmarines.validaciones.validacionprofesional.ValidacionProfesional.*;
-import static sprintmarines.validaciones.validacioncapacitacion.ValidacionCapacitacion.*;
+import static sprintmarines.validaciones.Validaciones.*;
 
 
 /**
@@ -96,7 +87,7 @@ public class Main {
         String titulo;
         String fechaDeIngreso;
 
-        //Variables de Administrtivo
+        //Variables de Administrativo
         String area;
         String experienciaPrevia;
 
@@ -104,7 +95,7 @@ public class Main {
         int idAccidente = 0;
         String dia, hora, lugar, origen, consecuencias;
 
-        // Variables de Capacitacion
+        // Variables de Capacitación
         Integer idCapacitacion = 0;
         Integer rutEmpresaCapacitacion = 0;
         String diaCapacitacion = "";
@@ -151,7 +142,7 @@ public class Main {
             System.out.println("(1) Almacenar cliente");
             System.out.println("(2) Almacenar profesional");
             System.out.println("(3) Almacenar administrativo");
-            System.out.println("(4) Almacenar capacitacion");
+            System.out.println("(4) Almacenar capacitación");
             System.out.println("(5) Eliminar usuario");
             System.out.println("(6) Listar usuarios");
             System.out.println("(7) Listar usuarios por tipo");
@@ -197,12 +188,12 @@ public class Main {
                         do {
                             System.out.println("Ingrese la dirección de la empresa");
                             direccionEmpresa = entrada.nextLine();
-                        } while (!validarDireccionEmpresa(direccionEmpresa));
+                        } while (validarLargoString(direccionEmpresa, 5, 70, "Dirección"));
 
                         do {
                             System.out.println("Ingrese la comuna de la empresa");
                             comunaEmpresa = entrada.nextLine();
-                        } while (!validarComunaEmpresa(comunaEmpresa));
+                        } while (validarLargoString(comunaEmpresa, 2, 50, "Comuna"));
 
                         Cliente clienteEjemplo = new Cliente(usuarioCliente.getNombre(), usuarioCliente.getApellido1(), usuarioCliente.getApellido2(), usuarioCliente.getFechaDeNacimiento(), usuarioCliente.getRun(), nombreEmpresa, giroEmpresa, rut, telefonoRepresentante, direccionEmpresa, comunaEmpresa);
 
@@ -219,7 +210,7 @@ public class Main {
                         do {
                             System.out.println("Ingrese título del profesional");
                             titulo = entrada.nextLine();
-                        } while (!validarTitulo(titulo));
+                        } while (validarLargoString(titulo, 5, 50, "Título"));
                         do {
                             System.out.println("Ingresa la fecha de ingreso:");
                             fechaDeIngreso = entrada.nextLine();
@@ -239,11 +230,11 @@ public class Main {
                         do {
                             System.out.println("Ingrese area de administración");
                             area = entrada.nextLine();
-                        } while (!validarArea(area));
+                        } while (validarLargoString(area, 5, 20, "Area"));
                         do {
                             System.out.println("Ingrese experiencia previa");
                             experienciaPrevia = entrada.nextLine();
-                        } while (!validarExperienciaPrevia(experienciaPrevia));
+                        } while (validarLargoString(experienciaPrevia, 0, 100, "Experiencia"));
 
                         Administrativo administrativoEjemplo = new Administrativo(usuarioAdministrativo.getNombre(), usuarioAdministrativo.getApellido1(), usuarioAdministrativo.getApellido2(), usuarioAdministrativo.getFechaDeNacimiento(), usuarioAdministrativo.getRun(), area, experienciaPrevia);
                         contenedor.almacenarAdministrativo(administrativoEjemplo);
@@ -288,7 +279,7 @@ public class Main {
                         do {
                             System.out.println("Ingresa el lugar donde se va a realizar al capacitación");
                             lugarCapacitacion = entrada.nextLine();
-                        } while (!validarLugar(lugarCapacitacion));
+                        } while (validarLargoString(lugarCapacitacion, 2, 50, "Lugar "));
 
                         do {
                             System.out.println("Ingresa la duración de la capacitación (en minutos)");

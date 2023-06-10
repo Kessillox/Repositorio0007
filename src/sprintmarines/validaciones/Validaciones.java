@@ -2,7 +2,7 @@ package sprintmarines.validaciones;
 
 import java.text.Normalizer;
 
-public class ValidacionStrings {
+public class Validaciones {
     // LARGO DE TEXTOS
     public static boolean validarLargoString(String str, int minCaracter, int maxCaracter, String nombre) {
         if (str == null) {
@@ -65,15 +65,16 @@ public class ValidacionStrings {
     }
 
     // ID
-    public static boolean validarId(int id){
-        if(id <1 && id >999) {
-            System.out.println("Ingrese un número válido(1-999)");
-            return false;
-        }else{
+    public static boolean validarId(int id) {
+        if (id >= 1 && id < 1000) {
             System.out.println("ID ingresado correctamente.");
+            return false;
+        } else {
+            System.out.println("ID no válido. Ingrese un número entre 1 y 999.");
             return true;
         }
     }
+
 
     // RUT
     public static boolean validarRut(int rut){
@@ -85,6 +86,19 @@ public class ValidacionStrings {
             return false;
         }
     }
+
+    // RUN USUARIO
+    public static boolean validarRunUser(int rut){
+        if(rut < 99999999) {
+            System.out.println("RUN Usuario registrado correctamente.");
+            return true;
+        }else{
+            System.out.println("RUT Usuario ingresado incorrectamente.");
+            return false;
+        }
+    }
+
+    // DIAS DE LA SEMANA
     public static boolean validarDia(String dia) {
         String diaNormalizado = Normalizer.normalize(dia, Normalizer.Form.NFD)
                 .replaceAll("[^\\p{ASCII}]", "")
@@ -103,4 +117,28 @@ public class ValidacionStrings {
                 System.out.println("Ingrese un día entre Lunes a Domingo");
                 return false;
         }
-    }}
+    }
+
+    // DURACION
+    public static boolean validarDuracion(int duracion) {
+        if(duracion > 0){
+            System.out.println("Duración ingresada correctamente!");
+            return true;
+        }else{
+            System.out.println("Duración debe ser mayor a 0 minutos");
+            return false;
+        }
+    }
+
+    // CANTIDAD ASISTENTES
+    public static boolean validarCantidadAsistentes(int id){
+        if(id <1 && id >999) {
+            System.out.println("Ingrese un número válido(1-999)");
+            return false;
+        }else{
+            System.out.println("Cantidad de asistentes ingresada incorrectamente.");
+            return true;
+        }
+    }
+
+}
