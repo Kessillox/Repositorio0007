@@ -62,4 +62,4 @@ muchas empresas se encuentran en zonas donde no hay conexión de ese tipo.
 | Leandro Villalba | 👽
 | Gustavo Vargas   | 👻
 | Cristian Trureo  | 💀
-| Luis Zambrano    | 😎
+| Luis Zambrano    | 🗡️
