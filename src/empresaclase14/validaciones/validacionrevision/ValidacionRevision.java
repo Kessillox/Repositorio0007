@@ -9,7 +9,7 @@ public class ValidacionRevision {
             System.out.println("Nombre ingresado correctamente");
             return true;
         }else{
-            System.out.println("Área no valida, ingrese entre 5 y 20 carácteres");
+            System.out.println("Area no valida, ingrese entre 5 y 20 caracteres");
             return false;
         }
     }

@@ -7,12 +7,6 @@ package empresaclase14;
   a su vez sus atributos están privados por lo que se puede amplicar sin modificar su
   implementación existente.
  */
-
-/**
- * Clase que representa un administrativo, que extiende la clase Usuario.
- * Contiene información adicional sobre el área y experiencia previa del administrativo.
- * También tiene un método para analizar la información del administrativo.
- */
 public class Administrativo extends Usuario {
     private String area;
     private String experienciaPrevia;
@@ -55,13 +49,9 @@ public class Administrativo extends Usuario {
                 '}';
     }
 
-    /**
-     * Método que analiza la información del administrativo e imprime por pantalla el área y
-     * experiencia previa del mismo.
-     */
     @Override
     public void analizarUsuario() {
         super.analizarUsuario();
-        System.out.println("     Área: " + this.getArea() + ". Experiencia Previa: " + this.getExperienciaPrevia());
+        System.out.println("     Area: " + this.getArea() + ". Experiencia Previa: " + this.getExperienciaPrevia());
     }
 }

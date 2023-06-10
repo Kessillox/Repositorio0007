@@ -3,10 +3,10 @@ package empresaclase14.validaciones.validacionadministrativo;
 public class ValidacionAdministrativo {
     public static boolean validarArea(String str){
         if(str != null && str.length() >= 5 && str.length() <= 20){
-            System.out.println("Área ingresada correctamente");
+            System.out.println("Area ingresada correctamente");
             return true;
         }else{
-            System.out.println("Área no valida, ingrese entre 5 y 20 carácteres");
+            System.out.println("Area no valida, ingrese entre 5 y 20 carácteres");
             return false;
         }
     }
