@@ -2,8 +2,7 @@ import cl.bootcamp.empresa.controllers.AlmacenarAdministrativoController;
 import cl.bootcamp.empresa.controllers.AlmacenarCapacitacionController;
 import cl.bootcamp.empresa.controllers.AlmacenarClienteController;
 import cl.bootcamp.empresa.controllers.AlmacenarProfesionalController;
-import cl.bootcamp.empresa.models.Contenedor;
-import cl.bootcamp.empresa.models.VisitaTerreno;
+import cl.bootcamp.empresa.models.*;
 
 import java.util.Scanner;
 
@@ -56,7 +55,7 @@ public class Principal {
                 case 4:
                     System.out.println("=== Almacenar Capacitación ===");
                     AlmacenarCapacitacionController almacenarCapacitacionController = new AlmacenarCapacitacionController();
-                    almacenarCapacitacionController.almacenarCapacitacionController();
+                    contenedor.almacenarCapacitacion(almacenarCapacitacionController.almacenarCapacitacionController());
                     break;
                 case 5:
                     System.out.println("=== Eliminar Usuario ===");
@@ -70,9 +69,28 @@ public class Principal {
                     break;
                 case 7:
                     System.out.println("=== Listar por tipo de usuario ===");
+                    System.out.println("opción 1: Cliente");
+                    System.out.println("opción 2: Administrativo");
+                    System.out.println("opción 3: Profesional");
+                    sc.nextLine(); // consumir el salto de línea
+                    String tipo = sc.nextLine();
+                    switch (tipo) {
+                        case "1":
+                            contenedor.listarUsuariosPorTipo(new Cliente());
+                            break;
+                        case "2":
+                            contenedor.listarUsuariosPorTipo(new Administrativo());
+                            break;
+                        case "3":
+                            contenedor.listarUsuariosPorTipo(new Profesional());
+                            break;
+                        default:
+                            System.out.println("Opción invalida");
+                    }
                     break;
                 case 8:
                     System.out.println("=== Listar Capacitaciones ===");
+                    contenedor.listarCapacitaciones();
                     break;
                 case 9:
                     System.out.print("Saliendo del programa");
@@ -87,7 +105,6 @@ public class Principal {
                 default:
                     System.out.println("Por favor, ingrese un número del 1 al 9 " +
                             "según la opción que desee");
-
             }
         }
 

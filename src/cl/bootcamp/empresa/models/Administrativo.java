@@ -79,7 +79,7 @@ public class Administrativo extends Usuario {
     @Override
     public String toString() {
         return super.toString() +
-                "area: " + area +
+                ", area: " + area +
                 ", experenciaArea: " + experenciaArea;
     }
 }

@@ -183,7 +183,7 @@ public class Cliente extends Usuario {
     @Override
     public String toString() {
         return super.toString() +
-                "nombre empresa: " + nombreEmpresa +
+                ", nombre empresa: " + nombreEmpresa +
                 ", giro empresa: " + giroEmpresa +
                 ", teléfono representante: " + telefonoRepresentante +
                 ", dirección empresa: " + direccionEmpresa +

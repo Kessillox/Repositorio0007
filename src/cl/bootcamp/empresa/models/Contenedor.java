@@ -18,28 +18,10 @@ public class Contenedor {
 
     private List<Capacitacion> capacitaciones = new ArrayList<>();
 
-    private List<Cliente> cliente = new ArrayList<>();
-
-    private List<Profesional> profesional = new ArrayList<>();
-
-    private List<Administrativo> administrativo = new ArrayList<>();
-
     /* Este método permite almacenar los datos de cliente, profesional y
     administrativo en una sola lista*/
     public void almacenarUsuario(IAsesoria a) {
         asesorias.add(a);
-    }
-
-    public void almacenarCliente(Cliente c) {
-        cliente.add(c);
-    }
-
-    public void almacenarProfesiona(Profesional p) {
-        profesional.add(p);
-    }
-
-    public void almacenarAdministrativo(Administrativo a) {
-        administrativo.add(a);
     }
 
     //almacena los datos de capacitacion
@@ -59,24 +41,14 @@ public class Contenedor {
         }
     }
 
-    public void listarUsuarios() {
-        for (IAsesoria asesoria : asesorias) {
-            asesoria.listaUsuario();
-        }
-    }
+    public void listarUsuariosPorTipo(Usuario usuario) {
 
-    public void listarUsuariosPorTipo() {
-        System.out.println("Lista de clientes");
-        for (Cliente c : cliente) {
-            System.out.println(c);
-        }
-        System.out.println("Lista de profesionales");
-        for (Profesional p : profesional) {
-            System.out.println(p);
-        }
-        System.out.println("Lista de administrativo");
-        for (Administrativo a : administrativo) {
-            System.out.println(a);
+        String usuarioClassName = usuario.getClass().getSimpleName();
+
+        for (IAsesoria a : asesorias) {
+            if (a.getClass().getSimpleName().equals(usuarioClassName)) {
+                System.out.println(a);
+            }
         }
     }
 

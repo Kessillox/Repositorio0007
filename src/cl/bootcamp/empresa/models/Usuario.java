@@ -117,19 +117,6 @@ public class Usuario implements IAsesoria {
     }
 
     /**
-     * Sobrescritura del método listaUsuario()
-     */
-    @Override
-    public void listaUsuario() {
-        System.out.println("nombre: " + nombre +
-                ", apellido1: " + apellido1 +
-                ", apellido2: " + apellido2 +
-                ", fecha nacimiento: " + fechaNacimiento +
-                ", run: " + run +
-                ", edad: " + edad);
-    }
-
-    /**
      * Sobrescritura del método toString
      *
      * @return String

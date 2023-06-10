@@ -19,5 +19,4 @@ import cl.bootcamp.empresa.models.Accidente;
 public interface IAsesoria {
     void analizarUsuario();
 
-    void listaUsuario();
 }
