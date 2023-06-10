@@ -1,5 +1,10 @@
 package empresaclase14;
 
+/**
+ * Clase que representa un profesional, que extiende la clase Usuario.
+ * Contiene información adicional sobre el título y fecha de ingreso del profesional.
+ * También tiene un método para analizar la información del profesional.
+ */
 public class Profesional extends Usuario {
     private String titulo;
     private String fechaDeIngreso;
@@ -42,6 +47,9 @@ public class Profesional extends Usuario {
                 '}';
     }
 
+    /**
+     * Método para analizar la información del profesional.
+     */
     @Override
     public void analizarUsuario() {
         super.analizarUsuario();

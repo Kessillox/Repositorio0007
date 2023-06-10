@@ -18,7 +18,11 @@ package empresaclase14;
     se altere el comportamiento de la clase padre (ni del programa), no haya que
     sobreecribir métodos que no sirvan a las clases hijas y también para que los
     atributos de la clase padre tengan sentido para las clases hijas*/
-
+/**
+ * Clase que representa un usuario.
+ * Implementa la interfaz IAsesoria y contiene 5 atributos privados con
+ * información básica del usuario.
+ */
 public class Usuario implements IAsesoria {
     private String nombre;
     private String apellido1;
@@ -88,12 +92,20 @@ public class Usuario implements IAsesoria {
                 '}';
     }
 
+    /**
+     * Método que retorna un string con la edad actual del usuario basada en su fecha de nacimiento.
+     * @return Un string con la edad actual del usuario.
+     */
     public String mostrarEdad(){
         int edad;
         edad = (2023 - Integer.parseInt(fechaDeNacimiento));
         return "El usuario tiene " + edad + " años";
     }
 
+    /**
+     * Implementación del método analizarUsuario de la interfaz IAsesoria que imprime por consola
+     * el nombre y RUN del usuario.
+     */
     @Override
     public void analizarUsuario() {
         System.out.println("Nombre de usuario: " + this.getNombre() +", run: "+ this.getRun());
