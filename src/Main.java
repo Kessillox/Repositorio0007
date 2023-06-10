@@ -16,13 +16,15 @@ import static empresaclase14.validaciones.validacioncapacitacion.ValidacionCapac
 
 
 /**
- * Esta es la clase Main donde se crea la instancia de los objetos Usuario, Capacitación y Cliente
+ * Esta es la clase Main donde se crea una instancia de la clase Contenedor
+ * Se crea un menú con 9 opciones para que interactúe el usuario, incluyendo
+ * una opción para salir del programa, finalizando el mismo.
  *
  * @author Leadro Villalba
  * @author Luis Zambrano
  * @author Gustavo Vargas
  * @author Cristian Trureo
- * @version 1.1
+ * @version 1.2
  */
 
 public class Main {
@@ -33,7 +35,6 @@ public class Main {
         String apellido2Usuario;
         String fechaDeNacimientoUsuario;
         int runUsuario;
-
 
         do {
             System.out.println("Ingresa el nombre: (mínimo 3 caracteres y máximo 50)");
@@ -67,18 +68,15 @@ public class Main {
         } while (!validarRunUser(runUsuario));
 
         return new Usuario(nombreUsuario, apellido1Usuario, apellido2Usuario, fechaDeNacimientoUsuario, runUsuario);
-
     }
 
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
-
         String tituloMenu = "";
         int opcion = 0;
 
         // Variables de Usuario
-
         String nombreUsuario = "";
         String apellido1Usuario = "";
         String apellido2Usuario = "";
@@ -86,7 +84,6 @@ public class Main {
         Integer runUsuario = 0;
 
         // Variables de Cliente
-
         String nombreEmpresa;
         String giroEmpresa;
         int rut;
@@ -102,7 +99,6 @@ public class Main {
         String area;
         String experienciaPrevia;
 
-
         // Variables de Accidente
         int idAccidente = 0;
         String dia, hora, lugar, origen, consecuencias;
@@ -116,7 +112,6 @@ public class Main {
         Integer duracionCapacitacion = 0;
         Integer cantidadAsistentesCapacitacion = 0;
 
-        //Cliente clienteEjemplo = new Cliente();
         // CONTENEDOR
         Contenedor contenedor = new Contenedor();
 
@@ -148,7 +143,6 @@ public class Main {
         contenedor.almacenarCapacitacion(capacitacion4);
         contenedor.almacenarCapacitacion(capacitacion5);
 
-
         while (opcion != 9) {
             System.out.println("\n Bienvenido a Sprint Modulo 4 Programación en Java!");
             System.out.println("--------------------------------------");
@@ -167,7 +161,6 @@ public class Main {
             if (entrada.hasNextInt()) {
                 opcion = entrada.nextInt();
                 entrada.nextLine();
-
 
                 switch (opcion) {
                     case 1:   // Cliente
@@ -200,7 +193,6 @@ public class Main {
                             entrada.nextLine();
                         } while (!esStringObligatorio(telefonoRepresentante));
 
-
                         do {
                             System.out.println("Ingrese la dirección de la empresa");
                             direccionEmpresa = entrada.nextLine();
@@ -213,15 +205,11 @@ public class Main {
 
                         Cliente clienteEjemplo = new Cliente(usuarioCliente.getNombre(), usuarioCliente.getApellido1(), usuarioCliente.getApellido2(), usuarioCliente.getFechaDeNacimiento(), usuarioCliente.getRun(), nombreEmpresa, giroEmpresa, rut, telefonoRepresentante, direccionEmpresa, comunaEmpresa);
 
-                        //System.out.println(clienteEjemplo.toString());
                         clienteEjemplo.analizarUsuario();
                         contenedor.almacenarCliente(clienteEjemplo);
-
-
                         break;
+
                     case 2:  // Profesional
-
-
                         System.out.println("Bienvenido al registro de Profesionales");
                         Usuario usuarioProfesional = almacenarUsuario(entrada);
 
@@ -235,13 +223,8 @@ public class Main {
                         } while (!validarFecha(fechaDeIngreso));
 
                         Profesional profesionalEjemplo = new Profesional(usuarioProfesional.getNombre(), usuarioProfesional.getApellido1(), usuarioProfesional.getApellido2(), usuarioProfesional.getFechaDeNacimiento(), usuarioProfesional.getRun(), titulo, fechaDeIngreso);
-
-
-                        //System.out.println(profesionalEjemplo.toString());
-                        //profesionalEjemplo.analizarUsuario();
                         contenedor.almacenarProfesional(profesionalEjemplo);
                         break;
-
 
                     case 3:   // Administrativo
                         System.out.println("Bienvenido al registro de Administrativo");
@@ -257,13 +240,11 @@ public class Main {
                         } while (!validarExperienciaPrevia(experienciaPrevia));
 
                         Administrativo administrativoEjemplo = new Administrativo(usuarioAdministrativo.getNombre(), usuarioAdministrativo.getApellido1(), usuarioAdministrativo.getApellido2(), usuarioAdministrativo.getFechaDeNacimiento(), usuarioAdministrativo.getRun(), area, experienciaPrevia);
-                        //administrativoEjemplo.analizarUsuario();
                         contenedor.almacenarAdministrativo(administrativoEjemplo);
 
                         break;
 
                     case 4: // Capacitacion
-
                         System.out.println("Bienvenido a el Registro de Capacitación");
                         do {
                             System.out.println("Ingrese el ID de Capacitación");
@@ -273,7 +254,6 @@ public class Main {
                             }
                             idCapacitacion = entrada.nextInt();
                         } while (validarId(idCapacitacion));
-
 
                         do {
                             System.out.println("Ingrese el RUT de la empresa");
@@ -302,7 +282,6 @@ public class Main {
                         }while(!validarLugar(lugarCapacitacion));
 
                         do {
-
                             System.out.println("Ingresa la duración de la capacitación");
                             if (entrada.hasNextInt()) {
                                 duracionCapacitacion = entrada.nextInt();
@@ -313,7 +292,6 @@ public class Main {
                                 continue; // Volver al inicio del bucle
                             }
                         } while (!validarDuracion(duracionCapacitacion));
-
 
                         do {
                             System.out.println("Ingresa la cantidad de asistentes");
@@ -351,8 +329,6 @@ public class Main {
                         contenedor.listarUsuarios();
                         break;
 
-
-
                     case 7:   // Listar usuarios por Tipo
                         System.out.println("Ingrese el tipo de usuario que desea listar (1: Cliente, 2: Administrativo, 3: Profesional):");
                         String tipoUsuario = entrada.nextLine();
@@ -381,9 +357,6 @@ public class Main {
                         contenedor.listarCapacitaciones();
                         break;
 
-
-
-
                     case 9: // Salir del programa
                         System.out.println("¡Gracias por usar nuestra aplicación, queremos un 7!");
                         break;
@@ -399,20 +372,6 @@ public class Main {
         }
 
     }
-/**
- // Creo Instancia Contenedor
- Contenedor prueba = new Contenedor();
- // Agrego Cliente a ListaDeUsuarios
- prueba.almacenarCliente(clienteEjemplo);
-
- //Muestro Lista
-
- prueba.listarUsuarios();
-
- //prueba.listarUsuariosPorTipo(clienteEjemplo);
- System.out.println(clienteEjemplo.getClass());
- */
-
 
 }
 
