@@ -1,4 +1,4 @@
-package individual27gustavov;
+package individual31gustavov;
 
 import java.util.Scanner;
 
