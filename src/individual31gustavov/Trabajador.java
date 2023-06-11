@@ -1,4 +1,4 @@
-package individual27gustavov;
+package individual31gustavov;
 
 /**
  * Individual 25: Crear una clase Trabajador creando algunos metodos.
@@ -21,6 +21,7 @@ public class Trabajador {
 
     /**
      * Constructor con parámetros
+     *
      * @param nombres
      * @param apellidos
      * @param run
@@ -90,14 +91,16 @@ public class Trabajador {
 
     /**
      * Método de concatenación del nombre completo
+     *
      * @return Devuelve el nombre completo del trabajador como una cadena
      */
-    public String nombreCompleto(){
+    public String nombreCompleto() {
         return nombres + " " + apellidos;
     }
 
     /**
      * Método de descomposición del RUN
+     *
      * @return Devuelve como un entero, los números del RUN antes del guión
      */
     public int descomponerRun() {
@@ -110,5 +113,10 @@ public class Trabajador {
         String runSinGuion = posicionGuion == -1 ? run : run.substring(0, posicionGuion);
         int runDescompuesto = Integer.parseInt(runSinGuion);  // con .parseInt() se convierte en un número entero
         return runDescompuesto;  // retorno entero del método
+    }
+
+    public void mostrarDatos() {
+        System.out.println("Teléfono: " + telefono);
+        System.out.println("Edad: " + edad);
     }
 }

@@ -1,6 +1,4 @@
-package individual27gustavov;
-
-import java.util.Scanner;
+package individual31gustavov;
 
 public class Main {
     public static void main(String[] args) {

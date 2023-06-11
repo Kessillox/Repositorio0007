@@ -34,3 +34,45 @@ mediante un menú que muestra tres opciones: 1) Cónyuge, 2) Hijo/a y 3) Otro. L
 un valor numérico a la variable `parentesco` dependiendo de la opción seleccionada por el usuario. Si el usuario ingresa
 una opción no válida, se asigna el valor 0 a `parentesco`. Después se crea una instancia de `CargaFamiliar` con los 
 datos ingresados y se muestra la representación en cadena de la carga familiar utilizando el método `toString`.
+
+
+### Ejercicio N°29:
+
+Se solicita crear un **diagrama de clases** que represente a las entidades Trabajador, CargaFamiliar, y dos clases 
+nuevas: Dirección y Estudio:
+
+Dirección
+- Identificador de la dirección
+- Calle
+- Número
+- Sector
+- Comuna
+
+Estudio
+- Institución
+- Carrera
+- Año inicio
+- Año fin
+
+Además, debe considerar lo siguiente:
+- Un trabajador está asociado solo a una dirección, o bien a ninguna.
+- Un trabajador puede tener registrados al menos un estudio, sin límite de registro.
+
+![Diagrama de Clases](/src/TI-29-GustavoV.png)
+
+
+### Ejercicio N°31:
+
+Este ejercicio es la continuación del N°29; se solicita agregar el método `mostrarDatos()` en la clase _Trabajador_, el 
+cual debe mostrar el `telefono` y `edad` del trabajador.
+
+Además, se sabe que existen _tres tipos_ de trabajadores:
+- **Honorario:** respecto de este tipo de trabajadores, se desea saber su `giro` y `año de iniciación` de actividades.
+- **Contratado:** de esta categoría se debe conocer su `fecha de ingreso` y `salario mensual`.
+- **Eventual:** de este tipo de trabajador se interesa saber su `disponibilidad` y `correo electrónico`.
+
+Las tres clases deben extender la clase `Trabajador` y deben incluir sus propios atributos, accesores, mutadores y el 
+método `toString()`.
+
+Además, cada clase hija debe implementar el método `mostrarDatos()`, sobrescribiendo el comportamiento establecido en 
+la clase padre.
