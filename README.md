@@ -76,3 +76,16 @@ método `toString()`.
 
 Además, cada clase hija debe implementar el método `mostrarDatos()`, sobrescribiendo el comportamiento establecido en 
 la clase padre.
+
+
+### Ejercicio N°33:
+
+Para este nuevo ejercicio, se necesita crear una clase padre llamada `Empleado`, de las cuales derivaran dos tipos:
+`Vendedor` y `Repartidor`.
+
+1. Todo **empleado** tendrá los siguientes atributos: `nombre`, `apellido`, `edad` y `salario`.
+1. Además, si este **empleado** tiene más de 40 años se le dará un bono adicional de `100.000` pesos.
+1. En cuanto al **vendedor**, se desea saber su `fecha de inicio` en la empresa. En lo que respecta al **repartidor**, 
+es necesario saber su `disponibilidad horaria` (texto).
+1. A los **vendedores**, se les asignará un bono adicional de `50.000`, y en el caso de los **repartidores**, quienes 
+tengan menos de 30 años se les asignará un bono adicional de `15.000`.
