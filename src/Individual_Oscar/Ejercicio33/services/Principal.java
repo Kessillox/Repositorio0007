@@ -8,13 +8,33 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Repartidor rep1 = new Repartidor("Juan","Perez",33,150000,"08:00 a 12:00");
-        //Vendedor ven1 = new Vendedor("Jose", "Gonzales", 33, 150000, "08:00 a 12:00");
-        //System.out.println(ven1.bonoVendedores());
-        System.out.println(rep1.bonoRepartidores());
-        //Vendedor ven2 = new Vendedor("Jose","Gonzales",33,150000,"08:00 a 12:00");
+        Repartidor rep1 = new Repartidor("Juan","Perez",45,150000,"08:00 a 12:00");
+        Repartidor rep2 = new Repartidor("Mauricio","Hernandez",23,130000,"08:00 a 12:00");
+        Repartidor rep3 = new Repartidor("Pamela","Neira",31,200000,"08:00 a 12:00");
 
-        System.out.println("Ingrese el Sueldo");
+        Vendedor ven1 = new Vendedor("Jose", "Gonzales", 45, 150000, "08:00 a 12:00");
+        Vendedor ven2 = new Vendedor("Pedro", "ramirez", 25, 350000, "08:00 a 12:00");
+        Vendedor ven3 = new Vendedor("Jose", "Gonzales", 31, 300000, "08:00 a 12:00");
+
+
+        System.out.println("########### VENDEDORES ###########");
+        System.out.println("Nombre: "+ven1.getNombre()+" "+ven1.getApellido()+"\nSueldo: "+ ven1.getSalario()+"\nEdad: "+ven1.getEdad()+"\nBono Edad: "+ ven1.bonoEdad());
+        System.out.println("----------------------------------------------------------------");
+        System.out.println("Nombre: "+ven2.getNombre()+" "+ven2.getApellido()+"\nSueldo: "+ ven2.getSalario()+"\nEdad: "+ven2.getEdad()+"\nBono Edad: "+ ven2.bonoEdad());
+        System.out.println("----------------------------------------------------------------");
+        System.out.println("Nombre: "+ven3.getNombre()+" "+ven3.getApellido()+"\nSueldo: "+ ven3.getSalario()+"\nEdad: "+ven3.getEdad()+"\nBono Edad: "+ ven3.bonoEdad());
+        System.out.println("----------------------------------------------------------------");
+
+        System.out.println("########### REPARTIDORES ###########");
+        System.out.println("Nombre: "+rep1.getNombre()+" "+rep1.getApellido()+"\nSueldo: "+ rep1.getSalario()+"\nEdad: "+rep1.getEdad()+"\nBono Edad: "+rep1.bonoEdad() + rep1.bonoRepartidores());
+        System.out.println("----------------------------------------------------------------");
+        System.out.println("Nombre: "+rep2.getNombre()+" "+rep2.getApellido()+"\nSueldo: "+ rep2.getSalario()+"\nEdad: "+rep2.getEdad()+"\nBono Edad: "+rep2.bonoEdad()+rep2.bonoRepartidores());
+        System.out.println("----------------------------------------------------------------");
+        System.out.println("Nombre: "+rep3.getNombre()+" "+rep3.getApellido()+"\nSueldo: "+ rep3.getSalario()+"\nEdad: "+rep3.getEdad()+"\nBono Edad: "+rep3.bonoEdad()+rep3.bonoRepartidores());
+
+
+
+
         System.out.println();
     }
 }
