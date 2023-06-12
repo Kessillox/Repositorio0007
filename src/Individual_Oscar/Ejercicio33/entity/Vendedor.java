@@ -8,6 +8,9 @@ public class Vendedor extends Empleado{
         this.fechaInicio = fechaInicio;
     }
 
+    public Vendedor() {
+    }
+
     public Vendedor(String fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
