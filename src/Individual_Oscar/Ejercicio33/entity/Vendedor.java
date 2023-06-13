@@ -1,5 +1,14 @@
 package Individual_Oscar.Ejercicio33.entity;
 
+/**
+ *
+ * Clase vendedor que hereda los atributos de la clase empleado.
+ * @author Oscar
+ * @version 1.0
+ */
+
+
+
 public class Vendedor extends Empleado{
     private String  fechaInicio;
 

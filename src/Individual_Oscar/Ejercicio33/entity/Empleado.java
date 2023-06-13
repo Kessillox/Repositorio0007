@@ -2,6 +2,18 @@ package Individual_Oscar.Ejercicio33.entity;
 
 import Individual_Oscar.Ejercicio33.iservices.IEmpresa;
 
+
+/** clase Empleado, la que permite registrar los datos de los empleados de la empresa
+ * @author Oscar
+ * @version 1
+ *
+ * @param nombre
+ * @param apellido
+ * @param edad
+ * @param salario
+ *
+ *
+ */
 public class Empleado  implements IEmpresa {
 
     private String nombre;
