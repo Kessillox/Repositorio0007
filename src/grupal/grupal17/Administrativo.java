@@ -1,7 +1,23 @@
 package grupal.grupal17;
 
 import java.time.LocalDate;
-
+/**Clase Administrativo que hereda los atributos y métodos de la clase Usuario
+ * @author Cintia Muñoz, Oscar Fernandez, Joaquin baeza, Hans Schiess
+ * @version 1.0.2
+ *
+ */
+/*
+* •	Principios SOLID que se cumplen:
+*1.	Principio de Responsabilidad Única (SRP): Las clases Administrativo
+*   tiene una única responsabilidad, que es representar a un administrativo
+*   y proporcionar métodos relacionados con la gestión de administrativos.
+*2.	Principio de Sustitución de Liskov (LSP): La clase Administrativo
+*   es subclase de Usuario y puede ser utilizada en lugar de la clase
+*   padre sin afectar el funcionamiento del programa.
+*3.	Principio de Abierto/Cerrado (OCP): La clase Administrativo extiende
+*   de la clase Usuario sin modificar su comportamiento existente.
+*   Permite la adición de nuevos atributos y métodos específicos de administrativos.
+*/
 
 //Clase Administrativo que hereda atributos y métodos desde la clase Usuario
 public class Administrativo extends Usuario {
@@ -53,7 +69,8 @@ public class Administrativo extends Usuario {
                 '}';
     }
 
-    //Metodo analizarUsuario heredado de la clase Usuario
+    /**Metodo heredado de Usuario
+     */
     @Override
     public void analizarUsuario() {
         System.out.println();

@@ -1,5 +1,19 @@
 package grupal.grupal17;
-
+/**
+ * La clase Capacitacion representa una capacitación realizada a un cliente.
+ * @author Cintia Muñoz, Oscar Fenández, Joaquín Baeza, Hans Schiess
+ * @version 1.0
+ */
+/*
+Principios SOLID que se cumplen:
+* 1.Principio de Responsabilidad Única (SRP): La clase Capacitacion
+*   cumple con este principio, ya que su única responsabilidad es
+*   representar una capacitación y proporcionar métodos para acceder
+*   y modificar sus atributos.
+* 2.Principio de Abierto/Cerrado (OCP): La clase Capacitacion es
+*   cerrada para modificaciones, ya que no tiene métodos para modificar
+*   su comportamiento.
+*/
 public class Capacitacion {// se crea la clase Capacitacion
 
     // se crea los atributos de la clase
@@ -78,7 +92,10 @@ public class Capacitacion {// se crea la clase Capacitacion
                 + "]";
     }
 
-    //Metodo mostrarDetalle
+    /**
+     * Devuelve un detalle de la capacitación en forma de cadena.
+     * @return Un detalle de la capacitación.
+     */
     public String mostrarDetalle(){
         return "“La capacitación será en "+lugar+" las "+hora+" del día "+dia+" durará "+duracion+" minutos";
     }

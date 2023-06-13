@@ -2,6 +2,23 @@ package grupal.grupal17;
 
 import java.time.LocalDate;
 import java.util.Scanner;
+/**Clase Cliente que hereda los atributos y métodos de la clase Usuario
+ * @author Cintia Muñoz, Oscar Fernandez, Joaquin baeza, Hans Schiess
+ * @version 1.0
+ *
+ */
+/*
+* •	Principios SOLID que se cumplen:
+1.	Principio de Responsabilidad Única (SRP): Las clases Cliente
+*   tiene una única responsabilidad, que es representar a un Cliente
+*   y proporcionar métodos relacionados con la gestión de clientes.
+2.	Principio de Sustitución de Liskov (LSP): La clase Cliente
+*   es subclase de Usuario y puede ser utilizada en lugar de la clase
+*   padre sin afectar el funcionamiento del programa.
+3.	Principio de Abierto/Cerrado (OCP): La clase Cliente extiende
+*   de la clase Usuario sin modificar su comportamiento existente.
+*   Permite la adición de nuevos atributos y métodos específicos de clientes.
+*/
 
 // Clase Cliente que hereda los atributos y métodos de la clase Usuario
 public class Cliente extends Usuario {
@@ -90,12 +107,17 @@ public class Cliente extends Usuario {
                 '}';
     }
 
-    //Metodo obtenerNombre
+    /**
+     * Método obtenerNombre
+     * Obtiene el nombre del representante de la empresa
+     * @return Una cadena que representa el nombre del representante legal.
+     */
     public String obtenerNombre(){
         return "El nombre del representante legal es: "+getNombreUsuario()+" "+getApellido1()+" "+getApellido2();
     }
 
-    //Metodo heredado de Usuario
+    /**Metodo heredado de Usuario
+     */
     @Override
     public void analizarUsuario() {
         System.out.println();

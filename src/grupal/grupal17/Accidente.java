@@ -1,4 +1,21 @@
 package grupal.grupal17;
+/**
+ * La clase Accidente representa un accidente registrado en una empresa.
+ * Contiene información como el identificador del accidente, el RUT del cliente involucrado,
+ * el día y hora del accidente, el lugar donde ocurrió, el origen del accidente y las consecuencias del mismo.
+ * @author Cintia Muñoz, Oscar Fenández, Joaquín Baeza, Hans Schiess
+ * @version 1.0
+ */
+
+/*
+* 1.Principio de Responsabilidad Única (SRP): La clase Accidente cumple
+*   con este principio, ya que su única responsabilidad es representar
+*   un accidente y proporcionar métodos para acceder y modificar sus atributos.
+* 2.Principio de Abierto/Cerrado (OCP): La clase Accidente es cerrada para
+*   modificaciones, ya que no tiene métodos para modificar su comportamiento.
+*   Sin embargo, podría ser extendida para agregar funcionalidades adicionales
+*    relacionadas con los accidentes.
+*/
 
 public class Accidente {
     //Atributos de la clase Accidente
