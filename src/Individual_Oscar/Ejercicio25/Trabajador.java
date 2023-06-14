@@ -67,6 +67,11 @@ public class Trabajador {
         return Integer.parseInt(runSinDigitoVerificador);
     }
 
+    // Método nombreCompleto()
+    public String nombreCompleto() {
+        return nombres + " " + apellidos;
+    }
+
     @Override
     public String toString() {
         return "Trabajador{" +
