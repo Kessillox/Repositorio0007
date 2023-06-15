@@ -65,6 +65,15 @@ public class Trabajador {
         return 0; // no contiene "-"
     }
 
+    /**
+     * Método que muestra el teléfono y la edad del trabajador
+     * @return String compuesta por el telefono y la edad con formato
+     */
+    public String mostrarDatos() {
+        return "Teléfono: " + this.telefono + "\n" +
+                "Edad: " + this.edad + "\n";
+    }
+
     public String getNombres() {
         return nombres;
     }

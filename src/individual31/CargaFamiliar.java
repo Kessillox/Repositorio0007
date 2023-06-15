@@ -3,7 +3,7 @@ package individual31;
 /**
  * Clase que almacena la informacion de la carga familiar
  * @author Juan Merino
- * @version 1.0
+ * @version 2.0
  */
 public class CargaFamiliar {
 
@@ -24,6 +24,18 @@ public class CargaFamiliar {
                 "RUN Familiar: " + runFamiliar + "\n" +
                 "Parentesco" + opcionesParentesco[parentesco - 1] + "\n" +
                 "Edad: " + edad + "\n";
+    }
+
+    public CargaFamiliar() {
+    }
+
+    public CargaFamiliar(String runCarga, String nombresCarga, String apellidosCarga, String runFamiliar, int parentesco, int edad) {
+        this.runCarga = runCarga;
+        this.nombresCarga = nombresCarga;
+        this.apellidosCarga = apellidosCarga;
+        this.runFamiliar = runFamiliar;
+        this.parentesco = parentesco;
+        this.edad = edad;
     }
 
     /**
