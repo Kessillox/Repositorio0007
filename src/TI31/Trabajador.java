@@ -1,4 +1,4 @@
-package TI25;
+package TI31;
 
 import java.sql.SQLOutput;
 
@@ -82,23 +82,24 @@ public class Trabajador {
                 '}';
     }
 
-    public String nombreCompleto(){
-       String nombreConcatenado = ("El nombre completo del trabajador es: "+this.nombre+" "+this.apellido1+ " "+this.apellido2);
+    public String nombreCompleto() {
+        String nombreConcatenado = ("El nombre completo del trabajador es: " + this.nombre + " " + this.apellido1 + " " + this.apellido2);
         return nombreConcatenado;
     }
-    public String descomponerRun(){
+
+    public String descomponerRun() {
         int pos = this.run.indexOf('-');
-        String newRun = this.run.substring(0,pos);
+        String newRun = this.run.substring(0, pos);
         return newRun;
     }
 
-    public void mostrarDatos(){
+    public void mostrarDatos() {
         System.out.println("El nombre: '" + nombre + '\'' +
                 ", apellido='" + apellido1 + '\'' +
                 ", apellido segundo='" + apellido2 + '\'' +
                 ", run='" + run + '\'' +
                 ", telefono='" + telefono + '\'' +
-                ", edad=" + edad );
+                ", edad=" + edad);
     }
 
 }
