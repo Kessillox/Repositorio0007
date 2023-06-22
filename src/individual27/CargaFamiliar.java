@@ -1,6 +1,6 @@
 package individual27;
 
-public class cargaFamiliar {
+public class CargaFamiliar {
     private String runC;
     private String nombreC;
     private String apellidoC;
@@ -8,10 +8,10 @@ public class cargaFamiliar {
     private String parentesco;
     private int edadC;
 
-    public cargaFamiliar() {
+    public CargaFamiliar() {
     }
 
-    public cargaFamiliar(String runC, String nombreC, String apellidoC, String runFamiliar, String parentesco, int edadC) {
+    public CargaFamiliar(String runC, String nombreC, String apellidoC, String runFamiliar, String parentesco, int edadC) {
         this.runC = runC;
         this.nombreC = nombreC;
         this.apellidoC = apellidoC;
