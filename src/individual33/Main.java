@@ -1,8 +1,5 @@
 package individual33;
 
-import individual33.Vendedor;
-
-
 public class Main {
     public static void main(String[] args){
 
@@ -14,9 +11,6 @@ public class Main {
         Repartidor repartidor1 = new Repartidor("Fat","Mike",29,450000,"Vespertino");
         System.out.println(repartidor1.toString());
         System.out.println("Sueldo total de "+repartidor1.getNombre()+": $"+repartidor1.tieneBono());
-
-
-
 
 
     }

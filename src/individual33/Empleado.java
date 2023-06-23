@@ -58,10 +58,10 @@ public class Empleado{
     @Override
     public String toString() {
         return
-    "nombre= '"+nombre +'\'' +
-    ", apellido= '"+ apellido +'\'' +
-    ", edad= '"+ edad +'\'' +
-    ", salario= '"+ salario +
-    "'";
+            "nombre= '"+nombre +'\'' +
+            ", apellido= '"+ apellido +'\'' +
+            ", edad= '"+ edad +'\'' +
+            ", salario= '"+ salario +
+            "'";
     }
 }
